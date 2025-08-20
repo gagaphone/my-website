@@ -396,13 +396,26 @@ English learner since childhood; earned the First Certificate in English from th
       </section>
 
 <!-- Skills -->  
-      <section id="skills" data-anchor="skills" class="navbar-is-white section pp-scrollable d-flex align-items-center position-absolute bg-dark">
+     <section id="skills" data-anchor="skills" class="navbar-is-white section pp-scrollable d-flex align-items-center position-absolute bg-dark">
         <div class="intro">
           <div class="container">
-             <h2><span class="text-white">My</span><span class="text-green">Skills.</span></h2>
-            <div class="mt-5 pt-5">
-                <h6 class="text-white">Web-development</h6> 
-                 <div class="row">
+            <h2><span class="text-white">My</span><span class="text-green">Skills.</span></h2>
+            <!-- Tab links -->
+              <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'wd')">Web-development</button>
+                <button class="tablinks" onclick="openCity(event, 'pp')">Project & Program Management</button>
+                <button class="tablinks" onclick="openCity(event, 'tkcb')">Training, Knowledge & Capacity Building</button>
+                <button class="tablinks" onclick="openCity(event, 'dpwd')">Digital Platforms & Web Development</button>
+                <button class="tablinks" onclick="openCity(event, 'ucm')">UX, Content & Marketing</button>
+                <button class="tablinks" onclick="openCity(event, 'ecbpa')">ERP, CRM & Business Process Automation</button>
+                <button class="tablinks" onclick="openCity(event, 'bfd')">Banking & FinTech Digitalization</button>
+                <button class="tablinks" onclick="openCity(event, 'gdma')">Game Development & Mobile Ads</button>
+                <button class="tablinks" onclick="openCity(event, 'tc')">Tools & Certifications</button>
+          </div>
+
+            <!-- Tab content -->
+            <div id="wd" class="tabcontent">    
+             <div class="row">
                   <ul class="skills tags">
                     <li>HTML5</li>
                     <li> CSS3 </li>
@@ -412,10 +425,11 @@ English learner since childhood; earned the First Certificate in English from th
                      <li>UX-Design </li>
                      <li>Business Analysis</li>
                   </ul>
-                  </div>
-                
-                 <h6 class="text-white">Project & Program Management</h6>
-                   <div class="row">
+              </div>
+            </div>
+
+            <div id="pp" class="tabcontent">
+            <div class="row">
                   <ul class="skills tags">
                     <li>Project Roadmap Development</li> 
                     <li> Strategic Planning </li>
@@ -434,9 +448,10 @@ English learner since childhood; earned the First Certificate in English from th
                     <li>Cross-Functional Collaboration</li>
                   </ul>
                   </div>
-                  
-                <h6 class="text-white">Training, Knowledge & Capacity Building</h6>
-                <div class="row">
+            </div>
+
+            <div id="tkcb" class="tabcontent">
+             <div class="row">
                   <ul class="skills tags">
                     <li>Knowledge Dissemination</li> 
                     <li>Capacity Building </li>
@@ -445,9 +460,10 @@ English learner since childhood; earned the First Certificate in English from th
                     <li>Training Sessions</li>
                   </ul>
                   </div>
-                  
-                <h6 class="text-white">Digital Platforms & Web Development</h6>
-                <div class="row">
+            </div>
+
+             <div id="dpwd" class="tabcontent">
+               <div class="row">
                   <ul class="skills tags">
                     <li>Corporate Website Development</li> 
                     <li>Web Portal Development</li>
@@ -455,9 +471,10 @@ English learner since childhood; earned the First Certificate in English from th
                     <li>B2B Platform Implementation</li>
                   </ul>
                   </div>
-                
-                <h6 class="text-white">UX, Content & Marketing</h6>
-                  <div class="row">
+            </div>
+
+              <div id="ucm" class="tabcontent">
+              <div class="row">
                   <ul class="skills tags">
                     <li>UX Design</li> 
                     <li>User Experience Enhancement</li>
@@ -466,8 +483,9 @@ English learner since childhood; earned the First Certificate in English from th
                     <li>Marketing Management</li>
                   </ul>
                   </div>
-                 
-                <h6 class="text-white">ERP, CRM & Business Process Automation</h6>
+            </div>
+
+             <div id="ecbpa" class="tabcontent">
                  <div class="row">
                   <ul class="skills tags">
                     <li>CRM/ ERP  Implementation & Customization</li> 
@@ -479,18 +497,21 @@ English learner since childhood; earned the First Certificate in English from th
                     <li>Client Training</li>           
                   </ul>
                   </div>
-                    
-                <h6 class="text-white">Banking & FinTech Digitalization</h6>
-                <div class="row">
+            </div>
+
+             <div id="bfd" class="tabcontent">
+                   <h6 class="text-white">Banking & FinTech Digitalization</h6>
+                  <div class="row">
                   <ul class="skills tags">
                     <li>Internet banking Implementation</li>
                     <li>Client bank Implementation</li>   
                     <li>Landing Pages </li>  
                   </ul>
                   </div>
-                    
-                <h6 class="text-white">Game Development & Mobile Ads</h6>
-                <div class="row">
+            </div>
+
+            <div id="gdma" class="tabcontent">
+                  <div class="row">
                   <ul class="skills tags">
                     <li>Mobile mini-games</li> 
                     <li>Workflow Optimization</li>
@@ -500,9 +521,10 @@ English learner since childhood; earned the First Certificate in English from th
                     <li>Storyboarding</li>         
                   </ul>
                   </div>
-                 
-                <h6 class="text-white">Tools & Certifications</h6>
-                 <div class="row">
+             </div>
+
+                <div id="tc" class="tabcontent">
+                   <div class="row">
                   <ul class="skills tags">
                     <li>MS Project</li> 
                     <li>Atlassian Jira (Admin), Confluence</li>
@@ -510,9 +532,10 @@ English learner since childhood; earned the First Certificate in English from th
                      <li>Visual Studio Code</li>      
                   </ul>
                   </div>
-              </div>
-            </div>
-          </div>
+             </div>
+        </div>
+       </div>
+  <script src="scripts.js"></script>
       </section>
              </div>
 
