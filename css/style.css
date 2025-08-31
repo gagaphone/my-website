@@ -13,17 +13,20 @@
 :root {
   --primary: #3b82f6;
   --bg-dark: #0a0f1c;
-  --bg-dark-navy: #0d1b2a;
-  --bg-near-black: #101820;
+  --bg-dns: #0d1b2a;
+  --bg-nbw: #101820;
   --bg-pmb: #000814;
+
   --text-light: #f1f5f9;
   --text-gray: #475569;
   --text-muted: #94a3b8;
+  --text-white: #ffffff;
 
   --font-base: 1rem;       /* 16px */
   --font-small: 0.875rem;  /* 14px */
   --font-large: 1.25rem;   /* 20px */
 
+  --white: #ffffff;
   --track:   #f1f5f9;  /* background circle */
   --size:    100px;     /* default size */
   --size-large:    500px;     /* L size */
@@ -31,56 +34,42 @@
   --speed:   1200ms;    /* animation duration */
 }
 
-
-
-/* Background-colors */
-
-
-.bg-dark{
-  background:#0a0f1c!important; /* almost black, but with a deep blue tint */
-  color:#fff;
-}
-
-.bg-dns{
-  background:#0d1b2a!important; /* dark navy, slightly softer */
-  color:#fff;
-}
-
-.bg-nbw{
-  background:#101820!important; /* near-black with a blue undertone */
-  color:#fff;
-}
-
-.bg-pmb{
-  background:#000814!important; /* pure midnight blue, very close to black */
-  color:#fff;
-}
+.bg-pmb { background-color: var(--bg-pmb); }
+.bg-dns { background-color: var(--bg-dns); }
 
 .bg-dark .progress{
   background: #fff;
 }
 
-/* General */
+
 html {
   -webkit-font-smoothing: antialiased;
 }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+    overflow-x: hidden; /* prevent horizontal scroll */
+    background-color: var(--bg-dark);
+}
 
+/* Make body a flex column to keep footer at bottom */
 body {
-  font-family: 'Work Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
   font-size: var(--font-base);
   line-height: 1.6;
   font-weight: 400;
   color: var(--text-light);
   letter-spacing: .25px;
-  margin: 0;
   min-height: 100dvh;   /* вместо 100vh → учитывает мобильные панели */
   display: flex;
-  overflow: hidden;
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
   margin: 0 0 1rem 0;
 }
 
@@ -93,20 +82,7 @@ h6 { font-size: 0.9rem; font-weight: 400; letter-spacing: 1px; text-transform: u
 
 /* Links */
 a {
-  color: var(--primary);
-  transition: color 0.3s;
-  font-size: 0.9rem;
-  text-decoration: none;
-}
-
-a:hover, a:focus, a:active {
-  color: var(--text-light);
-  text-decoration: underline dashed var(--primary);
-  outline: none;
-}
-
-a {
-  color: var(--primary);
+    color: var(--primary);
   transition: color 0.3s ease;
   font-size: var(--font-small);
   text-decoration: none;
@@ -115,7 +91,11 @@ a {
           transition: color .3s ease-out;
 }
 
-/* links */
+a:hover, a:focus, a:active {
+  color: var(--text-light);
+  text-decoration: underline dashed var(--primary);
+  outline: none;
+}
 
 /* Material icons */
 .material-icons {
@@ -129,50 +109,65 @@ a {
   color: var(--primary);
 }
 
-/* Main layout */
-.sidebar {
-  width: 18%;
-  max-width: 250px;
-  min-width: 180px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  background: var(--bg-pmb);
-  color: var(--text-light);
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  z-index: 1000;
-  text-align: center;
-}
 
 
 
+/*-------------------------------------------------------------------------------
+Main Content
+-------------------------------------------------------------------------------*/
 
 /* Base layout for large screens */
+
+
+/* Main content grows */
 .main-content {
     flex: 1;
-    margin-left: calc(20% + 10px); /* space for left sidebar */
     padding: 40px 20px;
+    margin-left: calc(20% + 10px); /* for left sidebar on desktop */
     width: calc(100% - 20%);
     overflow-y: auto;
-    height: 100vh;
 }
 
-.sidebar-nav {
+.main-header {
     position: fixed;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
+    top: 0;
+    left: calc(20%); /* start after left sidebar */
+    right: 0;
+    height: 60px;
+    background: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6rem;
     z-index: 1000;
 }
 
+.sidebar {
+    width: 18%;
+    max-width: 250px;
+    min-width: 180px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: var(--bg-pmb);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    z-index: 999;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
 
 /* Left sidebar hidden on tablets and below */
 @media (max-width: 991px) {
     .sidebar {
-        display: none;
+         transform: translateX(-100%); /* hidden by default */
+    }
+    .sidebar.active {
+        transform: translateX(0); /* show when toggled */
+        z-index: 1001;
     }
     .main-content {
         margin-left: 0;
@@ -184,62 +179,138 @@ a {
     }
 }
 
-/* Right sidebar adjustments for smaller devices */
+
+/*-------------------------------
+Right Sidebar Nav
+-------------------------------*/
+.sidebar-nav {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.sidebar-nav a {
+    color: var(--text-gray);
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+     line-height: 1.2;
+}
+
+.sidebar-nav a.active, 
+.sidebar-nav a:hover {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+/* Responsive scaling for small devices */
 @media (max-width: 768px) {
     .sidebar-nav {
         right: 15px;
         transform: translateY(-50%) scale(0.95);
     }
+    .sidebar-nav a {
+        font-size: 0.85rem;
+    }
 }
 
-@media (max-width: 481px) {
+@media (max-width: 480px) {
     .sidebar-nav {
         right: 10px;
         transform: translateY(-50%) scale(0.85);
     }
-    .main-content {
+    .sidebar-nav a {
+        font-size: 0.75rem;
+    }
+     .main-content {
         padding: 20px 10px;
     }
 }
 
+
 @media (max-width: 320px) {
     .sidebar-nav {
         right: 5px;
-        transform: translateY(-50%) scale(0.8);
+        transform: translateY(-50%) scale(0.75);
     }
     .main-content {
         padding: 15px 5px;
     }
 }
 
-/* Optional: make right nav links more compact on small screens */
-.sidebar-nav a {
-    font-size: 0.85rem;
-    line-height: 1.2;
+/*-------------------------------
+Sections
+-------------------------------*/
+.section {
+    min-height: 100vh;
+    padding: 60px 20px;
+    margin-left: 0; /* remove extra left margin for small screens */
+    box-sizing: border-box;
 }
 
-@media (max-width: 480px) {
-    .sidebar-nav a {
-        font-size: 0.75rem;
+/* Fix big left margins for sections on smaller screens */
+@media (max-width: 991px) {
+    .main-content .section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/*-------------------------------
+Footer
+-------------------------------*/
+.site-footer {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto; /* keeps footer at bottom */
+}
+
+/*-------------------------------
+Mobile Navigation Toggle
+-------------------------------*/
+.nav-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .nav-toggle {
+        display: block;
     }
 }
 
 
-/* Header */
-.main-header {
-  position: fixed;
-  top: 0;
-  left: calc(20%); /* start header where content begins */
-  right: 0;
-  height: 60px;
-  background: var(--bg-dark);
-   border-bottom: 1px solid var(--bg-dark);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
-  z-index: 900;
+/*-------------------------------
+Main Content adjustments
+-------------------------------*/
+@media (max-width: 991px) {
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 80px 15px 20px 15px; /* header space */
+    }
 }
+
+/*-------------------------------
+Fix horizontal scroll & gaps
+-------------------------------*/
+* {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/*-------------------------------
+Header
+-------------------------------*/
 
 
 .nav-right {
@@ -478,11 +549,6 @@ background: #3b82f6;
 /*  Sections */
 
 
-
-.section{
-  position: relative;
-}
-
 .section-sm{
   padding: 6rem 0;
 }
@@ -492,6 +558,7 @@ background: #3b82f6;
   background-size: cover;
   padding:8rem 0 6rem;
 }
+
 
 .section:not(#home) .intro{
   opacity: 0;
@@ -660,15 +727,10 @@ Work Expeience
   flex-shrink: 0;             /* prevent shrinking */
 }
 
-/* banner */
-.banner {
-  padding: 50px;
-    margin: 0 3.5rem 3rem 3rem;
-  text-align: left;
-  -webkit-box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-  font-size: 16px;
-}
+
+.expertise { 
+  padding: 40px;
+ }
 
 /* preview */
 
@@ -750,12 +812,6 @@ Work Expeience
 }
 
 
-/* Section styling (for demo) */
-.section {
-  min-height: 100vh;
-  padding: 60px 20px;
-}
-
 /*header*/
 
 
@@ -784,10 +840,6 @@ Work Expeience
   
 }
 
-
-.expertise { 
-  padding: 100px 40px 20px 30px;
- }
 
 
 
