@@ -147,28 +147,83 @@ a {
   text-align: center;
 }
 
-/* Убрать на мобилках */
-@media (max-width: 991px) {
-  .sidebar { display: none; }
-  .main-content { margin-left: 0; width: 100%; }
-}
 
+
+
+/* Base layout for large screens */
 .main-content {
-  flex: 1;
-  padding: 40px;
-  margin-left: calc(20% + 10px); /* sidebar width (20%) + 5px left + 5px right */
-  padding: 0 20px;
- width: calc(100% - 20%);
-  overflow-y: auto;
-  height: 100vh;
+    flex: 1;
+    margin-left: calc(20% + 10px); /* space for left sidebar */
+    padding: 40px 20px;
+    width: calc(100% - 20%);
+    overflow-y: auto;
+    height: 100vh;
 }
 
-@media (max-width: 991px) {
-  .main-content {
-    margin-left: 0;
-    width: 100%;
-  }
+.sidebar-nav {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1000;
 }
+
+
+/* Left sidebar hidden on tablets and below */
+@media (max-width: 991px) {
+    .sidebar {
+        display: none;
+    }
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 30px 15px;
+    }
+    .main-header {
+        left: 0;
+    }
+}
+
+/* Right sidebar adjustments for smaller devices */
+@media (max-width: 768px) {
+    .sidebar-nav {
+        right: 15px;
+        transform: translateY(-50%) scale(0.95);
+    }
+}
+
+@media (max-width: 481px) {
+    .sidebar-nav {
+        right: 10px;
+        transform: translateY(-50%) scale(0.85);
+    }
+    .main-content {
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .sidebar-nav {
+        right: 5px;
+        transform: translateY(-50%) scale(0.8);
+    }
+    .main-content {
+        padding: 15px 5px;
+    }
+}
+
+/* Optional: make right nav links more compact on small screens */
+.sidebar-nav a {
+    font-size: 0.85rem;
+    line-height: 1.2;
+}
+
+@media (max-width: 480px) {
+    .sidebar-nav a {
+        font-size: 0.75rem;
+    }
+}
+
 
 /* Header */
 .main-header {
@@ -184,10 +239,6 @@ a {
   justify-content: space-between;
   padding: 0 1rem;
   z-index: 900;
-}
-
-@media (max-width: 991px) {
-  .main-header { left: 0; }
 }
 
 
@@ -966,3 +1017,8 @@ Work Expeience
   margin: 0;
   letter-spacing: 0.5px;
 }
+/*-------------------------------
+Responsive adjustments
+Breakpoints: 320px, 480px, 481px, 769px
+-------------------------------*/
+
