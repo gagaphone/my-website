@@ -156,7 +156,7 @@ Main Content
     color: var(--text-light);
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 0.5rem;
     z-index: 999;
     text-align: center;
     transition: transform 0.3s ease;
@@ -960,7 +960,7 @@ Work Expeience
 .skill-header {
   display: flex;
   justify-content: space-between; /* pushes label left, % right */
-  font-size: 14px;
+  font-size: 12px;
   margin-bottom: 6px;
 }
 
@@ -989,13 +989,12 @@ Work Expeience
 
     /* Circle bar */
 
-
-.grid{
-  padding: 10px;
-  display: grid; 
+.grid {
+  display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  align-items: start;
+  grid-template-columns: repeat(2, 1fr); /* always 2 in a row */
+  justify-items: center; /* center each progress circle */
+   align-items: start;
 }
 
 
@@ -1026,8 +1025,8 @@ Work Expeience
 .c-progress__label{
   text-align:center; 
   margin-top:.1rem; 
-  font-weight:300;
-  font-size: 14px;
+  font-weight:200;
+  font-size: 12px;
 }
 
 .c-progress svg{
