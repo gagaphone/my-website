@@ -4,11 +4,6 @@
 -------------------------------------------------------------------------------*/
 
 
-/* Imports */
-@import url('bootstrap.min.css');
-@import url('aos.css');
-@import url('magnific-popup.css');
-
 /* Root variables */
 :root {
   --primary: #3b82f6;
@@ -17,6 +12,7 @@
   --bg-nbw: #101820;
   --bg-pmb: #000814;
 
+  --text-primary: #3b82f6;
   --text-dark: #343434;
   --text-light: #f1f5f9;
   --text-gray: #475569;
@@ -33,6 +29,10 @@
   --size-large:    500px;     /* L size */
   --stroke:  10;        /* stroke width (px) */
   --speed:   1200ms;    /* animation duration */
+
+   --sidebar-left: 20%;   /* left sidebar width (percent or px) */
+  --sidebar-gap: 10px;   /* spacing between left sidebar and content */
+  --sidebar-right: 80px; /* right sidebar nav width */
 }
 
 
@@ -75,8 +75,9 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 1rem 0;
 }
 
+
 h1 { font-size: 4.125rem; font-weight: 800; line-height: 1.05; }
-h2 { font-size: 2.1rem; font-weight: 700; line-height: 1.2; color: var(--text-light); }
+h2 { font-size: 2.1rem; font-weight: 700; line-height: 1.2; text-transform: uppercase; color: var(--text-light); }
 h3 { font-size: 1.925rem; font-weight: 700; line-height: 1.25; color: #cbd5e1; }
 h4 { font-size: 1.325rem; font-weight: 600; line-height: 1.2; color: var(--text-muted); }
 h5 { font-size: 1.125rem; font-weight: 500; color: var(--primary); }
@@ -122,12 +123,14 @@ Main Content
 
 
 /* Main content grows */
+
 .main-content {
-    flex: 1;
-    padding: 40px 20px;
-    margin-left: calc(20% + 10px); /* for left sidebar on desktop */
-    width: calc(100% - 20%);
-    overflow-y: auto;
+  flex: 1;
+  padding: 40px 20px;
+  margin-left: calc(var(--sidebar-left) + var(--sidebar-gap));
+  margin-right: var(--sidebar-right);
+  width: calc(100% - var(--sidebar-left) - var(--sidebar-right) - var(--sidebar-gap));
+  overflow-y: auto;
 }
 
 .main-header {
@@ -249,18 +252,19 @@ Right Sidebar Nav
 Sections
 -------------------------------*/
 .section {
-    min-height: 100vh;
-    padding: 60px 20px;
-    margin-left: 0; /* remove extra left margin for small screens */
-    box-sizing: border-box;
+  min-height: 100vh;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 /* Fix big left margins for sections on smaller screens */
 @media (max-width: 991px) {
-    .main-content .section {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
+  .main-content {
+    margin: 0;
+    width: 100%;
+    padding: 30px 15px;
+  }
 }
 
 /*-------------------------------
@@ -399,7 +403,7 @@ Header
 /* Each timeline card */
 .timeline-item {
   position: relative;
-  margin: 0 45px 2rem 0;
+  margin: 0 60px 2rem 0;
   padding: 30px 30px 30px 40px;     /* space so text doesn't hit the marker */
   /* Don't set opacity on the parent! (it would hide the marker) */
   /* background is moved to ::before so we can layer properly */
@@ -410,7 +414,6 @@ Header
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 8px;
   background: var(--bg-dns);
   box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
   z-index: 0;           /* background at the very back */
@@ -606,7 +609,7 @@ background: #3b82f6;
 
 
 .scroll-wrap {
-  height: 100vh;              /* full viewport height */
+  height: 100dvh;              /* full viewport height */
   overflow-y: auto;           /* scroll only if needed */
   overflow-x: hidden;         /* prevent horizontal scrollbar */
   box-sizing: border-box;
@@ -653,20 +656,43 @@ Work Expeience
 
 
 /*contact information*/
+/* Row and columns */
 .row {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-      margin: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
-.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
-    position: relative;
-    width: 100%;
-    padding: 25px;
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 15px; /* spacing */
+  box-sizing: border-box; /* keep padding inside */
+}
+
+.counters {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.art-counter-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.art-counter-box h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.art-counter-box h6 {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-muted);
 }
 
 .card {
@@ -760,20 +786,7 @@ Work Expeience
         max-width: 25%;
     }
 }
-.col-6 {
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
-}
 
-
-.art-counter-frame {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding: 20px;
-}
 
 /*expandable section*/
 .expandable {
@@ -975,14 +988,14 @@ Work Expeience
   height: 8px;
   width: 100%;
   overflow: hidden;
-  background: #1e293b; /* a subtle bg track */
+  background: var(--white) /* a subtle bg track */
 }
 
 .progress-bar {
   height: 8px;
   width: 0; /* animated via JS */
   border-radius: 8px;
-  background: #3b82f6; /* accent color */
+  background: var(--primary); /* accent color */
   transition: width 1s ease;
 }
 
