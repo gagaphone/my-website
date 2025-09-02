@@ -725,8 +725,10 @@ Work Expeience
   margin-bottom: 1rem;
 }
 
+/*-------------------------------------------------------------------------------
+Contact information
+-------------------------------------------------------------------------------*/
 
-/*contact information*/
 /* Row and columns */
 .row {
   display: flex;
@@ -741,6 +743,52 @@ Work Expeience
   padding: 0 15px; /* spacing */
   box-sizing: border-box; /* keep padding inside */
 }
+
+.cards {
+  background: transparent;
+  padding: 1.5rem 1rem;
+  margin: 0 3.5rem 3rem 3rem;
+  text-align: left;
+  font-size: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* адаптивные колонки */
+  gap: 1rem; /* расстояние между колонками */
+}
+
+.art-card {
+  background: var(--bg-dark-navy);
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.art-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.art-card li {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.art-card li strong {
+  color: var(--primary);
+  margin-right: 5px;
+}
+
+
+.art-info-bar .art-knowledge-list {
+    padding-left: 0;
+}
+
+
+
+/*-------------------------------------------------------------------------------
+counters
+-------------------------------------------------------------------------------*/
+
 
 .counters {
   margin-top: 20px;
@@ -766,44 +814,6 @@ Work Expeience
   color: var(--text-muted);
 }
 
-.card {
-  background: transparent;
-   padding: 1.5rem 1rem;
-  margin: 0 3.5rem 3rem 3rem;
-  text-align: left;
-  font-size: 1rem;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* адаптивные колонки */
-  gap: 1rem; /* расстояние между колонками */
-}
-
-.art-a.art-card {
-  background: var(--bg-dark-navy);
-  padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-}
-
-.art-table ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.art-table li {
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
-.art-table li strong {
-  color: var(--primary);
-  margin-right: 5px;
-}
-
-
-.art-info-bar .art-knowledge-list {
-    padding-left: 0;
-}
 
 /* Lish for skills in left side bar */
 
