@@ -67,37 +67,20 @@ function openCity(evt, cityName) {
 // --- Fade-in анимация для timeline ---
 document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".timeline-item");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
 
   items.forEach(item => observer.observe(item));
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-  const body = document.body;
-  const toggler = document.querySelector(".toggler");
-  const closeBtn = document.querySelector(".navbar-mobile .close");
-  const clickCapture = document.querySelector(".click-capture");
-
-  // Open menu
-  toggler.addEventListener("click", () => {
-    body.classList.add("menu-is-open");
-  });
-
-  // Close menu
-  closeBtn.addEventListener("click", () => {
-    body.classList.remove("menu-is-open");
-  });
-
-  clickCapture.addEventListener("click", () => {
-    body.classList.remove("menu-is-open");
-  });
 });
 
 
