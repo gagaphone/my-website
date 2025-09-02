@@ -100,17 +100,6 @@ a:hover, a:focus, a:active {
   outline: none;
 }
 
-/* Material icons */
-.material-icons {
-  font-size: 16px;
-  vertical-align: middle;
-  margin-right: 5px;
-  color: var(--text-light);
-  transition: color 0.3s;
-}
-.material-icons:hover, .material-icons:active {
-  color: var(--primary);
-}
 
 
 
@@ -317,12 +306,112 @@ Fix horizontal scroll & gaps
 Header
 -------------------------------*/
 
-
 .nav-right {
   display: flex;
-  gap: 15px;
   align-items: center;
+    text-align: center;
+   flex-shrink: 0;
+      position: relative; 
 }
+
+
+
+.nav-right a {
+   font-size: 14px;
+  transition: color 0.3s;
+}
+
+/* Container */
+.nav-right .social-icons {
+  display: flex;
+  align-items: center; /* vertical center */
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Each li */
+.nav-right .social-icons li {
+  display: flex;
+  align-items: center; /* keep icon + text aligned */
+}
+
+/* Icon links */
+.nav-right .social-icons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+
+/* icon-color */
+
+/* Icon sizes */
+.nav-right .social-icons ion-icon {
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.nav-right .social-icons a:hover {
+  color: var(--primary);
+}
+
+.nav-right .social-icons a:active {
+  color: var(--primary);
+}
+
+
+/* Material icons */
+.material-icons {
+font-size: 18px;
+  display: flex;
+      justify-content: center; /* center horizontally */
+      align-items: center;
+      gap: 15px; /* spacing between icons */
+      list-style: none;
+      padding: 0;
+      margin: 0;
+}
+.material-icons:hover, .material-icons:active {
+  color: var(--primary);
+}
+
+/* Special style for Resume link */
+/* Resume link styled as border button */
+.resume-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid var(--primary); /* border instead of background */
+  border-radius: 50px;
+  background: transparent;
+  color: var(--primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.resume-link a ion-icon {
+  font-size: 1.2rem;
+}
+
+.resume-link a:hover {
+  color: var(--text-light);
+  border-color: var(--text-light);
+  transform: translateY(-2px);
+}
+
+/*-------------------------------
+Right sidebar nav
+-------------------------------*/
+
 
 /* Right sidebar nav */
 .sidebar-nav {
@@ -511,24 +600,6 @@ ul{
 
 
 
-
-/* icon-color */
-
-.social-icons ion-icon{
-  color:#cbd5e1;  
-}
-
-.social-icons ion-icon:hover {
-  color: #3b82f6;
-}
-
-.social-icons ion-icon:active{
-  color: #3b82f6;
-}
-
-ion-icon{
-  color:#3b82f6;
-}
 
 
 
@@ -846,10 +917,7 @@ Work Expeience
 
 /* Right-side content */
 
-.nav-right a {
-   font-size: 16px;
-  transition: color 0.3s;
-}
+
 
 
 /* Content sections pushed below header */
@@ -899,19 +967,32 @@ Work Expeience
 
     /* Sidebar fixed header (name, position, CV) */
     .sidebar-header {
-      padding: 5px;
-      font-size: 14px;
+    text-align: center;
+      padding-top: 15px;
       flex-shrink: 0;
-      position: relative;
+      position: relative; 
       -webkit-box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
       box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
+      flex-shrink: 0;
+      position: relative
     }
+
+      .sidebar-header .social-icons {
+      display: flex;
+      justify-content: center; /* center horizontally */
+      align-items: center;
+      gap: 15px; /* spacing between icons */
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
 
       /* Sidebar fixed footer social media*/
 
      .sidebar-footer-sm{
       text-align: center;
-      padding: 15px 0;
+      padding-top: 15px;
       flex-shrink: 0;
       position: relative; 
       -webkit-box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
@@ -933,7 +1014,7 @@ Work Expeience
     }
 
     .sidebar-footer-sm .social-icons a {
-      font-size: 1.5rem; /* adjust icon size */
+      font-size: 1.1rem; /* adjust icon size */
       transition: color 0.3s ease;
     }
 
@@ -941,7 +1022,6 @@ Work Expeience
   /* Sidebar fixed footer cv*/
 
      .sidebar-footer-cv{
-      padding: 15px 0;
       flex-shrink: 0;
       position: relative; 
     -webkit-box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
