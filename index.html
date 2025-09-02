@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Ionicons (v5) -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
     <link rel="stylesheet" href="css/style.css">
     <title>ogalanets.</title>
    
@@ -43,15 +47,19 @@
     <!------------------------------- Left Sidebar --------------------------->
     <section id="home" class="navbar-is-white text-white pp-scrollable d-flex align-items-center section position-absolute">
       
-         <aside class="sidebar bg-pmb text-white">
-          <div class="sidebar-header bg-pmb text-white">
+         <aside class="sidebar bg-pmb">
+          <div class="sidebar-header bg-pmb">
             <div>
               <img src="img/personal/olga-galanets.256x256.jpg" alt="Olga Galanets portrait" class="" width="32" height="32" style="width:5rem;height:5rem" loading="lazy">
             </div>
-            <div>
-                <ul>
-                  <li><span class="material-icons">work</span> <span class="text-primary">IT Project Manager</span></li>
-                  <li><span class="material-icons">location_on</span><span class="text-primary">Germany, Hamburg</span></li>
+            <div class="social-icons">
+               <ul>
+              <li>
+                <ion-icon name="briefcase-outline"></ion-icon>  <span class="text-primary">IT Project Manager</span>
+              </li>
+                  <li>
+                    <ion-icon name="location-outline"></ion-icon><span class="text-primary">Germany, Hamburg</span>
+                  </li>
                 </ul>
             </div>
           </div>
@@ -110,7 +118,7 @@
           <div class="art-ls-divider bg-dns"></div>
           <!-- Social -->
           <div class="sidebar-footer-sm bg-pmb text-white">
-            <ul class="social-icons mr-auto mr-lg-0">
+            <ul class="social-icons">
               <li>
                 <a href="https://www.xing.com/profile/Olga_Galanets" target="_blank">
                   <ion-icon name="logo-xing"></ion-icon>
@@ -123,12 +131,22 @@
               </li>
             </ul>
           </div>
-
+            <div class="sidebar-footer-cv bg-pmb">
+              <ul class="social-icons">
+                <li> <ion-icon name="mail-outline"></ion-icon>
+                <a href="mailto:ogalanets@gmail.com" target="_blank">ogalanets@gmail.com  </a> 
+                </li> 
+                </ul>
+            </div>
           <!-- cv -->
           <div class="sidebar-footer-cv bg-pmb">
-            <ul>
-            <li><span class="material-icons">email</span> <a href="mailto:ogalanets@gmail.com" target="_blank">ogalanets@gmail.com </a></li> 
-           <li><span class="material-icons">download</span><a href="OlgaGalanetsCV.pdf" name="download" target="_blank">Download Resume </a></li> 
+            <ul class="social-icons">
+           <li class="resume-link">
+          <a href="OlgaGalanetsCV.pdf" target="_blank" download>
+            <ion-icon name="download"></ion-icon>
+            <span>Resume</span>
+          </a>
+        </li>
             </ul>
           </div>
           </aside>
@@ -136,21 +154,36 @@
 
         <main class="main-content">
      <!-- Fixed Header -->
-          <header class="main-header">
-            <nav class="header-nav">
-              <!-- left side (optional) -->
-              <div class="nav-left">
-                <!-- you could place logo or section links here -->
-              </div>
+         <header class="main-header">
+  <nav class="header-nav">
+    <!-- left side (optional) -->
+    <div class="nav-left">
+      <!-- logo or links -->
+    </div>
 
-              <!-- right side -->
-              <span class="nav-right">
-                <ul>
-                <li><span class="material-icons">download</span><a href="OlgaGalanetsCV.pdf" name="download" target="_blank">Download Resume </a></li> 
-                </ul>
-              </span>
-            </nav>
-          </header>
+    <div class="nav-right">
+      <ul class="social-icons">
+        <li>
+          <a href="https://www.xing.com/profile/Olga_Galanets" target="_blank" aria-label="Xing">
+            <ion-icon name="logo-xing"></ion-icon>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/olga-galanets-a1aa8681/" target="_blank" aria-label="LinkedIn">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+        <li class="resume-link">
+          <a href="OlgaGalanetsCV.pdf" target="_blank" download>
+            <ion-icon name="download"></ion-icon>
+            <span>Resume</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
 
       <!-- Home Section -->
 <section id="home-section" class="expertise">
@@ -704,19 +737,18 @@
           </div>
         <div class="art-a art-card">
           <div class="art-table p-15-15">
-          
-            <ul class="social-icons mr-auto mr-lg-0" style="display:flex; gap:15px; align-items:center; margin:10px 0 0; padding:0; list-style:none;">
-              <li>
-                <a href="https://www.xing.com/profile/Olga_Galanets" target="_blank" aria-label="Xing"> Xing
-                  <ion-icon name="logo-xing"> </ion-icon>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/olga-galanets-a1aa8681/" target="_blank" aria-label="LinkedIn"> Linkedin
-                  <ion-icon name="logo-linkedin"> </ion-icon>
-                </a>
-              </li>
-            </ul>
+           <ul class="social-icons">
+  <li>
+    <a href="https://www.xing.com/profile/Olga_Galanets" target="_blank">
+      <ion-icon name="logo-xing"></ion-icon>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.linkedin.com/in/olga-galanets-a1aa8681/" target="_blank">
+      <ion-icon name="logo-linkedin"></ion-icon>
+    </a>
+  </li>
+</ul>
           </div>
         </div>
         </div>
