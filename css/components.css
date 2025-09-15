@@ -1,0 +1,228 @@
+.progress{
+  background: #fff;
+}
+
+.progress {
+background: #f1f5f9;
+}
+
+.progress-bar {
+background: #3b82f6;
+    }
+
+.progress-bar::after {
+  color: #3b82f6;
+}
+
+.progress {
+  position: relative;
+  border-radius: 8px;
+  height: 8px;
+  width: 100%;
+  overflow: hidden;
+  background: var(--white) /* a subtle bg track */
+}
+
+.progress-bar {
+  height: 8px;
+  width: 0; /* animated via JS */
+  border-radius: 8px;
+  background: var(--primary); /* accent color */
+  transition: width 1s ease;
+}
+
+.loader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+}
+
+.resume-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid var(--primary); /* border instead of background */
+  border-radius: 50px;
+  background: transparent;
+  color: var(--primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.resume-link a ion-icon {
+  font-size: 1.2rem;
+}
+
+.resume-link a:hover {
+  color: var(--text-light);
+  border-color: var(--text-light);
+  transform: translateY(-2px);
+}
+
+.cards {
+  background: transparent;
+  padding: 1.5rem 1rem;
+  margin: 0 3.5rem 3rem 3rem;
+  text-align: left;
+  font-size: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* адаптивные колонки */
+  gap: 1rem; /* расстояние между колонками */
+}
+
+.art-card {
+  background: var(--bg-dark-navy);
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.art-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.art-card li {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.art-card li strong {
+  color: var(--primary);
+  margin-right: 5px;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between; /* pushes label left, % right */
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.skill-percent {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.c-progress{
+  --value: 0;
+  width: var(--size);
+  aspect-ratio: 1 / 1;
+  display:grid;
+  place-items:center;
+  position:relative;
+}
+
+.c-progress .c-progress-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.c-progress .c-progress-value span {
+  font-size: 0.8rem;
+}
+
+.c-progress__label{
+  text-align:center; 
+  margin-top:.1rem; 
+  font-weight:200;
+  font-size: 12px;
+}
+
+.c-progress svg{
+  width:100%; height:100%;
+  transform: rotate(-90deg); display:block;
+}
+
+.c-progress circle{
+  fill:none; 
+  stroke-linecap:round;
+}
+
+.c-progress:hover .c-bar{
+  filter: drop-shadow(0 2px 6px rgba(35,165,146,.35));
+}
+
+.timeline-item {
+  position: relative;
+  margin: 0 60px 2rem 0;
+  padding: 30px 30px 30px 40px;     /* space so text doesn't hit the marker */
+  /* Don't set opacity on the parent! (it would hide the marker) */
+  /* background is moved to ::before so we can layer properly */
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg-dns);
+  box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
+  z-index: 0;           /* background at the very back */
+}
+
+.timeline-content {
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.timeline-item.show .timeline-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -40px;          /* centers on the 4px line */
+  top: 20px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  background: var(--bg-dark);
+  box-shadow: 0 0 10px rgba(59,130,246,.9);
+  z-index: 2;           /* sits above ::before background and content */
+  pointer-events: none; /* so it never blocks hover/clicks on content */
+  transition: transform .3s, box-shadow .3s;
+}
+
+.timeline-item:hover .timeline-marker {
+  transform: scale(1.1);
+  box-shadow: 0 0 14px rgba(59,130,246,1);
+}
+
+.timeline-title { font-weight: 600; font-size: 1.1rem; color: var(--text-light); }
+
+.timeline-content p { font-size: .9rem; margin: .3rem 0 .6rem; }
+
+.timeline-content a { font-size: .85rem; text-decoration: none; }
+
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.counters {
+  margin-top: 20px;
+  text-align: center;
+}

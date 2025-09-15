@@ -1,0 +1,31 @@
+:root {
+  --primary: #3b82f6;
+  --bg-dark: #0a0f1c;
+  --bg-dns: #0d1b2a;
+  --bg-nbw: #101820;
+  --bg-pmb: #000814;
+
+  --text-primary: #3b82f6;
+  --text-dark: #343434;
+  --text-light: #f1f5f9;
+  --text-gray: #475569;
+  --text-muted: #94a3b8;
+  --text-white: #ffffff;
+
+  --font-base: 1rem;       /* 16px */
+  --font-small: 0.875rem;  /* 14px */
+  --font-large: 1.25rem;   /* 20px */
+
+  --white: #ffffff;
+  --track: #f1f5f9;  /* background circle */
+  --size: 100px;     /* default size */
+  --size-large: 500px;     /* L size */
+  --stroke: 10;        /* stroke width (px) */
+  --speed: 1200ms;    /* animation duration */
+
+  --sidebar-left: 20%;   /* left sidebar width (percent or px) */
+  --sidebar-gap: 10px;   /* spacing between left sidebar and content */
+  --sidebar-right: 80px; /* right sidebar nav width */
+
+
+}
