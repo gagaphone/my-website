@@ -1,274 +1,4 @@
 
-/*-------------------------------------------------------------------------------
- Global
--------------------------------------------------------------------------------*/
-
-
-/* Root variables */
-:root {
-  --primary: #3b82f6;
-  --bg-dark: #0a0f1c;
-  --bg-dns: #0d1b2a;
-  --bg-nbw: #101820;
-  --bg-pmb: #000814;
-
-  --text-primary: #3b82f6;
-  --text-dark: #343434;
-  --text-light: #f1f5f9;
-  --text-gray: #475569;
-  --text-muted: #94a3b8;
-  --text-white: #ffffff;
-
-  --font-base: 1rem;       /* 16px */
-  --font-small: 0.875rem;  /* 14px */
-  --font-large: 1.25rem;   /* 20px */
-
-  --white: #ffffff;
-  --track:   #f1f5f9;  /* background circle */
-  --size:    100px;     /* default size */
-  --size-large:    500px;     /* L size */
-  --stroke:  10;        /* stroke width (px) */
-  --speed:   1200ms;    /* animation duration */
-
-   --sidebar-left: 20%;   /* left sidebar width (percent or px) */
-  --sidebar-gap: 10px;   /* spacing between left sidebar and content */
-  --sidebar-right: 80px; /* right sidebar nav width */
-}
-
-
-.bg-pmb { background-color: var(--bg-pmb); }
-.bg-dns { background-color: var(--bg-dns); }
-
-.bg-dark .progress{
-  background: #fff;
-}
-
-
-html {
-  -webkit-font-smoothing: antialiased;
-}
-  
-  html, body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Work Sans', sans-serif;
-    overflow-x: hidden; /* prevent horizontal scroll */
-    background-color: var(--bg-dark);
-}
-
-/* Make body a flex column to keep footer at bottom */
-body {
-    display: flex;
-    flex-direction: column;
-  font-size: var(--font-base);
-  line-height: 1.6;
-  font-weight: 400;
-  color: var(--text-light);
-  letter-spacing: .25px;
-  min-height: 100dvh;   /* вместо 100vh → учитывает мобильные панели */
-  display: flex;
-}
-
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 1rem 0;
-}
-
-
-h1 { font-size: 4.125rem; font-weight: 800; line-height: 1.05; }
-h2 { font-size: 2.1rem; font-weight: 700; line-height: 1.2; text-transform: uppercase; color: var(--text-light); }
-h3 { font-size: 1.925rem; font-weight: 700; line-height: 1.25; color: #cbd5e1; }
-h4 { font-size: 1.325rem; font-weight: 600; line-height: 1.2; color: var(--text-muted); }
-h5 { font-size: 1.125rem; font-weight: 500; color: var(--primary); }
-h6 { font-size: 0.9rem; font-weight: 400; letter-spacing: 1px; text-transform: uppercase; color: var(--text-gray); }
-
-/* Links */
-a {
-    color: var(--primary);
-  transition: color 0.3s ease;
-  font-size: var(--font-small);
-  text-decoration: none;
-  -webkit-transition: color .3s ease-out;
-       -o-transition: color .3s ease-out;
-          transition: color .3s ease-out;
-}
-
-a:hover, a:focus, a:active {
-  color: var(--text-light);
-  text-decoration: underline dashed var(--primary);
-  outline: none;
-}
-
-
-
-
-
-/*-------------------------------------------------------------------------------
-Main Content
--------------------------------------------------------------------------------*/
-
-/* Base layout for large screens */
-
-
-/* Main content grows */
-
-.main-content {
-  flex: 1;
-  padding: 40px 20px;
-  margin-left: calc(var(--sidebar-left) + var(--sidebar-gap));
-  margin-right: var(--sidebar-right);
-  width: calc(100% - var(--sidebar-left) - var(--sidebar-right) - var(--sidebar-gap));
-  overflow-y: auto;
-}
-
-.main-header {
-    position: fixed;
-    top: 0;
-    left: calc(20%); /* start after left sidebar */
-    right: 0;
-    height: 60px;
-    background: var(--bg-dark);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 6rem;
-    z-index: 1000;
-}
-
-.sidebar {
-    width: 18%;
-    max-width: 250px;
-    min-width: 180px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    background: var(--bg-pmb);
-    color: var(--text-light);
-    display: flex;
-    flex-direction: column;
-    padding: 0.5rem;
-    z-index: 999;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-/* Left sidebar hidden on tablets and below */
-@media (max-width: 991px) {
-    .sidebar {
-         transform: translateX(-100%); /* hidden by default */
-    }
-    .sidebar.active {
-        transform: translateX(0); /* show when toggled */
-        z-index: 1001;
-    }
-    .main-content {
-        margin-left: 0;
-        width: 100%;
-        padding: 30px 15px;
-    }
-    .main-header {
-        left: 0;
-    }
-}
-
-
-/*-------------------------------
-Right Sidebar Nav
--------------------------------*/
-.sidebar-nav {
-    position: fixed;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    z-index: 1000;
-}
-
-.sidebar-nav a {
-    color: var(--text-gray);
-    text-decoration: none;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-weight: 500;
-    font-size: 0.85rem;
-    transition: color 0.3s;
-     line-height: 1.2;
-}
-
-.sidebar-nav a.active, 
-.sidebar-nav a:hover {
-    color: var(--text-light);
-    font-weight: 600;
-}
-
-/* Responsive scaling for small devices */
-@media (max-width: 768px) {
-    .sidebar-nav {
-        right: 15px;
-        transform: translateY(-50%) scale(0.95);
-    }
-    .sidebar-nav a {
-        font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .sidebar-nav {
-        right: 10px;
-        transform: translateY(-50%) scale(0.85);
-    }
-    .sidebar-nav a {
-        font-size: 0.75rem;
-    }
-     .main-content {
-        padding: 20px 10px;
-    }
-}
-
-
-@media (max-width: 320px) {
-    .sidebar-nav {
-        right: 5px;
-        transform: translateY(-50%) scale(0.75);
-    }
-    .main-content {
-        padding: 15px 5px;
-    }
-}
-
-/*-------------------------------
-Sections
--------------------------------*/
-.section {
-  min-height: 100vh;
-  padding: 60px 20px;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-/* Fix big left margins for sections on smaller screens */
-@media (max-width: 991px) {
-  .main-content {
-    margin: 0;
-    width: 100%;
-    padding: 30px 15px;
-  }
-}
-
-/*-------------------------------
-Footer
--------------------------------*/
-.site-footer {
-    background: var(--bg-dark);
-    color: var(--text-light);
-    text-align: center;
-    padding: 20px 10px;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: auto; /* keeps footer at bottom */
-}
-
 /*-------------------------------
 Mobile Navigation Toggle
 -------------------------------*/
@@ -277,23 +7,6 @@ Mobile Navigation Toggle
     cursor: pointer;
 }
 
-@media (max-width: 991px) {
-    .nav-toggle {
-        display: block;
-    }
-}
-
-
-/*-------------------------------
-Main Content adjustments
--------------------------------*/
-@media (max-width: 991px) {
-    .main-content {
-        margin-left: 0;
-        width: 100%;
-        padding: 80px 15px 20px 15px; /* header space */
-    }
-}
 
 /*-------------------------------
 Fix horizontal scroll & gaps
@@ -302,183 +15,7 @@ Fix horizontal scroll & gaps
     max-width: 100%;
 }
 
-/*-------------------------------
-Header
--------------------------------*/
 
-.nav-right {
-  display: flex;
-  align-items: center;
-    text-align: center;
-   flex-shrink: 0;
-      position: relative; 
-}
-
-
-
-.nav-right a {
-   font-size: 14px;
-  transition: color 0.3s;
-}
-
-/* Container */
-.nav-right .social-icons {
-  display: flex;
-  align-items: center; /* vertical center */
-  gap: 15px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-
-/* Each li */
-.nav-right .social-icons li {
-  display: flex;
-  align-items: center; /* keep icon + text aligned */
-}
-
-/* Icon links */
-.nav-right .social-icons a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 1rem;
-  color: #cbd5e1;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-
-/* icon-color */
-
-/* Icon sizes */
-.nav-right .social-icons ion-icon {
-  font-size: 1.5rem;
-  vertical-align: middle;
-}
-
-.nav-right .social-icons a:hover {
-  color: var(--primary);
-}
-
-.nav-right .social-icons a:active {
-  color: var(--primary);
-}
-
-
-/* Material icons */
-.material-icons {
-font-size: 18px;
-  display: flex;
-      justify-content: center; /* center horizontally */
-      align-items: center;
-      gap: 15px; /* spacing between icons */
-      list-style: none;
-      padding: 0;
-      margin: 0;
-}
-.material-icons:hover, .material-icons:active {
-  color: var(--primary);
-}
-
-/* Special style for Resume link */
-/* Resume link styled as border button */
-.resume-link a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border: 1px solid var(--primary); /* border instead of background */
-  border-radius: 50px;
-  background: transparent;
-  color: var(--primary);
-  font-size: 0.95rem;
-  font-weight: 500;
-  transition: color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-}
-
-.resume-link a ion-icon {
-  font-size: 1.2rem;
-}
-
-.resume-link a:hover {
-  color: var(--text-light);
-  border-color: var(--text-light);
-  transform: translateY(-2px);
-}
-
-/*-------------------------------
-Right sidebar nav
--------------------------------*/
-
-
-/* Right sidebar nav */
-.sidebar-nav {
-  position: fixed;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  z-index: 1000;
-}
-
-.sidebar-nav nav {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.sidebar-nav a {
-  color: var(--text-gray);
-  text-decoration: none;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.3s;
-}
-
-.sidebar-nav a.active, .sidebar-nav a:hover {
-  color: var(--text-light);
-  font-weight: 600;
-}
-
-/*-------------------------------------------------------------------------------
-  Loader
--------------------------------------------------------------------------------*/
-.loader {
-  position: fixed;
-  inset: 0;
-  background: var(--bg-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1200;
-}
-.double-bounce1, .double-bounce2 {
-  width: 40px;
-  height: 40px;
-  background: var(--primary);
-  border-radius: 50%;
-  position: absolute;
-  animation: bounce 2s infinite ease-in-out;
-}
-
-.double-bounce2 { animation-delay: -1s; }
-
-.double-bounce3, .double-bounce4 {
-  width: 40px;
-  height: 40px;
-  background: var(--white);
-  border-radius: 50%;
-  position: absolute;
-  animation: bounce 2s infinite ease-in-out;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: scale(0); }
-  50% { transform: scale(1); }
-}
 
 /* Timeline */
 /* Vertical line */
@@ -549,7 +86,12 @@ Right sidebar nav
 
 /* Titles & misc */
 .timeline-title { font-weight: 600; font-size: 1.1rem; color: var(--text-light); }
-.subtitle { font-size: .9rem; display: block; }
+.subtitle
+ { 
+  font-size: .9rem; 
+  display: block;
+  color: var(--text-light);
+ }
 .date {
   display: inline-block;
   font-size: .8rem;
@@ -597,46 +139,9 @@ ul{
 
 
 
-
-
-
-
-
-
-/* progress-bars-colors */
-
-.progress {
-background: #f1f5f9;
-}
-  
-
-.progress-bar {
-background: #3b82f6;
-    }
-
-    
-/* Add % text inside the bar */
-.progress-bar::after {
-  color: #3b82f6;
-}
-
-
 /*-------------------------------------------------------------------------------
   Sections 
 -------------------------------------------------------------------------------*/
-
-/*  Sections */
-
-
-.section-sm{
-  padding: 6rem 0;
-}
-
-.pp-section{
-  background-position: 50%;
-  background-size: cover;
-  padding:8rem 0 6rem;
-}
 
 
 .section:not(#home) .intro{
@@ -695,15 +200,12 @@ background: #3b82f6;
   border-radius: 3px;
 }
 
-
 .bg-responsive{
   position: absolute;
   height: 100%;
   top:0;
   padding: 0;
 }
-
-
 
 
 /*-------------------------------------------------------------------------------
@@ -778,17 +280,9 @@ Contact information
   margin-right: 5px;
 }
 
-
-.art-info-bar .art-knowledge-list {
-    padding-left: 0;
-}
-
-
-
 /*-------------------------------------------------------------------------------
 counters
 -------------------------------------------------------------------------------*/
-
 
 .counters {
   margin-top: 20px;
@@ -814,35 +308,23 @@ counters
   color: var(--text-muted);
 }
 
-
-/* Lish for skills in left side bar */
-
-.art-knowledge-list {
-  list-style: none;        /* remove default bullets */
-  padding-left: 0;
-  margin: 0;
-}
-
-.art-knowledge-list li {
-  position: relative;
-  padding-left: 0px;      /* space for the icon */
-  margin-bottom: 20px;
-  font-size: 14px;
-  color: #fff;             /* adjust for your theme */
+.art-counter-box span {
+  color: var(--primary);
 }
 
 
-.art-knowledge-list li::before {
-  content: "\2713";           /* Unicode checkmark ✓ */
-  color: #3b82f6;          /* green tick */
-  font-weight: bold;
-  flex-shrink: 0;             /* prevent shrinking */
-}
 
 
+/*  Home Section */
+
+/* Introduction text in body */
 
 .expertise { 
   padding: 40px;
+ }
+
+ .expertise span { 
+  color: var(--primary);
  }
 
 /* preview */
@@ -860,13 +342,6 @@ counters
     scrollbar-width: none;
 }
 
-@media (min-width: 768px) {
-    .col-md-3 {
-        -ms-flex: 0 0 25%;
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
-}
 
 
 /*expandable section*/
@@ -883,7 +358,7 @@ counters
 .toggle-link {
   display: inline-block;
   margin-top: 8px;
-  color: #4ea3ff;
+  color: var(--primary);
   cursor: pointer;
   font-size: 14px;
   text-decoration: underline;
@@ -899,286 +374,4 @@ counters
   display: none;
 }
 
-
-
-
-/* Right content */
-
-    .art-ls-divider {
-    width: 100%;
-    height: 1px;
-    opacity: .3;
-     place-items:center;
-}
-
-
-/*header*/
-
-
-
-
-/* Navigation inside header */
-.header-nav {
-  display: flex;
-  justify-content: space-between; /* left + right separation */
-  align-items: center;
-  width: 100%;
-}
-
-/* Right-side content */
-
-
-
-
-/* Content sections pushed below header */
-.main-content .content {
-  padding: 100px 40px 20px 30px; /* extra top padding for header space */
-  min-height: 50vh;
-  
-}
-
-
-
-
-
-/* Sidebar links */
-
-
-
-/* Hide sidebar on small screens */
-@media (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
-
-  /* Ensure main-content takes full width when sidebar is hidden */
-  .main-content {
-    margin-left: 0;
-  }
-
-  .main-header {
-    left: 0;
-  }
-}
-
-
-
-/* Left panel */
-
-
-
-      img {
-      border-radius: 50%;
-      position: relative;
-      margin: 10px;
-      padding: 0;
-    }
-
-
-    /* Sidebar fixed header (name, position, CV) */
-    .sidebar-header {
-    text-align: center;
-      padding-top: 15px;
-      flex-shrink: 0;
-      position: relative; 
-      -webkit-box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
-      box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
-      flex-shrink: 0;
-      position: relative
-    }
-
-      .sidebar-header .social-icons {
-      display: flex;
-      justify-content: center; /* center horizontally */
-      align-items: center;
-      gap: 15px; /* spacing between icons */
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-
-      /* Sidebar fixed footer social media*/
-
-     .sidebar-footer-sm{
-      text-align: center;
-      padding-top: 15px;
-      flex-shrink: 0;
-      position: relative; 
-      -webkit-box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
-      box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
-    }
-
-    .sidebar-footer-sm .social-icons {
-      display: flex;
-      justify-content: center; /* center horizontally */
-      align-items: center;
-      gap: 15px; /* spacing between icons */
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .sidebar-footer-sm .social-icons li {
-      display: inline-flex;
-    }
-
-    .sidebar-footer-sm .social-icons a {
-      font-size: 1.1rem; /* adjust icon size */
-      transition: color 0.3s ease;
-    }
-
-
-  /* Sidebar fixed footer cv*/
-
-     .sidebar-footer-cv{
-      flex-shrink: 0;
-      position: relative; 
-    -webkit-box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
-    box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
-}
-
-    /* Sidebar scrollable content */
-    .sidebar-scroll {
-      overflow-y: auto;
-      padding: 5px;
-      margin: 5px;
-      flex-grow: 1;
-      text-align: center;
-    }
-
-    .info {
-      margin-bottom: 10px;
-    }
-
-    
-
-/*Progress bar for skills*/
-
-
-.skill {
-  margin-bottom: 20px;
-}
-
-.skill-header {
-  display: flex;
-  justify-content: space-between; /* pushes label left, % right */
-  font-size: 12px;
-  margin-bottom: 6px;
-}
-
-.skill-percent {
-  font-size: 0.85rem;
-  font-weight: bold;
-}
-
-.progress {
-  position: relative;
-  border-radius: 8px;
-  height: 8px;
-  width: 100%;
-  overflow: hidden;
-  background: var(--white) /* a subtle bg track */
-}
-
-.progress-bar {
-  height: 8px;
-  width: 0; /* animated via JS */
-  border-radius: 8px;
-  background: var(--primary); /* accent color */
-  transition: width 1s ease;
-}
-
-
-    /* Circle bar */
-
-.grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(2, 1fr); /* always 2 in a row */
-  justify-items: center; /* center each progress circle */
-   align-items: start;
-}
-
-
-/* Component wrapper */
-.c-progress{
-  --value: 0;
-  width: var(--size);
-  aspect-ratio: 1 / 1;
-  display:grid;
-  place-items:center;
-  position:relative;
-}
-
-/* number + % wrapper */
-.c-progress .c-progress-value {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: 1.1rem;
-}
-
-.c-progress .c-progress-value span {
-  font-size: 0.8rem;
-}
-
-.c-progress__label{
-  text-align:center; 
-  margin-top:.1rem; 
-  font-weight:200;
-  font-size: 12px;
-}
-
-.c-progress svg{
-  width:100%; height:100%;
-  transform: rotate(-90deg); display:block;
-}
-.c-progress circle{
-  fill:none; 
-  stroke-linecap:round;
-}
-
-.c-track{ stroke: var(--track); stroke-width: var(--stroke); }
-.c-bar{
-  stroke: var(--primary); stroke-width: var(--stroke);
-  stroke-dasharray: 0 999;
-  transition: stroke-dasharray var(--speed) ease;
-}
-
-.c-progress:hover .c-bar{
-  filter: drop-shadow(0 2px 6px rgba(35,165,146,.35));
-}
-
-.sr-only{
-  position:absolute !important; 
-  width:1px; 
-  height:1px; 
-  padding:0; margin:-1px;
-  overflow:hidden; 
-  clip:rect(0,0,0,0); 
-  white-space:nowrap; border:0;
-}
-
-/* footer */
-.site-footer {
-  background: var(--bg-dark, #0a0f1c); 
-  color: var(--text-light, #f1f5f9);
-  text-align: center;
-  padding: 20px 10px;
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: auto; /* keep footer bottom */
-}
-
-.site-footer p {
-  margin: 0;
-  letter-spacing: 0.5px;
-}
-/*-------------------------------
-Responsive adjustments
-Breakpoints: 320px, 480px, 481px, 769px
--------------------------------*/
 
