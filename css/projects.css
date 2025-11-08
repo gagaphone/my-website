@@ -1,0 +1,187 @@
+/*-------------------------------------------------------------------------------
+Projects Section
+-------------------------------------------------------------------------------*/
+
+
+#projects-section.projects {
+  padding: 30px 20px;
+}
+
+
+
+/* Tabs */
+#projects-section .tabs {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+#projects-section .tab-button {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--text-light);
+  padding: 8px 16px;
+  text-transform: lowercase;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#projects-section .tab-button.active,
+#projects-section .tab-button:hover {
+  background: var(--primary);
+  color: var(--text-white);
+}
+
+/* Projects grid */
+#projects-section .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  #projects-section .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  #projects-section .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tabs mobile slider */
+@media (max-width: 600px) {
+  #projects-section .tabs {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 8px;
+    padding-bottom: 6px;
+    scrollbar-width: none; /* Hide scrollbar (Firefox) */
+  }
+
+  #projects-section .tabs::-webkit-scrollbar {
+    display: none; /* Hide scrollbar (Chrome/Safari) */
+  }
+
+  #projects-section .tab-button {
+    flex: 0 0 auto; /* prevent shrinking */
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+
+/*-------------------------------------------------------------------------------
+Card Flip Effect
+-------------------------------------------------------------------------------*/
+.project-card {
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  border: 2px solid var(--bg-dns);
+  border-radius: 8px;
+}
+
+.project-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back Faces */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  background: rgba(10, 15, 28, 0.9);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-front {
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+/* Category label tag */
+.card-front .label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--primary);
+  color: var(--text-white);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 25px;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+/* Optional: differentiate by category type if desired */
+.project-card[data-category="horizon"] .label {
+  background: var(--primary); /* example color */
+}
+
+
+.card-back {
+  transform: rotateY(180deg);
+  background: rgba(20, 25, 45, 0.95);
+  color: var(--text-light);
+}
+
+/* Text styling */
+.card-front h4,
+.card-back h4 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.card-front p,
+.card-back p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 2px 0;
+  text-align: center;
+}
+
+/* Company name */
+.card-back .company {
+  margin-top: 5px;
+  font-weight: 600;
+  color: var(--text-white);
+  letter-spacing: 0.5px;
+}
+
+/* More link */
+.card-back .more-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.card-back .more-link:hover {
+  color: var(--text-white);
+}
+

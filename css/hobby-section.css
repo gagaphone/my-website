@@ -1,0 +1,137 @@
+/* ------------------------------
+Hobby Section
+------------------------------ */
+.hobby-section {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  padding: 40px 20px;
+}
+
+.hobby-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hobby-grid {
+  display: flex;
+  gap: 30px;
+}
+
+/* Left scroll column */
+
+
+/* Overlay on images */
+.exhibition {
+  position: relative;
+  overflow: hidden; /* ensures overlay follows image bounds */
+  padding-top: 40px;
+}
+
+.exhibition h5 {font-size: 1.2rem; margin-bottom: 10px;}
+
+
+/* Left scroll column */
+.exhibition-details {
+  flex: 0.8; /* reduced width */
+  height: 60vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding-right: 20px;
+}
+.exhibition-details::-webkit-scrollbar {display:none;}
+
+/* Right sticky list */
+.exhibition-list {
+  flex: 1.2; /* slight increase */
+  position: sticky;
+  top: 40px;
+  align-self: flex-start;
+}
+
+/* Smaller images */
+.exhibition img {
+  width: 60%; /* smaller size */
+  display: block;
+  border-radius: 8px;
+  cursor: zoom-in;
+}
+
+/* Right sticky list */
+.exhibition-list {
+  flex: 1;
+  position: sticky;
+  top: 40px;
+  align-self: flex-start;
+}
+.exhibition-list ul {list-style:none;padding:0;}
+.exhibition-list li {
+  cursor: pointer;
+  margin-bottom: 12px;
+  font-weight: 500;
+  transition: .3s;
+}
+.exhibition-list li:hover, .exhibition-list li.active {color: var(--primary);}
+
+
+
+/* Animation */
+.exhibition {opacity:0;transform:translateY(25px); animation:fadeInUp .6s forwards;}
+@keyframes fadeInUp {to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:992px){
+  .hobby-grid {flex-direction: column;}
+  .exhibition-details {height:auto;overflow:visible;}
+}
+
+/* ------------------------------
+Lightbox
+------------------------------ */
+.lightbox-overlay {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center;
+  z-index:10000;
+}
+.lightbox-overlay.active {display:flex;}
+.lightbox-img {
+  max-width:80%;
+  max-height:80vh;
+   border-radius: 8px;
+}
+.lightbox-close {
+  position:absolute;
+  top:20px; right:30px;
+  font-size:3rem;
+  cursor:pointer;
+  color:#fff;
+}
+
+/* Mobile: put exhibition list on top */
+@media (max-width: 600px) {
+  .exhibition-list {
+    display: none !important;
+  }
+}
+
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.8); /* Black see-through */
+  color: #f1f1f1; 
+  width: auto;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+}
+
+.container:hover .overlay {
+  opacity: 2;
+}
+

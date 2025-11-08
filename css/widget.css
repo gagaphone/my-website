@@ -1,0 +1,96 @@
+/* === Services Section === */
+.elementor-container {
+  --radius: 8px;
+  --gap: 30px;
+  --transition: 260ms cubic-bezier(.2,.9,.3,1);
+
+  box-sizing: border-box;
+  font-family: inherit;
+  color: var(--text-light);
+  background: transparent;
+  padding: 30px 20px;
+  justify-content: center;
+}
+
+/* Container */
+.elementor-container .container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+ 
+}
+
+/* Row setup (flex fix) */
+.elementor-container .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap);
+  
+}
+
+/* Column sizing: 3 per row (like col-lg-4) */
+.elementor-container .col-lg-4,
+.elementor-container .col-md-6 {
+  flex: 1 1 calc(33.333% - var(--gap));
+  max-width: calc(33.333% - var(--gap));
+  display: flex;
+
+}
+
+@media (max-width: 992px) {
+  .elementor-container .col-lg-4,
+  .elementor-container .col-md-6 {
+    flex: 1 1 calc(50% - var(--gap));
+    max-width: calc(50% - var(--gap));
+  }
+}
+
+@media (max-width: 600px) {
+  .elementor-container .col-lg-4,
+  .elementor-container .col-md-6 {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* Service Card */
+.elementor-container .art-service-icon-box {
+  background: var(--bg-dark);
+  border-radius: var(--radius);
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+ /* border: 1px solid rgba(255,255,255,0.08);*/
+  background-color: var(--bg-dns);
+}
+
+.elementor-container .art-service-icon-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* Title */
+.elementor-container h5 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: none;
+}
+
+/* Description */
+.elementor-container p {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Utility spacing */
+.elementor-container .mb-15 {
+  margin-bottom: 15px;
+}
