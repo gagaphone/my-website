@@ -15,107 +15,6 @@ Fix horizontal scroll & gaps
     max-width: 100%;
 }
 
-.overview {
-  position: relative;
-  margin: 0 60px 2rem 0;
-  padding: 40px;     /* space so text doesn't hit the marker */
-}
-
-
-/* Timeline */
-/* Vertical line */
-.resume-timeline {
-  position: relative;
-  margin-left: 20px;
-  padding-left: 30px;
-  border-left: 3px solid var(--primary);
-}
-
-/* Each timeline card */
-.timeline-item {
-  position: relative;
-  margin: 0 60px 2rem 0;
-  padding: 30px 30px 30px 40px;     /* space so text doesn't hit the marker */
-  /* Don't set opacity on the parent! (it would hide the marker) */
-  /* background is moved to ::before so we can layer properly */
-}
-
-/* Card background as a layer behind contents and marker */
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--bg-dns);
-  box-shadow: 0 3px 8px 0 rgba(15, 15, 20, .2);
-  z-index: 0;           /* background at the very back */
-}
-
-/* Real content sits above the background */
-.timeline-content {
-  position: relative;
-  z-index: 1;
-}
-
-/* Appear animation applies to content only (not the marker) */
-.timeline-content {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity .6s ease, transform .6s ease;
-}
-.timeline-item.show .timeline-content {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Marker — always above the card */
-.timeline-marker {
-  position: absolute;
-  left: -40px;          /* centers on the 4px line */
-  top: 20px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 2px solid var(--primary);
-  background: var(--bg-dark);
-  box-shadow: 0 0 10px rgba(59,130,246,.9);
-  z-index: 2;           /* sits above ::before background and content */
-  pointer-events: none; /* so it never blocks hover/clicks on content */
-  transition: transform .3s, box-shadow .3s;
-}
-
-/* Optional hover “glow” (kept, but won’t intercept clicks thanks to pointer-events:none) */
-.timeline-item:hover .timeline-marker {
-  transform: scale(1.1);
-  box-shadow: 0 0 14px rgba(59,130,246,1);
-}
-
-/* Titles & misc */
-.timeline-title { font-weight: 600; font-size: 1.1rem; color: var(--text-light); }
-.subtitle
- { 
-  font-size: .9rem; 
-  display: block;
-  color: var(--text-light);
- }
-.date {
-  display: inline-block;
-  font-size: .8rem;
-  margin-bottom: .5rem;
-  padding: 4px 12px;
-  border: 1px solid var(--bg-dark);
-  background-color: var(--bg-pmb);
-  border-radius: 999px;
-  line-height: 1.4;
-}
-.timeline-content p { font-size: .9rem; margin: .3rem 0 .6rem; }
-.timeline-content a { font-size: .85rem; text-decoration: none; }
-
-.timeline-item.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
 /* scrollbar */
 
 ::-webkit-scrollbar{
@@ -213,124 +112,9 @@ ul{
 }
 
 
-/*-------------------------------------------------------------------------------
-Work Expeience
--------------------------------------------------------------------------------*/
-
-/* Layout */
-.resume-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-.resume-column {
-  flex: 1;
-  min-width: 300px;
-}
-.resume-title {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-/*-------------------------------------------------------------------------------
-Contact information
--------------------------------------------------------------------------------*/
-
-/* Row and columns */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -15px;
-  margin-right: -15px;
-}
-
-.col-6 {
-  flex: 0 0 50%;
-  max-width: 50%;
-  padding: 0 15px; /* spacing */
-  box-sizing: border-box; /* keep padding inside */
-}
-
-.cards {
-  background: transparent;
-  padding: 1.5rem 1rem;
-  margin: 0 3.5rem 3rem 3rem;
-  text-align: left;
-  font-size: 1rem;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* адаптивные колонки */
-  gap: 1rem; /* расстояние между колонками */
-}
-
-.art-card {
-  background: var(--bg-dark-navy);
-  padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-}
-
-.art-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.art-card li {
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
-.art-card li strong {
-  color: var(--primary);
-  margin-right: 5px;
-}
-
-/*-------------------------------------------------------------------------------
-counters
--------------------------------------------------------------------------------*/
-
-.counters {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.art-counter-frame {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-}
-
-.art-counter-box h2 {
-  font-size: 2rem;
-  margin: 0;
-}
-
-.art-counter-box h6 {
-  margin: 5px 0 0;
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: var(--text-muted);
-}
-
-.art-counter-box span {
-  color: var(--primary);
-}
-
-
-
-
 /*  Home Section */
 
-/* Introduction text in body */
 
-.expertise { 
-  padding: 40px;
- }
-
- .expertise span { 
-  color: var(--primary);
- }
 
 /* preview */
 
@@ -348,35 +132,144 @@ counters
 }
 
 
+/*-------------------------------------------------------------------------------
+Main Content
+-------------------------------------------------------------------------------*/
 
-/*expandable section*/
-.expandable {
-  max-height: 30px;   /* show only first part */
-  overflow: hidden;
-  transition: max-height 0.4s ease;
+/* Body */
+.section {
+  min-height: 100vh;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
-.expandable.expanded {
-  max-height: 1000px;  /* large enough to fit full content */
+
+/*-------------------------------
+ Right Body Main Content
+-------------------------------*/
+
+
+/* Base layout for large screens */
+
+
+/* Main content grows */
+
+.main-content {
+  flex: 1;
+  padding: 40px 20px;
+  margin-left: calc(var(--sidebar-left) + var(--sidebar-gap));
+  margin-right: var(--sidebar-right);
+  width: calc(100% - var(--sidebar-left) - var(--sidebar-right) - var(--sidebar-gap));
+  overflow-y: auto;
 }
 
-.toggle-link {
-  display: inline-block;
-  margin-top: 8px;
+/* Right-side content */
+/* Content sections pushed below header */
+.main-content .content {
+  padding: 100px 40px 20px 30px; /* extra top padding for header space */
+  min-height: 50vh;
+  
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: calc(22%); /* start after left sidebar */
+    right: 0;
+    height: 60px;
+    background: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6rem;
+    z-index: 1000;
+}
+
+/*header*/
+
+
+/* Navigation inside header */
+.header-nav {
+  display: flex;
+  justify-content: space-between; /* left + right separation */
+  align-items: center;
+  width: 100%;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-shrink: 0;
+  position: relative; 
+}
+
+.nav-right a {
+  transition: color 0.3s;
+}
+
+/* Container */
+.nav-right .social-icons {
+  display: flex;
+  align-items: center; /* vertical center */
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Each li */
+.nav-right .social-icons li {
+  display: flex;
+  align-items: center; /* keep icon + text aligned */
+}
+
+/* Icon links - MAIN FOR HEADER */
+.nav-right .social-icons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+
+/* icon-color */
+
+/* Icon sizes */
+.nav-right .social-icons ion-icon {
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.nav-right .social-icons a:hover {
   color: var(--primary);
-  cursor: pointer;
-  font-size: 14px;
-  text-decoration: underline;
+}
+
+.nav-right .social-icons a:active {
+  color: var(--primary);
 }
 
 
-.pp-tooltip {
-  position: absolute;
-  background: #333;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 4px;
-  display: none;
+/* Material icons */
+.material-icons {
+    font-size: 18px;
+      display: flex;
+      justify-content: center; /* center horizontally */
+      align-items: center;
+      gap: 15px; /* spacing between icons */
+      list-style: none;
+      padding: 0;
+      margin: 0;
+}
+.material-icons:hover, .material-icons:active {
+  color: var(--primary);
 }
 
+
+.section-sm{
+  padding: 6rem 0;
+}
 
