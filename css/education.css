@@ -1,5 +1,5 @@
 /*-------------------------------------------------------------------------------
-Education Section (Cards)
+Education Section
 -------------------------------------------------------------------------------*/
 #education-section.education {
   padding: 50px 20px;
@@ -7,32 +7,31 @@ Education Section (Cards)
   font-family: inherit;
 }
 
-#education-section .tabs,
-#education-section .sub-tabs {
+/* Data Filter */
+#education-section .data-filter {
+  margin-bottom: 25px;
   display: flex;
-  justify-content: flex-start;
-  gap: 10px;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--text-light);
 }
 
-#education-section .tab-button,
-#education-section .sub-tab-button {
-  background: transparent;
+#education-section .data-filter select {
+  padding: 6px 12px;
+  border-radius: 8px;
   border: 1px solid var(--primary);
+  background: rgba(10,15,28,0.9);
   color: var(--text-light);
-  padding: 8px 16px;
-  text-transform: lowercase;
-  border-radius: 25px;
   cursor: pointer;
   transition: 0.3s;
 }
 
-#education-section .tab-button.active,
-#education-section .tab-button:hover,
-#education-section .sub-tab-button.active,
-#education-section .sub-tab-button:hover {
-  background: var(--primary);
-  color: var(--text-white);
+#education-section .data-filter select:hover,
+#education-section .data-filter select:focus {
+  border-color: var(--primary);
+  background: rgba(15,20,35,0.95);
+  outline: none;
 }
 
 /* Grid of cards */
@@ -56,142 +55,72 @@ Education Section (Cards)
   }
 }
 
-/* Tabs mobile slider */
-@media (max-width: 600px) {
-   #education-section .tabs {
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    gap: 8px;
-    padding-bottom: 6px;
-    scrollbar-width: none; /* Hide scrollbar (Firefox) */
-  }
-
- #education-section .tabs::-webkit-scrollbar {
-    display: none; /* Hide scrollbar (Chrome/Safari) */
-  }
-
-   #education-section .tab-button {
-    flex: 0 0 auto; /* prevent shrinking */
-    padding: 8px 14px;
-    font-size: 0.85rem;
-  }
-}
-
-/*-------------------------------------------------------------------------------
-Card Flip Effect
--------------------------------------------------------------------------------*/
+/* Card styling */
 .edu-card {
-  perspective: 1000px;
-}
-
-.edu-card .card-inner {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
   border: 2px solid var(--bg-dns);
-  border-radius: 8px;
-}
-
-.edu-card:hover .card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Front & Back Faces */
-.edu-card .card-front,
-.edu-card .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 8px;
-  background: rgba(10, 15, 28, 0.9);
+  border-radius: 10px;
+  background: rgba(10,15,28,0.9);
   padding: 20px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.edu-card .card-front {
+.edu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+/* Card content */
+.edu-card .card-content h4 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
   color: var(--primary);
-  border: 1px solid var(--primary);
   text-align: center;
 }
 
-.edu-card .card-back {
-  transform: rotateY(180deg);
-  background: rgba(20, 25, 45, 0.95);
+.edu-card .card-content p.category {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.edu-card .card-content p.details {
+  font-size: 0.85rem;
   color: var(--text-light);
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+/* Tags styling */
+.edu-card .tags {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
   justify-content: center;
 }
 
-/* Back content columns */
-.edu-card .card-back .card-back-content {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  gap: 15px;
-}
-
-.edu-card .card-back .card-left {
-  flex: 2;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-.edu-card .card-back .card-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  flex-wrap: wrap;
-}
-
-.edu-card .card-back .card-right span {
+.edu-card .tags span {
   background: var(--bg-dns);
   color: var(--text-light);
   border: 1px solid var(--primary);
   border-radius: 20px;
-  padding: 3px 10px;
+  padding: 4px 10px;
   font-size: 0.75rem;
   text-transform: capitalize;
   transition: all 0.3s ease;
 }
 
-.edu-card .card-back .card-right span:hover {
+.edu-card .tags span:hover {
   background: var(--primary);
   color: var(--text-white);
 }
 
-/* Text styling */
-.edu-card .card-front h4,
-.edu-card .card-back h4 {
-  font-size: 1rem;
-  margin-bottom: 8px;
-  color: var(--primary);
-}
-
-.edu-card .card-front p,
-.edu-card .card-back p.details {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin: 2px 0;
-  text-align: left;
-}
-
-/* Responsive Back Columns */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .edu-card .card-back .card-back-content {
-    flex-direction: column;
+  .edu-card .card-content p.details {
+    font-size: 0.8rem;
   }
-  .edu-card .card-back .card-right {
-    flex-direction: row;
-    flex-wrap: wrap;
+  .edu-card .tags span {
+    font-size: 0.7rem;
   }
 }
