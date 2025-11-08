@@ -1222,266 +1222,186 @@
       </div>
     </section>
 
-    <section id="education-section" class="education">
-      <div class="container">
-        <h3 class="resume-title">Education & Courses</h3>
+  <section id="education-section" class="education">
+  <div class="container">
+    <h3 class="resume-title">Education & Courses</h3>
 
-        <!-- Category Tabs -->
-        <div class="tabs">
-          <button class="tab-button active" data-filter="all">All</button>
-          <button class="tab-button" data-filter="undergraduate">Undergraduate</button>
-          <button class="tab-button" data-filter="graduate">Graduate</button>
-          <button class="tab-button" data-filter="postgraduate">Postgraduate</button>
-          <button class="tab-button" data-filter="online">Online Courses</button>
-        </div>
+    <!-- Data Filter Label -->
+    <div class="data-filter">
+      <label for="edu-filter">Filter by Category:</label>
+      <select id="edu-filter">
+        <option value="all">All</option>
+        <option value="undergraduate">Undergraduate</option>
+        <option value="graduate">Graduate</option>
+        <option value="postgraduate">Postgraduate</option>
+        <option value="online">Online Courses</option>
+      </select>
+    </div>
 
-        <!-- Subcategory Tabs (visible only when Online is active) -->
-        <div class="sub-tabs" style="display:none;">
-          <button class="sub-tab-button active" data-subfilter="all">All</button>
-          <button class="sub-tab-button" data-subfilter="seo">SEO</button>
-          <button class="sub-tab-button" data-subfilter="languages">Languages</button>
-          <button class="sub-tab-button" data-subfilter="project-management">Project Management</button>
-          <button class="sub-tab-button" data-subfilter="ux-design">UX/UI & Design</button>
-          <button class="sub-tab-button" data-subfilter="development">Development</button>
-          <button class="sub-tab-button" data-subfilter="qa">QA & Testing</button>
-          <button class="sub-tab-button" data-subfilter="analytics">Analytics</button>
-        </div>
+    <!-- Cards Grid -->
+    <div class="edu-grid">
 
-        <!-- Cards Grid -->
-        <div class="edu-grid">
-
-          <!-- Undergraduate -->
-          <div class="edu-card" data-category="undergraduate">
-            <div class="card-inner">
-              <div class="card-front">
-                <h4>Political Science & Public Relations</h4>
-                <p class="category">Bachelor · Averroes Ukrainian-Arabic Institute / MAUP · 2002–2005</p>
-              </div>
-              <div class="card-back">
-                <div class="card-back-content">
-                  <div class="card-left">
-                    <p class="details">Graduated with honors. Focus on Politics, Leadership, Communication.</p>
-                  </div>
-                  <div class="card-right tags">
-                    <span>Public Relations</span>
-                    <span>Politics</span>
-                    <span>Leadership</span>
-                    <span>Communication</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <!-- Undergraduate -->
+      <div class="edu-card" data-category="undergraduate">
+        <div class="card-content">
+          <h4>Political Science & Public Relations</h4>
+          <p class="category">Bachelor · Averroes Ukrainian-Arabic Institute / MAUP · 2002–2005</p>
+          <p class="details">Graduated with honors.</p>
+          <div class="tags">
+            <span>Public Relations</span>
+            <span>Politics</span>
+            <span>Leadership</span>
+            <span>Communication</span>
           </div>
-
-          <!-- Postgraduate -->
-          <div class="edu-card" data-category="postgraduate">
-            <div class="card-inner">
-              <div class="card-front">
-                <h4>Philosophy & Political Science</h4>
-                <p class="category">Master · Kyiv National Taras Shevchenko University · 2005–2010</p>
-              </div>
-              <div class="card-back">
-                <div class="card-back-content">
-                  <div class="card-left">
-                    <p class="details">Graduated with honors. Focus on Philosophy, Political Science, Research.</p>
-                  </div>
-                  <div class="card-right tags">
-                    <span>Philosophy</span>
-                    <span>Political Science</span>
-                    <span>Teaching</span>
-                    <span>Critical Thinking</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Graduate -->
-          <div class="edu-card" data-category="graduate">
-            <div class="card-inner">
-              <div class="card-front">
-                <h4>Marketing Management</h4>
-                <p class="category">MBA · City Business School · 2013–2015</p>
-              </div>
-              <div class="card-back">
-                <div class="card-back-content">
-                  <div class="card-left">
-                    <p class="details">Graduated with honors. Mini-MBA in Marketing Management.</p>
-                  </div>
-                  <div class="card-right tags">
-                    <span>Marketing</span>
-                    <span>Leadership</span>
-                    <span>Finance</span>
-                    <span>Strategy</span>
-                    <span>Project Management</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Online Courses - Project Management -->
-          <div class="edu-card" data-category="online" data-subcategory="project-management">
-            <div class="card-inner">
-              <div class="card-front">
-                <h4>Project Management</h4>
-                <p class="category">Web-Academy & Smart Academy · 2016–2025</p>
-              </div>
-              <div class="card-back">
-                <div class="card-back-content">
-                  <div class="card-left">
-                    <p class="details">PMI® Certified Member. Agile, Scrum, CAMP, Leadership.</p>
-                  </div>
-                  <div class="card-right tags">
-                    <span>Project Management</span>
-                    <span>Scrum</span>
-                    <span>Agile</span>
-                    <span>Leadership</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Online Courses - Languages -->
-          <div class="edu-card" data-category="online" data-subcategory="languages">
-            <div class="card-inner">
-              <div class="card-front">
-                <h4>English Language</h4>
-                <p class="category">Cambridge ESOL & LSE · 2010–2012</p>
-              </div>
-              <div class="card-back">
-                <div class="card-back-content">
-                  <div class="card-left">
-                    <p class="details">FCE (First Certificate English). Business English focus.</p>
-                  </div>
-                  <div class="card-right tags">
-                    <span>English</span>
-                    <span>FCE</span>
-                    <span>Business English</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Online Courses - UX/UI & Design -->
-          <div class="edu-card" data-category="online" data-subcategory="ux-design">
-            <div class="card-inner">
-              <div class="card-front">
-                <h4>UX Design</h4>
-                <p class="category">Web Academy · 2016</p>
-              </div>
-              <div class="card-back">
-                <div class="card-back-content">
-                  <div class="card-left">
-                    <p class="details">Web-Design, UX, Figma, Moquaps, Color theory, Responsive design, Grids, UIKit.</p>
-                  </div>
-                  <div class="card-right tags">
-                    <span>UX</span>
-                    <span>Design</span>
-                    <span>Figma</span>
-                    <span>Responsive</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Online Courses - Development -->
-          <div class="edu-card" data-category="online" data-subcategory="development">
-            <div class="card-inner">
-              <div class="card-front">
-                <h4>Front-End Development</h4>
-                <p class="category">Web Academy · 2015–2016</p>
-              </div>
-              <div class="card-back">
-                <div class="card-back-content">
-                  <div class="card-left">
-                    <p class="details">HTML, CSS, JS, Frameworks, Libraries, Project work, DOM.</p>
-                  </div>
-                  <div class="card-right tags">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>Frameworks</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Online Courses - QA -->
-          <div class="edu-card" data-category="online" data-subcategory="qa">
-            <div class="card-inner">
-              <div class="card-front">
-                <h4>Quality Assurance (QA)</h4>
-                <p class="category">Web Academy · 2016</p>
-              </div>
-              <div class="card-back">
-                <div class="card-back-content">
-                  <div class="card-left">
-                    <p class="details">SDLC, STLC, Bug-tracking, Test design, Functional & Non-functional testing, Postman.</p>
-                  </div>
-                  <div class="card-right tags">
-                    <span>QA</span>
-                    <span>Testing</span>
-                    <span>Postman</span>
-                    <span>Manual Testing</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Online Courses - Analytics -->
-          <div class="edu-card" data-category="online" data-subcategory="analytics">
-            <div class="card-inner">
-              <div class="card-front">
-                <h4>Google Analytics</h4>
-                <p class="category">ITC School · 2015</p>
-              </div>
-              <div class="card-back">
-                <div class="card-back-content">
-                  <div class="card-left">
-                    <p class="details">Traffic sources, Unique visitors, Goals, Conversions, Geopolitics.</p>
-                  </div>
-                  <div class="card-right tags">
-                    <span>Analytics</span>
-                    <span>Traffic</span>
-                    <span>Conversion</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Online Courses - SEO example -->
-          <div class="edu-card" data-category="online" data-subcategory="seo">
-            <div class="card-inner">
-              <div class="card-front">
-                <h4>SEO Fundamentals</h4>
-                <p class="category">Coursera · 2023</p>
-              </div>
-              <div class="card-back">
-                <div class="card-back-content">
-                  <div class="card-left">
-                    <p class="details">SEO strategies, keyword research, on-page & off-page SEO, analytics tools.</p>
-                  </div>
-                  <div class="card-right tags">
-                    <span>SEO</span>
-                    <span>Analytics</span>
-                    <span>Marketing</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
-    </section>
 
+      <!-- Postgraduate -->
+      <div class="edu-card" data-category="postgraduate">
+        <div class="card-content">
+          <h4>Philosophy & Political Science</h4>
+          <p class="category">Master · Kyiv National Taras Shevchenko University · 2005–2010</p>
+          <p class="details">Graduated with honors. </p>
+          <div class="tags">
+            <span>Philosophy</span>
+            <span>Political Science</span>
+            <span>Teaching</span>
+           
+             <span>Research</span>
+              <span>Critical Thinking</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Graduate -->
+      <div class="edu-card" data-category="graduate">
+        <div class="card-content">
+          <h4>Marketing Management</h4>
+          <p class="category">MBA · City Business School · 2013–2015</p>
+          <p class="details">Graduated with honors.</p>
+          <div class="tags">
+            <span>Marketing</span>
+            <span>Leadership</span>
+            <span>Finance</span>
+            <span>Strategy</span>
+            <span>Project Management</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Online Courses - Project Management -->
+      <div class="edu-card" data-category="online" data-subcategory="project-management">
+        <div class="card-content">
+          <h4>Project Management</h4>
+          <p class="category">Web-Academy & Smart Academy · 2016–2025</p>
+          <p class="details">PMI® Certified Member.</p>
+          <div class="tags">
+            <span>Project Management</span>
+            <span>Scrum</span>
+            <span>Agile</span>
+            <span>Leadership</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Online Courses - Languages -->
+      <div class="edu-card" data-category="online" data-subcategory="languages">
+        <div class="card-content">
+          <h4>English Language</h4>
+          <p class="category">Cambridge ESOL & LSE · 2010–2012</p>
+          <p class="details">FCE (First Certificate English).</p>
+          <div class="tags">
+            <span>English</span>
+            <span>FCE</span>
+            <span>Business English</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Online Courses - UX/UI & Design -->
+      <div class="edu-card" data-category="online" data-subcategory="ux-design">
+        <div class="card-content">
+          <h4>UX-Design</h4>
+          <p class="category">Web Academy · 2016</p>
+          <p class="details">Web-Development.</p>
+          <div class="tags">
+            <span>Moquaps</span>
+            <span>Figma</span>
+            <span>Responsive desig</span>
+             <span>Storyboarding</span>
+             <span>Color theory</span>
+             <span>Grids</span>
+             <span>UIKit</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Online Courses - Development -->
+      <div class="edu-card" data-category="online" data-subcategory="development">
+        <div class="card-content">
+          <h4>Front-End Development</h4>
+          <p class="category">Web Academy · 2015–2016</p>
+          <p class="details">Web-Development.</p>
+          <div class="tags">
+            <span>HTML/HTML5</span>
+            <span>CSS/CSS3</span>
+            <span>JavaScript</span>
+            <span>Frameworks</span>
+             <span>Librarie</span>
+            <span>Project work</span>
+            <span>DOM</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Online Courses - QA -->
+      <div class="edu-card" data-category="online" data-subcategory="qa">
+        <div class="card-content">
+          <h4>Quality Assurance (QA)</h4>
+          <p class="category">Web Academy · 2016</p>
+          <p class="details">Functional & Non-functional testing.</p>
+          <div class="tags">
+            <span>QA</span>
+            <span>Postman</span>
+            <span>Manual Testing</span>
+            <span>SDLC/STLC</span>
+            <span>Bug-tracking</span>
+            <span>Test design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Online Courses - Analytics -->
+      <div class="edu-card" data-category="online" data-subcategory="analytics">
+        <div class="card-content">
+          <h4>Google Analytics</h4>
+          <p class="category">ITC School · 2015</p>
+          <div class="tags">
+            <span>Analytics</span>
+            <span>Traffic</span>
+            <span>Conversion</span>
+              <span>Unique visitors</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Online Courses - SEO -->
+      <div class="edu-card" data-category="online" data-subcategory="seo">
+        <div class="card-content">
+          <h4>SEO Fundamentals</h4>
+          <p class="category">Coursera · 2023</p>
+          <p class="details">SEO strategies, keyword research, on-page & off-page SEO, analytics tools.</p>
+          <div class="tags">
+            <span>SEO</span>
+            <span>Analytics</span>
+            <span>Marketing</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <section id="hobby-section" class="hobby-section">
       <div class="container">
