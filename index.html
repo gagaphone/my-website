@@ -15,15 +15,27 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
     <link rel="stylesheet" href="css/loader.css">
-    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/variables.css"> <!--root-->
     <link rel="stylesheet" href="css/base.css">
-     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/banner.css">
+    <link rel="stylesheet" href="css/counters.css">
+    <link rel="stylesheet" href="css/widget.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/education.css">
+    <link rel="stylesheet" href="css/mystack.css">
+    <link rel="stylesheet" href="css/resume.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/sidebarleft.css">
+    <link rel="stylesheet" href="css/rightsidebarfixed.css">
+    <link rel="stylesheet" href="css/hobby-section.css">
+    <link rel="stylesheet" href="css/worksidepanel.css">
 
         <!-- Ionicons (v5) -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 
     <title>ogalanets.</title>
    
@@ -40,172 +52,689 @@
 
   <body>
     
-    <!-- Loader -->
-    <div class="loader">
-      <div class="spinner">
-        <div class="double-bounce1"></div>
-        <div class="double-bounce2"></div>
-        <div class="double-bounce3"></div>
-        <div class="double-bounce4"></div>
-      </div>
-    </div>
+  <!-- Loader -->
+  <div class="loader">
+        <div class="spinner">
+          <div class="double-bounce1"></div>
+          <div class="double-bounce2"></div>
+          <div class="double-bounce3"></div>
+          <div class="double-bounce4"></div>
+        </div>
+  </div>
 
-    <!------------------------------- Left Sidebar --------------------------->
-    <section id="home" class="navbar-is-white text-white pp-scrollable d-flex align-items-center section position-absolute">
+<!------------------------------- All content - HOME --------------------------->
+  <section id="home" class="navbar-is-white text-white pp-scrollable d-flex align-items-center section position-absolute">
       
-         <aside class="sidebar">
-          <div class="sidebar-header">
-            <div>
-              <img src="img/personal/olga-galanets.256x256.jpg" alt="Olga Galanets portrait" class="" width="32" height="32" style="width:5rem;height:5rem" loading="lazy">
-            </div>
-            <div class="social-icons">
-               <ul>
-                  <li>
-                    <span>IT Project Manager |<br>
-                     Digital Transformation |<br> 
-                     R&D Innovation</span> </li>
-                </ul>
-            </div>
-          </div>
-          <!-- Scroll-bar -->
-          <div class="art-ls-divider bg-dns"></div>
-          <div class="sidebar-scroll bg-pmb text-white">
-            <!-- Circular Progress Bars -->
-           <p><span>Languages</span></p>
-            <div class="grid" id="skill">
-              <div class="c-progress" data-value="100" data-label="Ukrainian"></div>
-              <div class="c-progress" data-value="100" data-label="Russian"></div>
-              <div class="c-progress" data-value="90" data-label="English"></div>
-              <div class="c-progress" data-value="65" data-label="German"></div>
-            </div>
-            <!-- Skills -->
-           <div class="skills"> 
-            <p><span>Skills</span></p>
 
-            <div class="skill">
-              <div class="skill-header">
-                <span>Project Management</span>
-                <span class="skill-percent">95%</span>
-              </div>
-              <div class="progress">
-                <div class="progress-bar" data-progress="95%"></div>
-              </div>
-            </div>
+    <aside class="sidebar">
+              <!-- Collapsed Panel Work experience-->
+              <div class="side-panel" id="panel-experience">
+                <div class="panel-tab" onclick="togglePanel('experience')">Timeline</div>
+                <div class="panel-content">
+                  <!--Work experience-->
+                  <div class="resume-section">
+                                <div class="resume-container">
+                                  <div class="resume-column">
+                                      <div class="overview">
+                            <h4 class="resume-title">Work History</h4>
+                                          <p>    Over the years, I’ve managed projects across <strong>IT, finance, aviation, e-commerce, and R&D</strong>, leading teams and delivering solutions that transform business processes. From coordinating <strong>EU Horizon innovation projects</strong> to launching <strong>digital platforms and ERP/CRM systems</strong>, my career reflects a blend of <strong>strategic leadership, technical expertise, and international collaboration.</strong> </li>
+                                          </p>
+                                      </div>
+                                    <div class="resume-timeline">
+                                
+                                      <!-- IDSA -->
+                                      <div class="timeline-item bg-dns">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <span class="date text-white">Apr 2022 – May 2025</span>
+                                          <h5>Senior IT Project Manager <span class="subtitle">International Data Spaces Association (IDSA)</span></h5>
+                                            <h6>Project Management · Strategic Planning · Knowledge Dissemination · Innovation Management · Web-Development · R&D</h6>
+                                            <!-- Expandable section -->
+                                            <div class="expandable">
+                                                <p>· Coordinated Horizon EU R&D projects: <a href="https://datapact.eu/" target="_blank" rel="noopener noreferrer">DataPACT</a>, <a href="https://databri-x.eu/" target="_blank" rel="noopener noreferrer">DataBri-X</a>, <a href="https://veleshub.eu/" target="_blank" rel="noopener noreferrer">VELES</a>, <a href="https://www.trusts-data.eu/" target="_blank" rel="noopener noreferrer">TRUSTS</a>. </p>
+                                                <p>· Presented projects at international events, organized knowledge sharing activities.</p>
+                                                <p>· Developed <a href="https://component.internationaldataspaces.org/" target="_blank">self-assessment web-portal for Self Assessment Certification of IDS-based data space components</a> and <a href="https://semantic.internationaldataspaces.org/">semantic website</a>. </p>
+                                                <p>· Co-organized Semantic Workshops in Data Spaces 2023–2024.</p>
+                                    
+                                        </div>
+                                        <!-- Toggle button -->
+                                        <a href="javascript:void(0);" class="toggle-link">More</a>
+                                      </div>
+                                    </div>
+                                      <!-- Sanwell -->
+                                      <div class="timeline-item bg-dns">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                          
+                                          <span class="date text-white">Sep 2019 – Feb 2022</span>
+                                          <h5>IT Project Account Manager  <span class="subtitle">Sanwell</span></h5>
+                                        
+                                          <h6>Project Management · E-commerce · UX-Design · Vendor Negotiation · QA</h6>
+                                        </p>
+                                      <div class="expandable">
+                                            <p>· Led the design, development, and launch of <a href="https://hot-point.com.ua/" target="_blank">Hot-Point.com.ua</a> for a seamless B2C shopping experience. </p>
+                                            <p>· Managed implementation of <a href="https://b2b.sanwell.biz/" target="_blank">Sanwell’s B2B platform</a>. Improved procurement efficiency, automized sales. </p>
+                                          
+                                            <p>· Oversaw full project lifecycle from requirements gathering to post-launch support.</p>
+                                            <p>· Served as primary liaison between internal teams, clients, and stakeholders.</p>
+                                            <p>· Supervised web development, UX, and QA to ensure high usability and reliability.</p>
+                                        
+                                        </div>
+                                        <!-- Toggle button -->
+                                        <a href="javascript:void(0);" class="toggle-link">More</a>
+                                      </div>
+                                    </div>
+                                      <!-- PlayToMax -->
+                                      <div class="timeline-item bg-dns">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                          
+                                          <span class="date text-white">Feb 2018 – Mar 2019</span>
+                                          <h5>IT Project Account Manager <span class="subtitle">PlayToMax</span></h5>
+                                          
+                                            <h6> Mobile Game Dev · Interactive Ads · Team Leadership · Performance Marketing</h6>
+                                          <!-- Expandable section -->
+                                      <div class="expandable">
+                                            <p>· Managed 100+ playable ad projects for iOS and Android, boosting engagement and conversions.</p>
+                                            <p>· Created storyboards, wireframes, and coordinated asset production.</p>
+                                            <p>· Led a team of artists, designers, and developers with optimized workflows.</p>
+                                            <p>· Conducted QA testing, ensuring functionality and responsiveness.</p>
+                                            <p>· Advised clients on performance marketing best practices.</p>
+                                        
+                                        </div>
+                                        <!-- Toggle button -->
+                                        <a href="javascript:void(0);" class="toggle-link">More</a>
+                                      </div>
+                                    </div>
+                                      <!-- Awery Aviation Software -->
+                                      <div class="timeline-item bg-dns">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                          
+                                          <span class="date text-white">Apr 2017 – Feb 2018</span>
+                                          <h5>ERP Project Manager <span class="subtitle">Awery Aviation Software</span></h5>
+                                          
+                                          <h6>ERP Implementation · Business Analysis · Aviation Software · Process Optimization </h6>
+                                      <!-- Expandable section -->
+                                      <div class="expandable">
+                                            <p>· Led ERP deployment for aviation companies, integrating with existing workflows.</p>
+                                            <p>· Customized ERP solutions for sales, fleet management, and operations.</p>
+                                            <p>· Gathered requirements and created technical documentation.</p>
+                                            <p>· Coordinated teams of developers, engineers, and analysts.</p>
+                                            <p>· Provided client training and ongoing support.</p>
+                                            <p>· Maintained quality assurance and compliance with aviation standards.</p>
+                                          
+                                        </div>
+                                        <!-- Toggle button -->
+                                        <a href="javascript:void(0);" class="toggle-link">More</a>
+                                      </div>
+                                    </div>
+                                      <!-- Tallium -->
+                                      <div class="timeline-item bg-dns">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                          
+                                          <span class="date text-white">Feb 2017 – Apr 2017</span>
+                                          <h5>Software Release Coordinator <span class="subtitle">Tallium Inc.</span></h5>
+                                              <h6>Release Management · UI/UX · SEO · QA </h6>
+                                          <!-- Expandable section -->
+                                      <div class="expandable">
+                                            <p>· Oversaw development and launch of a web hosting services platform <a href="https://webhostinggeeks.com/" target="_blank">webhostinggeeks</a>. </p>
+                                            <p>· Planned and managed software releases, updates, and enhancements.</p>
+                                            <p>· Facilitated change control processes and release meetings.</p>
+                                            <p>· Supervised QA testing and smooth rollout of updates.</p>
+                                            <p>· Assisted with UI/UX prototyping and SEO content optimization.</p>
+                                        </div>
+                                        <!-- Toggle button -->
+                                        <a href="javascript:void(0);" class="toggle-link">More</a>
+                                      </div>
+                                    </div>
+                                      <!-- Weltrade -->
+                                  <div class="timeline-item bg-dns"> 
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                      
+                                      <span class="date text-white">May 2016 – Jan 2017</span>
+                                      <h5>Project Manager <span class="subtitle">Weltrade</span></h5>
+                                    <h6> CRM Implementation · Vendor Management · Business Automation · Finance</h6>
+                                      <!-- Expandable Responsibilities -->
+                                      <div class="expandable">
+                                          <p>· Managed a project for CRM implementation.</p>
+                                          <p>· Created detailed scope documents and workflow checklists.</p>
+                                          <p>· Led tendering process, evaluated vendors, and negotiated terms.</p>
+                                          <p>· Acted as liaison between departments and vendors.</p>
+                                      
+                                        </div>
+                                        <!-- Toggle button -->
+                                        <a href="javascript:void(0);" class="toggle-link">More</a>
+                                      </div>
+                                    </div>
+                                    <!-- Terrasoft -->
+                                  <div class="timeline-item bg-dns"> 
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                      
+                                      <span class="date text-white">2017</span>
+                                      <h5>Project Manager for Terrasoft CRM-System (Internship)
+                                      <span class="subtitle">Terrasoft</span> </h5>
+                                    <h6> CRM Implementation · Finance</h6>
+                                          <p>· Implementation of the CRM-System (Bank Customer journey) at the enterprise.</p>
+                                          </div>
+                                  </div>
+                                      <!-- Bank Trust -->
+                                      <div class="timeline-item bg-dns">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                          
+                                          <span class="date text-white">May 2014 – Dec 2016</span>
+                                          <h5>Project Manager – Business Development <span class="subtitle">Bank Trust</span></h5>
+                                    
+                                          <h6> Digital Banking · ERP · CRM · Tender Planning · Finance · Banking · Business Automation · Sales · Compliance · Call Centre</h6>
+                                          <!-- Expandable section -->
+                                      <div class="expandable">
+                                            <p>· Led UX/UI design, developed and launched Online banking operations and services.</p>
+                                            <p>· Implemented Client-bank systems for B2B customers. </p>
+                                            <p>· Developed a new <a href="https://www.banktrust.com.ua/" target="_blank">corporate website</a>. </p>
+                                          <p>· Implemented a new CRM system to enhance sales and operations: Bank Card Sell, Call Center, Telemarketing.</p>
+                                            <p>· Implemented a new service - Credit Online – Reduced processing time by 40% through workflow optimization.</p>
+                                            <p>· Created project scopes, WBS, and execution strategies.</p>
+                                            <p>· Managed tendering, vendor evaluation, and risk resolution.</p>
+                                            <p>· Monitored project timelines, budgets, and performance.</p>
+                                        </div>
+                                        <!-- Toggle button -->
+                                        <a href="javascript:void(0);" class="toggle-link">More</a>
+                                      </div>
+                                    </div>
+                                      <!-- AVANGARDCO IPL -->
+                                      <div class="timeline-item bg-dns">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                          
+                                          <span class="date text-white">Sep 2012 – May 2014</span>
+                                          <h5>Market expansion manager <span class="subtitle">AVANGARDCO IPL</span></h5>
+                                          
+                                            <h6>Brand management · Marketing management · Sales · ATL · BTL · Standartisation · POS · Advertising · Tendering · Budget planning</h6>
+                                          <!-- Expandable section -->
+                                      <div class="expandable">
+                                            <p>· Developed merchandising standards and advertising materials for branch networks.</p>
+                                            <p>· Created databases for tracking and managing advertising products.</p>
+                                            <p>· Led projects to increase brands recognition "Pakko" and "Vopak".</p>
+                                            <p>· Managed tendering, vendor evaluation, and risk resolution.</p>
+                                        </div>
+                                        <!-- Toggle button -->
+                                        <a href="javascript:void(0);" class="toggle-link">More</a>
+                                      </div>
+                                    </div>
+                                  <!-- Kreditprombank -->
+                                      <div class="timeline-item bg-dns">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                          
+                                          <span class="date text-white">May 2011 – Apr 2012</span>
+                                          <h5>Head of Marketing and Business Development Group  <span class="subtitle">Kreditprombank</span></h5>
+                                        
+                                          <h6>Brand development · Marketing Management · Merchandising· Finance · Banking · Digitalisation · ATL · BTL · Advertising</h6>
+                                          <!-- Expandable section -->
+                                      <div class="expandable">
+                                            <p>· Developed merchandising standards and advertising materials for branch networks and ATMs.</p>
+                                            <p>· Created databases for tracking and managing advertising products.</p>
+                                            <p>· Created databases for tracking outdoor signs and ATMs.</p>
+                                            <p>· Led projects to increase brand recognition and customer satisfaction.</p>
+                                        </div>
+                                        <!-- Toggle button -->
+                                        <a href="javascript:void(0);" class="toggle-link">More</a>
+                                      </div>
+                                    </div>
+                                      <!-- Nadra Bank -->
+                                      <div class="timeline-item bg-dns">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                          <span class="date text-white">Aug 2008 – Jun 2009</span>
+                                          <h5>Chief Marketing Officer 
+                                          <span class="subtitle">Marketing Department, Advertising Directorate, Unit for Retail Advertising Support and E-Commerce Channels, Nadra Bank</span></h5>
+                                            <h6> UI-Design · Copywriting · Web Project Management · Marketing · Advertising · Finance · Banking · Digitalisation · Brand Management · Retail · E-Commerce · Bank</h6>
+                                          <!-- Expandable section -->
+                                      <div class="expandable">
+                                            <p>· Administered bank websites, HTML content creation, and SEO.</p>
+                                            <p>· Managed development of a new bank website nadra.com.ua.</p>
+                                        </div>
+                                        <!-- Toggle button -->
+                                        <a href="javascript:void(0);" class="toggle-link">More</a>
+                                      </div>
+                                    </div>
+                                  <!-- PrivatBank -->
+                                      <div class="timeline-item bg-dns">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                          
+                                          <span class="date text-white">Oct 2006 – Mar 2008</span>
+                                          <h5>Senior Manager
+                                          <span class="subtitle">Services for High-Net-Worth Individual Clients (HNWIs), PrivatBank</span></h5>
+                                            <h6>Marketing · Merchandising · PR · SMI · Finance · Banking · Digitalisation · Brand Management · Web-Development</h6>
+                                          <!-- Expandable section -->
+                                      <div class="expandable">
+                                            <p>· Developed merchandising standards and promotional materials for VIP customers.</p>
+                                            <p>· Managed projects to expand bank recognition.</p>
+                                            <p>· Maintained bank blog, wrote content, and promoted in media.</p>
+                                            <p>· Trained staff on product promotion.</p>
+                                        </div>
+                                        <!-- Toggle button -->
+                                        <a href="javascript:void(0);" class="toggle-link">More</a>
+                                      </div>
+                                    </div>
+                                    <!-- DO -->
+                                      <div class="timeline-item bg-dns">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                          
+                                          <span class="date text-white">Dec 2005 – Aug 2006</span>
+                                          <h5>Chief Officer
+                                          <span class="subtitle">Dnipropetrovsk Regional State Administration</span></h5>
+                                            <h6>HR</h6>
+                                        </div>
+                                      </div>
+                                    <!-- VRU -->
+                                      <div class="timeline-item bg-dns">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                          
+                                          <span class="date text-white">2003-2004</span>
+                                          <h5>Assistant to the deputy (Internship)
+                                          <span class="subtitle">Committee on Rules of Procedure, Parliamentary Ethics and Organization of Work of the Verkhovna Rada of Ukraine</span></h5>
+                                            <h6>Politics</h6>
+                                      <!-- Expandable section -->
+                                      <div class="expandable">
+                                            <p>· Support legislative work – research issues, prepare materials, assist in drafting.</p>
+                                            <p>· Organize and summarize – collect feedback, analyze public opinion, report to the MP.</p>
+                                            <p>· Ensure administrative support – manage documents, correspondence, and technical assistance.</p>
+                                        </div>
+                                        <!-- Toggle button -->
+                                        <a href="javascript:void(0);" class="toggle-link">More</a>
+                                      </div>
+                                    </div>
 
-            <div class="skill">
-              <div class="skill-header">
-                  <span>Marketing Management</span>
-                  <span class="skill-percent">95%</span>
-              </div>
-              <div class="progress">
-                  <div class="progress-bar" data-progress="95%"></div>
-              </div>
-            </div>
+                                    </div>
+                                  </div>
+                                </div>
+                  </div>
+                  <!--Education-->
+                     <div class="resume-section">
+                    <div class="resume-container">
+                      <div class="resume-column">
+                          <div class="overview">
+                        <h4 class="resume-title">Education</h4>
+                            <p>My academic path combines <strong>business management, political science, and philosophy</strong>, providing a strong foundation in <strong>strategic thinking, leadership, and research</strong>. With an <strong>MBA in Marketing Management</strong>, postgraduate studies in philosophy and political science, and participation in <strong>international scholarship and governance programs</strong>, I bring both <strong>analytical depth and a global outlook</strong> into my project management work.
+                            </p>
+                          </div>
+                        <div class="resume-timeline">
+                          <!-- Project Management -->
+                          <div class="timeline-item bg-dns">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                              
+                              <span class="date text-white">2016–2025</span>
+                              <h5>Project Management
+                              <span class="subtitle">Member of Project Management Institute · Web-Academy · Smart Academy </span>
+                            </h5>
+                                <h6>Project Management · AI · Scrum · Agile · CAMP</h6>
+                                <!-- Expandable section -->
+                                <div class="expandable">
+                                    <p>· Project Management Basics (CAMP).</p>
+                                    <p>· Talking to AI: Prompt Engineering for Project Managers. </p>
+                                    <p>· Taming Bias: Using Wicked Problem Solving to Make Better Decisions & Align Teams.</p>
+                                    <p>· Business Continuity.</p>
+                                    <p>· Data Landscape of GenAI for Project Managers. </p>
+                                    <p>· The Basics of Scrum.</p>
+                                    <p>· Basics of Disciplined Agile. </p>
+                                    <p>· PMI® CERTIFIED MEMBER.</p>
+                                    <p>· Generative AI Overview for Project Managers. </p>
+                                </div>
+                                  <!-- Toggle button -->
+                            <a href="javascript:void(0);" class="toggle-link">More</a>
+                        </div>
+                          </div>
+                          <!-- mini-MBA -->
+                          <div class="timeline-item bg-dns">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                              
+                              <span class="date text-white">2013–2015</span>
+                              <h5>Marketing Management
+                              <span class="subtitle text-primary">Master of Business Administration in Marketing Management, mini-MBA</span>
+                              <span class="subtitle">City Business School</span></h5>
+                              <h6> Marketing Management · Business Administration · Interpersonal Skills · Leadership · Strategic sales management · HR Management · Financial Management · Project Management</h6>
+                              </div>
+                          </div>
+                          <!-- Social-Politic -->
+                          <div class="timeline-item bg-dns">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                              
+                              <span class="date text-white">2005–2010</span>
+                              
+                              <h5>Philosophy and Political Science
+                              <span class="subtitle text-primary">Master degree, Postgraduate Studies, Teacher of Social-Politic and Philosophical disciplines</span>
+                              <span class="subtitle">Kyiv National Taras Shevchenko University</span></h5>
+                            <p class="subtitle text-gray">Graduated with honors</p>
+                                <h6> Philosophy · Political Science · Research Skills · Teaching · Politics · Philosophy · Social disciplines</h6>
+                              </div>
+                          </div>
+                          <!-- Political Science and Government -->
+                          <div class="timeline-item bg-dns">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                              
+                              <span class="date text-white">2002–2005</span>
+                              <h5>Political Science and Public Relations
+                              <span class="subtitle text-primary">Bachelor degree</span>
+                              <span class="subtitle">Averroes Ukrainian-Arabic Institute of Linguistics, Kyiv Inter-regional Academy of Personnel Management</span></h5>
+                                <p class="subtitle text-gray"> Graduated with honors</p>
+                                <h6>Research Skills · Politics · Public Relations · Leadership</h6>
+                            </div>
+                          </div>
+                          <!-- Journalist -->
+                          <div class="timeline-item bg-dns">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                              
+                              <span class="date text-white">2003-2004</span>
+                              <h5>Journalist & International Election Observer
+                              <span class="subtitle">Scholarship Program. Friedrich-Ebert-Stiftung (FES)</span></h5>
+                            <p> Completed leadership development program focused on civic engagement, governance, and democratic values.</p>
+      
+                                <h6>Politics · Elections · Journalism · Election Law · International Human Rights</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>     
+                  <!-- Courses Section -->
+                   <div class="resume-section">
+                    <div class="resume-container">
+                      <div class="resume-column">
+                     
+                       <div class="overview">
+						            <h4 class="resume-title">Courses</h4>
+                            <p>I believe in <strong>lifelong learning</strong> and continuously strengthen my expertise through professional development. My training spans <strong>UX/UI design, front-end development, QA, and business analysis</strong>, complemented by <strong>language studies and digital marketing tools</strong>. These courses allow me to stay adaptable, bridging <strong>technical know-how with project management excellence</strong>.
+                            </p> 
+                      </div>
+                      <div class="resume-timeline">
+                    
+                    <!-- Design -->
+                        <div class="timeline-item bg-dns">
+                          <div class="timeline-marker"></div>
+                          <div class="timeline-content">
+                            
+                            <span class="date text-white">2023</span>
+                          <h5>Web-design 
+                            <span class="subtitle">Coursera </span></h5>
+                                <h6>Web-design · Canva · Social media design</h6>
+                      </div>
+                    </div>
+                      <!-- Design -->
+                        <div class="timeline-item bg-dns">
+                          <div class="timeline-marker"></div>
+                          <div class="timeline-content">
+                            
+                            <span class="date text-white">2022-2023</span>
+                          <h5>German Language 
+                            <span class="subtitle">Perfekt Deutsch · VHS</span></h5>
+                                <h6>German Language · B1</h6>
+                      </div>
+                    </div>
+                  
+                        <!-- Web academy - UX-Design-->
+                        <div class="timeline-item bg-dns">
+                          <div class="timeline-marker"></div>
+                          <div class="timeline-content">
+                            
+                            <span class="date text-white">2016</span>
+                            <h5>UX-Design
+                            <span class="subtitle">Web Academy</span></h5>
+                                <h6>Web-Design · UX · Design analysis · Figma · Moquaps · Color theory · Responsive design · Grids ·  UIKit</h6>
+                          </div>
+                          </div>
 
-            <div class="skill">
-              <div class="skill-header">
-                <span>Web-Development</span>
-                <span class="skill-percent">80%</span>
-              </div>
-              <div class="progress">
-                <div class="progress-bar" data-progress="80%"></div>
-              </div>
-            </div>
-          </div>
-            <ul class="art-knowledge-list">
-              <li><i></i>HTML, CSS</li>
-              <li><i></i>Quality Assurance</li>
-              <li><i></i>Business Analysis</li>
-              <li><i></i>UX-Design</li>
-            </ul>
-          </div>
-          <div class="art-ls-divider bg-dns"></div>
-          <!-- Social -->
-          <div class="sidebar-footer bg-pmb text-white">
-            <ul class="social-icons">
-              <li>
-                <a href="https://www.xing.com/profile/Olga_Galanets" target="_blank">
-                  <ion-icon name="logo-xing"></ion-icon>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/olga-galanets-a1aa8681/" target="_blank">
-                  <ion-icon name="logo-linkedin"></ion-icon>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="sidebar-footer bg-pmb">
-              <ul class="social-icons">
-                <li> 
-                <a href="mailto:ogalanets@gmail.com" target="_blank">ogalanets@gmail.com  </a> 
-                </li> 
-              </ul>
-          </div>
-          <!-- cv -->
-          <div class="sidebar-footer bg-pmb">
-            <ul class="social-icons">
-              <li class="resume-link">
-                  <a href="OlgaGalanetsCV.pdf" target="_blank" download>
-                    <ion-icon name="download"></ion-icon>
-                  <span>Resume</span>
-                  </a>
-              </li>
-            </ul>
-          </div>
-          </aside>
-        <!----------------------- Right Main Content ---------------------------------->
+                            <!-- Web academy- Frontend-->
+                        <div class="timeline-item bg-dns">
+                          <div class="timeline-marker"></div>
+                          <div class="timeline-content">
+                            
+                            <span class="date text-white">2015-2016</span>
+                            <h5>Front-end development
+                            <span class="subtitle">Web Academy</span></h5>
+                                <h6>Web development · Js advanced · HTML · CSS · HTML5 · CSS3 · Working on project · DOM · Frameworks · Libraries</h6>
+                          </div>
+                          </div>
+                          <!-- Web academy - QA-->
+                            <div class="timeline-item bg-dns">
+                              <div class="timeline-marker"></div>
+                              <div class="timeline-content">
+                                
+                                <span class="date text-white">2016</span>
+                                <h5>Quality Assurance (QA)
+                                <span class="subtitle">Web Academy</span></h5>
+                                    <h6>SDLC and STLC life cycles · Bug-tracking systems · Test design · Functional testing  ·  Non-functional testing  · Postman  · Manual testing </h6>
+                                    
+                              </div>
+                              </div>
+                          <!-- Web academy - BA-->
+                        <div class="timeline-item bg-dns">
+                          <div class="timeline-marker"></div>
+                          <div class="timeline-content">
+                            
+                            <span class="date text-white">2015</span>
+                            <h5>Business Analysis
+                            <span class="subtitle">Web Academy</span></h5>
+                                <h6>Business Analysis · SDLC (Software Development Life Cycle) · Communication · Requirements modeling · Requirements documentation · Functional decomposition · User role model · Acceptance criteria · Backlog and prioritization · BPMN diagrams · UML diagrams · Interface prototyping </h6>
+                            <p>Conducted market research and implemented automation strategies of Rubalka.ua, Eurabota.com, Kidsguide.</p>
+                          </div>
+                          </div>
+                              <!-- GA-->
+                        <div class="timeline-item bg-dns">
+                          <div class="timeline-marker"></div>
+                          <div class="timeline-content">
+                            
+                            <span class="date text-white">2015</span>
+                            <h5>Google Analytics
+                            <span class="subtitle">ITC School</span></h5>
+                                <h6>Traffic sources · Unique visitors · Goal setting · Geopolitics · Conversions</h6>
+                            </div> 
+                          </div>
+                    <!-- English-->
+                        <div class="timeline-item bg-dns">
+                          <div class="timeline-marker"></div>
+                          <div class="timeline-content">
+                            
+                            <span class="date text-white">2010-2012</span>
+                          <h5>English Language
+                            <span class="subtitle">University of Cambridge ESOL Examinations · The London School of English (LSE) <br> Business Academy</span></h5>
+                                <h6>English Language · FCE · First Certificate English</h6>
+                      </div>
+                    </div>
 
-        <main class="main-content">
-     <!-- Fixed Header -->
-         <header class="main-header">
-  <nav class="header-nav">
-    <!-- left side (optional) -->
-    <div class="nav-left">
-      <!-- logo or links -->
-    </div>
+                    
+                    </div>
 
-    <div class="nav-right">
-      <ul class="social-icons">
-        <li>
-          <a href="https://www.xing.com/profile/Olga_Galanets" target="_blank" aria-label="Xing">
-            <ion-icon name="logo-xing"></ion-icon>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/olga-galanets-a1aa8681/" target="_blank" aria-label="LinkedIn">
-            <ion-icon name="logo-linkedin"></ion-icon>
-          </a>
-        </li>
-        <li class="resume-link">
+                      </div>
+                     </div>
+                   </div>
+                </div>
+              </div>
+
+              <div class="sidebar-inner">
+                <div class="sidebar-header">
+                  <div>
+                    <img src="img/personal/olga-galanets.256x256.jpg" alt="Olga Galanets portrait" class="" width="32" height="32" style="width:5rem;height:5rem" loading="lazy">
+                  </div>
+                  <div class="social-icons">
+                    <ul>
+                        <li>
+                          <span>IT Project Manager |<br>
+                          Digital Transformation |<br> 
+                          R&D Innovation</span> </li>
+                      </ul>
+                  
+                  </div>
+                </div>
+
+                <!-- Scroll-bar -->
+                <div class="ls-divider bg-dns"></div>
+
+                <div class="sidebar-scroll bg-pmb text-white">
+                  <!-- Circular Progress Bars -->
+                <p><span>Languages</span></p>
+                  <div class="grid" id="skill">
+                    <div class="c-progress" data-value="100" data-label="Ukrainian"></div>
+                    <div class="c-progress" data-value="100" data-label="Russian"></div>
+                    <div class="c-progress" data-value="90" data-label="English"></div>
+                    <div class="c-progress" data-value="65" data-label="German"></div>
+                  </div>
+                  <!-- Skills -->
+                <div class="skills"> 
+                  <p><span>Skills</span></p>
+
+                  <div class="skill">
+                    <div class="skill-header">
+                      <span>Project Management</span>
+                      <span class="skill-percent">95%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" data-progress="95%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill">
+                    <div class="skill-header">
+                        <span>Marketing Management</span>
+                        <span class="skill-percent">95%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" data-progress="95%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill">
+                    <div class="skill-header">
+                      <span>Web-Development</span>
+                      <span class="skill-percent">80%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" data-progress="80%"></div>
+                    </div>
+                  </div>
+                </div>
+                  <ul class="knowledge-list">
+                    <li><i></i>HTML, CSS</li>
+                    <li><i></i>Quality Assurance</li>
+                    <li><i></i>Business Analysis</li>
+                    <li><i></i>UX-Design</li>
+                  </ul>
+                </div>
+
+                <div class="ls-divider bg-dns"></div>
+
+                <!-- Social -->
+                <div class="sidebar-footer bg-pmb text-white">
+                  <ul class="social-icons">
+                    <li>
+                      <a href="https://www.xing.com/profile/Olga_Galanets" target="_blank">
+                        <ion-icon name="logo-xing"></ion-icon>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.linkedin.com/in/olga-galanets-a1aa8681/" target="_blank">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="sidebar-footer bg-pmb">
+                    <ul class="social-icons">
+                      <li> 
+                      <a href="mailto:ogalanets@gmail.com" target="_blank">ogalanets@gmail.com  </a> 
+                      </li> 
+                    </ul>
+                </div>
+
+                <!-- cv -->
+                <div class="sidebar-footer bg-pmb">
+                  <ul class="social-icons">
+                    <li class="resume-link">
+                        <a href="OlgaGalanetsCV.pdf" target="_blank" download>
+                          <ion-icon name="download"></ion-icon>
+                        <span>Resume</span>
+                        </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+    </aside>
+
+    <!-- Right Main Content -->
+    <main class="main-content">
+
+    <!-- Fixed Header -->
+    <header class="main-header">
+      <nav class="header-nav">
+                <!-- left side (optional) -->
+                <div class="nav-left">
+                  <!-- logo or links -->
+                </div>
+
+        <div class="nav-right">
+          <ul class="social-icons">
+         
+
+            <li>
+              <a href="https://www.xing.com/profile/Olga_Galanets" target="_blank" aria-label="Xing">
+                <ion-icon name="logo-xing"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/olga-galanets-a1aa8681/" target="_blank" aria-label="LinkedIn">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+             <li>
+              <a href="mailto:ogalanets@gmail.com" target="_blank" aria-label="mailto">
+                <ion-icon name="mail-outline"></ion-icon>
+              </a>
+            </li>
+            <li class="resume-link">
           <a href="OlgaGalanetsCV.pdf" target="_blank" download>
             <ion-icon name="download"></ion-icon>
             <span>Resume</span>
           </a>
         </li>
-      </ul>
-    </div>
-  </nav>
-</header>
+    
+          </ul>
+         </div>
+    </nav>
+    </header>
+            
+    <section id="home-section" class="expertise banner">
 
+      <div class="intro">
+        <h2>
+          Hi! My name is <span>Olga Galanets.</span><br>
+          I am <span>IT Project Manager.</span>
+        </h2>
+        <p>
+          I am passionate about turning complex ideas into successful, streamlined solutions. Over the years, I’ve built extensive expertise in Project management.
+        </p>
+      </div>
+    </section>
 
-      <!-- Home Section -->
-<section id="home-section" class="expertise">
-  <div class="intro">
-    <div>
-      <h2>
-        Hi! My name is <span>Olga Galanets.</span><br>
-        I am <span>IT Project Manager.</span>
-      </h2>
-      <p>
-        I am passionate about turning complex ideas into successful, streamlined solutions. Over the years, I’ve built extensive expertise in Project and Marketing management, Business process automation.</p>
-
+    <section id="counter-section">
       <div class="row counters">
         <div class="col-6">
           <div class="art-counter-frame">
             <div class="art-counter-box">
-              <h2 id="counter-experience">0</h2>
-              <h6><span>Years Experience</span></h6>
+              <h2 id="counter-experience">12</h2>
+              <h6><span>years experience</span></h6>
             </div>
           </div>
         </div>
@@ -213,580 +742,921 @@
         <div class="col-6">
           <div class="art-counter-frame">
             <div class="art-counter-box">
-              <h2 id="counter-projects">0</h2>
-              <h6><span>Completed Projects</span></h6>
+              <h2 id="counter-projects">58</h2>
+              <h6><span>completed projects</span></h6>
             </div>
           </div>
         </div>
       </div>
-
-    </div>
-  </div>
-</section>
-
-
-               <!-- Experience Section -->
-             <section id="experience-section">
-                <div class="resume-section">
-                  <div class="resume-container">
-                    <div class="resume-column">
-                        <div class="overview">
-							<h4 class="resume-title">Work History</h4>
-                            <p>    Over the years, I’ve managed projects across <strong>IT, finance, aviation, e-commerce, and R&D</strong>, leading teams and delivering solutions that transform business processes. From coordinating <strong>EU Horizon innovation projects</strong> to launching <strong>digital platforms and ERP/CRM systems</strong>, my career reflects a blend of <strong>strategic leadership, technical expertise, and international collaboration.</strong> </li>
-                            </p>
-                        </div>
-                      <div class="resume-timeline">
-                   
-                        <!-- IDSA -->
-                        <div class="timeline-item bg-dns">
-                          <div class="timeline-marker"></div>
-                          <div class="timeline-content">
-                               <span class="date text-white">Apr 2022 – May 2025</span>
-                            <h5>Senior IT Project Manager <span class="subtitle">International Data Spaces Association (IDSA)</span></h5>
-                              <h6>Project Management · Strategic Planning · Knowledge Dissemination · Innovation Management · Web-Development · R&D</h6>
-                              <!-- Expandable section -->
-                              <div class="expandable">
-                                  <p>· Coordinated Horizon EU R&D projects: <a href="https://datapact.eu/" target="_blank" rel="noopener noreferrer">DataPACT</a>, <a href="https://databri-x.eu/" target="_blank" rel="noopener noreferrer">DataBri-X</a>, <a href="https://veleshub.eu/" target="_blank" rel="noopener noreferrer">VELES</a>, <a href="https://www.trusts-data.eu/" target="_blank" rel="noopener noreferrer">TRUSTS</a>. </p>
-                                  <p>· Presented projects at international events, organized knowledge sharing activities.</p>
-                                  <p>· Developed <a href="https://component.internationaldataspaces.org/" target="_blank">self-assessment web-portal for Self Assessment Certification of IDS-based data space components</a> and <a href="https://semantic.internationaldataspaces.org/">semantic website</a>. </p>
-                                  <p>· Co-organized Semantic Workshops in Data Spaces 2023–2024.</p>
-                      
-                          </div>
-                          <!-- Toggle button -->
-                          <a href="javascript:void(0);" class="toggle-link">More</a>
-                        </div>
-                      </div>
-                        <!-- Sanwell -->
-                        <div class="timeline-item bg-dns">
-                          <div class="timeline-marker"></div>
-                          <div class="timeline-content">
-                            
-                            <span class="date text-white">Sep 2019 – Feb 2022</span>
-                            <h5>IT Project Account Manager  <span class="subtitle">Sanwell</span></h5>
-                           
-                            <h6>Project Management · E-commerce · UX-Design · Vendor Negotiation · QA</h6>
-                          </p>
-                        <div class="expandable">
-                              <p>· Led the design, development, and launch of <a href="https://hot-point.com.ua/" target="_blank">Hot-Point.com.ua</a> for a seamless B2C shopping experience. </p>
-                              <p>· Managed implementation of <a href="https://b2b.sanwell.biz/" target="_blank">Sanwell’s B2B platform</a>. Improved procurement efficiency, automized sales. </p>
-                            
-                              <p>· Oversaw full project lifecycle from requirements gathering to post-launch support.</p>
-                              <p>· Served as primary liaison between internal teams, clients, and stakeholders.</p>
-                              <p>· Supervised web development, UX, and QA to ensure high usability and reliability.</p>
-                          
-                          </div>
-                          <!-- Toggle button -->
-                          <a href="javascript:void(0);" class="toggle-link">More</a>
-                        </div>
-                      </div>
-                        <!-- PlayToMax -->
-                        <div class="timeline-item bg-dns">
-                          <div class="timeline-marker"></div>
-                          <div class="timeline-content">
-                            
-                            <span class="date text-white">Feb 2018 – Mar 2019</span>
-                            <h5>IT Project Account Manager <span class="subtitle">PlayToMax</span></h5>
-                            
-                              <h6> Mobile Game Dev · Interactive Ads · Team Leadership · Performance Marketing</h6>
-                            <!-- Expandable section -->
-                        <div class="expandable">
-                              <p>· Managed 100+ playable ad projects for iOS and Android, boosting engagement and conversions.</p>
-                              <p>· Created storyboards, wireframes, and coordinated asset production.</p>
-                              <p>· Led a team of artists, designers, and developers with optimized workflows.</p>
-                              <p>· Conducted QA testing, ensuring functionality and responsiveness.</p>
-                              <p>· Advised clients on performance marketing best practices.</p>
-                          
-                          </div>
-                          <!-- Toggle button -->
-                          <a href="javascript:void(0);" class="toggle-link">More</a>
-                        </div>
-                      </div>
-                        <!-- Awery Aviation Software -->
-                        <div class="timeline-item bg-dns">
-                          <div class="timeline-marker"></div>
-                          <div class="timeline-content">
-                            
-                            <span class="date text-white">Apr 2017 – Feb 2018</span>
-                            <h5>ERP Project Manager <span class="subtitle">Awery Aviation Software</span></h5>
-                            
-                            <h6>ERP Implementation · Business Analysis · Aviation Software · Process Optimization </h6>
-                        <!-- Expandable section -->
-                        <div class="expandable">
-                              <p>· Led ERP deployment for aviation companies, integrating with existing workflows.</p>
-                              <p>· Customized ERP solutions for sales, fleet management, and operations.</p>
-                              <p>· Gathered requirements and created technical documentation.</p>
-                              <p>· Coordinated teams of developers, engineers, and analysts.</p>
-                              <p>· Provided client training and ongoing support.</p>
-                              <p>· Maintained quality assurance and compliance with aviation standards.</p>
-                            
-                          </div>
-                          <!-- Toggle button -->
-                          <a href="javascript:void(0);" class="toggle-link">More</a>
-                        </div>
-                      </div>
-                        <!-- Tallium -->
-                        <div class="timeline-item bg-dns">
-                          <div class="timeline-marker"></div>
-                          <div class="timeline-content">
-                            
-                            <span class="date text-white">Feb 2017 – Apr 2017</span>
-                            <h5>Software Release Coordinator <span class="subtitle">Tallium Inc.</span></h5>
-                                <h6>Release Management · UI/UX · SEO · QA </h6>
-                            <!-- Expandable section -->
-                        <div class="expandable">
-                              <p>· Oversaw development and launch of a web hosting services platform <a href="https://webhostinggeeks.com/" target="_blank">webhostinggeeks</a>. </p>
-                              <p>· Planned and managed software releases, updates, and enhancements.</p>
-                              <p>· Facilitated change control processes and release meetings.</p>
-                              <p>· Supervised QA testing and smooth rollout of updates.</p>
-                              <p>· Assisted with UI/UX prototyping and SEO content optimization.</p>
-                          </div>
-                          <!-- Toggle button -->
-                          <a href="javascript:void(0);" class="toggle-link">More</a>
-                        </div>
-                      </div>
-                        <!-- Weltrade -->
-                    <div class="timeline-item bg-dns"> 
-                      <div class="timeline-marker"></div>
-                      <div class="timeline-content">
-                        
-                        <span class="date text-white">May 2016 – Jan 2017</span>
-                        <h5>Project Manager <span class="subtitle">Weltrade</span></h5>
-                      <h6> CRM Implementation · Vendor Management · Business Automation · Finance</h6>
-                        <!-- Expandable Responsibilities -->
-                        <div class="expandable">
-                            <p>· Managed a project for CRM implementation.</p>
-                            <p>· Created detailed scope documents and workflow checklists.</p>
-                            <p>· Led tendering process, evaluated vendors, and negotiated terms.</p>
-                            <p>· Acted as liaison between departments and vendors.</p>
-                        
-                          </div>
-                          <!-- Toggle button -->
-                          <a href="javascript:void(0);" class="toggle-link">More</a>
-                        </div>
-                      </div>
-                      <!-- Terrasoft -->
-                    <div class="timeline-item bg-dns"> 
-                      <div class="timeline-marker"></div>
-                      <div class="timeline-content">
-                        
-                        <span class="date text-white">2017</span>
-                        <h5>Project Manager for Terrasoft CRM-System (Internship)
-                        <span class="subtitle">Terrasoft</span> </h5>
-                      <h6> CRM Implementation · Finance</h6>
-                            <p>· Implementation of the CRM-System (Bank Customer journey) at the enterprise.</p>
-                            </div>
-                    </div>
-                        <!-- Bank Trust -->
-                        <div class="timeline-item bg-dns">
-                          <div class="timeline-marker"></div>
-                          <div class="timeline-content">
-                            
-                            <span class="date text-white">May 2014 – Dec 2016</span>
-                            <h5>Project Manager – Business Development <span class="subtitle">Bank Trust</span></h5>
-                      
-                            <h6> Digital Banking · ERP · CRM · Tender Planning · Finance · Banking · Business Automation · Sales · Compliance · Call Centre</h6>
-                            <!-- Expandable section -->
-                        <div class="expandable">
-                              <p>· Led UX/UI design, developed and launched Online banking operations and services.</p>
-                              <p>· Implemented Client-bank systems for B2B customers. </p>
-                              <p>· Developed a new <a href="https://www.banktrust.com.ua/" target="_blank">corporate website</a>. </p>
-                            <p>· Implemented a new CRM system to enhance sales and operations: Bank Card Sell, Call Center, Telemarketing.</p>
-                              <p>· Implemented a new service - Credit Online – Reduced processing time by 40% through workflow optimization.</p>
-                              <p>· Created project scopes, WBS, and execution strategies.</p>
-                              <p>· Managed tendering, vendor evaluation, and risk resolution.</p>
-                              <p>· Monitored project timelines, budgets, and performance.</p>
-                          </div>
-                          <!-- Toggle button -->
-                          <a href="javascript:void(0);" class="toggle-link">More</a>
-                        </div>
-                      </div>
-                        <!-- AVANGARDCO IPL -->
-                        <div class="timeline-item bg-dns">
-                          <div class="timeline-marker"></div>
-                          <div class="timeline-content">
-                            
-                            <span class="date text-white">Sep 2012 – May 2014</span>
-                            <h5>Market expansion manager <span class="subtitle">AVANGARDCO IPL</span></h5>
-                            
-                              <h6>Brand management · Marketing management · Sales · ATL · BTL · Standartisation · POS · Advertising · Tendering · Budget planning</h6>
-                            <!-- Expandable section -->
-                        <div class="expandable">
-                              <p>· Developed merchandising standards and advertising materials for branch networks.</p>
-                              <p>· Created databases for tracking and managing advertising products.</p>
-                              <p>· Led projects to increase brands recognition "Pakko" and "Vopak".</p>
-                              <p>· Managed tendering, vendor evaluation, and risk resolution.</p>
-                          </div>
-                          <!-- Toggle button -->
-                          <a href="javascript:void(0);" class="toggle-link">More</a>
-                        </div>
-                      </div>
-                    <!-- Kreditprombank -->
-                        <div class="timeline-item bg-dns">
-                          <div class="timeline-marker"></div>
-                          <div class="timeline-content">
-                            
-                            <span class="date text-white">May 2011 – Apr 2012</span>
-                            <h5>Head of Marketing and Business Development Group  <span class="subtitle">Kreditprombank</span></h5>
-                           
-                            <h6>Brand development · Marketing Management · Merchandising· Finance · Banking · Digitalisation · ATL · BTL · Advertising</h6>
-                            <!-- Expandable section -->
-                        <div class="expandable">
-                              <p>· Developed merchandising standards and advertising materials for branch networks and ATMs.</p>
-                              <p>· Created databases for tracking and managing advertising products.</p>
-                              <p>· Created databases for tracking outdoor signs and ATMs.</p>
-                              <p>· Led projects to increase brand recognition and customer satisfaction.</p>
-                          </div>
-                          <!-- Toggle button -->
-                          <a href="javascript:void(0);" class="toggle-link">More</a>
-                        </div>
-                      </div>
-                        <!-- Nadra Bank -->
-                        <div class="timeline-item bg-dns">
-                          <div class="timeline-marker"></div>
-                          <div class="timeline-content">
-                            <span class="date text-white">Aug 2008 – Jun 2009</span>
-                            <h5>Chief Marketing Officer 
-                            <span class="subtitle">Marketing Department, Advertising Directorate, Unit for Retail Advertising Support and E-Commerce Channels, Nadra Bank</span></h5>
-                              <h6> UI-Design · Copywriting · Web Project Management · Marketing · Advertising · Finance · Banking · Digitalisation · Brand Management · Retail · E-Commerce · Bank</h6>
-                            <!-- Expandable section -->
-                        <div class="expandable">
-                              <p>· Administered bank websites, HTML content creation, and SEO.</p>
-                              <p>· Managed development of a new bank website nadra.com.ua.</p>
-                          </div>
-                          <!-- Toggle button -->
-                          <a href="javascript:void(0);" class="toggle-link">More</a>
-                        </div>
-                      </div>
-                    <!-- PrivatBank -->
-                        <div class="timeline-item bg-dns">
-                          <div class="timeline-marker"></div>
-                          <div class="timeline-content">
-                            
-                            <span class="date text-white">Oct 2006 – Mar 2008</span>
-                            <h5>Senior Manager
-                            <span class="subtitle">Services for High-Net-Worth Individual Clients (HNWIs), PrivatBank</span></h5>
-                              <h6>Marketing · Merchandising · PR · SMI · Finance · Banking · Digitalisation · Brand Management · Web-Development</h6>
-                            <!-- Expandable section -->
-                        <div class="expandable">
-                              <p>· Developed merchandising standards and promotional materials for VIP customers.</p>
-                              <p>· Managed projects to expand bank recognition.</p>
-                              <p>· Maintained bank blog, wrote content, and promoted in media.</p>
-                              <p>· Trained staff on product promotion.</p>
-                          </div>
-                          <!-- Toggle button -->
-                          <a href="javascript:void(0);" class="toggle-link">More</a>
-                        </div>
-                      </div>
-                      <!-- DO -->
-                        <div class="timeline-item bg-dns">
-                          <div class="timeline-marker"></div>
-                          <div class="timeline-content">
-                            
-                            <span class="date text-white">Dec 2005 – Aug 2006</span>
-                            <h5>Chief Officer
-                            <span class="subtitle">Dnipropetrovsk Regional State Administration</span></h5>
-                              <h6>HR</h6>
-                          </div>
-                        </div>
-                      <!-- VRU -->
-                        <div class="timeline-item bg-dns">
-                          <div class="timeline-marker"></div>
-                          <div class="timeline-content">
-                            
-                            <span class="date text-white">2003-2004</span>
-                            <h5>Assistant to the deputy (Internship)
-                            <span class="subtitle">Committee on Rules of Procedure, Parliamentary Ethics and Organization of Work of the Verkhovna Rada of Ukraine</span></h5>
-                              <h6>Politics</h6>
-                        <!-- Expandable section -->
-                        <div class="expandable">
-                              <p>· Support legislative work – research issues, prepare materials, assist in drafting.</p>
-                              <p>· Organize and summarize – collect feedback, analyze public opinion, report to the MP.</p>
-                              <p>· Ensure administrative support – manage documents, correspondence, and technical assistance.</p>
-                          </div>
-                          <!-- Toggle button -->
-                          <a href="javascript:void(0);" class="toggle-link">More</a>
-                        </div>
-                      </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-             </section>
-
-              <!-- Education Section -->
-            <section id="education-section">
-              <div class="resume-section">
-                <div class="resume-container">
-                  <div class="resume-column">
-                      <div class="overview">
-                     <h4 class="resume-title">Education</h4>
-                            <p>My academic path combines <strong>business management, political science, and philosophy</strong>, providing a strong foundation in <strong>strategic thinking, leadership, and research</strong>. With an <strong>MBA in Marketing Management</strong>, postgraduate studies in philosophy and political science, and participation in <strong>international scholarship and governance programs</strong>, I bring both <strong>analytical depth and a global outlook</strong> into my project management work.
-                        </p></div>
-                     <div class="resume-timeline">
-                      <!-- Project Management -->
-                      <div class="timeline-item bg-dns">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                          
-                          <span class="date text-white">2016–2025</span>
-                          <h5>Project Management
-                          <span class="subtitle">Member of Project Management Institute · Web-Academy · Smart Academy </span>
-                         </h5>
-                            <h6>Project Management · AI · Scrum · Agile · CAMP</h6>
-                            <!-- Expandable section -->
-                            <div class="expandable">
-                                <p>· Project Management Basics (CAMP).</p>
-                                <p>· Talking to AI: Prompt Engineering for Project Managers. </p>
-                                <p>· Taming Bias: Using Wicked Problem Solving to Make Better Decisions & Align Teams.</p>
-                                <p>· Business Continuity.</p>
-                                <p>· Data Landscape of GenAI for Project Managers. </p>
-                                <p>· The Basics of Scrum.</p>
-                                <p>· Basics of Disciplined Agile. </p>
-                                 <p>· PMI® CERTIFIED MEMBER.</p>
-                                <p>· Generative AI Overview for Project Managers. </p>
-                            </div>
-                              <!-- Toggle button -->
-                        <a href="javascript:void(0);" class="toggle-link">More</a>
-                    </div>
-                  </div>
-                      <!-- mini-MBA -->
-                      <div class="timeline-item bg-dns">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                          
-                          <span class="date text-white">2013–2015</span>
-                          <h5>Marketing Management
-                           <span class="subtitle text-primary">Master of Business Administration in Marketing Management, mini-MBA</span>
-                          <span class="subtitle">City Business School</span></h5>
-                           <h6> Marketing Management · Business Administration · Interpersonal Skills · Leadership · Strategic sales management · HR Management · Financial Management · Project Management</h6>
-                          </div>
-                      </div>
-                      <!-- Social-Politic -->
-                      <div class="timeline-item bg-dns">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                          
-                          <span class="date text-white">2005–2010</span>
-                          
-                          <h5>Philosophy and Political Science
-                          <span class="subtitle text-primary">Master degree, Postgraduate Studies, Teacher of Social-Politic and Philosophical disciplines</span>
-                          <span class="subtitle">Kyiv National Taras Shevchenko University</span></h5>
-                         <p class="subtitle text-gray">Graduated with honors</p>
-                            <h6> Philosophy · Political Science · Research Skills · Teaching · Politics · Philosophy · Social disciplines</h6>
-                          </div>
-                      </div>
-									<!-- Political Science and Government -->
-                      <div class="timeline-item bg-dns">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                          
-                          <span class="date text-white">2002–2005</span>
-                          <h5>Political Science and Public Relations
-                          <span class="subtitle text-primary">Bachelor degree</span>
-                          <span class="subtitle">Averroes Ukrainian-Arabic Institute of Linguistics, Kyiv Inter-regional Academy of Personnel Management</span></h5>
-                            <p class="subtitle text-gray"> Graduated with honors</p>
-                            <h6>Research Skills · Politics · Public Relations · Leadership</h6>
-                        </div>
-                      </div>
-                      <!-- Journalist -->
-                      <div class="timeline-item bg-dns">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                          
-                          <span class="date text-white">2003-2004</span>
-                          <h5>Journalist & International Election Observer
-                          <span class="subtitle">Scholarship Program. Friedrich-Ebert-Stiftung (FES)</span></h5>
-                         <p> Completed leadership development program focused on civic engagement, governance, and democratic values.</p>
-  
-                            <h6>Politics · Elections · Journalism · Election Law · International Human Rights</h6>
-                        </div>
-                        </div>
-                      </div>
-                      </div>
-                      </div>
-              </div>
-            </section>
-
-            <!-- Courses Section -->
-             <section id="courses-section">
-              <div class="resume-section">
-                <div class="resume-container">
-                  <div class="resume-column">
-                     
-                       <div class="overview">
-						   <h4 class="resume-title">Courses</h4>
-                            <p>I believe in <strong>lifelong learning</strong> and continuously strengthen my expertise through professional development. My training spans <strong>UX/UI design, front-end development, QA, and business analysis</strong>, complemented by <strong>language studies and digital marketing tools</strong>. These courses allow me to stay adaptable, bridging <strong>technical know-how with project management excellence</strong>.
-                              </p> </div>
-                    <div class="resume-timeline">
-                  
-                  <!-- Design -->
-                      <div class="timeline-item bg-dns">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                          
-                          <span class="date text-white">2023</span>
-                        <h5>Web-design 
-                          <span class="subtitle">Coursera </span></h5>
-                              <h6>Web-design · Canva · Social media design</h6>
-                    </div>
-                  </div>
-                     <!-- Design -->
-                      <div class="timeline-item bg-dns">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                          
-                          <span class="date text-white">2022-2023</span>
-                        <h5>German Language 
-                          <span class="subtitle">Perfekt Deutsch · VHS</span></h5>
-                              <h6>German Language · B1</h6>
-                    </div>
-                  </div>
-                
-                      <!-- Web academy - UX-Design-->
-                      <div class="timeline-item bg-dns">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                          
-                          <span class="date text-white">2016</span>
-                          <h5>UX-Design
-                          <span class="subtitle">Web Academy</span></h5>
-                              <h6>Web-Design · UX · Design analysis · Figma · Moquaps · Color theory · Responsive design · Grids ·  UIKit</h6>
-                        </div>
-                        </div>
-
-                          <!-- Web academy- Frontend-->
-                      <div class="timeline-item bg-dns">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                          
-                          <span class="date text-white">2015-2016</span>
-                          <h5>Front-end development
-                          <span class="subtitle">Web Academy</span></h5>
-                              <h6>Web development · Js advanced · HTML · CSS · HTML5 · CSS3 · Working on project · DOM · Frameworks · Libraries</h6>
-                        </div>
-                        </div>
-                        <!-- Web academy - QA-->
-                          <div class="timeline-item bg-dns">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                              
-                              <span class="date text-white">2016</span>
-                              <h5>Quality Assurance (QA)
-                              <span class="subtitle">Web Academy</span></h5>
-                                  <h6>SDLC and STLC life cycles · Bug-tracking systems · Test design · Functional testing  ·  Non-functional testing  · Postman  · Manual testing </h6>
-                                   
-                            </div>
-                            </div>
-                        <!-- Web academy - BA-->
-                      <div class="timeline-item bg-dns">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                          
-                          <span class="date text-white">2015</span>
-                          <h5>Business Analysis
-                          <span class="subtitle">Web Academy</span></h5>
-                              <h6>Business Analysis · SDLC (Software Development Life Cycle) · Communication · Requirements modeling · Requirements documentation · Functional decomposition · User role model · Acceptance criteria · Backlog and prioritization · BPMN diagrams · UML diagrams · Interface prototyping </h6>
-                           <p>Conducted market research and implemented automation strategies of Rubalka.ua, Eurabota.com, Kidsguide.</p>
-                        </div>
-                        </div>
-                            <!-- GA-->
-                      <div class="timeline-item bg-dns">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                          
-                          <span class="date text-white">2015</span>
-                          <h5>Google Analytics
-                          <span class="subtitle">ITC School</span></h5>
-                              <h6>Traffic sources · Unique visitors · Goal setting · Geopolitics · Conversions</h6>
-                          </div> 
-                        </div>
-                  <!-- English-->
-                      <div class="timeline-item bg-dns">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                          
-                          <span class="date text-white">2010-2012</span>
-                         <h5>English Language
-                          <span class="subtitle">University of Cambridge ESOL Examinations · The London School of English (LSE) <br> Business Academy</span></h5>
-                              <h6>English Language · FCE · First Certificate English</h6>
-                    </div>
-                  </div>
-
-                  
-                  </div>
-
-                </div>
-              </div>
-              </div>
-            </section>
-
-    
-              <!-- Contact Section -->
-             <section id="contacts-section">
-                <div class="resume-section">
-					<div class="overview">
-                  <h4 class="resume-title">Contact information</h4>
-						</div>
-                  <div id="contacts" class="row">
-                   <div class="cards">
-                   <div class="art-card">
-                     <ul>
-                      <li>
-                        <ion-icon name="briefcase-outline"></ion-icon>  <span class="text-primary">IT Project Manager</span>
-                      </li>
-                          
-                        </ul>
-                    </div>
-                    <div class="art-card">
-                            <ul>
-                    
-                          <li>
-                            <ion-icon name="location-outline"></ion-icon><span class="text-primary">Germany, Hamburg</span>
-                          </li>
-                    </ul>
-                  </div>
-                    <div class="art-card">
-                      <ul>
-                          <li> <ion-icon name="mail-outline"></ion-icon>
-                          <a href="mailto:ogalanets@gmail.com" target="_blank">ogalanets@gmail.com  </a> 
-                          </li>
-                    </ul>
-                  </div>
-                 </div>
-                  </div>
-    
-              </div>
-             </section>
-             
-
-
-             <!-- Footer -->
-            <footer class="site-footer">
-              <p>© 2025. All rights reserved.</p>
-            </footer>
-
-        </main>
-        <!-- Fixed Right Sidebar Navigation -->
-        <aside class="sidebar-nav">
-          <nav>
-            <a href="#home-section">Home</a>
-            <a href="#experience-section">Experience</a>
-            <a href="#education-section">Education</a>
-            <a href="#courses-section">Courses</a>
-            <a href="#contacts-section">Contacts</a>
-          </nav>
-        </aside>
-       </div>
     </section>
 
-    <!-- Optional JavaScript -->
+    <section id="services-section" class="elementor-container">
+      <div class="container-fluid">
+        <div class="gallery">
+                  <h3 class="resume-title">My Services</h3>
+          <div class="row">
+            
+            <!-- Project Management -->
+            <div class="col-lg-4 col-md-6">
+              <div class="art-a art-service-icon-box">
+                <div class="art-service-ib-content">
+                  <h5 class="mb-15"><span>Project Management</span></h5>
+                  <div class="mb-15">
+                    <p>I enjoy turning ideas into structured, successful projects — balancing strategy, collaboration, and clear execution from concept to delivery.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- UX Design -->
+            <div class="col-lg-4 col-md-6">
+              <div class="art-a art-service-icon-box">
+                <div class="art-service-ib-content">
+                  <h5 class="mb-15"><span>Business Analysis & UX Design</span></h5>
+                  <div class="mb-15">
+                    <p>I combine business analysis with UX design to transform ideas into efficient, user-friendly digital solutions — aligning business needs, user goals, and technical reality through research, strategy, and clear experience design.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+                  <!-- Web Development -->
+            <div class="col-lg-4 col-md-6">
+              <div class="art-a art-service-icon-box">
+                <div class="art-service-ib-content">
+                  <h5 class="mb-15"><span>Web Development</span></h5>
+                  <div class="mb-15">
+                    <p>Building responsive, fast, and accessible websites that connect design with functionality is where technology meets creativity for me.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quality Assurance -->
+            <div class="col-lg-4 col-md-6">
+              <div class="art-a art-service-icon-box">
+                <div class="art-service-ib-content">
+                  <h5 class="mb-15"><span>Quality Assurance</span></h5>
+                  <div class="mb-15">
+                    <p>I’m dedicated to precision and improvement — ensuring every detail works flawlessly to deliver reliable, user-centered, high-quality digital experiences.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Advertising -->
+            <div class="col-lg-4 col-md-6">
+              <div class="art-a art-service-icon-box">
+                <div class="art-service-ib-content">
+                  <h5 class="mb-15"><span>Advertising</span></h5>
+                  <div class="mb-15">
+                    <p>I’m fascinated by how storytelling, design, and data come together to inspire audiences and strengthen brand identity through meaningful campaigns.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photography -->
+            <div class="col-lg-4 col-md-6">
+              <div class="art-a art-service-icon-box">
+                <div class="art-service-ib-content">
+                  <h5 class="mb-15"><span>Copywriting</span></h5>
+                  <div class="mb-15">
+                    <p>I craft clear, compelling copy grounded in user insights and business goals — blending strategy, storytelling, and conversion-focused messaging to drive engagement and meaningful action.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div> <!-- end .row -->
+        </div> <!-- end .gallery -->
+      </div> <!-- end .container-fluid -->
+    </section>
+
+    <section id="my-stack-section" class="my-stack">
+      <div class="container">
+          <h3 class="resume-title">My Stack</h3>
+     
+        <div class="stack-grid">
+
+          <!-- Tools -->
+          <div class="stack-card">
+            <h5 class="stack-category">Tools</h5>
+            <div class="tags">
+              <span>Figma</span>
+              <span>Sketch</span>
+              <span>JIRA</span>
+              <span>Confluence</span>
+              <span>Notion</span>
+              <span>Visual Studio Code</span>
+              <span>Canva</span>
+              <span>Photoshop</span>
+              <span>GitHUb</span>
+              <span>MS Project</span>
+              <span>AI Tools (ChatGPT)</span>
+            </div>
+          </div>
+
+          <!-- Research & Audit -->
+          <div class="stack-card">
+            <h5 class="stack-category">Research & Development</h5>
+            <div class="tags">
+              <span>User Research</span>
+              <span>User Interviews</span>
+              <span>Usability Testing</span>
+            </div>
+          </div>
+
+
+          <!-- Development -->
+          <div class="stack-card">
+            <h5 class="stack-category">Front-end / Code</h5>
+            <div class="tags">
+              <span>UX Design</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Js</span>
+            </div>
+          </div>
+
+          <!-- PM-->
+          <div class="stack-card">
+            <h5 class="stack-category">Project management</h5>
+            <div class="tags">
+              <span>Digital Transformation Strategy</span>
+              <span>Agile / Waterfall / Hybrid PM</span>
+              <span>Business Process Optimization</span>
+              <span>Vendor & Partner Management</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="projects-section" class="projects">
+      <div class="container">
+        <h3 class="resume-title">My Projects</h3>
+      
+        <!-- Tabs -->
+        <div class="tabs">
+          <button class="tab-button active" data-filter="all">All</button>
+          <button class="tab-button" data-filter="horizon">Horizon</button>
+          <button class="tab-button" data-filter="software">Software Dev</button>
+          <button class="tab-button" data-filter="gamedev">Game Dev</button>
+          <button class="tab-button" data-filter="marketing">Marketing</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+
+          <!-- Horizon Projects -->
+<div class="project-card" data-category="horizon"> 
+  <div class="card-inner">
+    <div class="card-front">
+      <span class="label category-label">#HorizonEU</span>
+      <h4>DataPACT</h4>
+        <p class="year">2025 - 2027</p>
+        <p class="role">Senior IT Project Manager</p>
+    </div>
+    <div class="card-back">
+      <h4>DataPACT</h4>
+      <p class="company">IDSA</p>
+      <a href="https://datapact.eu/" target="_blank" class="more-link">More...</a>
+    </div>
+  </div>
+</div>
+
+
+          <div class="project-card" data-category="horizon">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="label category-label">#HorizonEU</span>
+               
+                <h4>Veles</h4>
+                <p class="year">2023 - 2027</p>
+                <p class="role">Senior IT Project Manager</p>
+              </div>
+              <div class="card-back">
+                <h4>Veles</h4>
+                <p class="company">IDSA</p>
+                <a href="https://veleshub.eu/" target="_blank" class="more-link">More...</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="horizon">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="label category-label">#HorizonEU</span>
+                <h4>DataBri-X</h4>
+                <p class="year">2022 - 2025</p>
+                <p class="role">Senior IT Project Manager</p>
+              </div>
+              <div class="card-back">
+                <h4>DataBri-X</h4>
+                <p class="company">IDSA</p>
+                <a href="https://databri-x.eu/" target="_blank" class="more-link">More...</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="horizon">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="label category-label">#Horizon2020</span>
+                <h4>TRUSTS</h4>
+                <p class="year">2022-2023</p>
+                 <p class="role">Senior IT Project Manager</p>
+              </div>
+              <div class="card-back">
+                <h4>TRUSTS</h4>
+                <p class="company">IDSA</p>
+                <a href="#" target="_blank" class="more-link">More...</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Software Dev -->
+          <div class="project-card" data-category="software">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="label category-label">#BusinessPlatforms</span>
+                <h4>Web-portal</h4>
+                <p class="year">2023-2024</p>
+                <p class="role">Senior IT Project Manager</p>
+              </div>
+              <div class="card-back">
+                <h4>Self Assessment Certification of IDS-based DS components web-portal </portal></h4>
+                
+                <p class="company">IDSA</p>
+                <a href="https://component.internationaldataspaces.org/" target="_blank" class="more-link">More...</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="software">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="label category-label">#BusinessPlatforms</span>
+                <h4>Semantic Website</h4>
+                      <p class="year">2023-2024</p>
+                <p class="role">Senior IT Project Manager</p>
+              </div>
+              <div class="card-back">
+                <h4>Semantic Website</h4>
+          
+                <p class="company">IDSA</p>
+                <a href="https://semantic.internationaldataspaces.org/" target="_blank" class="more-link">More...</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="software">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="label category-label">#EnterpriseSoftware</span>
+                <h4>B2B Platform</h4>
+                  <p class="year">2019-2022</p>
+                <p class="role">IT Project Manager</p>
+              </div>
+              <div class="card-back">
+                <h4>B2B Platform</h4>
+                <p class="company">Sanwell</p>
+              <a href="https://b2b.sanwell.biz/" target="_blank" class="more-link">More...</a>
+              </div>
+            </div>
+          </div>
+
+            <div class="project-card" data-category="software">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="label category-label">#EnterpriseSoftware</span>
+                <h4>B2C Internet Store</h4>
+                 <p class="year">2019-2022</p>
+                <p class="role">IT Project Manager</p>
+              </div>
+              <div class="card-back">
+                <h4>Hot-Point.com.ua </h4>
+             
+                <p class="company">Sanwell</p>
+                <a href="https://hot-point.com.ua/" target="_blank" class="more-link">More...</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="software">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="label category-label">#EnterpriseSoftware</span>
+                <h4>ERP-System</h4>
+               <p class="year">2017-2018</p>
+                <p class="role">IT Project Manager</p>
+              </div>
+              <div class="card-back">
+                <h4>ERP-System</h4>
+                
+                <p class="company">Awery Aviation Software</p>
+                <a href="https://awery.aero/" target="_blank" class="more-link">More...</a>
+              </div>
+            </div>
+          </div>
+
+            <div class="project-card" data-category="software">
+            <div class="card-inner">
+              <div class="card-front">
+                 <span class="label category-label">#BusinessPlatforms</span>
+                <h4>Web hosting services platform</h4>
+                <p class="year">2017</p>
+                <p class="role">Software Release Coordinator</p>
+              </div>
+              <div class="card-back">
+              <h4>Web hosting services platform</h4>
+                
+                <p class="company">Tallium Inc.</p>
+                <a href="https://webhostinggeeks.com/" target="_blank" class="more-link">More...</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="software">
+            <div class="card-inner">
+              <div class="card-front">
+                  <span class="label category-label">#EnterpriseSoftware</span>
+                <h4>CRM-System</h4>
+                <p class="year">2016-2017</p>
+                <p class="role">Project Manager</p>
+              </div>
+              <div class="card-back">
+                <h4>CRM-System</h4>
+              
+                <p class="company">Weltrade</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="software">
+            <div class="card-inner">
+              <div class="card-front">
+                 <span class="label category-label">#DigitalTransformation</span>
+                <h4>Business Automatization Program</h4>
+                      <p class="year">2014-2016</p>
+                <p class="role">Business Development Project Manager </p>
+              </div>
+              <div class="card-back">
+              <h4>Client-bank, CRM-System, Corporate website, Credit Online program </h4>
+         
+                <p class="company">Bank Trust</p>
+                <a href="https://www.banktrust.com.ua/" target="_blank" class="more-link">More...</a>
+              </div>
+            </div>
+          </div>
+
+
+
+            <div class="project-card" data-category="software">
+            <div class="card-inner">
+              <div class="card-front">
+                 <span class="label category-label">#WebApplications</span>
+                <h4>Bank webs-site</h4>
+              <p class="year">2008-2009</p>
+                <p class="role">Chief Marketing Officer</p>
+              </div>
+              <div class="card-back">
+                <h4>nadra.com.ua </h4>
+                
+                <p class="company">Nadra Bank</p>
+              </div>
+            </div>
+          </div>
+
+                  <!-- Gamedev -->
+    <div class="project-card" data-category="gamedev">
+            <div class="card-inner">
+              <div class="card-front">
+                 <span class="label category-label">#GamifiedMarketing</span>
+                <h4>Playable ads</h4>
+                <p class="year">2018-2019</p>
+                <p class="role">IT Project Account Manager</p>
+              </div>
+              <div class="card-back">
+                <h4>Playable ads </h4>
+                
+                <p class="company">PlayToMax</p>
+                <a href="https://playtomax.com/page/about/" target="_blank" class="more-link">More...</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Marketing -->
+      <div class="project-card" data-category="marketing">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="label category-label">#CapacityBuilding</span>
+                <h4>Knowledge sharing activities</h4>
+                 <p class="year">2023-2024</p>
+                <p class="role">Senior IT Project Manager</p>
+              </div>
+              <div class="card-back">
+               <h4>Workshops, webinars, conferences etc</h4>
+     
+                <p class="company">IDSA</p>
+                <a href="https://semantic.internationaldataspaces.org/" target="_blank" class="more-link">More...</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-card" data-category="marketing">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="label category-label">#SalesBusinessDevelopment</span>
+                <h4> Market expansion program  </h4>
+                <p class="year">2012-2014</p>
+                <p class="role">Market expansion manager</p>
+              </div>
+              <div class="card-back">
+                <h4> Network of grocery stores "Pakko"/ "Vopak" </h4>
+                
+                <p class="company">AVANGARDCO IPL</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="project-card" data-category="marketing">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="label category-label">#FinancialBusinessDevelopment</span>
+                <h4>Business Development Program </h4>
+                <p class="year">2011-2012</p>
+                <p class="role">Head of Marketing and Business Development Group</p>
+              </div>
+              <div class="card-back">
+                <h4>Marketing / Merchandising / Advertising </h4>
+                
+                <p class="company">Kreditprombank</p>
+              </div>
+            </div>
+          </div>
+
+        
+
+          <div class="project-card" data-category="marketing">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="label category-label">#FinancialBusinessDevelopment</span>
+              <h4>Business Development Program  </h4>
+                <p class="year">2006-2008</p>
+                <p class="role">Chief Marketing Officer</p>
+              </div>
+              <div class="card-back">
+                <h4>Marketing / Merchandising / Advertising </h4>
+                
+                <p class="company">PrivatBank</p>
+                <a href="https://privatbank.ua/" target="_blank" class="more-link">More...</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="education-section" class="education">
+      <div class="container">
+        <h3 class="resume-title">Education & Courses</h3>
+
+        <!-- Category Tabs -->
+        <div class="tabs">
+          <button class="tab-button active" data-filter="all">All</button>
+          <button class="tab-button" data-filter="undergraduate">Undergraduate</button>
+          <button class="tab-button" data-filter="graduate">Graduate</button>
+          <button class="tab-button" data-filter="postgraduate">Postgraduate</button>
+          <button class="tab-button" data-filter="online">Online Courses</button>
+        </div>
+
+        <!-- Subcategory Tabs (visible only when Online is active) -->
+        <div class="sub-tabs" style="display:none;">
+          <button class="sub-tab-button active" data-subfilter="all">All</button>
+          <button class="sub-tab-button" data-subfilter="seo">SEO</button>
+          <button class="sub-tab-button" data-subfilter="languages">Languages</button>
+          <button class="sub-tab-button" data-subfilter="project-management">Project Management</button>
+          <button class="sub-tab-button" data-subfilter="ux-design">UX/UI & Design</button>
+          <button class="sub-tab-button" data-subfilter="development">Development</button>
+          <button class="sub-tab-button" data-subfilter="qa">QA & Testing</button>
+          <button class="sub-tab-button" data-subfilter="analytics">Analytics</button>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="edu-grid">
+
+          <!-- Undergraduate -->
+          <div class="edu-card" data-category="undergraduate">
+            <div class="card-inner">
+              <div class="card-front">
+                <h4>Political Science & Public Relations</h4>
+                <p class="category">Bachelor · Averroes Ukrainian-Arabic Institute / MAUP · 2002–2005</p>
+              </div>
+              <div class="card-back">
+                <div class="card-back-content">
+                  <div class="card-left">
+                    <p class="details">Graduated with honors. Focus on Politics, Leadership, Communication.</p>
+                  </div>
+                  <div class="card-right tags">
+                    <span>Public Relations</span>
+                    <span>Politics</span>
+                    <span>Leadership</span>
+                    <span>Communication</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Postgraduate -->
+          <div class="edu-card" data-category="postgraduate">
+            <div class="card-inner">
+              <div class="card-front">
+                <h4>Philosophy & Political Science</h4>
+                <p class="category">Master · Kyiv National Taras Shevchenko University · 2005–2010</p>
+              </div>
+              <div class="card-back">
+                <div class="card-back-content">
+                  <div class="card-left">
+                    <p class="details">Graduated with honors. Focus on Philosophy, Political Science, Research.</p>
+                  </div>
+                  <div class="card-right tags">
+                    <span>Philosophy</span>
+                    <span>Political Science</span>
+                    <span>Teaching</span>
+                    <span>Critical Thinking</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Graduate -->
+          <div class="edu-card" data-category="graduate">
+            <div class="card-inner">
+              <div class="card-front">
+                <h4>Marketing Management</h4>
+                <p class="category">MBA · City Business School · 2013–2015</p>
+              </div>
+              <div class="card-back">
+                <div class="card-back-content">
+                  <div class="card-left">
+                    <p class="details">Graduated with honors. Mini-MBA in Marketing Management.</p>
+                  </div>
+                  <div class="card-right tags">
+                    <span>Marketing</span>
+                    <span>Leadership</span>
+                    <span>Finance</span>
+                    <span>Strategy</span>
+                    <span>Project Management</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Online Courses - Project Management -->
+          <div class="edu-card" data-category="online" data-subcategory="project-management">
+            <div class="card-inner">
+              <div class="card-front">
+                <h4>Project Management</h4>
+                <p class="category">Web-Academy & Smart Academy · 2016–2025</p>
+              </div>
+              <div class="card-back">
+                <div class="card-back-content">
+                  <div class="card-left">
+                    <p class="details">PMI® Certified Member. Agile, Scrum, CAMP, Leadership.</p>
+                  </div>
+                  <div class="card-right tags">
+                    <span>Project Management</span>
+                    <span>Scrum</span>
+                    <span>Agile</span>
+                    <span>Leadership</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Online Courses - Languages -->
+          <div class="edu-card" data-category="online" data-subcategory="languages">
+            <div class="card-inner">
+              <div class="card-front">
+                <h4>English Language</h4>
+                <p class="category">Cambridge ESOL & LSE · 2010–2012</p>
+              </div>
+              <div class="card-back">
+                <div class="card-back-content">
+                  <div class="card-left">
+                    <p class="details">FCE (First Certificate English). Business English focus.</p>
+                  </div>
+                  <div class="card-right tags">
+                    <span>English</span>
+                    <span>FCE</span>
+                    <span>Business English</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Online Courses - UX/UI & Design -->
+          <div class="edu-card" data-category="online" data-subcategory="ux-design">
+            <div class="card-inner">
+              <div class="card-front">
+                <h4>UX Design</h4>
+                <p class="category">Web Academy · 2016</p>
+              </div>
+              <div class="card-back">
+                <div class="card-back-content">
+                  <div class="card-left">
+                    <p class="details">Web-Design, UX, Figma, Moquaps, Color theory, Responsive design, Grids, UIKit.</p>
+                  </div>
+                  <div class="card-right tags">
+                    <span>UX</span>
+                    <span>Design</span>
+                    <span>Figma</span>
+                    <span>Responsive</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Online Courses - Development -->
+          <div class="edu-card" data-category="online" data-subcategory="development">
+            <div class="card-inner">
+              <div class="card-front">
+                <h4>Front-End Development</h4>
+                <p class="category">Web Academy · 2015–2016</p>
+              </div>
+              <div class="card-back">
+                <div class="card-back-content">
+                  <div class="card-left">
+                    <p class="details">HTML, CSS, JS, Frameworks, Libraries, Project work, DOM.</p>
+                  </div>
+                  <div class="card-right tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Frameworks</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Online Courses - QA -->
+          <div class="edu-card" data-category="online" data-subcategory="qa">
+            <div class="card-inner">
+              <div class="card-front">
+                <h4>Quality Assurance (QA)</h4>
+                <p class="category">Web Academy · 2016</p>
+              </div>
+              <div class="card-back">
+                <div class="card-back-content">
+                  <div class="card-left">
+                    <p class="details">SDLC, STLC, Bug-tracking, Test design, Functional & Non-functional testing, Postman.</p>
+                  </div>
+                  <div class="card-right tags">
+                    <span>QA</span>
+                    <span>Testing</span>
+                    <span>Postman</span>
+                    <span>Manual Testing</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Online Courses - Analytics -->
+          <div class="edu-card" data-category="online" data-subcategory="analytics">
+            <div class="card-inner">
+              <div class="card-front">
+                <h4>Google Analytics</h4>
+                <p class="category">ITC School · 2015</p>
+              </div>
+              <div class="card-back">
+                <div class="card-back-content">
+                  <div class="card-left">
+                    <p class="details">Traffic sources, Unique visitors, Goals, Conversions, Geopolitics.</p>
+                  </div>
+                  <div class="card-right tags">
+                    <span>Analytics</span>
+                    <span>Traffic</span>
+                    <span>Conversion</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Online Courses - SEO example -->
+          <div class="edu-card" data-category="online" data-subcategory="seo">
+            <div class="card-inner">
+              <div class="card-front">
+                <h4>SEO Fundamentals</h4>
+                <p class="category">Coursera · 2023</p>
+              </div>
+              <div class="card-back">
+                <div class="card-back-content">
+                  <div class="card-left">
+                    <p class="details">SEO strategies, keyword research, on-page & off-page SEO, analytics tools.</p>
+                  </div>
+                  <div class="card-right tags">
+                    <span>SEO</span>
+                    <span>Analytics</span>
+                    <span>Marketing</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section id="hobby-section" class="hobby-section">
+      <div class="container">
+        <h3 class="resume-title">My Hobby</h3>
+
+        <p>
+          <strong>Photography</strong> is where my soul meets the world. Wandering through cities, mountains, and remote lands — 
+          I capture cultures, emotions, and the irreplaceable language of light.
+        </p>
+
+        <div class="hobby-grid">
+
+          <!-- Left Column -->
+          <div class="exhibition-details">
+
+            <section class="exhibition" id="exh1">
+             <h5>Mostly White</h5>
+              <ion-icon name="calendar-outline"></ion-icon> <span> Oct, 2025</span><br>
+              <ion-icon name="location-outline"></ion-icon><span> online</span><br>
+              <ion-icon name="link-outline"></ion-icon> <span> 
+              <a href="https://www.digitalcameraworld.com/photography/awards-and-competitions/gurushots-winning-images-from-the-latest-mostly-white-october-2025-challenge" target="_blank" class="btn">
+            digitalcameraworld.com </a> </span>
+              <img src="img/photos/DCW.jpg" alt="Mostly White" class="lightbox-trigger">
+             <div class="overlay">Photo: Olga Galanets</div>
+           </section>
+
+            <section class="exhibition" id="exh2">
+              <h5>Photographer of the Year</h5>
+              <ion-icon name="calendar-outline"></ion-icon> <span> Dec, 2025</span><br>
+              <ion-icon name="camera-outline"></ion-icon><span> Coningsby Gallery </span><br>
+              <ion-icon name="location-outline"></ion-icon><span> London, United Kingdom </span><br>
+              <ion-icon name="logo-facebook"></ion-icon> <span> <a href="https://www.facebook.com/events/2292985224494294" target="_blank" class="btn">Facebook Event</a></span>
+              <img src="img/photos/London.jpg" alt="Photographer of the Year" class="lightbox-trigger">
+             <div class="overlay">Photo: Olga Galanets</div>
+            </section>
+
+            <section class="exhibition" id="exh6">
+              <h5>Our Amazing Planet</h5>
+              <ion-icon name="calendar-outline"></ion-icon> <span> Jan, 2026</span><br>
+              <ion-icon name="camera-outline"></ion-icon><span> FotoZA Gallery </span><br>
+              <ion-icon name="location-outline"></ion-icon><span> Johannesburg, South Africa</span><br>
+              <ion-icon name="logo-facebook"></ion-icon> <span> <a href="https://www.facebook.com/events/742902658420812" target="_blank" class="btn">Facebook Event</a></span>
+              <img src="img/photos/Johannesburg.jpg" alt="South Africa Exhibit" class="lightbox-trigger">
+              <div class="overlay">Photo: Olga Galanets </div>
+            </section>
+
+            <section class="exhibition" id="exh7">
+              <h5>Art of Black & White</h5>
+              <ion-icon name="calendar-outline"></ion-icon> <span> Jan, 2026</span><br>
+              <ion-icon name="camera-outline"></ion-icon><span> FotoZA Gallery </span><br>
+              <ion-icon name="location-outline"></ion-icon><span>Johannesburg, South Africa</span><br>
+              <ion-icon name="logo-facebook"></ion-icon> <span> <a href="https://www.facebook.com/events/742902658420812" target="_blank" class="btn">Facebook Event</a></span>
+              <img src="img/photos/Johannesburg2.jpg" alt="South Africa Exhibit" class="lightbox-trigger">
+              <div class="overlay">Photo: Olga Galanets</div>
+            </section>
+
+            <section class="exhibition" id="exh8">
+              <h5>The Beauty of Earth</h5>
+              <ion-icon name="calendar-outline"></ion-icon> <span> Feb, 2026</span><br>
+              <ion-icon name="camera-outline"></ion-icon><span> GuruShots exhibition </span><br>
+              <ion-icon name="location-outline"></ion-icon><span> Bogotá, Colombia</span><br>
+              <ion-icon name="logo-facebook"></ion-icon> <span> <a href="https://www.facebook.com/events/1310110303845380" target="_blank" class="btn">Facebook Event</a></span>
+              <img src="img/photos/Bogota.jpg" alt="The Beauty of Earth" class="lightbox-trigger">
+              <div class="overlay">Photo: Olga Galanets</div>
+            </section>
+
+            <section class="exhibition" id="exh3">
+              <h5>GuruShots Photography Exhibition</h5>
+              <ion-icon name="calendar-outline"></ion-icon> <span> Mar, 2026</span><br>
+              <ion-icon name="camera-outline"></ion-icon><span> Valid World Hall exhibition </span><br>
+              <ion-icon name="location-outline"></ion-icon><span> Barcelona, Spain</span><br>
+              <ion-icon name="logo-facebook"></ion-icon><span> <a href="https://www.facebook.com/events/2079041002633339" target="_blank" class="btn">Facebook Event</a></span>
+              <img src="img/photos/Barcelona.jpg" alt="Barcelona Exhibition" class="lightbox-trigger">
+              <div class="overlay">Photo: Olga Galanets</div>
+            </section>
+
+            <section class="exhibition" id="exh4">
+              <h5>Art of Photography</h5>
+              <ion-icon name="calendar-outline"></ion-icon> <span> Mar, 2026</span><br>
+              <ion-icon name="camera-outline"></ion-icon><span> Photo North Festival </span><br>
+              <ion-icon name="location-outline"></ion-icon><span> Leeds, UK</span><br>
+              <ion-icon name="logo-facebook"></ion-icon>
+              <span><a href="https://www.facebook.com/events/799993332764066" target="_blank" class="btn">Facebook Event</a></span>
+              <img src="img/photos/Leeds.jpg" alt="Art of Photography" class="lightbox-trigger">
+              <div class="overlay">Photo: Olga Galanets</div>
+            </section>
+
+            <section class="exhibition" id="exh5">
+              <h5>My Best Shot</h5>
+              <ion-icon name="calendar-outline"></ion-icon> <span> Apr, 2026</span><br>
+              <ion-icon name="camera-outline"></ion-icon><span> Malta Photo Exhibition </span><br>
+              <ion-icon name="location-outline"></ion-icon><span> Malta</span><br>
+              <ion-icon name="logo-facebook"></ion-icon>
+              <span> <a href="https://www.facebook.com/events/1315125676828219" target="_blank" class="btn">Facebook Event</a></span>
+              <img src="img/photos/Malta.jpg" alt="Malta Exhibit" class="lightbox-trigger">
+              <div class="overlay">Photo: Olga Galanets </div>
+            </section>
+
+          </div>
+
+          <!-- Right Column -->
+          <div class="exhibition-list">
+            <h5>Exhibitions</h5>
+            <hr>
+            <ul>
+              <li data-target="exh1">Mostly White · Oct, 2025</li>
+              <li data-target="exh2">Photographer of the Year · Dec, 2025</li>
+              <li data-target="exh7">Art of Black & White ·  Johannesburg · Jan, 2026</li>
+               <li data-target="exh6">Our Amazing Planet · Johannesburg · Jan, 2026</li>
+              <li data-target="exh8">The Beauty of Earth · Bogota· Feb, 2026</li>
+              <li data-target="exh3">GuruShots Barcelona · Barcelona · Mar, 2026</li>
+              <li data-target="exh4">Art of Photography · Leeds · Mar, 2026</li>
+              <li data-target="exh5">My Best Shot · Malta · Apr, 2026</li>
+              
+          </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Lightbox -->
+      <div class="lightbox-overlay">
+        <span class="lightbox-close">×</span>
+        <img class="lightbox-img" src="" alt="">
+      </div>
+    </section>
+
+    <section id="contact-section" class="contact">
+      <div class="intro">
+        <h2>
+          Ready to <span>start your project?</span>
+        </h2>
+        <p>
+          I’m available for new collaborations and freelance opportunities.
+          Let’s build something impactful together.
+        </p>
+        <a href="mailto:ogalanets@gmail.com" target="_blank" class="btn">
+          Contact me
+        </a>
+      </div>
+
+       <aside class="sidebar-nav">
+              <nav>
+                <a href="#home-section">Home</a>
+                <a href="#services-section">My Services</a>
+                <a href="#my-stack-section">My Stack</a>
+                <a href="#projects-section">Projects</a>
+                <a href="#education-section">Education</a>
+                <a href="#hobby-section">Hobbies</a>
+                <a href="#contact-section">Contacts</a>
+              </nav>
+    </aside>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+    <p>© 2025. All rights reserved.</p>
+    </footer>
+
+    </main>
+
+    <!-- Fixed Right Sidebar Navigation -->
+ 
+
+  </section>
+
+<!-- Optional JavaScript -->
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/jarallax.min.js"></script>
     <script src="js/jquery.ajaxchimp.min.js"></script>
     <script src="js/interface.js"></script>
     <script src="js/scripts.js"></script>
-
-  </body>
+   
+</body>
 
 </html>
