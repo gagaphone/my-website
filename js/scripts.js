@@ -224,44 +224,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 // Education
+  const filterSelect = document.getElementById('edu-filter');
+  const eduCards = document.querySelectorAll('.edu-card');
 
-// Category filter
-const tabButtons = document.querySelectorAll('#education-section .tab-button');
-const subTabButtons = document.querySelectorAll('#education-section .sub-tab-button');
-const eduCards = document.querySelectorAll('#education-section .edu-card');
+  filterSelect.addEventListener('change', () => {
+    const selectedCategory = filterSelect.value;
 
-let activeCategory = 'all';
-let activeSubcategory = 'all';
+    eduCards.forEach(card => {
+      const cardCategory = card.getAttribute('data-category');
 
-tabButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    tabButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-    activeCategory = button.getAttribute('data-filter');
-    filterCards();
+      if (selectedCategory === 'all' || cardCategory === selectedCategory) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
   });
-});
-
-subTabButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    subTabButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-    activeSubcategory = button.getAttribute('data-subfilter');
-    filterCards();
-  });
-});
-
-function filterCards() {
-  eduCards.forEach(card => {
-    const cardCategory = card.getAttribute('data-category');
-    const cardSub = card.getAttribute('data-subcategory');
-
-    const showByCategory = activeCategory === 'all' || cardCategory === activeCategory;
-    const showBySub = activeSubcategory === 'all' || cardSub === activeSubcategory;
-
-    card.style.display = showByCategory && showBySub ? 'block' : 'none';
-  });
-}
 
 // blog
 document.addEventListener("DOMContentLoaded", () => {
