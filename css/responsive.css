@@ -21,7 +21,6 @@
     }
 }
 
-
 /* Responsive scaling for small devices */
 
 @media (max-width: 768px) {
@@ -74,6 +73,3 @@
         padding: 15px 5px;
     }
 }
-
-
-
