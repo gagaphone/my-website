@@ -224,6 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 // Education
+
   const filterSelect = document.getElementById('edu-filter');
   const eduCards = document.querySelectorAll('.edu-card');
 
@@ -307,23 +308,113 @@ document.querySelectorAll('.exhibition-list li').forEach(li=>{
   });
 });
 
-// Lightbox
-const overlay=document.querySelector('.lightbox-overlay');
-const overlayImg=document.querySelector('.lightbox-img');
 
-document.querySelectorAll('.lightbox-trigger').forEach(img=>{
-  img.addEventListener('click',()=>{
-    overlayImg.src=img.src;
-    overlay.classList.add('active');
-  });
-});
-
-document.querySelector('.lightbox-close').onclick=()=>overlay.classList.remove('active');
-overlay.onclick=e=>{if(e.target===overlay)overlay.classList.remove('active');}
 
 //worksidepanel
 function togglePanel(panel) {
   const el = document.getElementById(`panel-${panel}`);
   el.classList.toggle("open");
 }
+
+ const exhibitions = document.querySelectorAll('.exhibition img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxDate = document.getElementById('lightbox-date');
+  const lightboxPlace = document.getElementById('lightbox-place');
+  const lightboxClose = document.querySelector('.lightbox-close');
+  let currentIndex = 0;
+
+  const openLightbox = index => {
+    const parent = exhibitions[index].closest('.exhibition');
+    lightboxImg.src = parent.dataset.img;
+    lightboxTitle.textContent = parent.dataset.title;
+    lightboxDate.textContent = parent.dataset.date;
+    lightboxPlace.textContent = parent.dataset.place;
+    lightbox.classList.add('active');
+    currentIndex = index;
+  };
+
+  exhibitions.forEach((img, index) => img.addEventListener('click', () => openLightbox(index)));
+  lightboxClose.addEventListener('click', () => lightbox.classList.remove('active'));
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('active'); });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+    if (e.key === 'ArrowRight') openLightbox((currentIndex + 1) % exhibitions.length);
+    if (e.key === 'ArrowLeft') openLightbox((currentIndex - 1 + exhibitions.length) % exhibitions.length);
+  });
+
+
+  //lighbox
+document.addEventListener("DOMContentLoaded", () => {
+  // Select all exhibition images
+  const exhibitions = document.querySelectorAll(".exhibition img");
+
+  // Create lightbox elements
+  const lightbox = document.createElement("div");
+  lightbox.classList.add("lightbox-overlay");
+
+  lightbox.innerHTML = `
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img" src="" alt="">
+    <div class="lightbox-caption">
+      <h4></h4>
+      <p class="lightbox-date"></p>
+      <p class="lightbox-place"></p>
+    </div>
+  `;
+
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = lightbox.querySelector(".lightbox-img");
+  const lightboxTitle = lightbox.querySelector(".lightbox-caption h4");
+  const lightboxDate = lightbox.querySelector(".lightbox-date");
+  const lightboxPlace = lightbox.querySelector(".lightbox-place");
+  const closeBtn = lightbox.querySelector(".lightbox-close");
+
+  // Open lightbox
+  exhibitions.forEach((img) => {
+    img.addEventListener("click", (e) => {
+      const exhibition = e.target.closest(".exhibition");
+
+      // Get data from exhibition attributes
+      const title = exhibition.dataset.title || "Untitled";
+      const date = exhibition.dataset.date || "";
+      const place = exhibition.dataset.place || "";
+      const src = exhibition.dataset.img || img.src;
+
+      // Update lightbox content
+      lightboxImg.src = src;
+      lightboxTitle.textContent = title;
+      lightboxDate.textContent = date ? `📅 ${date}` : "";
+      lightboxPlace.textContent = place ? `📍 ${place}` : "";
+
+      // Show lightbox
+      lightbox.classList.add("active");
+      document.body.style.overflow = "hidden"; // prevent background scroll
+    });
+  });
+
+  // Close lightbox when clicking X or background
+  const closeLightbox = () => {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = ""; // re-enable scrolling
+  };
+
+  closeBtn.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Close with ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("active")) {
+      closeLightbox();
+    }
+  });
+});
+
 
