@@ -85,7 +85,7 @@
 
 /* Description */
 .elementor-container p {
-  color: var(--text-gray);
+ color: var(--text-light);
   font-size: 0.9rem;
   line-height: 1.6;
 }
@@ -93,4 +93,9 @@
 /* Utility spacing */
 .elementor-container .mb-15 {
   margin-bottom: 15px;
+}
+
+.elementor-container span {
+ color: var(--primary);
+
 }
