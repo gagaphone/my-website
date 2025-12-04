@@ -1,0 +1,47 @@
+/* Loader Overlay */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+/* Hide Loader */
+.loader.hidden {
+  opacity: 0;
+  pointer-events: none; /* prevent interaction */
+}
+
+/* Spinner */
+.spinner {
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  background: var(--primary, #3563d6);
+  border-radius: 50%;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+.dot1 { animation-delay: 0s; }
+.dot2 { animation-delay: 0.2s; }
+.dot3 { animation-delay: 0.4s; }
+.dot4 { animation-delay: 0.6s; }
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,11 @@
+/* pdf.css - print-optimized */
+@page { margin: 20mm; }
+body{ background:#fff !important; color:#000 !important; font-size:12pt; }
+.app-header, .controls { display:none !important; }
+.content { max-width:100% !important; margin:0; padding:0; }
+.resume-section{ page-break-inside:avoid; margin-bottom:14px; }
+.resume-timeline{ border-left:2px solid #333; padding-left:18px; }
+.timeline-content{ box-shadow:none !important; background:transparent !important; border:none !important; padding:0 !important; }
+.timeline-marker{ display:inline-block !important; width:8px; height:8px; margin-right:8px; background:#333 !important }
+.toggle-link{ display:none !important; }
+a[href]:after { content: " (" attr(href) ")"; font-size:10pt; color:#111 }

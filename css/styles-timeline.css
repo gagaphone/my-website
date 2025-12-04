@@ -1,0 +1,266 @@
+
+/*--------------------------------------------------
+Global Reset
+---------------------------------------------------*/
+
+ul { color: var(--primary); }
+.text-wrapper {    color: black; }
+
+/*--------------------------------------------------
+Header / Control Panel
+---------------------------------------------------*/
+.panel-header, .app-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.app-header h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.control-panel {
+  display: flex;
+  gap: 12px;
+}
+
+#export-pdf {
+ align-items: center;
+  cursor: pointer;
+    background: none;
+  color: var(--primary-dark);
+  border: 1px solid var(--primary);
+   border-radius: 50px;
+  padding: 8px 16px;
+ font-size: 1.5rem;
+  transition: 0.3s ease;
+}
+#export-pdf:hover { 
+  background-color: var(--primary-light);
+  color: var(--white);
+ }
+
+ /* btn-resume */
+ .btn-resume {
+ align-items: center;
+  cursor: pointer;
+    background: none;
+  color: var(--primary-dark);
+  border: 1px solid var(--primary);
+  border-radius: 50px;
+  padding: 8px 16px;
+  font-size: 1.5rem;
+  transition: 0.3s ease;
+}
+
+.btn-resume:hover {
+    background-color:var(--primary-light);
+  color: var(--white);
+}
+
+
+/* Remove underline */
+a.no-underline {
+    text-decoration: none;
+    color: inherit; /* keep the button's text color */
+}
+
+/* Optional: make link fill the button */
+button a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem; /* spacing between icon and text */
+}
+
+
+/*--------------------------------------------------
+Main Content
+---------------------------------------------------*/
+
+
+.panel-content {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/*--------------------------------------------------
+Sections
+---------------------------------------------------*/
+.section, .section-sm {
+  width: 100%;
+  overflow-x: hidden;
+  padding: 60px 20px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+
+/*--------------------------------------------------
+Timeline
+---------------------------------------------------*/
+.resume-timeline {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* Vertical line */
+.resume-timeline::before {
+  content: "";
+  position: absolute;
+  left: 60px; /* desktop */
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: rgba(0,0,0,0.08);
+}
+
+/* Timeline items */
+.timeline-item {
+  position: relative;
+  width: calc(100% - 100px);
+  margin-left: 100px;
+  padding: 20px 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  text-align: left;
+}
+.timeline-item.in-view { opacity: 1; transform: translateY(0); }
+
+/* Marker */
+.timeline-marker {
+  position: absolute;
+  left: -45px; /* aligned with line */
+  top: 20px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid #fff;
+  box-shadow: 0 0 12px rgba(53,99,214,0.4);
+  z-index: 2;
+}
+
+/* Timeline content (card) */
+.timeline-content {
+  background: var(--card);
+  padding: 25px 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.timeline-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  justify-content: left;
+}
+
+.tags span {
+  background: var(--bg-dns);
+  color: var(--text-light);
+  border: 1px solid var(--primary);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  transition: 0.3s ease;
+}
+
+ .tags span:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* Role / Subtitle */
+.timeline-item .role 
+{ margin: 0; font-size: 0.85rem; color: var(--text-muted); }
+
+.subtitle {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+
+/*--------------------------------------------------
+Portfolio / Project Card Styles
+---------------------------------------------------*/
+
+.project-card {
+  background: var(--bg-nbw);
+  border: 1px solid var(--primary-slight);
+  border-radius: 12px;
+  padding: 20px;
+  transition: 0.3s ease;
+  text-align: left;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+.card-content {
+  position: relative;
+  overflow: visible;
+  height: 100%;
+}
+
+.content-block h4 { margin: 18px 0 6px; color: var(--primary); }
+.content-block p.role { margin: 0; font-size: 0.85rem; color: var(--text-muted); }
+.card-divider { width: 100%; height: 1px; background: linear-gradient(to right, transparent, var(--primary), transparent); margin: 12px 0; opacity: 0.6; }
+.card-content .description { margin: 0 0 12px; color: var(--text-light); font-size: .95rem; line-height: 1.4; }
+.card-content > * { position: relative; }
+
+/*--------------------------------------------------
+Responsive Timeline
+---------------------------------------------------*/
+@media (max-width: 991px) {
+  .main-content { padding: 30px 15px; }
+  .timeline-item { margin-left: 70px; width: calc(100% - 80px); }
+  .resume-timeline::before { left: 35px; }
+  .timeline-marker { left: -40px; top: 22px; }
+}
+
+@media (max-width: 768px) {
+  .main-content { padding: 25px 10px; }
+  .timeline-item { margin-left: 60px; width: calc(100% - 70px); }
+  .resume-timeline::before { left: 25px; }
+  .timeline-marker { left: -40px; top: 20px; }
+  .timeline-content { width: 92%; left: 0; }
+}
+
+@media (max-width: 480px) {
+  .timeline-item { margin-left: 45px; width: calc(100% - 55px); }
+  .resume-timeline::before { left: 15px; }
+  .timeline-marker { left: -35px; top: 18px; }
+  .timeline-content .tags .tag { font-size: 0.70rem; padding: 3px 8px; }
+  .timeline-content { padding: 16px; }
+}
+
+@media (max-width: 420px) {
+  .learn-more { width: 100%; }
+  .project-card { min-height: 200px; }
+}
+
+@media (max-width: 320px) {
+  .main-content { padding: 15px 5px; }
+  .timeline-item { margin-left: 40px; width: calc(100% - 50px); }
+  .resume-timeline::before { left: 12px; }
+  .timeline-marker { left: -18px; top: 16px; }
+}

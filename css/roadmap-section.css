@@ -1,0 +1,183 @@
+/* --------------------------------------------------
+   Roadmap Section (Wave Style)
+-------------------------------------------------- */
+.rm-roadmap-section {
+  position: relative;
+  overflow: visible;
+  background: var(--bg-dark, #0c0c14);
+  perspective: 900px;
+}
+
+/* Background shapes */
+.rm-bg-shapes {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.rm-shape { transform-origin: center; }
+
+.rm-shape-a {
+  animation: rm-shape-a 20s ease-in-out infinite alternate;
+}
+
+.rm-shape-b {
+  animation: rm-shape-b 28s linear infinite;
+}
+
+@keyframes rm-shape-a {
+  0%   { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-20px) scale(1.04); }
+}
+
+@keyframes rm-shape-b {
+  0%   { transform: translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-12px) rotate(12deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Noise & ambient overlay */
+.rm-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(111,92,255,0.1), rgba(63,170,255,0.05));
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+.rm-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('https://www.transparenttextures.com/patterns/noise.png');
+  opacity: 0.05;
+}
+
+/* Roadmap content */
+.rm-roadmap-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px 80px;
+}
+
+.rm-roadmap-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.rm-title {
+  color: var(--primary, #715bff);
+  font-size: 2.2rem;
+}
+
+.rm-lead {
+  color: var(--text-muted, #aaa);
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------
+   Wave Roadmap Nodes
+-------------------------------------------------- */
+
+/* Circular nodes */
+.rm-node {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: var(--primary, #715bff);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+/* Hover effect */
+.rm-node:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 0 16px 28px rgba(0,0,0,0.3);
+}
+
+/* Node text */
+.rm-node h3 {
+  font-size: 0.95rem;
+  margin: 0 0 4px;
+}
+
+.rm-node p {
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+/* Remove static positions - handled by JS */
+.rm-node:nth-child(n) { top: auto; left: auto; }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) { .rm-node { width: 100px; height: 100px; } }
+@media (max-width: 768px)  { .rm-node { width: 90px; height: 90px; } }
+@media (max-width: 480px)  { .rm-node { width: 80px; height: 80px; font-size: 0.7rem; } }
+
+/* Wave path */
+.rm-wave-roadmap {
+  position: relative;
+  width: 100%;
+  height: 800px;
+}
+
+.rm-wave-path {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1; /* behind nodes */
+}
+
+.rm-wave-path path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: rgba(255,255,255,0.35);
+  stroke-width: 4;
+  stroke-dasharray: 8 8;
+}
+
+/* Floating particles */
+.rm-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--accent, #715bff);
+  border-radius: 50%;
+  opacity: 0.3;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+/* Cursor Trail */
+.cursor-trail {
+  position: fixed;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(111,92,255,0.8) 0%, rgba(111,92,255,0) 60%);
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  z-index: 9999;
+}

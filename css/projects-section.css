@@ -1,0 +1,192 @@
+/* ---------- Section wrapper ---------- */
+#projects-section.projects {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+#projects-section h2 {
+  font-size: 2.2rem;
+  text-transform: lowercase;
+  margin: 0 0 8px;
+}
+
+#projects-section > .section-container > p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto 28px auto;
+}
+
+/* ---------- Tabs ---------- */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+.tab-button {
+  background: transparent;
+  border: 1px solid var(--primary);
+  padding: 8px 18px;
+  border-radius: 25px;
+  text-transform: lowercase;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: 220ms ease;
+}
+.tab-button.active,
+.tab-button:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ---------- Grid ---------- */
+.projects-grid {
+  display: grid;
+  gap: 28px;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 992px) { .projects-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* ---------- Project Card ---------- */
+.project-card {
+  background: var(--bg-nbw);
+  border: 1px solid var(--primary-slight);
+  border-radius: 12px;
+  padding: 20px;
+  transition: 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+.card-content {
+  position: relative;
+  overflow: visible;
+  height: 100%;
+}
+
+/* ---------- Category Badge (clickable) ---------- */
+.project-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 10px 0 14px 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(53,99,214,0.38);
+}
+
+
+/* ---------- Text inside Card ---------- */
+.project-card h4 { margin: 18px 0 6px; color: var(--primary); }
+.project-card p.role { margin: 0; font-size: 0.85rem; color: var(--text-muted); }
+.card-divider { width: 100%; height: 1px; background: linear-gradient(to right, transparent, var(--primary), transparent); margin: 12px 0; opacity: 0.6; }
+.card-content .description { margin: 0 0 12px; color: var(--text-light); font-size: .95rem; line-height: 1.4; }
+
+/* ---------- Learn-More Button ---------- */
+.learn-more {
+  display: inline-block;
+  position: relative;
+  width: 12rem;
+  height: 3rem;
+  text-decoration: none;
+  vertical-align: middle;
+  margin-top: 6px;
+  z-index: 4;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.learn-more .circle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 3rem;
+  height: 3rem;
+  background: var(--primary-btn);
+  border-radius: 1.625rem;
+  display: block;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+
+.learn-more .circle .icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+  transition: transform 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+.learn-more .circle .icon::before {
+  content: "";
+  position: absolute;
+  top: -0.25rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+.learn-more .button-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1.85rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-btn);
+  transition: color 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  pointer-events: none;
+}
+
+.learn-more:hover .circle,
+.learn-more:focus .circle { width: 100%; }
+.learn-more:hover .circle .icon,
+.learn-more:focus .circle .icon { transform: translateX(1rem); }
+.learn-more:hover .button-text,
+.learn-more:focus .button-text { color: #fff; }
+
+.learn-more:focus {
+  outline: 3px solid rgba(53,99,214,0.18);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.card-content > * { position: relative; }
+
+/* Responsive tweaks */
+@media (max-width: 420px) {
+  .learn-more { width: 100%; }
+  .project-card { min-height: 200px; }
+}

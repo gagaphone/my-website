@@ -1,0 +1,118 @@
+/* ----------------------------------------------------------
+   Education Section
+---------------------------------------------------------- */
+#education-section.education {
+  padding: 60px 20px;
+  color: var(--text-light);
+}
+
+/* Title */
+
+#education-section.education h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  text-transform: lowercase;
+  margin-bottom: 1rem;
+}
+
+/* Filter */
+#education-section .data-filter {
+  margin: 0 auto 25px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--text-light);
+}
+
+.data-filter label span {
+  color: var(--text-muted);
+}
+
+#education-section .data-filter select {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--primary);
+  background: var(--bg-dns);
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+/* Grid */
+#education-section .edu-grid {
+  display: grid;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  #education-section .edu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  #education-section .edu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Cards */
+.edu-card {
+  background: var(--bg-nbw);
+  border: 1px solid var(--primary-slight);
+  border-radius: 12px;
+  padding: 20px;
+  transition: 0.3s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Card content */
+.edu-card h4 {
+  text-align: center;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.edu-card p.category {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.83rem;
+  margin-bottom: 10px;
+}
+
+.edu-card p.details {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* Tags */
+.edu-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  justify-content: center;
+}
+
+.edu-card .tags span {
+  background: var(--bg-dns);
+  color: var(--text-light);
+  border: 1px solid var(--primary);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  transition: 0.3s ease;
+}
+
+.edu-card .tags span:hover {
+  background: var(--primary);
+  color: var(--white);
+}
