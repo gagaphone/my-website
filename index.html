@@ -17,23 +17,11 @@
   <link rel="stylesheet" href="css/loader.css">
   <link rel="stylesheet" href="css/flm-main.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/banner-section.css">
-  <link rel="stylesheet" href="css/services-section.css">
-  <link rel="stylesheet" href="css/mystack-section.css">
-  <link rel="stylesheet" href="css/projects-section.css">
-  <link rel="stylesheet" href="css/education-section.css">
-  <link rel="stylesheet" href="css/aboutme-section.css">
-  <link rel="stylesheet" href="css/hobby-section.css">
-  <link rel="stylesheet" href="css/contact-section.css">
-  <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/scrolldown-section.css">
-
-
 
   <!-- Ionicons (v5) -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.4/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.4/dist/ionicons/ionicons.js"></script>
-
 
 
   <title>ogalanets.</title>
@@ -79,7 +67,6 @@
 
     <!-- Expanded Menu (slides up above main button) -->
     <div class="expanded-menu-main" id="expandedMenu">
-      
       <a href="resume.html" target="_blank">
         <ion-icon name="briefcase-outline"></ion-icon> Timeline
       </a>
@@ -88,7 +75,7 @@
         <ion-icon name="download"></ion-icon> Resume
       </a>
 
-       <a href="photowebsite.html" target="_blank">
+ <a href="photowebsite.html" target="_blank">
         <ion-icon name="camera-outline"></ion-icon> Photowebsite
       </a>
 
@@ -229,6 +216,7 @@
               </div>
             </div>
 
+            
             <!-- ================== PROJECT MANAGEMENT ================== -->
             <div class="stack-card">
               <h5 class="stack-category">Project Management</h5>
@@ -257,25 +245,32 @@
       </section>
 
 
-      <section id="projects-section" class="projects">
-        <div class="section-container">
-          <h2>portfolio</h2>
-          <p>A curated selection of EU Horizon, software, game development, and marketing projects I have managed or contributed to.</p>
+      <!-- ================== SECTION PORTFOLIO WORK&EDUCATION ================== -->
+<section id="portfolio-section" class="portfolio">
+  <div class="section-container">
+    <h2>Portfolio & Education</h2>
+    <p>A curated selection of projects and educational achievements I have managed or completed.</p>
 
-          <!-- Tabs -->
-          <div class="tabs" role="tablist" aria-label="Project categories">
-            <button class="tab-button active" data-filter="all">All</button>
-            <button class="tab-button" data-filter="horizon">Horizon</button>
-            <button class="tab-button" data-filter="software">Software Dev</button>
-            <button class="tab-button" data-filter="gamedev">Game Dev</button>
-            <button class="tab-button" data-filter="marketing">Marketing</button>
-          </div>
+    <!-- Top Tabs: Projects / Education -->
+    <div class="main-tabs" role="tablist" aria-label="Portfolio and Education Tabs">
+      <button class="main-tab active" data-target="projects-content">Projects</button>
+      <button class="main-tab" data-target="education-content">Education</button>
+    </div>
 
-          <!-- Projects Grid -->
-          <div class="projects-grid">
+    <!-- ===== Projects Content ===== -->
+    <div id="projects-content" class="tab-content active">
+      <!-- Category Tabs for Projects -->
+      <div class="tabs" role="tablist" aria-label="Project categories">
+        <button class="tab-button active" data-filter="all">All</button>
+        <button class="tab-button" data-filter="horizon">Horizon</button>
+        <button class="tab-button" data-filter="software">Software Dev</button>
+        <button class="tab-button" data-filter="gamedev">Game Dev</button>
+        <button class="tab-button" data-filter="marketing">Marketing</button>
+      </div>
 
-
-            <!-- ================= HORIZON ================= -->
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+        <!-- ================= HORIZON ================= -->
             <div class="project-card" data-category="horizon">
               <div class="card-content">
                 <span class="category-label category-horizon">#HorizonEU</span>
@@ -287,7 +282,7 @@
                 <!-- UPDATED CLICKABLE BADGE -->
                 <div class="centered-container">
                   <a href="https://datapact.eu/" target="_blank" class="link link--arrowed learn-more">
-                    web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -299,7 +294,6 @@
 
               </div>
             </div>
-
 
             <div class="project-card" data-category="horizon">
               <div class="card-content">
@@ -311,7 +305,7 @@
 
                 <div class="centered-container">
                   <a href="https://veleshub.eu/" target="_blank" class="link link--arrowed">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -323,7 +317,6 @@
 
               </div>
             </div>
-
 
             <div class="project-card" data-category="horizon">
               <div class="card-content">
@@ -335,7 +328,7 @@
 
                 <div class="centered-container">
                   <a href="https://databri-x.eu/" target="_blank" class="link link--arrowed">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -347,7 +340,6 @@
 
               </div>
             </div>
-
 
             <div class="project-card" data-category="horizon">
               <div class="card-content">
@@ -359,7 +351,7 @@
 
                 <div class="centered-container">
                   <a href="https://www.trusts-data.eu/" target="_blank" class="link link--arrowed">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -371,8 +363,6 @@
 
               </div>
             </div>
-
-
 
             <!-- ================= SOFTWARE DEV ================= -->
 
@@ -386,7 +376,7 @@
 
                 <div class="centered-container">
                   <a href="https://component.internationaldataspaces.org/" target="_blank" class="link link--arrowed">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -398,7 +388,6 @@
 
               </div>
             </div>
-
 
             <div class="project-card" data-category="software">
               <div class="card-content">
@@ -410,7 +399,7 @@
 
                 <div class="centered-container">
                   <a href="https://semantic.internationaldataspaces.org/" target="_blank" class="link link--arrowed">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -422,7 +411,6 @@
 
               </div>
             </div>
-
 
             <div class="project-card" data-category="software">
               <div class="card-content">
@@ -434,7 +422,7 @@
 
                 <div class="centered-container">
                   <a href="https://hot-point.com.ua/" target="_blank" class="link link--arrowed">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -446,7 +434,6 @@
 
               </div>
             </div>
-
 
             <div class="project-card" data-category="software">
               <div class="card-content">
@@ -458,7 +445,7 @@
 
                 <div class="centered-container">
                   <a href="https://b2b.sanwell.biz/" target="_blank" class="link link--arrowed">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -471,7 +458,6 @@
               </div>
             </div>
 
-
             <div class="project-card" data-category="software">
               <div class="card-content">
                 <span class="category-label category-software">#BusinessPlatforms</span>
@@ -482,7 +468,7 @@
 
                 <div class="centered-container">
                   <a href="https://www.awery.aero" target="_blank" class="link link--arrowed" rel="noopener noreferrer">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -505,7 +491,7 @@
 
                 <div class="centered-container">
                   <a href="https://webhostinggeeks.com/" target="_blank" class="link link--arrowed">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -528,7 +514,7 @@
 
                 <div class="centered-container">
                   <a href="https://www.weltrade.com" target="_blank" class="link link--arrowed" rel="noopener noreferrer">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -541,7 +527,6 @@
               </div>
             </div>
 
-
             <div class="project-card" data-category="software">
               <div class="card-content">
                 <span class="category-label category-banking">#DigitalBankingProducts</span>
@@ -552,7 +537,7 @@
 
                 <div class="centered-container">
                   <a href="https://www.banktrust.com.ua/" target="_blank" class="link link--arrowed" rel="noopener noreferrer">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -575,7 +560,7 @@
 
                 <div class="centered-container">
                   <a href="https://www.banktrust.com.ua/" target="_blank" class="link link--arrowed" rel="noopener noreferrer">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -598,7 +583,7 @@
 
                 <div class="centered-container">
                   <a href="https://www.banktrust.com.ua/" target="_blank" class="link link--arrowed" rel="noopener noreferrer">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -621,7 +606,7 @@
 
                 <div class="centered-container">
                   <a href="https://www.banktrust.com.ua/" target="_blank" class="link link--arrowed" rel="noopener noreferrer">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -644,7 +629,7 @@
 
                 <div class="centered-container">
                   <a href="https://www.nadrabank.ua" target="_blank" class="link link--arrowed" rel="noopener noreferrer">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -667,7 +652,7 @@
 
                 <div class="centered-container">
                   <a href="https://privatbank.ua/" target="_blank" class="link link--arrowed">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -679,7 +664,6 @@
 
               </div>
             </div>
-
 
             <!-- ================= GAMEDEV ================= -->
 
@@ -693,7 +677,7 @@
 
                 <div class="centered-container">
                   <a href="https://playtomax.com/" target="_blank" class="link link--arrowed">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -718,7 +702,7 @@
 
                 <div class="centered-container">
                   <a href="https://www.banktrust.com.ua/" target="_blank" class="link link--arrowed" rel="noopener noreferrer">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -730,7 +714,6 @@
 
               </div>
             </div>
-
 
             <div class="project-card" data-category="marketing">
               <div class="card-content">
@@ -742,7 +725,7 @@
 
                 <div class="centered-container">
                   <a href="https://www.vopak.ua" target="_blank" class="link link--arrowed" rel="noopener noreferrer">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -755,7 +738,6 @@
               </div>
             </div>
 
-
             <div class="project-card" data-category="marketing">
               <div class="card-content">
                 <span class="category-label category-banking">#BankingMarketing</span>
@@ -766,7 +748,7 @@
 
                 <div class="centered-container">
                   <a href="https://www.kreditprombank.com" target="_blank" class="link link--arrowed" rel="noopener noreferrer">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -789,7 +771,7 @@
 
                 <div class="centered-container">
                   <a href="https://privatbank.ua/" target="_blank" class="link link--arrowed">
-                     web-site
+                    Learn More
                     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                       <g fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
                         <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
@@ -802,31 +784,24 @@
               </div>
             </div>
 
-          </div>
-        </div>
-      </section>
+      </div>
+    </div>
+
+    <!-- ===== Education Content ===== -->
+    <div id="education-content" class="tab-content">
+      <!-- Filter for Education -->
+<div class="tabs edu-tabs">
+  <button class="tab-button active" data-filter="all">all</button>
+  <button class="tab-button" data-filter="undergraduate">undergraduate</button>
+  <button class="tab-button" data-filter="graduate">graduate (mba)</button>
+  <button class="tab-button" data-filter="postgraduate">postgraduate (ma)</button>
+  <button class="tab-button" data-filter="online">online</button>
+</div>
 
 
-
-      <!-- ===== EDUCATION SECTION ===== -->
-      <section id="education-section" class="education">
-        <div class="container">
-          <h2>Education</h2>
-
-          <!-- Filter -->
-          <div class="data-filter">
-            <label for="edu-filter"><span>Filter:</span></label>
-            <select id="edu-filter">
-              <option value="all">All</option>
-              <option value="undergraduate">Undergraduate</option>
-              <option value="graduate">Graduate (MBA)</option>
-              <option value="postgraduate">Postgraduate (MA)</option>
-              <option value="online">Online Courses</option>
-            </select>
-          </div>
-
-          <!-- Cards Grid -->
-          <div class="edu-grid">
+      <!-- Education Grid -->
+      <div class="edu-grid">
+        
 
             <!-- Undergraduate -->
             <div class="edu-card" data-category="undergraduate">
@@ -1018,9 +993,11 @@
               </div>
             </div>
 
-          </div>
-        </div>
-      </section>
+
+      </div>
+    </div>
+  </div>
+</section>
 
 
       <section id="roadmap" class="rm-roadmap-section section">
@@ -1099,7 +1076,7 @@
 
       <!-- Footer -->
       <footer class="site-footer">
-        <p>© 2026. All rights reserved.</p>
+        <p>© 2025. All rights reserved.</p>
       </footer>
 
     </section>
@@ -1114,7 +1091,6 @@
   <script src="js/scripts.js"></script>
   <script src="js/flm-main.js"></script>
   <script src="js/project-section.js"></script>
-  <script src="js/hobby.js"></script>
   <script src="js/scrolldown.js"></script>
 </body>
 
