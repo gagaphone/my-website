@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dribbble Style Exhibition</title>
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.4/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.4/dist/ionicons/ionicons.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/photowebsitestyles.css">
+  </head>
+  <body>
+    <!-- ===================== MASONRY GALLERY ===================== -->
+    <section id="masonry-gallery" class="masonry-section">
+      <!-- FILTERS -->
+      <div class="filters-wrapper" id="filtersWrapper">
+        <div class="filters tabs" id="filterTabs"></div>
+        <div class="filters-meta">
+          <div class="active-tags" id="activeTags"></div>
+          <div class="results-count">
+            <span id="resultsCount">0</span> results
+          </div>
+        </div>
+      </div>
+
+      <!-- GRID -->
+      <div class="masonry">
+        <!-- Masonry items -->
+
+        <!-- Masonry Item 1 -->
+        <div class="masonry-item exhibition" 
+        data-title="Street Photography" 
+        data-category="Exhibition" 
+        data-place="Kiev" 
+        data-year="2020" 
+        data-img="img/photos/room/photo11.webp" 
+         data-secondary-img="img/photos/room/photo11_bg.webp"
+        data-exhibition="Street Photographer of the Year" 
+        data-exhibition-link="https://www.facebook.com/events/799993332764066" 
+        data-exhibition-place="Photo North Festival, The Carriageworks, Leeds UK" 
+        data-exhibition-year="2026"
+        data-exhibition-description="Awarded for outstanding street photography documenting everyday urban life.">
+          <img loading="lazy" src="img/photos/room/photo11.webp" alt="Photo 1 - Street Photography, Kiev, Exhibition: Street Photographer of the Year">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon>Photo #1. Origional size: Street Photographer of the Year</h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Masonry Item 2 -->
+        <div class="masonry-item magazine"
+        data-title="Street Photography" 
+        data-category="Magazine" 
+        data-place="Dortmund" 
+        data-year="2025" 
+        data-img="img/photos/room/photo15.webp" 
+        data-secondary-img="img/photos/room/photo15_bg.webp"
+        
+        data-magazine="DigitalCameraWorld" 
+        data-magazine-link="https://www.digitalcameraworld.com/photography/awards-and-competitions/gurushots-winning-images-from-the-latest-mostly-white-october-2025-challenge" 
+        data-magazine-year="2025"
+        data-magazine-description="Selected feature in photography publication.">
+          <img src="img/photos/room/photo15.webp" alt="Architecture">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Masonry Item 3 -->
+        <div class="masonry-item exhibition" 
+        data-title="Street Photography" 
+        data-category="Exhibition" 
+        data-place="France" 
+        data-year="2021" 
+        data-img="img/photos/room/photo23.webp" 
+        data-secondary-img="img/photos/room/photo23_bg.webp" 
+        
+        data-exhibition="My Best Shot" 
+        data-exhibition-link="https://www.facebook.com/events/1315125676828219" 
+        data-exhibition-place="Malta Photo Exhibition, Rinaxximent, Triq il-Bazilika Mosta, MST 2309, Malta" 
+        data-exhibition-year="2026">
+          <img src="img/photos/room/photo23.webp" alt="Architecture">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Masonry Item 4 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Exhibition" 
+        data-place="France" 
+        data-year="2021" 
+        
+        data-img="img/photos/room/photo28.webp" 
+        data-secondary-img="img/photos/room/photo28_bg.webp"
+        
+        data-exhibition="Photographer of the Year" data-exhibition-link="https://www.facebook.com/events/2292985224494294" data-exhibition-place="London Photo Exhibition, Coningsby Gallery, 30 Tottenham St, London W1T 4RJ, United Kingdom" data-exhibition-year="2025">
+          <img src="img/photos/room/photo28.webp" alt="Architecture">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Masonry Item 5 -->
+        <div class="masonry-item magazine"
+        data-title="Street Photography" data-category="Magazine" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo30.webp" 
+        data-secondary-img="img/photos/room/photo30_bg.webp"
+        
+        data-magazine="Amateur Photographer" data-magazine-link="https://amateurphotographer.com/latest/photo-news/gurushots-winners-on-the-theme-of-lighting/" data-magazine-year="2025">
+          <img src="img/photos/room/photo30.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Masonry Item 6 -->
+        <div class="masonry-item exhibition" data-title="Black & White" data-category="Exhibition" data-place="Nature" data-year="2024" 
+        data-img="img/photos/room/photo67.webp" 
+        data-secondary-img="img/photos/room/photo67_bg.webp"
+        data-exhibition="Art of Black & White" data-exhibition-link="https://www.facebook.com/events/742902658420812" data-exhibition-place="FotoZA, Stonemill Office Park, Greenstone House, 300 Acacia Road, Darrenwood, Johannesburg, South Africa" data-exhibition-year="2026">
+          <img src="img/photos/room/photo67.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Masonry Item 7 -->
+        <div class="masonry-item magazine"
+        data-title="Nature" data-category="Magazine" data-place="Nature" data-year="2025" 
+        data-img="img/photos/room/photo93.webp" 
+       data-secondary-img="img/photos/room/photo93_bg.webp"
+        
+        data-magazine="121 Clicks" data-magazine-link="https://121clicks.com/inspirations/gurushots-magnificent-macro-winning-images/" data-magazine-year="2025">
+          <img src="img/photos/room/photo93.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5>
+              <ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Masonry Item 8 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Exhibition" data-place="France" data-year="2021"
+         data-img="img/photos/room/photo98.webp" 
+         data-secondary-img="img/photos/room/photo98_bg.webp"
+         
+         data-exhibition="The Beauty of Earth" data-exhibition-link="https://www.facebook.com/events/1310110303845380" data-exhibition-place="Bogota Photo Exhibition, El Dorado, Cra. 4a #26c-37, Bogotá, Colombia" data-exhibition-year="2026">
+          <img src="img/photos/room/photo98.webp" alt="The Beauty of Earth">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Masonry Item 9 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Exhibition" 
+        data-place="Lviv" 
+        data-year="2020" 
+        data-img="img/photos/room/photo125.webp" 
+        data-secondary-img="img/photos/room/photo125_bg.webp"
+        
+        data-exhibition="Valid World Hall Photo Exhibition" data-exhibition-link="https://www.facebook.com/events/2079041002633339" data-exhibition-place="Valid World Hall, Carrer de Buenaventura Muñoz, 6, 08018 Barcelona" data-exhibition-year="2026">
+          <img src="img/photos/room/photo125.webp" alt="Valid World Hall Photo Exhibition">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Masonry Item 10 -->
+        <div class="masonry-item exhibition" data-title="Black & White" data-category="Exhibition" 
+        data-place="Turkey" 
+        data-year="2020" 
+        data-img="img/photos/room/photo63.webp" 
+      data-secondary-img="img/photos/room/photo63_bg.webp"
+        
+        data-exhibition="Hanoi Photo Exhibition" data-exhibition-link="https://www.facebook.com/events/1829078164697887" data-exhibition-place="Matca Space for Photography, 48 Ngoc Ha, Ba Dinh district, Hanoi" data-exhibition-year="2026">
+          <img src="img/photos/room/photo63.webp" alt="Hanoi Photo Exhibition">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Masonry Item 11 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Exhibition" 
+        data-place="Hamburg" 
+        data-year="2025" 
+        data-img="img/photos/room/photo71.webp" 
+        data-secondary-img="img/photos/room/photo71_bg.webp"
+        
+        data-exhibition="Chicago Photo Exhibition" data-exhibition-link="https://www.facebook.com/events/1829078164697887" data-exhibition-place="Bridgeport Art Center, 3rd Floor Gallery, 1200 W 35th St, Chicago" data-exhibition-year="2026">
+          <img src="img/photos/room/photo71.webp" alt="Chicago Photo Exhibition">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Masonry Item 12 -->
+        <div class="masonry-item magazine"
+        data-title="Street Photography" data-category="Magazine" data-place="Israel" data-year="2020" 
+        data-img="img/photos/room/photo31.webp" 
+       data-secondary-img="img/photos/room/photo31_bg.webp"
+        
+        data-magazine="Dodho" data-magazine-link="https://www.dodho.com/gurushots-your-magazine-shot/" data-magazine-year="2025">
+          <img src="img/photos/room/photo31.webp" alt="Dodho">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Masonry Item 13 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Exhibition" 
+        data-place="Barcelona" data-year="2024" 
+        data-img="img/photos/room/photo18.webp" 
+       data-secondary-img="img/photos/room/photo18_bg.webp"
+        
+        data-magazine="Digital Camera World" data-magazine-link="https://www.digitalcameraworld.com/photography/awards-and-competitions/gurushots-winning-images-from-the-latest-travel-tales-challenge" data-magazine-year="2025">
+          <img src="img/photos/room/photo18.webp" alt="Dodho">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Masonry Item 14 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Exhibition" data-place="Majorca" data-year="2024" 
+        data-img="img/photos/room/photo49.webp" 
+        data-secondary-img="img/photos/room/photo49_bg.webp"
+        
+        data-exhibition="FotoZA Gallery" data-exhibition-link="https://www.facebook.com/events/742902658420812" data-exhibition-place="FotoZA, Stonemill Office Park, Greenstone House, 300 Acacia Road, Darrenwood, Johannesburg, South Africa." data-exhibition-year="2026">
+          <img src="img/photos/room/photo49.webp" alt="FotoZA Gallery">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Masonry Item 15 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Exhibition" data-place="Prague" data-year="2021" 
+        data-img="img/photos/room/photo102.webp" 
+        data-secondary-img="img/photos/room/photo102_bg.webp"
+        
+        data-exhibition="Art of Photography" data-exhibition-link="https://www.facebook.com/events/799993332764066" data-exhibition-place="Photo North Festival, The Carriageworks, Leeds UK" data-exhibition-year="2026">
+          <img src="img/photos/room/photo102.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Masonry Item 16 -->
+<div class="masonry-item exhibition"
+  tabindex="0"
+  role="button"
+  aria-label="Open project: Street Photography"
+
+  data-title="Street Photography"
+  data-category="Exhibition"
+  data-place="Hamburg"
+  data-year="2025"
+
+  data-img="img/photos/room/photo68.webp"
+  data-secondary-img="img/photos/room/photo68_bg.webp"
+
+  data-exhibition="Art of Black & White"
+  data-exhibition-link="https://www.facebook.com/events/1315125676828219"
+  data-exhibition-place="Rinaxximent Gallery in Malta, Rinaxximent, Triq il-Bazilika Mosta, MST 2309, Malta"
+  data-exhibition-year="2026"
+>
+  <img
+    src="img/photos/room/photo68.webp"
+    alt="Street Photography, Malta, 2026"
+    loading="lazy"
+    decoding="async"
+  >
+
+  <div class="exhibition-info">
+    <h5>
+      <ion-icon name="aperture-outline"></ion-icon>
+    </h5>
+
+    <ion-icon
+      class="trophy-icon"
+      name="trophy-outline"
+      aria-hidden="true">
+    </ion-icon>
+  </div>
+</div>
+
+
+        <!-- Masonry Item 17 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Exhibition" 
+        data-place="Lisbon" 
+        data-year="2024" 
+        data-img="img/photos/room/photo12.webp" 
+        data-secondary-img="img/photos/room/photo12_bg.webp"
+        
+        data-exhibition="My Favorite Exhibition Shot" data-exhibition-link="https://www.facebook.com/events/1574392437232541" data-exhibition-place="Coningsby Gallery, 30 Tottenham St, London W1T 4RJ, United Kingdom" data-exhibition-year="2026">
+          <img src="img/photos/room/photo12.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Masonry Item 18 -->
+     <div class="masonry-item exhibition" data-title="Street Photography" data-category="Exhibition" 
+     data-place="Hamburg" 
+     data-year="2025" 
+     data-img="img/photos/room/photo65.webp" 
+     data-secondary-img="img/photos/room/photo65_bg.webp"
+     
+     data-exhibition="Art of Photography" data-exhibition-link="https://www.facebook.com/events/2079041002633339" data-exhibition-place="Valid World Hall, Carrer de Buenaventura Muñoz, 6, 08018, Barcelona" data-exhibition-year="2026">
+          <img src="img/photos/room/photo65.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Masonry Item 19 -->
+   <div class="masonry-item exhibition" data-title="Street Photography" data-category="Exhibition" 
+   data-place="Hamburg" 
+   data-year="2025" 
+   data-img="img/photos/room/photo6.webp" 
+ data-secondary-img="img/photos/room/photo6_bg.webp"
+   data-exhibition-description="Origional size: 6000px*4000px"
+   data-exhibition="Our Amazing Planet" data-exhibition-link="https://www.facebook.com/events/839181842077086" data-exhibition-place="Avalon Park Arts and Culture Center, 3801 Avalon Park Blvd. East, Ste. 400 Orlando, FL 32828" data-exhibition-year="2026">
+          <img src="img/photos/room/photo6.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+                <!-- Masonry Item 119 -->
+   <div class="masonry-item exhibition" data-title="Creative Composition" data-category="Exhibition" 
+   data-place="Hamburg" 
+   data-year="2025" 
+   data-img="img/photos/room/photo119.webp" 
+   
+   data-exhibition="Creative Composition" data-exhibition-link="https://www.facebook.com/events/839181842077086" data-exhibition-place="Avalon Park Arts and Culture Center, 3801 Avalon Park Blvd. East, Ste. 400 Orlando, FL 32828" data-exhibition-year="2026">
+          <img src="img/photos/room/photo119.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+            <ion-icon class="trophy-icon" name="trophy-outline"></ion-icon>
+          </div>
+        </div>
+
+         <!-- END OF EXHIBITIONS -->
+
+           <!-- Street Photography -->
+
+        <!-- Masonry Item 20 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Hamburg" data-year="2025" 
+        
+        data-img="img/photos/room/photo1.webp" 
+        data-secondary-img="img/photos/room/photo1_bg.webp">
+          <img src="img/photos/room/photo1.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 21 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo2.webp" 
+        data-secondary-img="img/photos/room/photo2_bg.webp">
+
+          <img src="img/photos/room/photo2.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 22 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo3.webp" 
+       data-secondary-img="img/photos/room/photo3_bg.webp">
+
+          <img src="img/photos/room/photo3.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 23 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo4.webp" 
+       data-secondary-img="img/photos/room/photo4_bg.webp">
+
+          <img src="img/photos/room/photo4.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+        <!-- Masonry Item 24 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo5.webp" 
+        data-secondary-img="img/photos/room/photo5_bg.webp">
+
+          <img src="img/photos/room/photo5.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+        <!-- Masonry Item 25 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo7.webp" 
+        data-secondary-img="img/photos/room/photo7_bg.webp">
+
+          <img src="img/photos/room/photo7.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+        <!-- Masonry Item 26 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Kiev" data-year="2020" 
+        data-img="img/photos/room/photo8.webp" 
+      data-secondary-img="img/photos/room/photo8_bg.webp">
+
+          <img src="img/photos/room/photo8.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 27 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo10.webp" 
+      data-secondary-img="img/photos/room/photo10_bg.webp">
+
+          <img src="img/photos/room/photo10.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 28 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Prague" data-year="2025" 
+        data-img="img/photos/room/photo19.webp" 
+        data-secondary-img="img/photos/room/photo19_bg.webp">
+
+          <img src="img/photos/room/photo19.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 29 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo20.webp" 
+       data-secondary-img="img/photos/room/photo20_bg.webp">
+
+          <img src="img/photos/room/photo20.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 30 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Milano" data-year="2025" 
+        data-img="img/photos/room/photo21.webp" 
+        data-secondary-img="img/photos/room/photo21_bg.webp">
+
+          <img src="img/photos/room/photo21.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 31 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Strassburg" data-year="2025" 
+        data-img="img/photos/room/photo22.webp" 
+        data-secondary-img="img/photos/room/photo22_bg.webp">
+
+          <img src="img/photos/room/photo22.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 32 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Ghent" data-year="2025" 
+        data-img="img/photos/room/photo27.webp" 
+       data-secondary-img="img/photos/room/photo27_bg.webp">
+
+          <img src="img/photos/room/photo27.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 33 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Strassburg" data-year="2025" 
+        data-img="img/photos/room/photo29.webp" 
+       data-secondary-img="img/photos/room/photo29_bg.webp">
+
+          <img src="img/photos/room/photo29.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 34 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Dubrovnik" data-year="2025" 
+        data-img="img/photos/room/photo37.webp" 
+        data-secondary-img="img/photos/room/photo37_bg.webp">
+
+          <img src="img/photos/room/photo37.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 38 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Sofia" data-year="2025" 
+        data-img="img/photos/room/photo38.webp" 
+       data-secondary-img="img/photos/room/photo38_bg.webp">
+
+          <img src="img/photos/room/photo38.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 39 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Viena" data-year="2025" 
+        data-img="img/photos/room/photo40.webp" 
+        data-secondary-img="img/photos/room/photo40_bg.webp">
+
+          <img src="img/photos/room/photo40.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 40 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Venice" data-year="2025" 
+        data-img="img/photos/room/photo41.webp" 
+       data-secondary-img="img/photos/room/photo41_bg.webp">
+
+          <img src="img/photos/room/photo41.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon> </h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 41 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Venice" data-year="2025" 
+        data-img="img/photos/room/photo42.webp" 
+        
+       data-secondary-img="img/photos/room/photo42_bg.webp">
+          <img src="img/photos/room/photo42.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 42 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Venice" data-year="2025" 
+        data-img="img/photos/room/photo44.webp" 
+       data-secondary-img="img/photos/room/photo44_bg.webp">
+          <img src="img/photos/room/photo44.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 43 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Oslo" data-year="2025" 
+        data-img="img/photos/room/photo45.webp" 
+        data-secondary-img="img/photos/room/photo45_bg.webp">
+          <img src="img/photos/room/photo45.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 44 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Cyprus" data-year="2025" 
+        data-img="img/photos/room/photo51.webp" 
+        data-secondary-img="img/photos/room/photo51_bg.webp">
+
+          <img src="img/photos/room/photo51.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 45 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Italy" data-year="2025" 
+        data-img="img/photos/room/photo52.webp" 
+       data-secondary-img="img/photos/room/photo52_bg.webp">
+          <img src="img/photos/room/photo52.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 46 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Oslo" data-year="2025" 
+        data-img="img/photos/room/photo54.webp" 
+        data-secondary-img="img/photos/room/photo54_bg.webp">
+
+          <img src="img/photos/room/photo54.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 47 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Kiev" data-year="2025" 
+        data-img="img/photos/room/photo59.webp" 
+        data-secondary-img="img/photos/room/photo59_bg.webp">
+
+          <img src="img/photos/room/photo59.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+        
+        <!-- Masonry Item 48 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Lviv" data-year="2025" 
+        data-img="img/photos/room/photo77.webp" 
+   data-secondary-img="img/photos/room/photo77_bg.webp">
+
+          <img src="img/photos/room/photo77.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 49 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Monemvasia" data-year="2025" 
+        data-img="img/photos/room/photo104.webp" 
+       data-secondary-img="img/photos/room/photo104_bg.webp">
+          <img src="img/photos/room/photo104.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 50 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Kiev" data-year="2025" 
+        data-img="img/photos/room/photo115.webp" 
+        data-secondary-img="img/photos/room/photo115_bg.webp">
+
+          <img src="img/photos/room/photo115.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 51 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Kiev" data-year="2025" 
+        data-img="img/photos/room/photo116.webp" 
+       data-secondary-img="img/photos/room/photo116_bg.webp">
+
+          <img src="img/photos/room/photo116.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 52 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Kiev" data-year="2025" 
+        data-img="img/photos/room/photo118.webp" 
+         data-secondary-img="img/photos/room/photo118_bg.webp">
+
+          <img src="img/photos/room/photo118.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 53 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Kev" data-year="2025" 
+        data-img="img/photos/room/photo120.webp" 
+         data-secondary-img="img/photos/room/photo120_bg.webp">
+
+          <img src="img/photos/room/photo120.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 54 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Kiev" data-year="2025" 
+        data-img="img/photos/room/photo121.webp" 
+         data-secondary-img="img/photos/room/photo121_bg.webp">
+
+          <img src="img/photos/room/photo121.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 55 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Kiev" data-year="2025" 
+        data-img="img/photos/room/photo122.webp" 
+         data-secondary-img="img/photos/room/photo122_bg.webp">
+
+          <img src="img/photos/room/photo122.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 56 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Lisbon" data-year="2025" 
+        data-img="img/photos/room/photo131.webp" 
+         data-secondary-img="img/photos/room/photo131_bg.webp">
+
+          <img src="img/photos/room/photo131.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 57 -->
+        <div class="masonry-item exhibition" data-title="Street Photography" data-category="Street Photography" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo133.webp" 
+         data-secondary-img="img/photos/room/photo133_bg.webp">
+
+          <img src="img/photos/room/photo133.webp" alt="Street Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+      <!-- END OF Street Photography -->
+
+        <!-- Black & White -->
+
+        <!-- Masonry Item 58 -->
+        <div class="masonry-item exhibition" data-title="Black & White" data-category="Black & White" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo61.webp" 
+         data-secondary-img="img/photos/room/photo61_bg.webp">
+
+          <img src="img/photos/room/photo61.webp" alt="Black & White">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 59 -->
+        <div class="masonry-item exhibition" data-title="Black & White" data-category="Black & White" data-place="Kiev" data-year="2025" 
+        data-img="img/photos/room/photo62.webp" 
+         data-secondary-img="img/photos/room/photo62_bg.webp">
+
+          <img src="img/photos/room/photo62.webp" alt="Black & White">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon> </h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 60 -->
+        <div class="masonry-item exhibition" data-title="Black & White" data-category="Black & White" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo64.webp" 
+        data-secondary-img="img/photos/room/photo64_bg.webp">
+          <img src="img/photos/room/photo64.webp" alt="Black & White">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 61 -->
+        <div class="masonry-item exhibition" data-title="Black & White" data-category="Black & White" data-place="Turkey" data-year="2025" 
+        data-img="img/photos/room/photo66.webp" 
+         data-secondary-img="img/photos/room/photo66_bg.webp">
+
+          <img src="img/photos/room/photo66.webp" alt="Black & White">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 62 -->
+        <div class="masonry-item exhibition" data-title="Black & White" data-category="Black & White" data-place="Kiev" data-year="2025" 
+        data-img="img/photos/room/photo69.webp" 
+         data-secondary-img="img/photos/room/photo69_bg.webp">
+          <img src="img/photos/room/photo69.webp" alt="Black & White">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+         <!-- END OF Black & White -->
+
+        <!-- Art of Photography -->
+
+        <!-- Masonry Item 63 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Kiev" data-year="2025" 
+        data-img="img/photos/room/photo17.webp" 
+         data-secondary-img="img/photos/room/photo17_bg.webp">
+
+          <img src="img/photos/room/photo17.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 64 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Glucksburg" data-year="2025" 
+        data-img="img/photos/room/photo32.webp" 
+         data-secondary-img="img/photos/room/photo32_bg.webp">
+
+          <img src="img/photos/room/photo32.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 65 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Kiel" data-year="2025" 
+        data-img="img/photos/room/photo78.webp" 
+         data-secondary-img="img/photos/room/photo78_bg.webp">
+
+          <img src="img/photos/room/photo78.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 66 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Lisbon" data-year="2025" 
+        data-img="img/photos/room/photo80.webp" 
+       data-secondary-img="img/photos/room/photo80_bg.webp">
+
+          <img src="img/photos/room/photo80.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 67 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Kiev" data-year="2025" 
+        data-img="img/photos/room/photo81.webp" 
+         data-secondary-img="img/photos/room/photo81_bg.webp">
+
+          <img src="img/photos/room/photo81.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 68 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Kiev" data-year="2025" 
+        data-img="img/photos/room/photo82.webp" 
+      data-secondary-img="img/photos/room/photo82_bg.webp">
+
+          <img src="img/photos/room/photo82.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 69 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Kiev" data-year="2025" 
+        data-img="img/photos/room/photo85.webp" 
+         data-secondary-img="img/photos/room/photo85_bg.webp">
+
+          <img src="img/photos/room/photo85.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 70 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Kiev" data-year="2025" 
+        data-img="img/photos/room/photo106.webp" 
+       data-secondary-img="img/photos/room/photo106_bg.webp">
+
+          <img src="img/photos/room/photo106.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 71 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Kiev" data-year="2025" 
+        data-img="img/photos/room/photo123.webp" 
+        data-secondary-img="img/photos/room/photo123_bg.webp">
+
+          <img src="img/photos/room/photo123.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon> </h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 72 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo126.webp" 
+        data-secondary-img="img/photos/room/photo126_bg.webp">
+
+          <img src="img/photos/room/photo126.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 73 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Germany" data-year="2025" 
+        data-img="img/photos/room/photo127.webp" 
+       data-secondary-img="img/photos/room/photo127_bg.webp">
+
+          <img src="img/photos/room/photo127.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon> </h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 74 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Switzerland" data-year="2025" 
+        data-img="img/photos/room/photo128.webp" 
+        data-secondary-img="img/photos/room/photo128_bg.webp">
+
+          <img src="img/photos/room/photo128.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 75 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Schwerin" data-year="2025" 
+        data-img="img/photos/room/photo129.webp" 
+        data-secondary-img="img/photos/room/photo129_bg.webp">
+
+          <img src="img/photos/room/photo129.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon> </h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 76 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Glucksburg" data-year="2025" 
+        data-img="img/photos/room/photo132.webp" 
+        data-secondary-img="img/photos/room/photo132_bg.webp">
+
+          <img src="img/photos/room/photo132.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon> </h5>
+          </div>
+        </div>
+
+
+        <!-- Masonry Item 77 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Turkey" data-year="2025" 
+        data-img="img/photos/room/photo70.webp" 
+        data-secondary-img="img/photos/room/photo70_bg.webp">
+
+          <img src="img/photos/room/photo70.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 78 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo72.webp" 
+       data-secondary-img="img/photos/room/photo72_bg.webp">
+
+          <img src="img/photos/room/photo72.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 79 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo73.webp" 
+        data-secondary-img="img/photos/room/photo73_bg.webp">
+
+          <img src="img/photos/room/photo73.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 80 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo75.webp" 
+        data-secondary-img="img/photos/room/photo75_bg.webp">
+
+          <img src="img/photos/room/photo75.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 81 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo87.webp" 
+        data-secondary-img="img/photos/room/photo87_bg.webp">
+
+          <img src="img/photos/room/photo87.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 82 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo88.webp" 
+        data-secondary-img="img/photos/room/photo88_bg.webp">
+
+          <img src="img/photos/room/photo88.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 83 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo89.webp" 
+        data-secondary-img="img/photos/room/photo89_bg.webp">
+
+          <img src="img/photos/room/photo89.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 84 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo90.webp" 
+        data-secondary-img="img/photos/room/photo90_bg.webp">
+
+          <img src="img/photos/room/photo90.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5><ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 85 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo94.webp" 
+        data-secondary-img="img/photos/room/photo94_bg.webp">
+
+          <img src="img/photos/room/photo94.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 86 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo95.webp" 
+        data-secondary-img="img/photos/room/photo95_bg.webp">
+
+          <img src="img/photos/room/photo95.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+    
+        <!-- Masonry Item 87 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo96.webp" 
+        data-secondary-img="img/photos/room/photo96_bg.webp">
+
+          <img src="img/photos/room/photo96.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+     
+         <!-- Masonry Item 89 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo97.webp" 
+       data-secondary-img="img/photos/room/photo97_bg.webp">
+
+          <img src="img/photos/room/photo97.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+     
+        <!-- Masonry Item 90 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Schwerin" data-year="2025" data-img="img/photos/room/photo99.webp" data-secondary-img="img/photos/room/photo99.webp">
+          <img src="img/photos/room/photo99.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+    
+       <!-- Masonry Item 91 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo100.webp" 
+        data-secondary-img="img/photos/room/photo100_bg.webp">
+
+          <img src="img/photos/room/photo100.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+   
+       <!-- Masonry Item 92 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Switzerland" data-year="2025" 
+        data-img="img/photos/room/photo101.webp" 
+        data-secondary-img="img/photos/room/photo101_bg.webp">
+
+          <img src="img/photos/room/photo101.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+     
+       <!-- Masonry Item 93 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Monemvasia" data-year="2025" 
+        data-img="img/photos/room/photo104.webp" 
+        data-secondary-img="img/photos/room/photo104_bg.webp">
+
+          <img src="img/photos/room/photo104.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+    
+        <!-- Masonry Item 94 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Switzerland" data-year="2025" 
+        data-img="img/photos/room/photo110.webp" 
+        data-secondary-img="img/photos/room/photo110_bg.webp">
+
+          <img src="img/photos/room/photo110.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+     
+       <!-- Masonry Item 95 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo111.webp" 
+        data-secondary-img="img/photos/room/photo111_bg.webp">
+
+          <img src="img/photos/room/photo111.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+     
+      <!-- Masonry Item 96 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo112.webp" 
+        data-secondary-img="img/photos/room/photo112_bg.webp">
+
+          <img src="img/photos/room/photo112.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+    
+       <!-- Masonry Item 97 -->
+        <div class="masonry-item exhibition" data-title="Nature" data-category="Nature" data-place="Switzerland" data-year="2025" 
+        data-img="img/photos/room/photo113.webp" 
+        data-secondary-img="img/photos/room/photo113_bg.webp">
+
+          <img src="img/photos/room/photo113.webp" alt="Nature">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+      
+       <!-- Masonry Item 98 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo134.webp" 
+       data-secondary-img="img/photos/room/photo134_bg.webp">
+
+          <img src="img/photos/room/photo134.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 99 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Kiel" data-year="2025" 
+        data-img="img/photos/room/photo135.webp" 
+        data-secondary-img="img/photos/room/photo135_bg.webp">
+
+          <img src="img/photos/room/photo135.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 100 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Verona" data-year="2025" 
+        data-img="img/photos/room/photo136.webp" 
+        data-secondary-img="img/photos/room/photo136_bg.webp">
+
+          <img src="img/photos/room/photo136.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 101 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo137.webp" 
+         data-secondary-img="img/photos/room/photo137_bg.webp"
+         data-description="Origional size: 6000px*4000px">
+          <img src="img/photos/room/photo137.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 102 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo138.webp" 
+         data-secondary-img="img/photos/room/photo138_bg.webp"
+         data-description="Origional size: 6000px*4000px">
+          <img src="img/photos/room/photo138.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 103 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Lubeck" data-year="2025" 
+        data-img="img/photos/room/photo139.webp" 
+        data-secondary-img="img/photos/room/photo139_bg.webp"
+        data-description="Origional size: 6000px*4000px">
+
+          <img src="img/photos/room/photo139.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 104 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Lubeck" data-year="2025" 
+        data-img="img/photos/room/photo140.webp" 
+        data-secondary-img="img/photos/room/photo140_bg.webp"
+        data-description="Origional size: 6000px*4000px">
+
+          <img src="img/photos/room/photo140.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 105 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Lubeck" data-year="2025" 
+        data-img="img/photos/room/photo141.webp" 
+       data-secondary-img="img/photos/room/photo141_bg.webp"
+       data-description="Origional size: 6000px*4000px">
+
+          <img src="img/photos/room/photo141.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 106 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Black & White" data-place="Lubeck" data-year="2025" 
+        data-img="img/photos/room/photo142.webp" 
+       data-secondary-img="img/photos/room/photo142_bg.webp">
+
+          <img src="img/photos/room/photo142.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+         <!-- Masonry Item 107 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Lubeck" data-year="2025" 
+        data-img="img/photos/room/photo143.webp" 
+        data-secondary-img="img/photos/room/photo143_bg.webp"
+        data-description="Origional size: 6000px*4000px">
+
+          <img src="img/photos/room/photo143.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 108 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Lubeck" data-year="2025" 
+        data-img="img/photos/room/photo144.webp" 
+        data-secondary-img="img/photos/room/photo144_bg.webp"
+        data-description="Origional size: 6000px*4000px">
+
+          <img src="img/photos/room/photo144.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 109 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Lubeck" data-year="2025" 
+        data-img="img/photos/room/photo145.webp" 
+        data-secondary-img="img/photos/room/photo145_bg.webp"
+        data-description="Origional size: 6000px*4000px">
+
+          <img src="img/photos/room/photo145.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 110 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Lubeck" data-year="2025" 
+        data-img="img/photos/room/photo146.webp" 
+        data-secondary-img="img/photos/room/photo146_bg.webp"
+         data-description="Origional size: 6000px*4000px">
+
+          <img src="img/photos/room/photo146.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 111 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Lubeck" data-year="2025" 
+        data-img="img/photos/room/photo147.webp" 
+        data-secondary-img="img/photos/room/photo147_bg.webp"
+        data-description="Origional size: 4000px*6000px">
+
+          <img src="img/photos/room/photo147.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 112 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Lubeck" data-year="2025" 
+        data-img="img/photos/room/photo148.webp" 
+        data-secondary-img="img/photos/room/photo148_bg.webp"
+        data-description="Origional size: 6000px*4000px">
+
+          <img src="img/photos/room/photo148.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+         <!-- Masonry Item 113 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Lubeck" data-year="2025" 
+        data-img="img/photos/room/photo149.webp" 
+        data-secondary-img="img/photos/room/photo149_bg.webp"
+        data-description="Origional size: 6000px*4000px">
+
+          <img src="img/photos/room/photo149.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+   
+
+        <!-- Masonry Item 115 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Lubeck" data-year="2025" 
+        data-img="img/photos/room/photo151.webp" 
+       data-secondary-img="img/photos/room/photo151_bg.webp">
+
+          <img src="img/photos/room/photo151.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 116 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Lubeck" data-year="2025" 
+        data-img="img/photos/room/photo152.webp" 
+        data-secondary-img="img/photos/room/photo152_bg.webp">
+
+          <img src="img/photos/room/photo152.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+       <!-- Masonry Item 117 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Lubeck" data-year="2025" 
+        data-img="img/photos/room/photo153.webp" 
+        data-secondary-img="img/photos/room/photo153_bg.webp">
+
+          <img src="img/photos/room/photo153.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- Masonry Item 118 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Lubeck" data-year="2025" 
+        data-img="img/photos/room/photo154.webp" 
+        data-secondary-img="img/photos/room/photo154_bg.webp">
+
+          <img src="img/photos/room/photo154.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+             <!-- Masonry Item 119 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Hamburg" data-year="2026" 
+        data-img="img/photos/room/photo155.webp" 
+        data-secondary-img="img/photos/room/photo155_bg.webp"
+        data-description="Origional size: 6000px*4000px">
+          <img src="img/photos/room/photo155.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+             <!-- Masonry Item 120 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo156.webp" 
+        data-secondary-img="img/photos/room/photo156_bg.webp"
+        data-description="Origional size: 6000px*4000px">
+          <img src="img/photos/room/photo156.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+              <!-- Masonry Item 121 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Hamburg" data-year="2026" 
+        data-img="img/photos/room/photo157.webp" 
+        data-secondary-img="img/photos/room/photo157_bg.webp"
+        data-description="Origional size: 6000px*4000px">
+          <img src="img/photos/room/photo157.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+                <!-- Masonry Item 122 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Hamburg" data-year="2026" 
+        data-img="img/photos/room/photo158.webp" 
+        data-secondary-img="img/photos/room/photo158_bg.webp"
+        data-description="Origional size: 6000px*4000px">
+          <img src="img/photos/room/photo158.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+                  <!-- Masonry Item 123 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Hamburg" data-year="2026" 
+        data-img="img/photos/room/photo159.webp" 
+        data-secondary-img="img/photos/room/photo159_bg.webp"
+        data-description="Origional size: 6000px*4000px">
+          <img src="img/photos/room/photo159.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        
+                  <!-- Masonry Item 124 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Hamburg" data-year="2026" 
+        data-img="img/photos/room/photo160.webp" 
+        data-secondary-img="img/photos/room/photo160_bg.webp">
+          <img src="img/photos/room/photo160.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+                          <!-- Masonry Item 125 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Hamburg" data-year="2026" 
+        data-img="img/photos/room/photo161.webp" 
+        data-secondary-img="img/photos/room/photo161_bg.webp"
+        data-description="Origional size: 6000px*4000px">
+          <img src="img/photos/room/photo161.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+                     <!-- Masonry Item 126 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Hamburg" data-year="2026" 
+        data-img="img/photos/room/photo162.webp" 
+        data-secondary-img="img/photos/room/photo162_bg.webp"
+        data-description="Origional size: 6000px*4000px">
+          <img src="img/photos/room/photo162.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+                  <!-- Masonry Item 127 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Art of Photography" data-place="Hamburg" data-year="2026" 
+        data-img="img/photos/room/photo163.webp" 
+        data-secondary-img="img/photos/room/photo163_bg.webp"
+        data-description="Origional size: 6000px*4000px">
+          <img src="img/photos/room/photo163.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+                       <!-- Masonry Item 128 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Black & White" data-place="Lubeck" data-year="2025" 
+        data-img="img/photos/room/photo164.webp" 
+        data-secondary-img="img/photos/room/photo164_bg.webp">
+          <img src="img/photos/room/photo164.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+                          <!-- Masonry Item 129 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Black & White" data-place="Kiev" data-year="2020" 
+        data-img="img/photos/room/photo165.webp" 
+        data-secondary-img="img/photos/room/photo165_bg.webp">
+          <img src="img/photos/room/photo165.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+                                 <!-- Masonry Item 130 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Black & White" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo166.webp" 
+        data-secondary-img="img/photos/room/photo166_bg.webp">
+          <img src="img/photos/room/photo166.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+                                         <!-- Masonry Item 131 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Black & White" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo167.webp" 
+        data-secondary-img="img/photos/room/photo167_bg.webp">
+          <img src="img/photos/room/photo167.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+                                               <!-- Masonry Item 132 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Black & White" data-place="Hamburg" data-year="2025" 
+        data-img="img/photos/room/photo168.webp" 
+        data-secondary-img="img/photos/room/photo168_bg.webp">
+          <img src="img/photos/room/photo168.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+                                                      <!-- Masonry Item 133 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Black & White" data-place="Sankt Peter-Ording, Schleswig-Holstein" data-year="2025" 
+        data-img="img/photos/room/photo169.webp" 
+        data-secondary-img="img/photos/room/photo169_bg.webp">
+          <img src="img/photos/room/photo169.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+                
+                                                      <!-- Masonry Item 134 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Black & White" data-place="Valencia" data-year="2022" 
+        data-img="img/photos/room/photo170.webp" 
+        data-secondary-img="img/photos/room/photo170_bg.webp">
+          <img src="img/photos/room/photo170.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+                                                              <!-- Masonry Item 135 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Black & White" data-place="Dusseldorf" data-year="2023" 
+        data-img="img/photos/room/photo171.webp" 
+        data-secondary-img="img/photos/room/photo171_bg.webp">
+          <img src="img/photos/room/photo171.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        
+                                                              <!-- Masonry Item 136 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Black & White" data-place="Dusseldorf" data-year="2023" 
+        data-img="img/photos/room/photo172.webp" 
+        data-secondary-img="img/photos/room/photo172_bg.webp">
+          <img src="img/photos/room/photo172.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+                                                                   <!-- Masonry Item 137 -->
+        <div class="masonry-item exhibition" data-title="Art of Photography" data-category="Black & White" data-place="Italy" data-year="2025" 
+        data-img="img/photos/room/photo173.webp" 
+        data-secondary-img="img/photos/room/photo173_bg.webp">
+          <img src="img/photos/room/photo173.webp" alt="Art of Photography">
+          <div class="exhibition-info">
+            <h5> <ion-icon name="aperture-outline"></ion-icon></h5>
+          </div>
+        </div>
+
+        <!-- END OF Art of Photography -->
+
+      <!-- END OF masonry -->
+       
+    </section>
+    <!-- /#masonry-gallery -->
+
+
+    <!-- ===================== FULLSCREEN PROJECT OVERLAY ===================== -->
+<div id="projectOverlay" class="project-overlay">
+  <!-- Topbar -->
+  <div class="project-topbar">
+    <div class="project-title" id="overlayTitle">Project Title</div>
+    <button id="closeOverlay" class="close-btn">&times;</button>
+  </div>
+
+  <!-- Scrollable content -->
+  <div class="project-scroll">
+    <!-- Metadata -->
+    <div class="project-meta" id="overlayMeta"></div>
+    <div id="overlayDescription" class="project-description"></div>
+
+    <!-- SHARE -->
+    <div class="share-block">
+      <span class="share-label">Share</span>
+
+      <button class="share-btn" id="shareNative" title="Share on your device">
+        <ion-icon name="share-social-outline"></ion-icon>
+      </button>
+
+      <button class="share-btn" id="shareCopy" title="Copy link">
+        <ion-icon name="link-outline"></ion-icon>
+      </button>
+
+      <a class="share-btn" id="shareFacebook" target="_blank" rel="noopener" title="Share on Facebook">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </a>
+
+      <a class="share-btn" id="shareTwitter" target="_blank" rel="noopener" title="Share on Twitter">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </a>
+
+      <a class="share-btn" id="shareLinkedIn" target="_blank" rel="noopener" title="Share on LinkedIn">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </a>
+
+      <!-- Contact Me Button -->
+<a class="share-btn contact-btn" 
+   href="mailto:ogalanets@gmail.com?subject=Photography Inquiry&body=Hi,%0D%0A%0D%0AI would like to contact you about your photography work." 
+   title="Contact Me">
+  <ion-icon name="mail-outline"></ion-icon>
+</a>
+    </div>
+    <!-- /SHARE -->
+
+    <!-- Main image -->
+    <section class="project-block">
+      <img id="overlayMain" alt="Project Image">
+      <img id="overlaySecondary" alt="Secondary Project Image" class="secondary-image">
+    </section>
+
+    <!-- Gallery thumbnails -->
+    <section class="project-block">
+      <h3 style="color:#fff; margin-bottom:15px;">More from this category</h3>
+      <div id="overlayGallery" class="overlay-gallery-grid"></div>
+    </section>
+  </div>
+</div>
+
+
+    <!-- JS -->
+    <script src="js/photowebsitejs.js"></script>
+  </body>
+</html>
