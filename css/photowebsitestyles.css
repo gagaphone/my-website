@@ -1,0 +1,459 @@
+/* ---------- GLOBAL ---------- */
+body {
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+  font-family: 'Montserrat', sans-serif;
+  background: #0b0b0b;
+  color: #ddd;
+}
+
+/* ===================== MASONRY GALLERY ===================== */
+.masonry-section {
+  width: 100%;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.masonry {
+  column-count: 6;
+  column-gap: 20px;
+}
+
+.masonry-item {
+  margin-bottom: 15px;
+  break-inside: avoid;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 14px;
+  position: relative;
+  transition: transform .25s ease, box-shadow .35s ease;
+}
+
+.masonry-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform .35s ease, opacity .35s ease;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.85;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.masonry-item:hover img {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.masonry-item:hover {
+  transform: translateY(-4px);
+}
+
+/* Exhibition card */
+.exhibition {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+  break-inside: avoid;
+  cursor: pointer;
+}
+
+/* Meta under images */
+.exhibition-info {
+  margin-top: 8px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exhibition-info h5 {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+/* Trophy icon */
+.masonry-item .trophy-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #fff;
+  background: rgba(0,0,0,0.45);
+  padding: 6px;
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+/* ---------- FULLSCREEN PROJECT OVERLAY ---------- */
+.project-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+.project-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- TOP BAR ---------- */
+.project-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(12px);
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+  animation: fadeUp .5s ease both;
+}
+
+.project-topbar .close-btn {
+  font-size: 32px;
+  width: 46px;
+  height: 46px;
+  color: #111;
+  background: #fff;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.project-topbar .close-btn:hover {
+  color: #fff;
+  background: #000;
+  border: 1px solid #ccc;
+}
+
+/* ---------- OVERLAY SCROLL CONTENT ---------- */
+.project-scroll {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.project-meta {
+  font-size: 16px;
+  color: #eee;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  animation: fadeUp .7s ease both;
+}
+
+.project-meta span {
+  background: rgba(255,255,255,0.08);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* ---------- DESCRIPTION ---------- */
+.project-description {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 10px 0 20px;
+  max-width: 700px;
+}
+
+/* ---------- MAIN IMAGE + SECOND IMAGE SWITCH ---------- */
+.project-block {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#overlayMain {
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 160px);
+  object-fit: contain;
+  display: block;
+  border-radius: inherit;
+  transition: opacity 0.6s ease;
+  opacity: 0;
+}
+
+/* ---------- SECONDARY IMAGE ---------- */
+#overlaySecondary {
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 160px);
+  object-fit: contain;
+  display: none;            /* controlled by JS */
+  border-radius: inherit;
+  transition: opacity 0.6s ease;
+  opacity: 0;
+}
+
+/* Buttons to switch images */
+.image-switch-buttons {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.switch-btn {
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.25s ease;
+}
+
+.switch-btn:hover {
+  background: rgba(0,0,0,0.85);
+}
+
+.switch-btn.active {
+  background: #ea4c89;
+  color: #fff;
+}
+
+/* ---------- CATEGORY GRID ---------- */
+.overlay-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.overlay-gallery-grid img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .4s ease, transform .4s ease;
+}
+
+.overlay-gallery-grid img.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- FILTER BUTTONS ---------- */
+.filters-wrapper {
+  position: sticky;
+  top: 15px;
+  z-index: 100;
+  margin-bottom: 35px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
+  transition: background .25s ease, box-shadow .25s ease;
+}
+
+.tab-button {
+  background: rgba(255,255,255,0.08);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ddd;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tab-button:hover {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+}
+
+.tab-button.active {
+  background: #ea4c89;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(234,76,137,0.35);
+  transform: translateY(-2px);
+}
+
+.filters-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.active-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.active-filter {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(234,76,137,0.85);
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 999px;
+  gap: 6px;
+  animation: fadeUp .25s ease both;
+}
+
+.active-filter button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.active-filter button:hover {
+  opacity: 1;
+}
+
+.results-count {
+  font-size: 13px;
+  color: #bbb;
+  background: rgba(255,255,255,0.08);
+  padding: 6px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.results-count span {
+  font-weight: 600;
+  color: #fff;
+}
+
+.filters-wrapper.stuck .filters {
+  background: rgba(15,15,15,0.85);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .filters { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .filters::-webkit-scrollbar { display: none; }
+  .filters-meta { flex-direction: column; align-items: flex-start; }
+  .results-count { align-self: flex-end; }
+  #overlayMain { max-height: calc(100vh - 110px); }
+  .project-block img { border-radius: 12px; transform: translateY(0); }
+  .masonry { column-count: 3; column-gap: 15px; }
+  .tab-button { font-size: 12px; }
+}
+
+@media (max-width: 480px) {
+  .masonry { column-count: 2; column-gap: 10px; }
+  .tab-button { font-size: 10px; }
+}
+
+@media (max-width: 375px) {
+  .masonry { column-count: 2; column-gap: 10px; }
+}
+
+/* ---------- ANIMATION ---------- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.overlay-section-title {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+
+/* ---------- Share photo ---------- */
+.share-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.share-label {
+  font-size: 14px;
+  color: #aaa;
+  margin-right: 6px;
+}
+
+.share-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.share-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255,255,255,0.15);
+}
+
+.share-btn ion-icon {
+  font-size: 18px;
+}
+
+
+/* ===================== CONTACT BUTTON ===================== */
+.contact-btn {
+  background: #ff5722; /* orange color */
+  color: #fff;
+}
+
+.contact-btn:hover {
+  background: #e64a19; /* darker orange */
+  transform: translateY(-2px);
+}
