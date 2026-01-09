@@ -167,3 +167,69 @@ Responsive
 @media (max-width: 480px) { .main-content { padding: 20px 10px; } }
 @media (max-width: 320px) { .main-content { padding: 15px 5px; } }
 
+
+
+/* ===================== ROADMAP CTA ===================== */
+/* ===================== ROADMAP CTA ===================== */
+.rm-cta {
+  position: relative;
+  margin-top: 60px;              /* ✅ SPACE BEFORE BUTTON */
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+}
+
+/* Button */
+.rm-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 28px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: #fff;
+  text-decoration: none;
+
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 40px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+
+  transition: all 0.3s ease;
+  touch-action: manipulation;
+}
+
+/* Icon */
+.rm-cta-btn ion-icon {
+  font-size: 18px;
+}
+
+/* Hover (desktop only) */
+@media (hover: hover) {
+  .rm-cta-btn:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-3px);
+    border-color: #fff;
+  }
+}
+
+/* ===================== MOBILE OPTIMIZATION ===================== */
+@media (max-width: 768px) {
+  .rm-cta {
+    margin-top: 48px;             /* slightly tighter on mobile */
+    padding-bottom: 20px;
+  }
+
+  .rm-cta-btn {
+    width: 100%;                  /* ✅ easy thumb tap */
+    max-width: 320px;
+
+    justify-content: center;
+    padding: 16px 24px;           /* bigger tap area */
+    font-size: 13px;
+  }
+}
