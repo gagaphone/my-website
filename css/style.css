@@ -771,17 +771,20 @@ RESPONSIVE OPTIMIZATION
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  background: var(--white);
+  background: none;
   border-radius: calc(var(--radius) * 1.2);
   border: 1px solid rgba(11, 18, 38, 0.12);
-  font-weight: 700;
-  text-transform: uppercase;
+  font-weight: 400;
+  text-transform: none;
   color: var(--text-btn);
   transition: background 0.3s ease, color 0.3s ease;
+  text-decoration: none;
 }
 
 .link--arrowed:hover {
   background: var(--primary);
+  border-radius: calc(var(--radius) * 1.2);
+  border: 1px solid rgba(11, 18, 38, 0.12);
   color: #fff;
 }
 
