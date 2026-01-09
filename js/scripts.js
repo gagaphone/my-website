@@ -5,23 +5,6 @@ const qs = (sel, scope=document) => scope.querySelector(sel);
 const qsa = (sel, scope=document) => [...scope.querySelectorAll(sel)];
 
 /*****************************************
- * TABS (only if elements exist)
- *****************************************/
-function openCity(evt, cityName) {
-  const tabcontent = qsa(".tabcontent");
-  const tablinks = qsa(".tablinks");
-
-  tabcontent.forEach(el => el.style.display = "none");
-  tablinks.forEach(el => el.classList.remove("active"));
-
-  const target = qs(`#${cityName}`);
-  if (target) target.style.display = "block";
-
-  if (evt?.currentTarget) evt.currentTarget.classList.add("active");
-}
-
-
-/*****************************************
  * TIMELINE FADE-IN
  *****************************************/
 document.addEventListener("DOMContentLoaded", () => {
@@ -40,9 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
   items.forEach(i => observer.observe(i));
 });
 
-
 /*****************************************
- * EXPANDABLE SECTIONS (merged & fixed)
+ * EXPANDABLE SECTIONS
  *****************************************/
 qsa('.toggle-link').forEach(link => {
   link.addEventListener('click', function(){
@@ -71,9 +53,8 @@ qsa('.skills-handle').forEach(handle => {
   });
 });
 
-
 /*****************************************
- * SIDE MENU LOADER (safe)
+ * SIDE MENU LOADER
  *****************************************/
 document.addEventListener("DOMContentLoaded", () => {
   const sideMenu = qs("#sideMenu");
@@ -111,45 +92,86 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /*****************************************
- * PROJECT FILTER
+ * MAIN PORTFOLIO / EDUCATION TABS
  *****************************************/
 (function(){
-  const buttons = qsa('.tab-button');
-  const cards = qsa('.project-card');
-  if (!buttons.length) return;
+  const mainTabs = qsa(".main-tab");
+  const tabContents = qsa(".tab-content");
+  if (!mainTabs.length) return;
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', ()=>{
-      buttons.forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
+  mainTabs[0].classList.add("active");
+  tabContents.forEach((tc, i) => tc.style.display = i===0 ? "block" : "none");
 
-      cards.forEach(card=>{
-        card.style.display =
-          filter === "all" || card.dataset.category === filter
-            ? "block"
-            : "none";
-      });
+  mainTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      mainTabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      tabContents.forEach(tc => tc.style.display = "none");
+      const target = qs(`#${tab.dataset.target}`);
+      if (target) target.style.display = "block";
     });
   });
 })();
 
 /*****************************************
- * EDUCATION FILTER
+ * PROJECT CATEGORY FILTER
  *****************************************/
 (function(){
-  const select = qs("#edu-filter");
-  const cards = qsa(".edu-card");
-  if (!select) return;
+  const projectTabContent = qs("#projects-content");
+  if (!projectTabContent) return;
 
-  select.addEventListener("change", ()=>{
-    const filter = select.value;
-    cards.forEach(card=>{
-      const cat = card.dataset.category;
-      card.style.display =
-        filter === "all" || cat === filter ? "block" : "none";
+  const projectButtons = qsa(".tab-button", projectTabContent);
+  const projectCards = qsa(".project-card", projectTabContent);
+
+  if (!projectButtons.length) return;
+
+  projectButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      projectButtons.forEach(b => b.classList.remove("active"));
+      button.classList.add("active");
+
+      const filter = button.dataset.filter;
+      projectCards.forEach(card => {
+        card.style.display = (filter === "all" || card.dataset.category === filter)
+          ? "block"
+          : "none";
+      });
     });
   });
+
+  // Show all projects by default
+  projectCards.forEach(card => card.style.display = "block");
+})();
+
+/*****************************************
+ * EDUCATION FILTER (TAB BUTTONS, like Projects)
+ *****************************************/
+(function(){
+  const eduTabContent = qs("#education-content");
+  if (!eduTabContent) return;
+
+  const eduButtons = qsa(".edu-tabs .tab-button", eduTabContent);
+  const eduCards = qsa(".edu-card", eduTabContent);
+
+  if (!eduButtons.length) return;
+
+  eduButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      eduButtons.forEach(b => b.classList.remove("active"));
+      button.classList.add("active");
+
+      const filter = button.dataset.filter;
+      eduCards.forEach(card => {
+        card.style.display = (filter === "all" || card.dataset.category === filter)
+          ? "block"
+          : "none";
+      });
+    });
+  });
+
+  // Show all education cards by default
+  eduCards.forEach(card => card.style.display = "block");
 })();
 
 /*****************************************
@@ -171,8 +193,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   cards.forEach(c=>observer.observe(c));
 });
-
-
 
 /*****************************************
  * PROJECT CARD FLIP (mobile only)
