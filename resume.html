@@ -8,7 +8,7 @@
   <meta name="author" content="ogalanets">
 
   <!--Favicon-->
-  <link rel="icon" type="image/png" href="img/personal/olga-galanets.256x256.jpg" alt="photo">
+  <link rel="icon" type="image/png" href="img/personal/olga-galanets.256x256.jpg">
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap">
@@ -49,6 +49,9 @@
   <!-- Floating Menu Container -->
   <div class="floating-menu-container-main">
 
+    <!-- Social Icons Always Visible (above main button) -->
+   
+
     <!-- Main Floating Menu Button -->
     <div class="floating-menu-main" id="floatingMenu">
       <ion-icon name="menu-outline"></ion-icon>
@@ -77,16 +80,35 @@
 </div>
 
   <!------------------------------- All content - HOME --------------------------->
-  <section id="home" class="text-white pp-scrollable d-flex align-items-center section position-relative">
+   <section id="home" class="text-white pp-scrollable d-flex align-items-center section position-relative">
 
     <header class="app-header">
       <h2>Professional Timeline</h2>
-      <div class="control-panel">
-        <button id="export-pdf"><ion-icon name="print-outline"></ion-icon></button>
-        <a href="OlgaGalanetsCV.pdf" target="_blank" class="btn-resume">
-          <ion-icon name="download-outline"></ion-icon>
-        </a>
-      </div>
+
+ <div class="control-panel">
+  <button id="export-pdf" class="btn-pill">
+    <ion-icon name="print-outline"></ion-icon>
+    <span class="btn-text">Download Timeline</span>
+  </button>
+
+  <a href="OlgaGalanetsCV.pdf"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="btn-pill btn-resume">
+    <ion-icon name="download-outline"></ion-icon>
+    <span class="btn-text">Download Resume (EN)</span>
+  </a>
+
+  <a href="OlgaGalanetsCVDE.pdf"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="btn-pill btn-resume">
+    <ion-icon name="download-outline"></ion-icon>
+    <span class="btn-text">Download Resume (DE)</span>
+  </a>
+</div>
+
+
     </header>
 
     <!-- Main Content -->
@@ -683,7 +705,7 @@
         </div>
       </div>
 
-           <section id="contact-section" class="contact section">
+      <section id="contact-section" class="contact section">
         <div class="contact-intro">
           <h2>Ready to <span>start your project?</span></h2>
           <p>I’m available for new collaborations and freelance opportunities. <br> Let’s build something impactful together.</p>
@@ -727,6 +749,3 @@
 </body>
 
 </html>
-
-
-
