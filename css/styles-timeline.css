@@ -1,6 +1,3 @@
-/*==================================================
-  RESUME — OPTIMIZED & ALIGNED WITH GLOBAL STYLES
-==================================================*/
 
 /*--------------------------------------------------
   Base adjustments (resume-only)
@@ -26,44 +23,136 @@ ul {
   width: 100%;
 }
 
-.app-header h2 {
-  font-size: 2rem;
-  text-align: center;
-}
+
 
 /*--------------------------------------------------
   Buttons (merged + normalized)
 --------------------------------------------------*/
-.btn-resume,
-#export-pdf {
+/*--------------------------------------------------
+  Unified Button Style (button + anchor)
+--------------------------------------------------*/
+.btn-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  cursor: pointer;
+  gap: 0.5rem;
+
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1;
+
   background: transparent;
   color: var(--primary-dark);
+
   border: 1px solid var(--primary);
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-size: 1.1rem;
-  transition: all 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: background 0.25s ease,
+              color 0.25s ease,
+              box-shadow 0.25s ease,
+              transform 0.15s ease;
+
+  min-height: 44px; /* Apple / Material tap target */
+  touch-action: manipulation;
 }
 
-.btn-resume:hover,
-#export-pdf:hover {
+/* Hover & focus */
+.btn-pill:hover,
+.btn-pill:focus-visible {
   background: var(--primary-light);
   color: var(--white);
+  box-shadow: 0 6px 16px rgba(53, 99, 214, 0.35);
+  transform: translateY(-1px);
 }
 
-/* Remove underline for links inside buttons */
-a.no-underline {
-  text-decoration: none;
-  color: inherit;
+/* Active */
+.btn-pill:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(53, 99, 214, 0.25);
 }
 
-button a {
-  display: inline-flex;
-  align-items: center;
+/* Icon alignment */
+.btn-pill ion-icon {
+  font-size: 1.1rem;
+}
+
+/* Remove button defaults */
+button.btn-pill {
+  border: 1px solid var(--primary);
+  background: transparent;
+}
+
+/* Accessibility */
+.btn-pill:focus-visible {
+  outline: 2px solid var(--primary-light);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .control-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-pill {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .control-panel {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn-pill {
+    font-size: 0.85rem;
+    gap: 0.4rem;
+    justify-content: center;
+    padding: 12px;
+    
+  }
+
+  .btn-pill ion-icon {
+    font-size: 1.25rem;
+
+  }
+
+   
+}
+
+@media (hover: none) {
+  .btn-pill:hover {
+    background: transparent;
+    color: var(--primary-dark);
+    box-shadow: none;
+    transform: none;
+  }
+
+  
+}
+
+
+
+
+@media (max-width: 360px) {
+  .btn-pill {
+    font-size: 0.8rem;
+  }
+
+  .btn-pill span {
+    display: none;
+  }
 }
 
 /*--------------------------------------------------
