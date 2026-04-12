@@ -1853,10 +1853,7 @@ color: var(--text-light);
   /* Education section - Responsive design */
   .education-grid {grid-template-columns: 1fr 1fr;}
 
-  /* Blog section - Responsive design */
-  .blog-card {flex: 0 0 60%;}
 
-  
   /* Hero section - Responsive design */
   .hero-main {flex-direction: column; text-align: center;}
   .hero-text {max-width: 90%;}
@@ -1926,14 +1923,39 @@ color: var(--text-light);
   }
   .pt-section { padding: 50px 15px;}
 
-  /* Blog section - Responsive design */
-  .blog-header {flex-direction: column; align-items: flex-start; gap: 12px;}
-  .blog-card {flex: 0 0 85%;}
-
    /* Site-footer section - Responsive design */
-  .footer-container {grid-template-columns: 1fr; text-align: center;}
-  .footer-links, .footer-contact, .footer-social {align-items: center; gap: 4px; /* 🔥 extra compact on mobile */}
-  .footer-bottom {margin-top: 18px;}
+  .footer-container {
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    gap: 20px;
+  }
+
+  /* Site footer */
+  .footer-brand {
+    grid-column: span 2; /* full width */
+    text-align: center;
+  }
+
+  .footer-links,
+  .footer-contact {
+    align-items: flex-start;
+  }
+
+  .footer-social {
+    flex-direction: row; /* horizontal icons */
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .footer-social a {
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+  }
 
   .cta-btn { padding: 10px 20px;}
 }
@@ -1984,5 +2006,56 @@ color: var(--text-light);
   /* KORE section - Responsive design */
   .kore-content h3 {font-size: 0.72rem;}
   .kore-content p {font-size: 0.8rem;}
+
+/* Site footer */
+  .site-footer {
+    padding: 32px 16px 12px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr; /* single column */
+    gap: 18px;
+    text-align: center;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-links,
+  .footer-contact,
+  .footer-social {
+    align-items: center;
+  }
+
+  .footer-links a,
+  .footer-contact a {
+    justify-content: center;
+  }
+
+  .footer-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .footer-social {
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .footer-social a {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.75rem;
+    margin-top: 18px;
+    padding-top: 10px;
+  }
 }
 
