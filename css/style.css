@@ -1631,9 +1631,9 @@ color: var(--text-light);
 /* ===============================================
    11 - CONTACT SECTION 
 ================================================ */
-
-/* Contact section - grid */
-/* Contact section - cards */
+/* ===============================================
+   CONTACT CARD FIX
+================================================ */
 
 .contact-card {
   display: flex;
@@ -1646,49 +1646,43 @@ color: var(--text-light);
   text-decoration: none;
   color: inherit;
   transition: all 0.25s ease;
-  text-align: left;
+
+  justify-content: flex-start; /* ✅ FIX */
 }
 
-.contact-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
-}
+/* ICON CONTAINER */
+.contact-icon {
+  width: 42px;
+  height: 42px;
 
-/* Contact section - cards - highlite email */
-.contact-card.primary {
-  border: 1px solid var(--primary-light);
-  background: linear-gradient(145deg, #ffffff, #f3f6ff);
-}
-
-/* Contact section - cards - icons */
-
-/* Fix icon inside contact card */
-.contact-card ion-icon {
-  font-size: 22px;
-  color: var(--primary);
-  display: block;
-}
-
-/* Center icon if no text */
-.contact-card {
+  display: flex;
+  align-items: center;
   justify-content: center;
+
+  border-radius: 10px;
+  background: rgba(99,102,241,0.08);
+
+  transition: all 0.25s ease;
 }
 
-/* Contact section - cards - text */
-
-.contact-card h3 {
-  margin: 0;
-  font-size: 1rem;
+/* ICON */
+.contact-icon ion-icon {
+  font-size: 20px;
+  color: var(--primary);
 }
 
-.contact-card p {
-  margin: 2px 0 0;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
+/* HOVER EFFECT */
 .contact-card:hover .contact-icon {
   background: var(--primary);
+}
+
+.contact-card:hover .contact-icon ion-icon {
+  color: white;
+}
+
+/* REMOVE THIS (important) */
+.contact-card.footer-item {
+  justify-content: flex-start;
 }
 
 /* ======================================================
