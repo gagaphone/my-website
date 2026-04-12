@@ -467,58 +467,46 @@ Main Content
 
 /* Mobile menu socials */
 
+/* MOBILE SOCIAL ICONS (CLEAN) */
 .mobile-socials {
   display: flex;
-  align-items: center;
-  gap: 12px;
-
-  width: 100%;          /* 🔥 ensures no clipping */
-  padding-left: 2px;    /* 🔥 small breathing room */
-padding-top: 20px;
-  position: relative;
-  z-index: 1001;
-  
   justify-content: center;
+  gap: 14px;
+  padding: 20px 0;
 }
 
 .mobile-socials a {
+  width: 44px;
+  height: 44px;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 40px;
-  height: 40px;
+  border-radius: 12px;
 
-  border-radius: 10px;
-
-  color: var(--text-light);
-  font-size: 18px;
-
-  background: rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.08);
 
   transition: all 0.25s ease;
-
-  position: relative;
-  z-index: 1002; /* ✅ ensures clickability */
-
-  pointer-events: auto; /* 🔥 force interaction */
-  cursor: pointer;
 }
 
-/* Hover socials*/
+.mobile-socials ion-icon {
+  font-size: 20px;
+  color: var(--text-light);
+}
+
+/* hover */
 .mobile-socials a:hover {
   background: rgba(99,102,241,0.15);
-  border-color: rgba(99,102,241,0.4);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
+  transform: translateY(-2px);
 }
 
-/* Mobile menu socials active (tap feedback) */
+/* tap */
 .mobile-socials a:active {
-  transform: scale(0.92);
-  background: rgba(99,102,241,0.25);
+  transform: scale(0.95);
 }
+
 
 /* Mobile menu nav */
 .mobile-nav {
@@ -1674,17 +1662,16 @@ color: var(--text-light);
 
 /* Contact section - cards - icons */
 
-.contact-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-sm);
-  background: var(--primary-light);
-  display: flex;
-  align-items: center;
+/* Fix icon inside contact card */
+.contact-card ion-icon {
+  font-size: 22px;
+  color: var(--primary);
+  display: block;
+}
+
+/* Center icon if no text */
+.contact-card {
   justify-content: center;
-  font-weight: 700;
-  color: var(--bg-white);
-  font-size: 0.9rem;
 }
 
 /* Contact section - cards - text */
