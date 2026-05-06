@@ -1646,8 +1646,23 @@ color: var(--text-light);
   text-decoration: none;
   color: inherit;
   transition: all 0.25s ease;
+  justify-content: flex-start;
+}
 
-  justify-content: flex-start; /* ✅ FIX */
+#contact-section .header-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact-section .header-inner h3,
+.header-inner p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+#contact-section .header-inner p {
+  font-size: 0.9rem;
+  color: #666;
 }
 
 /* ICON CONTAINER */
@@ -1670,6 +1685,7 @@ color: var(--text-light);
   font-size: 20px;
   color: var(--primary);
 }
+
 
 /* HOVER EFFECT */
 .contact-card:hover .contact-icon {
