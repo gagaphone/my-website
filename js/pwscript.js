@@ -680,6 +680,62 @@ const images = [
     src: "img/photos/art/photo38a.jpg",
     description: "Minimal monochrome emotional composition."
   },
+
+    {
+    title: "Creative photography",
+    category: "Creative",
+    place: "Hamburg",
+    year: "2026",
+    id: 163,
+    src: "img/photos/art/photo39a.jpg",
+    description: "Minimal monochrome emotional composition."
+  },
+   {
+    title: "Creative photography",
+    category: "Creative",
+    place: "Hamburg",
+    year: "2026",
+    id: 162,
+    src: "img/photos/art/photo40a.jpg",
+    description: "Minimal monochrome emotional composition."
+  },
+   {
+    title: "Creative photography",
+    category: "Creative",
+    place: "Hamburg",
+    year: "2026",
+    id: 161,
+    src: "img/photos/art/photo41a.jpg",
+    description: "Minimal monochrome emotional composition."
+  },
+   {
+    title: "Creative photography",
+    category: "Creative",
+    place: "Hamburg",
+    year: "2026",
+    id: 160,
+    src: "img/photos/art/photo42a.jpg",
+    description: "Minimal monochrome emotional composition."
+  },
+   {
+    title: "Creative photography",
+    category: "Creative",
+    place: "Hamburg",
+    year: "2026",
+    id: 159,
+    src: "img/photos/art/photo43a.jpg",
+    description: "Minimal monochrome emotional composition."
+  },
+
+   {
+    title: "Creative photography",
+    category: "Creative",
+    place: "Hamburg",
+    year: "2026",
+    id: 158,
+    src: "img/photos/art/photo44a.jpg",
+    description: "Minimal monochrome emotional composition."
+  },
      
 ];
 /* =========================
