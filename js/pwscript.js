@@ -737,7 +737,7 @@ images.forEach(img => {
   }
 });
 
-// 2. Assign country automatically (DO NOT TRUST DATA)
+// 2. Assign country automatically 
 images.forEach(img => {
   img.country = placeToCountry[img.place] || "Unknown";
 });
@@ -846,6 +846,7 @@ function createFilters() {
 
   getUniqueCategories(images).forEach(cat => {
     const btn = document.createElement("button");
+
     btn.className = "filter";
     btn.dataset.filter = cat;
     btn.textContent = cat;
@@ -875,7 +876,10 @@ function setFilter(filter) {
 
 function updateFilterUI() {
   filters.forEach(btn => {
-    btn.classList.toggle("active", btn.dataset.filter === state.filter);
+    btn.classList.toggle(
+      "active",
+      btn.dataset.filter === state.filter
+    );
   });
 }
 
@@ -897,6 +901,10 @@ function prev() {
   }
 }
 
+/* =========================
+   DESKTOP WHEEL NAVIGATION
+========================= */
+
 window.addEventListener(
   "wheel",
   (e) => {
@@ -906,7 +914,53 @@ window.addEventListener(
 
     e.deltaY > 0 ? next() : prev();
 
-    setTimeout(() => (state.lock = false), 500);
+    setTimeout(() => {
+      state.lock = false;
+    }, 500);
+  },
+  { passive: true }
+);
+
+/* =========================
+   MOBILE SWIPE SUPPORT
+========================= */
+
+let touchStartY = 0;
+let touchEndY = 0;
+
+window.addEventListener(
+  "touchstart",
+  (e) => {
+    touchStartY = e.changedTouches[0].screenY;
+  },
+  { passive: true }
+);
+
+window.addEventListener(
+  "touchend",
+  (e) => {
+    if (state.lock || !state.filtered.length) return;
+
+    touchEndY = e.changedTouches[0].screenY;
+
+    const swipeDistance = touchStartY - touchEndY;
+
+    // ignore tiny swipes
+    if (Math.abs(swipeDistance) < 50) return;
+
+    state.lock = true;
+
+    if (swipeDistance > 0) {
+      // swipe up → next image
+      next();
+    } else {
+      // swipe down → previous image
+      prev();
+    }
+
+    setTimeout(() => {
+      state.lock = false;
+    }, 500);
   },
   { passive: true }
 );
@@ -932,7 +986,9 @@ function softTransition() {
   if (!viewer) return;
 
   viewer.classList.remove("chapter");
+
   void viewer.offsetWidth;
+
   viewer.classList.add("chapter");
 }
 
@@ -942,6 +998,7 @@ function softTransition() {
 
 moreBtn?.addEventListener("click", () => {
   const img = getCurrentImage();
+
   if (!img) return;
 
   window.location.href = `pwproject.html?id=${img.id}`;
@@ -953,8 +1010,10 @@ moreBtn?.addEventListener("click", () => {
 
 function initIndexPage() {
   createFilters();
+
   state.filtered = images;
   state.index = 0;
+
   render();
   updateFilterUI();
 }
@@ -965,9 +1024,11 @@ function initIndexPage() {
 
 function initProjectPage() {
   const params = new URLSearchParams(window.location.search);
+
   const id = Number(params.get("id"));
 
   const img = images.find(i => i.id === id);
+
   if (!img) return;
 
   const title = document.getElementById("overlayTitle");
@@ -977,10 +1038,12 @@ function initProjectPage() {
   const gallery = document.getElementById("overlayGallery");
 
   if (title) title.textContent = img.title;
+
   if (main) main.src = img.src;
 
   if (desc) {
-    desc.textContent = img.exhibition ? "" : img.description;
+    desc.textContent =
+      img.exhibition ? "" : img.description;
   }
 
   if (meta) {
@@ -1009,15 +1072,21 @@ function initProjectPage() {
 
     if (img.exhibition) {
       const box = document.createElement("div");
+
       box.className = "meta-block exhibition";
 
       box.innerHTML = `
         <strong>${img.exhibitionTitle}</strong>
+
         <div class="exhibition-row">
           <span>${img.exhibitionYear}</span>
           <span>${img.exhibitionPlace}</span>
         </div>
-        <a href="${img.exhibitionLink}" target="_blank">View Exhibition</a>
+
+        <a href="${img.exhibitionLink}" target="_blank">
+          View Exhibition
+        </a>
+
         <p>${img.exhibitionDescription}</p>
       `;
 
@@ -1026,12 +1095,18 @@ function initProjectPage() {
 
     if (img.magazine) {
       const box = document.createElement("div");
+
       box.className = "meta-block magazine";
 
       box.innerHTML = `
         <strong>${img.magazineTitle}</strong>
-        <a href="${img.magazineLink}" target="_blank">Read Publication</a>
+
+        <a href="${img.magazineLink}" target="_blank">
+          Read Publication
+        </a>
+
         <span>${img.magazineYear}</span>
+
         <p>${img.magazineDescription}</p>
       `;
 
@@ -1048,10 +1123,12 @@ function initProjectPage() {
       .filter(i => i.category === img.category)
       .forEach(item => {
         const el = document.createElement("img");
+
         el.src = item.src;
 
         el.addEventListener("click", () => {
-         window.location.href = `pwproject.html?id=${item.id}`;
+          window.location.href =
+            `pwproject.html?id=${item.id}`;
         });
 
         gallery.appendChild(el);
@@ -1072,8 +1149,9 @@ if (document.querySelector(".project-scroll")) {
 }
 
 /* =========================
-toggle
+   FILTER TOGGLE
 ========================= */
+
 const toggle = document.getElementById("filterToggle");
 const panel = document.getElementById("filtersInner");
 
@@ -1081,48 +1159,64 @@ toggle?.addEventListener("click", () => {
   panel?.classList.toggle("open");
 });
 
+/* =========================
+   SHARE SYSTEM
+========================= */
 
-// ===================== SHARE SYSTEM =====================
+const shareNative =
+  document.getElementById("shareNative");
 
-const shareNative = document.getElementById("shareNative");
-const shareCopy = document.getElementById("shareCopy");
-const shareFacebook = document.getElementById("shareFacebook");
-const shareTwitter = document.getElementById("shareTwitter");
-const shareLinkedIn = document.getElementById("shareLinkedIn");
+const shareFacebook =
+  document.getElementById("shareFacebook");
 
-// ===================== PAGE DATA =====================
+const shareTwitter =
+  document.getElementById("shareTwitter");
 
-// Current page URL
+const shareLinkedIn =
+  document.getElementById("shareLinkedIn");
+
+/* =========================
+   PAGE DATA
+========================= */
+
 const pageURL = window.location.href;
 
-// Page title
 const pageTitle =
-  document.getElementById("overlayTitle")?.textContent ||
+  document.getElementById("overlayTitle")
+    ?.textContent ||
   document.title ||
   "Photography";
 
-// ===================== NATIVE SHARE =====================
+/* =========================
+   NATIVE SHARE
+========================= */
 
 if (shareNative) {
-  shareNative.addEventListener("click", async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: pageTitle,
-          text: pageTitle,
-          url: pageURL
-        });
-      } catch (err) {
-        console.log("Share cancelled");
+  shareNative.addEventListener(
+    "click",
+    async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: pageTitle,
+            text: pageTitle,
+            url: pageURL
+          });
+        } catch (err) {
+          console.log("Share cancelled");
+        }
+      } else {
+        alert(
+          "Sharing is not supported on this device."
+        );
       }
-    } else {
-      alert("Sharing is not supported on this device.");
     }
-  });
+  );
 }
 
-
-// ===================== SOCIAL LINKS =====================
+/* =========================
+   SOCIAL LINKS
+========================= */
 
 if (shareFacebook) {
   shareFacebook.href =
@@ -1138,4 +1232,3 @@ if (shareLinkedIn) {
   shareLinkedIn.href =
     `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageURL)}`;
 }
-
