@@ -1001,7 +1001,7 @@ moreBtn?.addEventListener("click", () => {
 
   if (!img) return;
 
-  window.location.href = `pwproject.html?id=${img.id}`;
+ window.location.href = `photo.html?id=${img.id}`;
 });
 
 /* =========================
@@ -1128,7 +1128,7 @@ function initProjectPage() {
 
         el.addEventListener("click", () => {
           window.location.href =
-            `pwproject.html?id=${item.id}`;
+            `photo.html?id=${item.id}`;
         });
 
         gallery.appendChild(el);
