@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Photo Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/pwstyle.css">
+
+
+</head>
+
+<body>
+
+
+  <div class="layout">
+
+    <!-- =========================
+       LEFT FILTER PANEL (DYNAMIC)
+  ========================== -->
+<aside class="filters">
+
+
+  <!-- FILTER PANEL -->
+  <div class="filters-inner" id="filtersInner">
+
+    <h2>Gallery</h2>
+
+    <!-- JS injects filters here -->
+    <div id="filterBar"></div>
+
+  </div>
+
+</aside>
+
+
+    
+    <!-- =========================
+       RIGHT VIEWER (CORE STAGE)
+  ========================== -->
+    <main class="viewer">
+
+      <div class="image-wrap">
+
+        <!-- PROGRESS INDICATOR -->
+        <div class="progress-line">
+          <div class="progress-fill"></div>
+        </div>
+
+        <!-- MAIN IMAGE -->
+        <img id="mainImage" src="" alt="photography image" />
+
+      </div>
+
+      <!-- =========================
+         META UI
+    ========================== -->
+      <div class="meta">
+
+        <!-- counter -->
+        <span id="counter">1 / 1</span>
+
+        <!-- open project page -->
+        <button id="moreBtn">More</button>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- =========================
+     SCRIPT
+========================= -->
+  <script src="js/pwscript.js" defer></script>
+
+</body>
+
+</html>
