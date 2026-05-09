@@ -452,3 +452,35 @@ const $$ = (sel, scope = document) => [...scope.querySelectorAll(sel)];
     lastScroll = current;
   }, { passive: true });
 })();
+
+/* ========================================
+   SECTION 02 — MICRO INTERACTIONS
+======================================== */
+
+const cards = document.querySelectorAll('.advantage-card');
+
+cards.forEach(card => {
+
+  card.addEventListener('mousemove', (e) => {
+
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    card.style.background = `
+      radial-gradient(
+        circle at ${x}px ${y}px,
+        rgba(255,255,255,0.98),
+        rgba(255,255,255,0.78) 45%
+      )
+    `;
+  });
+
+  card.addEventListener('mouseleave', () => {
+
+    card.style.background =
+      'rgba(255,255,255,0.75)';
+  });
+
+});
