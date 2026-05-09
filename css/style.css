@@ -2247,7 +2247,7 @@ box-shadow: 0 10px 30px rgba(79, 107, 255, 0.35);
 /* Contact section - Responsive design */
   .contact-grid {grid-template-columns: 1fr; max-width: 500px;}
   .contact-card {justify-content: flex-start;}
-  .contact-section h2 {font-size: 1.7rem;}
+
 
   /* Site-footer section - Responsive design */
   .footer-container {grid-template-columns: 1fr 1fr; gap: 14px;}
@@ -2356,7 +2356,7 @@ box-shadow: 0 10px 30px rgba(79, 107, 255, 0.35);
 
   /* Education section - Responsive design */
   .education-grid {grid-template-columns: 1fr;}
-  .education-section h2 {font-size: 1.7rem;}
+  
   .edu-card {padding: var(--space-1);}
 
   /* Personal touch section - Responsive design */
@@ -2439,19 +2439,17 @@ box-shadow: 0 10px 30px rgba(79, 107, 255, 0.35);
   #modalTitle {font-size: 1.2rem;}
 
   /* KORE section - Responsive design */
-  .kore-content h3 {font-size: 1.3rem;}
+
   .kore-content p {font-size: 0.8rem;}
 
   /* Education section - Responsive design */
-  .education-section h2 {font-size: 1.5rem;}
 
   /* Personal touch section - Responsive design */
    .pt-hobbies .pt-grid {
     grid-template-columns: repeat(1, 1fr);
     gap: 16px;
   }
-  .pt-card {padding: 14px;}
-  .pt-card h3 {font-size: 0.95rem;}
+ 
 
   /* Contact section - Responsive design */
   .contact-section {padding: 50px 0;}
@@ -2465,7 +2463,7 @@ box-shadow: 0 10px 30px rgba(79, 107, 255, 0.35);
   }
 
   /* KORE section - Responsive design */
-  .kore-content h3 {font-size: 0.72rem;}
+
   .kore-content p {font-size: 0.8rem;}
 
 /* Site footer */
