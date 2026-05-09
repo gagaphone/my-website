@@ -2480,7 +2480,7 @@ box-shadow: 0 10px 30px rgba(79, 107, 255, 0.35);
   #modalTitle {font-size: 1.2rem;}
 
   /* KORE section - Responsive design */
-  .kore-content h3 {font-size: 0.72rem;}
+    .kore-content h3 {font-size: 1.3rem;}
   .kore-content p {font-size: 0.8rem;}
 
   /* Education section - Responsive design */
