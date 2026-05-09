@@ -2461,7 +2461,8 @@ box-shadow: 0 10px 30px rgba(79, 107, 255, 0.35);
   .section {padding: var(--section-padding-mobile) 12px;}
 
   .hero-title {
-  font-size: clamp(0.9rem, 2vw, 1.5rem);
+  font-size: clamp(1.9rem, 2vw, 1.5rem);
+  margin-bottom: 22px;
 }
 
 
