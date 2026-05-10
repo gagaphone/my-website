@@ -1871,6 +1871,10 @@ Main Content
 
 @media (max-width: 768px) {
 
+#downloadCvBtn {
+    display: none;
+  }
+  
   .cta-container {
     padding: 32px 20px;
     border-radius: var(--radius);
@@ -1974,9 +1978,6 @@ Main Content
     display: none;
   }
 
-  /* About-me section - Responsive design */
-
-
   /* Portfolio section - Modal window - Responsive design */
   .modal-header {
     padding: 1.2rem 1.2rem 0.8rem 1.2rem;
@@ -1995,8 +1996,6 @@ Main Content
   }
 
   /* K.O.R.E  section - Responsive design */
-
-
   .kore-step {
     gap: 10px;
   }
@@ -2016,8 +2015,6 @@ Main Content
   }
 
   /* Education section - Responsive design */
-
-
   .edu-card {
     padding: var(--space-1);
   }
