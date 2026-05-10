@@ -656,6 +656,13 @@ Main Content
    SECTIONS
 ========================= */
 
+
+
+/* =========================
+   1 - HERO SECTION
+========================= */
+
+
 #transformation-leadership::before {
   content: "";
 
@@ -686,11 +693,6 @@ Main Content
   overflow: hidden;
 }
 
-
-
-/* =========================
-   1 - HERO SECTION
-========================= */
 
 /*  Hero main */
 .hero-main {
@@ -885,7 +887,7 @@ Main Content
 }
 
 /* ===============================================
-   CTA SECTION
+   2. CTA SECTION
 ================================================ */
 
 .cta-section {
@@ -1005,13 +1007,9 @@ Main Content
   right: -100px;
 }
 
-/* =========================
-   MOBILE
-========================= */
-
 
 /* ========================================
-   2.1 — COMPETITIVE ADVANTAGE SECTION
+   3 — COMPETITIVE ADVANTAGE SECTION
 ======================================== */
 
 #competitive-advantage {
@@ -1083,8 +1081,6 @@ Main Content
 
 /* Cards */
 
-
-
 /* Glow effect */
 
 .advantage-card::before {
@@ -1107,7 +1103,6 @@ Main Content
 }
 
 
-
 /* Number */
 
 .advantage-number {
@@ -1122,26 +1117,9 @@ Main Content
 }
 
 
-/* Responsive */
-
-@media (max-width: 980px) {
-
-  .advantage-grid {
-    grid-template-columns: 1fr;
-  }
-
-  #competitive-advantage {
-    padding: 110px 0;
-  }
-
-
-
-}
-
-
 
 /* =========================
-  3 - SKILLS SECTION
+  4 - SKILLS SECTION
 ========================= */
 
 /* Skill section - Category card */
@@ -1213,11 +1191,11 @@ Main Content
 }
 
 /* =========================
-  4 - TOOLS SECTION
+  5 - TOOLS SECTION
 ========================= */
 
 /* =========================
-  5 - CERTIFICATES SECTION
+  6 - CERTIFICATES SECTION
 ========================= */
 
 /* Certificates section - filters */
@@ -1252,10 +1230,6 @@ Main Content
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
-
-
-/* Certificates section - cards badge */
 
 /* Certificates section - cards title */
 .cert-card h4 {
@@ -1294,7 +1268,7 @@ Main Content
 }
 
 /* =========================
-  6 - PORTFOLIO / COMPANIES SECTION
+  7 - PORTFOLIO / COMPANIES SECTION
 ========================= */
 
 /* Portfolio section - cards */
@@ -1331,8 +1305,6 @@ Main Content
   transform: translateY(-8px) scale(1.02);
   box-shadow: var(--shadow);
 }
-
-/* Portfolio section - cards category tag */
 
 
 /* Portfolio section - cards company name */
@@ -1541,10 +1513,8 @@ Main Content
 }
 
 /* ===============================================
-   7 - K.O.R.E FRAMEWORK SECTION
+  8 - K.O.R.E FRAMEWORK SECTION
 ================================================ */
-
-/* K.O.R.E  section - Progress line */
 
 /* K.O.R.E  section - Steps */
 
@@ -1677,7 +1647,7 @@ Main Content
 }
 
 /* ===============================================
-   8 - EDUCATION SECTION
+  9 - EDUCATION SECTION
 ================================================ */
 
 .card.highlight {
@@ -1717,7 +1687,7 @@ Main Content
 }
 
 /* ===============================================
-   9 - PERSONAL TOUCH SECTION
+  10 - PERSONAL TOUCH SECTION
 ================================================ */
 
 /* Personal touch section - grid */
@@ -1728,12 +1698,6 @@ Main Content
  gap: 24px;
   margin-bottom: 40px;
 }
-
-
-
-/* Personal touch section - cards*/
-
-/* Personal touch section - cards - tags*/
 
 
 /* Personal touch section - cards - text*/
@@ -1748,9 +1712,6 @@ Main Content
   line-height: 1.5;
   margin-bottom: 10px;
 }
-
-
-
 
 /* Personal touch section - Hobbies subsection - title*/
 .pt-section-title {
@@ -1777,13 +1738,10 @@ Main Content
 }
 
 
-
 /* ===============================================
    11 - CONTACT SECTION 
 ================================================ */
-/* ===============================================
-   CONTACT CARD FIX
-================================================ */
+
 
 .contact-card {
   display: flex;
@@ -2048,6 +2006,19 @@ Main Content
     --fs-h3: 1.15rem;
   }
 }
+
+@media (max-width: 980px) {
+
+  .advantage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #competitive-advantage {
+    padding: 110px 0;
+  }
+
+}
+
 
 @media (max-width: 768px) {
 
