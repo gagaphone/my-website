@@ -1812,7 +1812,13 @@ Main Content
 /*==================================================
 13 - MOBILE OPTIMISATION
 ==================================================*/
+@media (max-width: 1024px) {
 
+
+#transformation-leadership {
+  min-height: 50vh;
+}
+}
 
 @media (max-width: 992px) {
 
@@ -1895,8 +1901,9 @@ Main Content
   /* Hero section - Responsive design */
   .hero-main {
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-2);
     text-align: center;
+    padding-top: 30px;
   }
 
   .hero-title {
@@ -1926,14 +1933,11 @@ Main Content
     display: flex;
     justify-content: center;
     order: 2;
-    /* moves image between subtitle and title */
+    margin-block: 0; 
   }
 
   .hero-image-main img {
-    width: 180px;
-    height: 180px;
-    max-width: 180px;
-    border-radius: 20px;
+    flex: 0 0 150px;
     object-fit: cover;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
   }
@@ -2073,22 +2077,46 @@ Main Content
 
 @media (max-width: 478px) {
 
-
   .section {
     padding: var(--section-py) 12px;
   }
 
   .hero-title {
     font-size: clamp(1.5rem, 8vw, 1.9rem);
-    margin-bottom: 22px;
+    margin-bottom: 14px;
+  }
+
+  .hero-main {
+    gap: var(--space-1);      /* tightest gap at small phones */
+    padding-top: 20px;
+  }
+
+  #transformation-leadership {
+    min-height: auto;
+    padding-top: 70px;
+    padding-bottom: 30px;
+  }
+
+  .hero-image-main {
+    margin-block: 0;
+  }
+
+  .hero-subtitle {
+    margin-bottom: 10px;
+  }
+
+  .hero-content-right p {
+    margin-bottom: 14px;
+  }
+
+  .hero-scroll-cue {
+    margin-top: 10px;
   }
 
 
   p {
     font-size: var(--fs-xs);
   }
-
-
 
   /* Portfolio section - Modal window - Responsive design */
   .modal-header {
