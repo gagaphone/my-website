@@ -82,7 +82,7 @@ body {
   display: flex;
   flex-wrap: wrap;
 
-  gap: 12px;
+  gap: 5px;
 
   align-content: flex-start;
 
@@ -371,13 +371,8 @@ body {
   }
 
   .filters-inner {
-    flex-wrap: nowrap;
-
     overflow-x: auto;
     overflow-y: hidden;
-
-    gap: 8px;
-
     -webkit-overflow-scrolling: touch;
   }
 
@@ -386,6 +381,7 @@ body {
 
     padding: 6px 12px;
     font-size: 12px;
+    margin: 5px;
   }
 
   .layout.sidebar-open .viewer {
@@ -417,9 +413,6 @@ body {
 
 @media (max-width: 470px) {
 
-  .filters-inner {
-    gap: 6px;
-  }
 
   .filter {
     padding: 5px 10px;
