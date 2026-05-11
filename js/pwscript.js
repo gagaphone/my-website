@@ -774,40 +774,65 @@ const placeToCountry = {
   Nature: "Unknown"
 };
 
-
 /* =========================
-   AUTO FIX LAYER (CRITICAL)
+   AUTO FIX LAYER
 ========================= */
 
-// 1. Normalize category (fix "black and white" etc.)
+// Normalize categories
 images.forEach(img => {
-  if (!img.category) img.category = "Uncategorized";
+
+  if (!img.category) {
+    img.category = "Uncategorized";
+  }
+
   img.category = img.category.trim();
 
-  if (img.category.toLowerCase() === "black and white") {
+  const normalized =
+    img.category.toLowerCase();
+
+  if (normalized === "black and white") {
     img.category = "Black & White";
   }
 
-  if (img.category.toLowerCase() === "street photography") {
+  if (normalized === "street photography") {
     img.category = "Street Photography";
   }
 });
 
-// 2. Assign country automatically 
+// Auto assign country
 images.forEach(img => {
-  img.country = placeToCountry[img.place] || "Unknown";
+  img.country =
+    placeToCountry[img.place] || "Unknown";
 });
 
-// 3. Fix duplicate IDs (VERY IMPORTANT)
+// Fix duplicate IDs
 images.forEach((img, index) => {
   img.id = index + 1;
 });
+
+
+/* =========================
+   CATEGORY CACHE
+========================= */
+
+const groupedByCategory = {};
+
+images.forEach(img => {
+
+  if (!groupedByCategory[img.category]) {
+    groupedByCategory[img.category] = [];
+  }
+
+  groupedByCategory[img.category].push(img);
+});
+
 
 /* =========================
    FLAGS
 ========================= */
 
 function getFlag(country) {
+
   const flags = {
     Germany: "🇩🇪",
     Ukraine: "🇺🇦",
@@ -830,29 +855,56 @@ function getFlag(country) {
   return flags[country] || "🌍";
 }
 
+
 /* =========================
    STATE
 ========================= */
 
 const state = {
+
   filter: "all",
+
   index: 0,
+
   filtered: images,
+
   lock: false
 };
+
 
 /* =========================
    ELEMENTS
 ========================= */
 
-const mainImage = document.getElementById("mainImage");
-const counter = document.getElementById("counter");
-const moreBtn = document.getElementById("moreBtn");
-const progressFill = document.querySelector(".progress-fill");
-const viewer = document.querySelector(".viewer");
-const filterBar = document.getElementById("filterBar");
+const mainImage =
+  document.getElementById("mainImage");
+
+const counter =
+  document.getElementById("counter");
+
+const moreBtn =
+  document.getElementById("moreBtn");
+
+const progressFill =
+  document.querySelector(".progress-fill");
+
+const viewer =
+  document.querySelector(".viewer");
+
+const filterBar =
+  document.getElementById("filterBar");
+
+const sidebarToggle =
+  document.getElementById("sidebarToggle");
+
+const sidebar =
+  document.getElementById("sidebar");
+
+const layout =
+  document.getElementById("layout");
 
 let filters = [];
+
 
 /* =========================
    HELPERS
@@ -862,76 +914,121 @@ function getCurrentImage() {
   return state.filtered[state.index];
 }
 
+
 /* =========================
    RENDER
 ========================= */
 
 function render() {
+
   const img = getCurrentImage();
+
   if (!img || !mainImage) return;
 
-  mainImage.style.opacity = 0.3;
+  mainImage.classList.add("loading");
 
   const preload = new Image();
+
   preload.src = img.src;
 
   preload.onload = () => {
+
     mainImage.src = img.src;
-    mainImage.style.opacity = 1;
+
+    requestAnimationFrame(() => {
+      mainImage.classList.remove("loading");
+    });
   };
 
   if (counter) {
-    counter.textContent = `${state.index + 1} / ${state.filtered.length}`;
+
+    counter.textContent =
+      `${state.index + 1} / ${state.filtered.length}`;
   }
 
   updateProgress();
 }
+
 
 /* =========================
    FILTERS
 ========================= */
 
 function getUniqueCategories(data) {
-  return ["all", ...new Set(data.map(i => i.category))];
+
+  return [
+    "all",
+    ...new Set(data.map(i => i.category))
+  ];
 }
 
 function createFilters() {
+
   if (!filterBar) return;
 
   filterBar.innerHTML = "";
 
   getUniqueCategories(images).forEach(cat => {
-    const btn = document.createElement("button");
+
+    const btn =
+      document.createElement("button");
 
     btn.className = "filter";
+
     btn.dataset.filter = cat;
+
     btn.textContent = cat;
 
-    btn.addEventListener("click", () => setFilter(cat));
+    btn.addEventListener("click", () => {
+
+      setFilter(cat);
+
+      // auto close mobile sidebar
+      if (window.innerWidth <= 1024) {
+
+        sidebar.classList.remove("open");
+
+        sidebar.classList.add("closed");
+
+        layout.classList.remove("sidebar-open");
+
+        if (sidebarToggle) {
+          sidebarToggle.innerHTML = "☰";
+        }
+      }
+    });
 
     filterBar.appendChild(btn);
   });
 
-  filters = filterBar.querySelectorAll(".filter");
+  filters =
+    filterBar.querySelectorAll(".filter");
 }
 
 function setFilter(filter) {
+
   state.filter = filter;
 
   state.filtered =
     filter === "all"
       ? images
-      : images.filter(i => i.category === filter);
+      : images.filter(
+          i => i.category === filter
+        );
 
   state.index = 0;
 
   render();
+
   updateFilterUI();
+
   softTransition();
 }
 
 function updateFilterUI() {
+
   filters.forEach(btn => {
+
     btn.classList.toggle(
       "active",
       btn.dataset.filter === state.filter
@@ -939,46 +1036,64 @@ function updateFilterUI() {
   });
 }
 
+
 /* =========================
    NAVIGATION
 ========================= */
 
 function next() {
-  if (state.index < state.filtered.length - 1) {
+
+  if (
+    state.index <
+    state.filtered.length - 1
+  ) {
+
     state.index++;
+
     render();
   }
 }
 
 function prev() {
+
   if (state.index > 0) {
+
     state.index--;
+
     render();
   }
 }
 
+
 /* =========================
-   DESKTOP WHEEL NAVIGATION
+   DESKTOP WHEEL
 ========================= */
 
 window.addEventListener(
   "wheel",
   (e) => {
-    if (state.lock || !state.filtered.length) return;
+
+    if (
+      state.lock ||
+      !state.filtered.length
+    ) return;
 
     state.lock = true;
 
-    e.deltaY > 0 ? next() : prev();
+    e.deltaY > 0
+      ? next()
+      : prev();
 
     setTimeout(() => {
       state.lock = false;
-    }, 500);
+    }, 450);
   },
   { passive: true }
 );
 
+
 /* =========================
-   MOBILE SWIPE SUPPORT
+   MOBILE SWIPE
 ========================= */
 
 let touchStartY = 0;
@@ -987,7 +1102,9 @@ let touchEndY = 0;
 window.addEventListener(
   "touchstart",
   (e) => {
-    touchStartY = e.changedTouches[0].screenY;
+
+    touchStartY =
+      e.changedTouches[0].screenY;
   },
   { passive: true }
 );
@@ -995,50 +1112,75 @@ window.addEventListener(
 window.addEventListener(
   "touchend",
   (e) => {
-    if (state.lock || !state.filtered.length) return;
 
-    touchEndY = e.changedTouches[0].screenY;
+    if (
+      state.lock ||
+      !state.filtered.length
+    ) return;
 
-    const swipeDistance = touchStartY - touchEndY;
+    touchEndY =
+      e.changedTouches[0].screenY;
 
-    // ignore tiny swipes
-    if (Math.abs(swipeDistance) < 50) return;
+    const swipeDistance =
+      touchStartY - touchEndY;
+
+    if (
+      Math.abs(swipeDistance) < 50
+    ) return;
 
     state.lock = true;
 
     if (swipeDistance > 0) {
-      // swipe up → next image
       next();
     } else {
-      // swipe down → previous image
       prev();
     }
 
     setTimeout(() => {
       state.lock = false;
-    }, 500);
+    }, 450);
   },
   { passive: true }
 );
+
 
 /* =========================
    PROGRESS
 ========================= */
 
 function updateProgress() {
+
   if (!progressFill) return;
 
   const percent =
-    ((state.index + 1) / state.filtered.length) * 100;
+    ((state.index + 1) /
+      state.filtered.length) * 100;
 
-  progressFill.style.height = percent + "%";
+  if (window.innerWidth <= 1024) {
+
+    progressFill.style.width =
+      percent + "%";
+
+    progressFill.style.height =
+      "100%";
+
+  } else {
+
+    progressFill.style.height =
+      percent + "%";
+
+    progressFill.style.width =
+      "100%";
+  }
 }
+
 
 /* =========================
    TRANSITION
 ========================= */
 
 function softTransition() {
+
   if (!viewer) return;
 
   viewer.classList.remove("chapter");
@@ -1048,172 +1190,253 @@ function softTransition() {
   viewer.classList.add("chapter");
 }
 
+
 /* =========================
    MORE BUTTON
 ========================= */
 
-moreBtn?.addEventListener("click", () => {
-  const img = getCurrentImage();
+moreBtn?.addEventListener(
+  "click",
+  () => {
 
-  if (!img) return;
+    const img = getCurrentImage();
 
- window.location.href = `photo.html?id=${img.id}`;
-});
+    if (!img) return;
+
+    window.location.href =
+      `photo.html?id=${img.id}`;
+  }
+);
+
+
+/* =========================
+   SIDEBAR TOGGLE
+========================= */
+
+sidebarToggle?.addEventListener(
+  "click",
+  () => {
+
+    const isOpen =
+      sidebar.classList.contains("open");
+
+    if (isOpen) {
+
+      sidebar.classList.remove("open");
+
+      sidebar.classList.add("closed");
+
+      layout.classList.remove(
+        "sidebar-open"
+      );
+
+      sidebarToggle.innerHTML = "☰";
+
+    } else {
+
+      sidebar.classList.remove("closed");
+
+      sidebar.classList.add("open");
+
+      layout.classList.add(
+        "sidebar-open"
+      );
+
+      sidebarToggle.innerHTML = "✕";
+    }
+  }
+);
+
+
+/* =========================
+   ESC CLOSE
+========================= */
+
+window.addEventListener(
+  "keydown",
+  (e) => {
+
+    if (e.key === "Escape") {
+
+      sidebar?.classList.remove("open");
+
+      sidebar?.classList.add("closed");
+
+      layout?.classList.remove(
+        "sidebar-open"
+      );
+
+      if (sidebarToggle) {
+        sidebarToggle.innerHTML = "☰";
+      }
+    }
+  }
+);
+
+
+/* =========================
+   MOBILE RESET
+========================= */
+
+window.addEventListener(
+  "resize",
+  () => {
+
+    if (window.innerWidth <= 1024) {
+
+      layout?.classList.remove(
+        "sidebar-open"
+      );
+
+      sidebar?.classList.remove("open");
+
+      sidebar?.classList.add("closed");
+
+      if (sidebarToggle) {
+        sidebarToggle.innerHTML = "☰";
+      }
+    }
+  }
+);
+
 
 /* =========================
    INIT INDEX
 ========================= */
 
 function initIndexPage() {
+
   createFilters();
 
   state.filtered = images;
+
   state.index = 0;
 
   render();
+
   updateFilterUI();
 }
+
 
 /* =========================
    PROJECT PAGE
 ========================= */
 
 function initProjectPage() {
-  const params = new URLSearchParams(window.location.search);
 
-  const id = Number(params.get("id"));
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
 
-  const img = images.find(i => i.id === id);
+  const id =
+    Number(params.get("id"));
+
+  const img =
+    images.find(i => i.id === id);
 
   if (!img) return;
 
-  const title = document.getElementById("overlayTitle");
-  const meta = document.getElementById("overlayMeta");
-  const desc = document.getElementById("overlayDescription");
-  const main = document.getElementById("overlayMain");
-  const gallery = document.getElementById("overlayGallery");
+  const title =
+    document.getElementById(
+      "overlayTitle"
+    );
 
-  if (title) title.textContent = img.title;
+  const meta =
+    document.getElementById(
+      "overlayMeta"
+    );
 
-  if (main) main.src = img.src;
+  const desc =
+    document.getElementById(
+      "overlayDescription"
+    );
+
+  const main =
+    document.getElementById(
+      "overlayMain"
+    );
+
+  const gallery =
+    document.getElementById(
+      "overlayGallery"
+    );
+
+  if (title) {
+    title.textContent = img.title;
+  }
+
+  if (main) {
+    main.src = img.src;
+  }
 
   if (desc) {
+
     desc.textContent =
-      img.exhibition ? "" : img.description;
+      img.exhibition
+        ? ""
+        : img.description;
   }
 
   if (meta) {
+
     meta.innerHTML = "";
 
-    const wrap = document.createElement("div");
+    const wrap =
+      document.createElement("div");
+
     wrap.className = "meta-wrapper";
 
-    const inline = document.createElement("div");
+    const inline =
+      document.createElement("div");
+
     inline.className = "meta-inline";
 
-    inline.innerHTML = img.exhibition
-      ? `
-        <span>${img.place}</span>
-        <span>${getFlag(img.country)} ${img.country}</span>
-        <span>${img.year}</span>
-      `
-      : `
-        <span>${img.category}</span>
-        <span>${img.place}</span>
-        <span>${getFlag(img.country)} ${img.country}</span>
-        <span>${img.year}</span>
-      `;
+    inline.innerHTML =
+      img.exhibition
+        ? `
+          <span>${img.place}</span>
+          <span>${getFlag(img.country)} ${img.country}</span>
+          <span>${img.year}</span>
+        `
+        : `
+          <span>${img.category}</span>
+          <span>${img.place}</span>
+          <span>${getFlag(img.country)} ${img.country}</span>
+          <span>${img.year}</span>
+        `;
 
     wrap.appendChild(inline);
-
-    if (img.exhibition) {
-      const box = document.createElement("div");
-
-      box.className = "meta-block exhibition";
-
-      box.innerHTML = `
-        <strong>${img.exhibitionTitle}</strong>
-
-        <div class="exhibition-row">
-          <span>${img.exhibitionYear}</span>
-          <span>${img.exhibitionPlace}</span>
-        </div>
-
-        <a href="${img.exhibitionLink}" target="_blank">
-          View Exhibition
-        </a>
-
-        <p>${img.exhibitionDescription}</p>
-      `;
-
-      wrap.appendChild(box);
-    }
-
-    if (img.magazine) {
-      const box = document.createElement("div");
-
-      box.className = "meta-block magazine";
-
-      box.innerHTML = `
-        <strong>${img.magazineTitle}</strong>
-
-        <a href="${img.magazineLink}" target="_blank">
-          Read Publication
-        </a>
-
-        <span>${img.magazineYear}</span>
-
-        <p>${img.magazineDescription}</p>
-      `;
-
-      wrap.appendChild(box);
-    }
 
     meta.appendChild(wrap);
   }
 
   if (gallery) {
+
     gallery.innerHTML = "";
 
-    images
-      .filter(i => i.category === img.category)
-      .forEach(item => {
-        const el = document.createElement("img");
+    groupedByCategory[img.category]
+      ?.forEach(item => {
+
+        const el =
+          document.createElement("img");
 
         el.src = item.src;
 
-        el.addEventListener("click", () => {
-          window.location.href =
-            `photo.html?id=${item.id}`;
-        });
+        el.addEventListener(
+          "click",
+          () => {
+
+            window.location.href =
+              `photo.html?id=${item.id}`;
+          }
+        );
 
         gallery.appendChild(el);
       });
   }
 }
 
-/* =========================
-   AUTO INIT
-========================= */
-
-if (document.querySelector(".viewer")) {
-  initIndexPage();
-}
-
-if (document.querySelector(".project-scroll")) {
-  initProjectPage();
-}
-
-/* =========================
-   FILTER TOGGLE
-========================= */
-
-const toggle = document.getElementById("filterToggle");
-const panel = document.getElementById("filtersInner");
-
-toggle?.addEventListener("click", () => {
-  panel?.classList.toggle("open");
-});
 
 /* =========================
    SHARE SYSTEM
@@ -1231,37 +1454,41 @@ const shareTwitter =
 const shareLinkedIn =
   document.getElementById("shareLinkedIn");
 
-/* =========================
-   PAGE DATA
-========================= */
-
-const pageURL = window.location.href;
+const pageURL =
+  window.location.href;
 
 const pageTitle =
-  document.getElementById("overlayTitle")
-    ?.textContent ||
+  document.getElementById(
+    "overlayTitle"
+  )?.textContent ||
   document.title ||
   "Photography";
 
-/* =========================
-   NATIVE SHARE
-========================= */
-
 if (shareNative) {
+
   shareNative.addEventListener(
     "click",
     async () => {
+
       if (navigator.share) {
+
         try {
+
           await navigator.share({
             title: pageTitle,
             text: pageTitle,
             url: pageURL
           });
+
         } catch (err) {
-          console.log("Share cancelled");
+
+          console.log(
+            "Share cancelled"
+          );
         }
+
       } else {
+
         alert(
           "Sharing is not supported on this device."
         );
@@ -1270,21 +1497,33 @@ if (shareNative) {
   );
 }
 
-/* =========================
-   SOCIAL LINKS
-========================= */
-
 if (shareFacebook) {
+
   shareFacebook.href =
     `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageURL)}`;
 }
 
 if (shareTwitter) {
+
   shareTwitter.href =
     `https://twitter.com/intent/tweet?text=${encodeURIComponent(pageTitle)}&url=${encodeURIComponent(pageURL)}`;
 }
 
 if (shareLinkedIn) {
+
   shareLinkedIn.href =
     `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageURL)}`;
+}
+
+
+/* =========================
+   AUTO INIT
+========================= */
+
+if (document.querySelector(".viewer")) {
+  initIndexPage();
+}
+
+if (document.querySelector(".project-scroll")) {
+  initProjectPage();
 }
