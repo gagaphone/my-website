@@ -2,44 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Project Details</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ogalanets.photography</title>
 
   <link rel="stylesheet" href="css/pwproject.css">
+  <link rel="icon" type="image/png" href="img/personal/olga-galanets.256x256.jpg">
 
-    <title>ogalanets.photography</title>
-
-    <!-- Icons -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.4/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.4/dist/ionicons/ionicons.js"></script>
-
-    <!--Favicon-->
-  <link rel="icon" type="image/png" href="img/personal/olga-galanets.256x256.jpg" alt="photo">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.4/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.4/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
 
-<!-- ===================== FULLSCREEN PROJECT PAGE ===================== -->
 <div class="project-page">
 
-  <!-- TOP BAR -->
-  <div class="project-topbar">
-    <div class="project-title" id="overlayTitle">Project Title</div>
+  <header class="project-topbar">
+    <h1 class="project-title" id="overlayTitle">Project Title</h1>
+    <a href="portfolio.html" class="close-btn" aria-label="Back to portfolio">&times;</a>
+  </header>
 
-    <a href="portfolio.html" class="close-btn">&times;</a>
-  </div>
+  <main class="project-scroll">
 
-  <!-- SCROLL AREA -->
-  <div class="project-scroll">
+    <div id="overlayMeta"></div>
 
-    <!-- =========================
-         META (FULL JS CONTROL)
-    ========================== -->
-    <div class="project-meta-block">
-      <div id="overlayMeta"></div>
-    </div>
-
-      <!-- SHARE -->
+    <!-- Share -->
     <div class="share-block">
       <span class="share-label">Share</span>
 
@@ -59,39 +45,24 @@
         <ion-icon name="logo-linkedin"></ion-icon>
       </a>
 
-      <!-- Contact Me Button -->
-<a class="share-btn contact-btn" 
-   href="mailto:ogalanets@gmail.com?subject=Photography Inquiry&body=Hi,%0D%0A%0D%0AI would like to contact you about your photography work." 
-   title="Contact Me">
-  <ion-icon name="mail-outline"></ion-icon>
-</a>
-
+      <a class="share-btn contact-btn"
+         href="mailto:ogalanets@gmail.com?subject=Photography Inquiry&body=Hi,%0D%0A%0D%0AI would like to contact you about your photography work."
+         title="Contact Me">
+        <ion-icon name="mail-outline"></ion-icon>
+      </a>
     </div>
-    <!-- /SHARE -->
 
+    <img id="overlayMain" alt="Project Image">
 
-    <!-- =========================
-         MAIN IMAGE (ONLY ONE IMAGE NOW)
-    ========================== -->
-    <section class="project-block">
-      <img id="overlayMain" alt="Project Image">
-    </section>
-
-    <!-- =========================
-         GALLERY
-    ========================== -->
-    <section class="project-block">
-      <h3 style="color:#fff; margin-bottom:15px;">
-        More from this category
-      </h3>
-
+    <section class="gallery-section">
+      <h2 class="gallery-heading">More from this category</h2>
       <div id="overlayGallery" class="overlay-gallery-grid"></div>
     </section>
 
-  </div>
+  </main>
+
 </div>
 
-<!-- SCRIPT -->
 <script src="js/pwscript.js" defer></script>
 
 </body>
