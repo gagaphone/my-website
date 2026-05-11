@@ -164,33 +164,58 @@ body {
   letter-spacing: -0.5px;
 }
 
+/* =========================
+   CLOSE BUTTON (REDESIGNED)
+========================= */
+.close-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
 .project-topbar .close-btn {
- width: var(--close-size); 
- height: var(--close-size); 
- font-size: var(--close-fs);
+  width: var(--close-size);
+  height: var(--close-size);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  font-size: var(--close-fs);
   line-height: 1;
 
-  color: #111;
-  background: #fff;
+  color: var(--text);
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
 
   border-radius: 50%;
-  border: none;
-
-  text-decoration: none;
+  backdrop-filter: blur(12px);
 
   cursor: pointer;
+
   transition: all 0.25s ease;
 
-  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
 }
 
+
+/* HOVER STATE */
 .project-topbar .close-btn:hover {
-  color: var(--text);
-  background: #000;
-  border: 1px solid #ccc;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+
+  transform: rotate(90deg) scale(1.08);
+  box-shadow: 0 6px 20px rgba(234, 76, 137, 0.35);
+}
+
+/* ACTIVE / CLICK FEEDBACK */
+.project-topbar .close-btn:active {
+  transform: rotate(90deg) scale(0.95);
 }
 
 /* ---------- OVERLAY SCROLL CONTENT ---------- */
