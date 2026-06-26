@@ -4,64 +4,7 @@
 const $ = (sel, scope = document) => scope.querySelector(sel);
 const $$ = (sel, scope = document) => [...scope.querySelectorAll(sel)];
 
-/*****************************************
- * TIMELINE FADE-IN
- *****************************************/
-(() => {
-  const items = $$(".timeline-item");
-  if (!items.length) return;
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  items.forEach(i => observer.observe(i));
-})();
-
-/*****************************************
- * EXPANDABLE SECTIONS
- *****************************************/
-(() => {
-  $$(".toggle-link").forEach(link => {
-    link.addEventListener("click", () => {
-      const box = link.previousElementSibling;
-      if (!box) return;
-
-      box.classList.toggle("expanded");
-      link.textContent = box.classList.contains("expanded") ? "Less" : "More";
-    });
-  });
-})();
-
-/*****************************************
- * SKILLS PANEL
- *****************************************/
-(() => {
-  const handles = $$(".skills-handle");
-  const panel = $(".col-right");
-  if (!handles.length || !panel) return;
-
-  handles.forEach(handle => {
-    handle.addEventListener("click", () => {
-      const isOpen = panel.classList.contains("active");
-
-      if (isOpen) {
-        panel.classList.remove("active");
-        setTimeout(() => {
-          panel.style.display = "none";
-        }, 300);
-      } else {
-        panel.style.display = "block";
-        requestAnimationFrame(() => panel.classList.add("active"));
-      }
-    });
-  });
-})();
 
 /*****************************************
  * SIDE MENU + DYNAMIC LOADER
@@ -125,109 +68,7 @@ const $$ = (sel, scope = document) => [...scope.querySelectorAll(sel)];
   });
 })();
 
-/*****************************************
- * PROJECT FILTER
- *****************************************/
-(() => {
-  const section = $("#projects-content");
-  if (!section) return;
 
-  const buttons = $$(".tab-button", section);
-  const cards = $$(".project-card", section);
-  if (!buttons.length || !cards.length) return;
-
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      buttons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const filter = btn.dataset.filter;
-
-      cards.forEach(card => {
-        const match =
-          filter === "all" || card.dataset.category === filter;
-        card.style.display = match ? "block" : "none";
-      });
-    });
-  });
-})();
-
-/*****************************************
- * BLOG FADE-IN
- *****************************************/
-(() => {
-  const cards = $$("#blog-section .blog-card");
-  if (!cards.length) return;
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.animationDelay = `${Math.random() * 0.3}s`;
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  cards.forEach(c => observer.observe(c));
-})();
-
-/*****************************************
- * PROJECT FLIP (MOBILE ONLY)
- *****************************************/
-(() => {
-  const cards = $$(".project-card");
-  if (!cards.length) return;
-
-  const mq = window.matchMedia("(max-width: 767px)");
-
-  cards.forEach(card => {
-    card.addEventListener("click", () => {
-      if (mq.matches) {
-        card.classList.toggle("flipped");
-      }
-    });
-  });
-
-  window.addEventListener("resize", () => {
-    if (!mq.matches) {
-      cards.forEach(c => c.classList.remove("flipped"));
-    }
-  });
-})();
-
-/*****************************************
- * CERTIFICATES MODAL
- *****************************************/
-(() => {
-  const items = $$(".certificate-item");
-  const modal = $("#certificateModal");
-  const img = $("#modalCertificateImg");
-  const close = $("#closeCertificateModal");
-
-  if (!items.length || !modal || !img) return;
-
-  items.forEach(item => {
-    item.addEventListener("click", () => {
-      const src = item.querySelector("img")?.src;
-      if (!src) return;
-
-      img.src = src;
-      modal.style.display = "flex";
-    });
-  });
-
-  const closeModal = () => {
-    modal.style.display = "none";
-    img.src = "";
-  };
-
-  close?.addEventListener("click", closeModal);
-
-  modal.addEventListener("click", e => {
-    if (e.target === modal) closeModal();
-  });
-})();
 
 /*****************************************
  * MOBILE MENU (SAFE FIXED)
@@ -255,181 +96,85 @@ const $$ = (sel, scope = document) => [...scope.querySelectorAll(sel)];
   });
 })();
 
-/*****************************************
- * SERVICE BLOCK OVERLAY
- *****************************************/
-(() => {
-  const blocks = $$(".service-block");
-  if (!blocks.length) return;
-
-  const closeAll = () => blocks.forEach(b => b.classList.remove("active"));
-
-  blocks.forEach(block => {
-    block.addEventListener("click", e => {
-      e.stopPropagation();
-      const active = block.classList.contains("active");
-      closeAll();
-      if (!active) block.classList.add("active");
-    });
-
-    block.querySelector(".more-icon")?.addEventListener("click", e => {
-      e.stopPropagation();
-      const active = block.classList.contains("active");
-      closeAll();
-      if (!active) block.classList.add("active");
-    });
-  });
-
-  document.addEventListener("click", closeAll);
-})();
 
 /*****************************************
- * ABOUT ME ANIMATION
- *****************************************/
-(() => {
-  const section = $("#about-me");
-  if (!section) return;
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-
-      const items = section.querySelectorAll(".story p, .card");
-      items.forEach((el, i) => {
-        setTimeout(() => el.classList.add("visible"), i * 120);
-      });
-
-      obs.unobserve(section);
-    });
-  }, { threshold: 0.2 });
-
-  observer.observe(section);
-})();
-
-/*****************************************
- * PROGRESS BARS
- *****************************************/
-(() => {
-  const bars = $$(".progress-bar");
-  if (!bars.length) return;
-
-  const animate = () => {
-    bars.forEach(bar => {
-      const rect = bar.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 50) {
-        bar.style.width = bar.dataset.progress + "%";
-      }
-    });
-  };
-
-  window.addEventListener("scroll", animate, { passive: true });
-  window.addEventListener("load", animate);
-})();
-
-/*****************************************
- * CERT FILTER + PREVIEW
- *****************************************/
-(() => {
-  const section = $("#certificates-section");
-  if (!section) return;
-
-  const cards = $$(".cert-card", section);
-  const filters = $$(".filter", section);
-  const preview = $("#certPreviewPanel");
-  const previewImg = preview?.querySelector("img");
-
-  if (!filters.length) return;
-
-  filters.forEach(btn => {
-    btn.addEventListener("click", () => {
-      filters.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const type = btn.dataset.filter;
-
-      cards.forEach(card => {
-        const show =
-          type === "all" || card.dataset.category === type;
-        card.style.display = show ? "block" : "none";
-      });
-    });
-  });
-
-  cards.forEach(card => {
-    const img = card.dataset.img;
-    if (!img || !preview || !previewImg) return;
-
-    card.addEventListener("mousemove", e => {
-      previewImg.src = img;
-      preview.style.opacity = "1";
-      preview.style.left = e.clientX + 20 + "px";
-      preview.style.top = e.clientY + 20 + "px";
-    });
-
-    card.addEventListener("mouseleave", () => {
-      preview.style.opacity = "0";
-    });
-  });
-})();
-
-/*****************************************
- * COMPANY MODAL
+ * COMPANY MODAL (DELEGATION & DATA FIX)
  *****************************************/
 (() => {
   const items = $$(".company-item");
-  const modal = $("#companyModal");
+  const modal = $("#detailsModal"); 
   if (!items.length || !modal) return;
 
-  const title = $("#modalTitle");
-  const role = $("#modalRole");
-  const overview = $("#modalOverview");
-  const challenges = $("#modalChallenges");
-  const actions = $("#modalActions");
-  const results = $("#modalResults");
+  const modalContent = $(".details-modal-content", modal);
 
   const parseJSON = str => {
     try { return JSON.parse(str); } catch { return []; }
   };
 
-  const renderList = (el, arr, badge = false) => {
-    if (!el) return;
-    el.innerHTML = arr.map(i =>
-      badge ? `<li><span class="result-badge">${i}</span></li>` : `<li>${i}</li>`
+  const generateListHTML = (arr, isBadge = false) => {
+    return arr.map(i => 
+      isBadge ? `<li><span class="result-badge">${i}</span></li>` : `<li>${i}</li>`
     ).join("");
   };
 
+  // Setup the event engine directly on the parent layout container
   items.forEach(item => {
-    item.addEventListener("click", () => {
-      title.textContent = item.dataset.key || "";
-      role.textContent = item.dataset.role || "";
-      overview.textContent = item.dataset.overview || "";
+    item.addEventListener("click", (e) => {
+      
+      // 1. Check if the user is clicking the Case Study link directly
+      if (e.target.closest(".service-link.learn-more")) {
+        // Let the link behave perfectly normal without triggering the modal markup wrapper
+        return; 
+      }
 
-      renderList(challenges, parseJSON(item.dataset.challenges));
-      renderList(actions, parseJSON(item.dataset.actions));
-      renderList(results, parseJSON(item.dataset.results), true);
+      // 2. Otherwise, run the safe dynamic modal injection
+      const key = item.dataset.key || "";
+      const role = item.dataset.role || "";
+      const overview = item.dataset.overview || "";
+      const challenges = parseJSON(item.dataset.challenges);
+      const actions = parseJSON(item.dataset.actions);
+      const results = parseJSON(item.dataset.results);
+
+      modalContent.innerHTML = `
+        <button class="details-modal-close">&times;</button>
+        <h2 class="modal-company">${key}</h2>
+        <div class="modal-role">${role}</div>
+        <p class="modal-overview">${overview}</p>
+        
+        <div class="detail-block">
+          <h4>Challenges</h4>
+          <ul>${generateListHTML(challenges)}</ul>
+        </div>
+        <div class="detail-block">
+          <h4>Actions Taken</h4>
+          <ul>${generateListHTML(actions)}</ul>
+        </div>
+        <div class="detail-block">
+          <h4>Key Results</h4>
+          <ul>${generateListHTML(results, true)}</ul>
+        </div>
+      `;
 
       modal.classList.add("active");
       document.body.style.overflow = "hidden";
     });
   });
 
-  const close = () => {
-    modal.classList.remove("active");
-    document.body.style.overflow = "";
-  };
-
-  $("#closeModal")?.addEventListener("click", close);
-
+  // Close control workflows
   modal.addEventListener("click", e => {
-    if (e.target === modal) close();
+    if (e.target.classList.contains("details-modal-close") || e.target === modal) {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    }
   });
 
   window.addEventListener("keydown", e => {
-    if (e.key === "Escape") close();
+    if (e.key === "Escape") {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    }
   });
 })();
-
-
 
 /*****************************************
  * HEADER AUTO HIDE (SAFE)
@@ -483,4 +228,142 @@ cards.forEach(card => {
       'rgba(255,255,255,0.75)';
   });
 
+});
+
+/* ========================================
+   SECTION 0 — Portfolio
+======================================== */
+
+const slides = document.querySelectorAll(".slide");
+const counter = document.getElementById("counter");
+
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+
+let current = 0;
+
+function updateSlider() {
+
+    slides.forEach(slide =>
+        slide.classList.remove("active")
+    );
+
+    slides[current].classList.add("active");
+
+    counter.textContent =
+        `${current + 1} / ${slides.length}`;
+}
+
+nextBtn.addEventListener("click", () => {
+
+    current++;
+
+    if (current >= slides.length) {
+        current = 0;
+    }
+
+    updateSlider();
+});
+
+prevBtn.addEventListener("click", () => {
+
+    current--;
+
+    if (current < 0) {
+        current = slides.length - 1;
+    }
+
+    updateSlider();
+});
+
+updateSlider();
+
+
+
+/* ========================================
+   SECTION 01 — left side bar
+======================================== */
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const elementsToCount = document.querySelectorAll(".olg-number");
+
+  const executeCounterAnimation = (domElement) => {
+    const targetInteger = parseInt(domElement.getAttribute("data-target"), 10);
+    const runDuration = 1100; // Animation lifecycle time window inside window loop
+    const initializationTimestamp = performance.now();
+
+    const progressFrame = (currentTimestamp) => {
+      const elapsedWindow = currentTimestamp - initializationTimestamp;
+      const calculatedProgress = Math.min(elapsedWindow / runDuration, 1);
+      
+      // Applies an easing formula out for a smooth visual deceleration drop-off
+      const easedProgress = 1 - Math.pow(1 - calculatedProgress, 3);
+
+      domElement.innerText = Math.floor(easedProgress * targetInteger);
+
+      if (calculatedProgress < 1) {
+        requestAnimationFrame(progressFrame);
+      } else {
+        domElement.innerText = targetInteger; // Fallback locking precisely to target values
+      }
+    };
+
+    requestAnimationFrame(progressFrame);
+  };
+
+  const viewportScrollObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        executeCounterAnimation(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  elementsToCount.forEach(metricItem => viewportScrollObserver.observe(metricItem));
+});
+
+/* ========================================
+   SECTION 02 — Slider
+======================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const servicesSlides = document.querySelectorAll(".services-slide");
+    const servicesCounter = document.getElementById("serviceCounter");
+    const servicesNextBtn = document.getElementById("serviceNextBtn");
+    const servicesPrevBtn = document.getElementById("servicePrevBtn");
+
+    // Defensive handling logic to prevent errors if elements don't exist on the page
+    if (!servicesSlides.length || !servicesCounter || !servicesNextBtn || !servicesPrevBtn) return;
+
+    let servicesCurrent = 0;
+
+    function updateServicesSlider() {
+        // Toggle engine states visibility classes safely
+        servicesSlides.forEach(slide => slide.classList.remove("active"));
+        servicesSlides[servicesCurrent].classList.add("active");
+
+        // Repopulate counter indicator dynamically
+        servicesCounter.textContent = `${servicesCurrent + 1} / ${servicesSlides.length}`;
+    }
+
+    servicesNextBtn.addEventListener("click", () => {
+        servicesCurrent++;
+        if (servicesCurrent >= servicesSlides.length) {
+            servicesCurrent = 0; // Loops back to start
+        }
+        updateServicesSlider();
+    });
+
+    servicesPrevBtn.addEventListener("click", () => {
+        servicesCurrent--;
+        if (servicesCurrent < 0) {
+            servicesCurrent = servicesSlides.length - 1; // Loops back to end
+        }
+        updateServicesSlider();
+    });
+
+    // Fire state configuration layout initialization instantly
+    updateServicesSlider();
 });
