@@ -515,175 +515,174 @@ Main Content
 /* ------------------------------------------------------
    MOBILE MENU
 ------------------------------------------------------ */
-
+/* ==========================================================================
+   Mobile Navigation Fullscreen Menu Shell
+   ========================================================================== */
 .mobile-menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 100%;
-  height: 100%;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: #0f172a;
+    transition: right 0.3s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
 
-  background: #0f172a;
-  transition: right 0.3s ease;
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+.mobile-menu.active {
+    right: 0;
 }
 
 .mobile-nav-wrapper {
-  flex: 1;
-  overflow-y: auto;
+    flex: 1;
+    overflow-y: auto;
 }
 
-/* Show menu */
-.mobile-menu.active {
-  right: 0;
-}
-
-/* Mobile menu header */
-
+/* ==========================================================================
+   Mobile Menu Sticky Header
+   ========================================================================== */
 .mobile-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 18px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background: rgba(2, 6, 23, 0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  padding-bottom: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 18px 20px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: rgba(2, 6, 23, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .mobile-header::after {
-  pointer-events: none;
-  /* ✅ prevents invisible overlay blocking clicks */
+    pointer-events: none; /* Prevents pseudo-elements from trapping mobile clicks */
 }
 
-/* MOBILE SOCIAL ICONS (CLEAN) */
+/* ==========================================================================
+   Refactored Mobile Social Icons (Matching Footer Mechanics)
+   ========================================================================== */
 .mobile-socials {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    padding: 20px 0;
 }
 
 .mobile-socials a {
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.25s ease;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-light, #ffffff);
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 
 .mobile-socials ion-icon {
-  font-size: 20px;
-  color: var(--text-light);
+    font-size: 1.3rem; /* Dynamic scaling match for footer layout sizing */
+    display: block;
 }
 
+/* Hover state updated to use your unified design variables */
 .mobile-socials a:hover {
-  background: rgba(99, 102, 241, 0.15);
-  transform: translateY(-2px);
+    background: var(--primary-light, #be2f3d);
+    border-color: transparent;
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
-/* tap */
+/* Tactile mobile tap down feedback */
 .mobile-socials a:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
 
-/* Mobile menu nav */
+/* ==========================================================================
+   Mobile Inner List Navigation Link Strips
+   ========================================================================== */
 .mobile-nav {
-  flex: 1;
-  overflow-y: auto;
-  /* ✅ scroll inside */
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-/* Mobile menu nav li */
 .mobile-nav li {
-  list-style: none;
+    list-style: none;
 }
 
-/* Mobile menu nav links */
 .mobile-nav a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 16px;
-  border-radius: 12px;
-  color: var(--text-light);
-  text-decoration: none;
-  font-size: 14px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-radius: 12px;
+    color: var(--text-light, #ffffff);
+    text-decoration: none;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
-/* Mobile menu nav markers */
 .mobile-nav a::after {
-  content: "›";
-  opacity: 0.4;
+    content: "›";
+    opacity: 0.4;
+    font-size: 1.1rem;
+    transition: opacity 0.25s ease;
 }
 
-/* Mobile menu nav markers hover */
+/* Navigation rows interactive focus updates */
 .mobile-nav a:hover {
-  background: rgba(99, 102, 241, 0.12);
-  border-color: rgba(99, 102, 241, 0.3);
-  transform: translateX(4px);
+    background: rgba(190, 47, 61, 0.12); /* Clean tint using #be2f3d opacity */
+    border-color: rgba(190, 47, 61, 0.3);
+    color: var(--primary-light, #be2f3d);
+    transform: translateX(4px);
 }
 
-/* Mobile menu nav markers active */
+.mobile-nav a:hover::after {
+    opacity: 1;
+}
+
 .mobile-nav a:active {
-  background: rgba(99, 102, 241, 0.2);
+    background: rgba(190, 47, 61, 0.2);
 }
 
-/* Mobile menu deviders (top & bottom separation) */
+/* ==========================================================================
+   Mobile Footer Container
+   ========================================================================== */
+.mobile-footer {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-shrink: 0; /* Prevents block squishing on smaller devices */
+}
+
+/* Content layout separator lines */
 .mobile-header::after,
 .mobile-footer::before {
-  content: "";
-  display: block;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
-}
-
-/* Mobile menu footer */
-
-.mobile-footer {
-  padding: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  flex-shrink: 0;
-  /* ✅ prevents collapse */
-
-}
-
-/* Mobile menu footer subtle top divider glow */
-.mobile-footer::before {
-  content: "";
-  height: 1px;
-  background: linear-gradient(to right,
-      transparent,
-      rgba(255, 255, 255, 0.15),
-      transparent);
+    content: "";
+    display: block;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.15), transparent);
 }
 
 .mobile-footer small {
-  text-align: center;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.2px;
 }
-
 
 /* =========================
    1 - HERO SECTION
