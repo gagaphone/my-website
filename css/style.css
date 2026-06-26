@@ -1660,10 +1660,21 @@ Main Content
 }
 
 /* Color Gradients */
-.silver {
+.red {
      background: linear-gradient(45deg, #c33642, #ff6b81);
 }
 
+.blue {
+  background: linear-gradient(45deg, #1e3c72, #2a5298);
+}
+
+.green {
+  background: linear-gradient(45deg, #2ecc71, #27ae60);
+}
+
+.purple {
+  background: linear-gradient(45deg, #8e44ad, #c0392b);
+}
 
 @media (max-width:768px){
 
