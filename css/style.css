@@ -11,16 +11,16 @@
   --primary-slight: rgba(47, 89, 192, 0.15);
 
   --tag-success-bg: rgba(34, 197, 94, 0.10);
-  --tag-success-text: #22c55e;
 
   --bg-main: #f3f8fa;
   --bg-white: #ffffff;
   --bg-dark: #0f172a;
 
   --text-main: #0b1226;
-  --text-muted:#666;
+  --text-muted:#555;
   --text-light: #e2e8f0;
 
+  
   /* Radius */
   --radius-sm: 10px;
   --radius: 16px;
@@ -45,7 +45,8 @@
   --fs-h1: clamp(1.7rem, 5vw, 2.8rem);
   --fs-h2: clamp(1.3rem, 3vw, 2.0rem);
   --fs-h3: clamp(1.0rem, 2vw, 1.6rem);
-  --fs-body: 1rem;
+
+  --fs-body: 1.2rem;
   --fs-sm: 0.875rem;
   --fs-xs: 0.78rem;
 
@@ -64,6 +65,7 @@
   /* UI */
   --transition: all 0.25s ease;
   --glow: 0 0 0 6px var(--primary-soft);
+  
 
 }
 
@@ -76,6 +78,16 @@ Global & Typography
   box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "Inter";
+    src:
+        url("Inter-Regular.woff2") format("woff2"),
+        url("Inter-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+
 body {
   margin: 0;
   background: var(--bg-main);
@@ -84,7 +96,7 @@ body {
   font-size: var(--fs-body);
 	font-family: 'Inter';
 	font-weight: normal;
-	src: url('Inter-Italic.woff2') format('woff2'), url('Inter-Italic.woff') format('woff');
+	font-family: "Inter", sans-serif;
 }
 
 
@@ -121,15 +133,13 @@ img {
   max-width: 100%;
 }
 
-/*==================================================
-Section Gen
-==================================================*/
+/*=Section Gen=*/
 
 .section {
   padding-block: var(--section-py);
   padding-inline: var(--section-px);
-  text-align: center;
   scroll-margin-top: 80px;
+  text-align: center;
 }
 
 .section-title {
@@ -160,9 +170,7 @@ section p {
   color: var(--text-muted);
 }
 
-/*==================================================
-Cards
-==================================================*/
+/*==Cards==*/
 
 .card {
   background: var(--card);
@@ -252,10 +260,10 @@ BUTTONS IN SECTIONS
   color: var(--primary-light);
 }
 
-.btn--primary:hover {
-   background: var(--primary-light);
-   color: var(--text-light);
-  transform: translateY(-2px);
+.btn--primary:hover,
+.btn--secondary:hover {
+    background: var(--primary-light);
+    color: var(--text-light);
 }
 
 .btn--secondary {
@@ -264,12 +272,6 @@ BUTTONS IN SECTIONS
   color: var(--text-main);
 }
 
-.btn--secondary:hover {
-   background: var(--primary-light);
-   color: var(--text-light);
-     border: 1px solid var(--primary-light);
-  transform: translateY(-2px);
-}
 
 .btn--ghost {
   background: linear-gradient(135deg, #ffffff, #f2f2f2);
@@ -690,7 +692,7 @@ Main Content
 
 .olg-hero-section {
   background-color: #0f172a;
-  height: 100vh; /* Lock section to exactly the full screen height */
+  
   display: flex;
   align-items: center;
   position: relative;
@@ -699,6 +701,7 @@ Main Content
   overflow: hidden;
 }
 
+
 /* --- Core Flexible Grid Structure --- */
 .olg-hero-grid {
   display: flex;
@@ -706,7 +709,7 @@ Main Content
   justify-content: space-between;
   width: 100%;
   height: 100%; /* Force grid to span full container height */
-  gap: 60px;
+ 
 }
 
 .olg-hero-text {
@@ -770,12 +773,15 @@ Main Content
   margin-bottom: 50px;
 }
 
+
+
 /* --- Inline Metric Counters Row --- */
 .olg-counter-container {
   display: flex;
   gap: 80px;
   margin-bottom: 60px;
 }
+
 
 .olg-counter-item {
   display: flex;
@@ -839,7 +845,6 @@ Main Content
 
 @media (max-width: 991px) {
   .olg-hero-section {
-    /* Release the strict 100vh lock so content doesn't break or overlap on smaller heights */
     height: auto; 
     min-height: 100vh; 
     padding-top: 100px; /* Extra room for mobile navigation */
@@ -850,7 +855,6 @@ Main Content
     flex-direction: column-reverse; /* Keeps image stacked logically */
     align-items: center;
     justify-content: flex-start;
-    gap: 40px;
   }
   
   .olg-hero-text, .olg-image-main {
@@ -921,7 +925,6 @@ Main Content
    2 — SERVICE SECTION
 ======================================== */
 .services-section {
-    padding: 60px 0;
     margin: 0;
     background: var(--bg-white);
 }
@@ -939,22 +942,24 @@ Main Content
 
 .experience-number {
     color: var(--primary-light);
-    font-size: 120px;
+    font-size: 100px;
     font-weight: 600;
     line-height: 0.8;
 }
 
 .experience-number span {
-    font-size: 60px;
+    font-size: 50px;
     vertical-align: top;
 }
 
 .experience-text {
-    margin-top: 60px;
-    font-size: 24px;
+    margin-top: 40px;
+    font-size: 14px;
     font-weight: 700;
     line-height: 1.7;
-    color: #111;
+    color: var(--text-main);
+    text-transform: uppercase;
+    text-align: center;
 }
 
 
@@ -970,7 +975,7 @@ Main Content
 }
 
 .services-heading {
-    color: #111;
+    color: var(--text-main);
     margin: 0 0 30px; 
     max-width: 900px;
 }
@@ -987,6 +992,7 @@ Main Content
     gap: 25px;
     user-select: none;
     margin-bottom: 20px; 
+    
 }
 
 .services-slider-nav button {
@@ -1006,7 +1012,7 @@ Main Content
 .services-slider-nav span {
     font-size: 32px;
     font-weight: 600;
-    color: #888;
+    color: #999;
 }
 
 /* Slider Core Engine Frames */
@@ -1034,12 +1040,13 @@ Main Content
 }
 
 .service-item h3 {
-    color: #111;
+    color: var(--text-main);
+    font-size: 20px;
 }
 
 .service-item p {
     margin: 0;
-    color: #666;
+    color: var(--text-muted);
     font-size: 16px;
     line-height: 2;
 }
@@ -1194,7 +1201,6 @@ Main Content
 .skills-section {
   display: flex;
   width: 100%;
-  min-height: 80vh;
   margin: 0;
   padding: 0;
 }
@@ -1218,11 +1224,12 @@ Main Content
 
 /* Hard Skills Styling (Left Panel) */
 .hard-skills {
-  background-color: var(--primary-dark); /* Deep Navy Blue */
+  background-color: var(--text-main); /* Deep Navy Blue */
 }
 
 .hard-skills .skills-title {
   border-bottom: 2px solid var(--primary-light);
+  font-size: 20px;
 }
 
 .hard-skills .highlight {
@@ -1237,10 +1244,11 @@ Main Content
 
 .soft-skills .skills-title {
   border-bottom: 2px solid var(--primary-dark);
+  font-size: 20px;
 }
 
 .soft-skills .highlight {
-  color: var(--primary-dark); /* Deep Navy Accent */
+  color: var(--text-main); /* Deep Navy Accent */
   font-weight: bold;
 }
 
@@ -1316,6 +1324,7 @@ Main Content
   .skills-icon .about-image img {
     width: 84px; /* Decreased scale slightly for better asset breathing room */
     height: 84px;
+    display: none;
   }
 
   .skills-text {
@@ -1341,6 +1350,7 @@ Main Content
   .skills-icon .about-image img {
     width: 72px; /* Compact structural configuration for minimal height overhead */
     height: 72px;
+    display: none;
   }
 
   .skills-text {
@@ -1355,22 +1365,21 @@ Main Content
 ======================================== */
 #tools-section .grid {
   display: grid;
-  /* Creates exactly 4 equal columns on desktop screens */
   grid-template-columns: repeat(3, 1fr); 
-  gap: 30px; /* Spacing between the columns and rows */
+  gap: 30px; 
   width: 100%;
 }
 
 .tools-heading {
-    color: #111;
+    color: var(--text-main);
     margin: 0 0 30px; 
     max-width: 900px;
 }
 
 #tools-section h3 {
-  font-size: var(--fs-h3);
+  font-size: 20px;
   font-weight: 700;
-  color: #111;
+  color: var(--text-main);
   display: flex;
   align-items: center;
   gap: 16px;
@@ -1473,6 +1482,10 @@ Main Content
     scroll-snap-align: center;
     box-sizing: border-box;
   }
+
+
+
+  
 
   #tools-section h3 {
     font-size: 20px; 
@@ -1741,13 +1754,7 @@ Main Content
 /* =========================
   7 - PORTFOLIO / COMPANIES SECTION
 ========================= */
-.about-slider-section {
-    background: #f7f7f7;
-    padding: 120px 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-}
+
 
 .about-layout {
     display: grid;
@@ -1766,7 +1773,7 @@ Main Content
     font-size: 32px;
     line-height: 1.3;
     font-weight: 700;
-    color: #111;
+    color: var(--text-main);
     margin-bottom: 40px;
 }
 
@@ -1778,9 +1785,10 @@ Main Content
     margin-top: 10px;
 }
 
+
+
 /* Slider Controls */
 .slider-nav {
-
     display: flex;
     align-items: center;
     justify-content: flex-end; /* Shims controls flawlessly over to the far right edge */
@@ -1790,7 +1798,7 @@ Main Content
 }
 
 .slider-nav button {
-    border: none;
+   border: none;
     background: transparent;
     font-size: 28px;
     cursor: pointer;
@@ -1801,13 +1809,13 @@ Main Content
 
 
 .slider-nav button:hover {
-     color: var(--primary-light);
+      color: var(--primary-light);
 }
 
 .slider-nav span {
-      font-size: 32px;
+   font-size: 32px;
     font-weight: 600;
-    color: #888;
+    color: #999;
 }
 
 /* Slider Content Container */
@@ -1833,11 +1841,17 @@ Main Content
 
 /* Card Elements */
 .company-item {
-    background: #fff;
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.04);
-    box-sizing: border-box;
+   background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  padding: var(--space-4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.company-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
 }
 
 .company-meta {
@@ -1850,7 +1864,7 @@ Main Content
     padding: 6px 14px;
     border-radius: 100px;
     background: #f3f3f3;
-    color: #666;
+    color: var(--text-muted);
     font-size: 13px;
     font-weight: 600;
 }
@@ -1864,10 +1878,10 @@ Main Content
 }
 
 .company-item h2 {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1.15;
     margin: 0;
-    color: #111;
+    color: var(--text-main);
     font-weight: 700;
 }
 
@@ -1879,7 +1893,7 @@ Main Content
 }
 
 .overview {
-    color: #555;
+    color: var(--text-muted);
     line-height: 1.7;
     font-size: 17px;
 }
@@ -1955,7 +1969,7 @@ Main Content
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 10px;
-    color: #111;
+    color: var(--text-main);
 }
 
 .modal-role {
@@ -1966,7 +1980,7 @@ Main Content
 }
 
 .modal-overview {
-    color: #555;
+    color: var(--text-muted);
     line-height: 1.7;
     margin-bottom: 35px;
     font-size: 16px;
@@ -1980,7 +1994,7 @@ Main Content
     margin-bottom: 15px;
     font-size: 20px;
     font-weight: 700;
-    color: #111;
+    color: var(--text-main);
 }
 
 .detail-block ul {
@@ -2200,7 +2214,7 @@ Main Content
 }
 
 .folder-inner-content h3 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
     margin: 0 0 15px 0;
     color: #fff;
@@ -2241,7 +2255,7 @@ Main Content
 /* Enhances active structural tab state elements */
 .kore-slider-accordion input[type="radio"]:checked + .kore-folder-layer .kore-node {
     background: #fff;
-    color: #111;
+    color: var(--text-main);
     transform: scale(1.1);
 }
 
@@ -2311,13 +2325,8 @@ Main Content
     }
 }
 
-/* ===============================================
-  9 - EDUCATION SECTION
-================================================ */
+/* ==9 - EDUCATION SECTION== */
 
-/* ==========================================================================
-   Education Section Grid Layout
-   ========================================================================== */
 .education-section .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -2328,43 +2337,11 @@ Main Content
 }
 
 .education-section .card {
-    background: #fff;
-    border: 1px solid #eef0f4;
-    border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.education-section .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
-}
-
-/* Featured/Highlight Card Accent Treatment */
-.education-section .card.highlight {
-    border: 1px solid var(--primary-light, #be2f3d);
-    background: linear-gradient(145deg, #ffffff, #fffafd);
-    position: relative;
-}
-
-/* Optional subtle tag badge for the highlighted card */
-.education-section .card.highlight::after {
-    content: "Featured";
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 10px;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    background: var(--primary-light, #be2f3d);
-    color: #fff;
-    padding: 3px 8px;
-    border-radius: 4px;
-}
 
 /* ==========================================================================
    Typography & Elements Inside Cards
@@ -2381,19 +2358,19 @@ Main Content
 
 /* Main Academic Degree Heading (Fixed from .edu-card typo) */
 .education-section .card .h3 {
- 
-    font-size: 22px;
-    line-height: 1.15;
-    margin: 0;
-    color: #111;
-    font-weight: 700;
-
+ font-size: 20px;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
 }
 
 /* Academic Institution */
 .edu-school {
   
-    color: #555;
+    color: var(--text-muted);
     line-height: 1.7;
     font-size: 17px;
 
@@ -2401,7 +2378,7 @@ Main Content
 
 /* Performance honors notes */
 .edu-note {
-   color: #555;
+   color: var(--text-muted);
     line-height: 1.7;
     font-size: 17px;
 }
