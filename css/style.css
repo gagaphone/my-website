@@ -1948,15 +1948,11 @@ Mobile Architecture (Hamburger & Menus)
     text-align: center;
 }
 
-.edu-school, .edu-note {
-    color: var(--text-muted);
-    line-height: 1.7;
-    font-size: var(--fs-base, 17px);
-}
 
 .edu-note {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
+    color: var(--primary-light);
 }
 
 #education-section .dot-list {
