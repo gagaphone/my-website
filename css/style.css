@@ -1036,8 +1036,8 @@ Mobile Architecture (Hamburger & Menus)
 ==================================================*/
 #tools-section .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: var(--gap-xxl); 
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-xxl);
   width: 100%;
 }
 
@@ -1104,14 +1104,17 @@ Mobile Architecture (Hamburger & Menus)
 }
 
 /* Tools Responsiveness & Mobile Horizontal Slider View */
-@media (max-width: 1200px) {
-  #tools-section .grid { grid-template-columns: repeat(2, 1fr); }
-}
 
-@media (max-width: 768px) {
-  #tools-section .grid { grid-template-columns: 1fr; row-gap: 35px; }
+
+@media (max-width: 1024px) {
+  #tools-section .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   #tools-section h3 { margin-bottom: 20px; }
 }
+
+
 
 @media (max-width: 560px) {
   #tools-section .grid {
@@ -1128,6 +1131,33 @@ Mobile Architecture (Hamburger & Menus)
   }
   #tools-section .grid::-webkit-scrollbar {
     display: none;
+  }
+}
+
+@media (max-width: 470px) {
+  #tools-section .grid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    gap: 16px;
+    padding: 15px 20px;
+    margin: 0 -20px;
+
+    scrollbar-width: none;
+  }
+
+  #tools-section .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  #tools-section .card {
+    flex: 0 0 85%;   
+    min-width: 280px;
+    scroll-snap-align: center;
   }
 }
 
@@ -1198,16 +1228,16 @@ Mobile Architecture (Hamburger & Menus)
 .ribbon {
     position: absolute;
     left: 50%;
-    bottom: 18px;
+    bottom: 5px;
     transform: translateX(-50%);
     z-index: 10;
-    width: 125px;
+    width: 145px;
     padding: 6px 10px;
     background: var(--bg-dark);
     color: var(--text-light);
     border-radius: var(--radius-xs, 6px);
     border-inline-color: var(--bg-dark);
-    font-size: var(--fs-xs, 12px);
+    font-size: var(--fs-md, 14px);
     font-weight: var(--fw-m);
     text-transform: uppercase;
     line-height: 1.2;
@@ -1237,7 +1267,6 @@ Mobile Architecture (Hamburger & Menus)
 @media (max-width:768px){
 
     .badge-grid{
-        grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
         gap:50px 20px;
     }
 
@@ -1246,8 +1275,8 @@ Mobile Architecture (Hamburger & Menus)
     }
 
     .ribbon{
-        width:115px;
-        font-size:.65rem;
+        width:135px;
+        font-size:.95rem;
     }
 }
 
@@ -1270,15 +1299,16 @@ Mobile Architecture (Hamburger & Menus)
     }
 
     .badge-item {
-        flex: 0 0 45%; /* Fits roughly two badges visible at a time */
+        flex: 0 0 65%; /* Fits roughly two badges visible at a time */
         scroll-snap-align: center;
         box-sizing: border-box;
     }
 }
 
+
 @media (max-width: 360px) {
     .badge-item {
-        flex: 0 0 55%; /* Scales percentage slightly to prevent tight text truncation */
+        flex: 0 0 65%; /* Scales percentage slightly to prevent tight text truncation */
     }
 
     .ribbon {
@@ -1984,7 +2014,7 @@ Mobile Architecture (Hamburger & Menus)
 
 @media (max-width: 900px) {
    #education-section .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
