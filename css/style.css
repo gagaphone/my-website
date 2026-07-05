@@ -213,7 +213,7 @@ Dots, Spans & Tags
   padding: 4px 10px;
   border-radius: 999px;
   font-size: var(--fs-xs);
-  font-weight: var(--fw-l);
+  font-weight: var(--fw-xs);
   letter-spacing: 0.5px;
   background: var(--primary-slight);
   color: var(--primary);
@@ -1447,16 +1447,7 @@ Mobile Architecture (Hamburger & Menus)
 .company-meta { margin-bottom: 20px; }
 .company-name { font-size: var(--fs-base, 1rem); }
 
-.tag {
-    display: inline-flex;
-    align-items: center;
-    padding: 6px 14px;
-    border-radius: var(--radius-round, 100px);
-    background: var(--bg-neutral-light, #f3f3f3);
-    color: var(--text-muted);
-    font-size: var(--fs-xs, 13px);
-    font-weight: var(--fw-l);
-}
+
 
 .company-header-row {
     justify-content: space-between;
@@ -1474,18 +1465,36 @@ Mobile Architecture (Hamburger & Menus)
 }
 
 .role, .modal-role {
-    color: var(--primary-light, #be2f3d);
-    font-weight: var(--fw-l);
-    margin-bottom: 18px;
-    font-size: var(--fs-base, 16px);
+
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--bg-dark);
+  margin-bottom: 4px;
+}
+
+.role span{
+   font-weight: 800;
+}
+
+.date {
+  font-size: 0.85rem;
+  color: #718096;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.exp-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4a5568;
 }
 
 .modal-role { margin-bottom: 25px; }
 
 .overview, .modal-overview {
-    color: var(--text-muted);
-    line-height: 1.7;
-    font-size: var(--fs-base, 17px);
+   line-height: 1.7;
+   font-size: 0.95rem;
+   color: #4a5568;
 }
 
 .modal-overview {
@@ -1506,6 +1515,61 @@ Mobile Architecture (Hamburger & Menus)
     object-fit: cover;
     border-radius: var(--radius-lg, 20px);
     display: block;
+}
+
+/* ======================================
+Company Item Path Matrix Row
+====================================== */
+
+.path-matrix-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border, #edf2f7);
+}
+
+.matrix-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Subtle separator line between columns */
+.matrix-col:not(:last-child) {
+  border-right: 1px solid var(--border, #edf2f7);
+  padding-right: 12px;
+}
+
+.matrix-label {
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--primary-light, #3498db);
+}
+
+.matrix-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark, #2d3748);
+  line-height: 1.3;
+}
+
+/* Responsive adjustment for small viewports */
+@media (max-width: 600px) {
+  .path-matrix-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .matrix-col:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid var(--border, #edf2f7);
+    padding-right: 0;
+    padding-bottom: 8px;
+  }
 }
 
 /* Modals Overlay Base styling */
@@ -1657,6 +1721,10 @@ Mobile Architecture (Hamburger & Menus)
     .about-image {
         display: none !important;
     }
+
+      .slider-nav span {
+        font-size: 20px;
+    }
 }
 
 
@@ -1680,7 +1748,7 @@ Mobile Architecture (Hamburger & Menus)
     }
 
     .slider-nav span {
-        font-size: 22px;
+        font-size: 20px;
     }
 }
 
