@@ -471,29 +471,35 @@ body {
 
 /* MOBILE RESPONSIVENESS */
 @media(max-width: 1024px) {
-  .filters {
+ .filters {
     position: fixed;
     top: 70px;
     left: 0;
-    height: calc(100vh - 70px);
-    z-index: 90;
+    /* FIX: Swapped to 100dvh to stay above the iOS URL section */
+    height: calc(100dvh - 70px); 
+    
+    /* FIX: Brought z-index to 130 so the drawer slides out ON TOP of the viewer stage */
+    z-index: 130; 
     width: 100%;
     max-width: 300px;
+    
+    /* FIX: Added safe area bottom padding so the last categories aren't cut off */
+    padding-bottom: calc(40px + env(safe-area-inset-bottom, 24px)); 
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Butter-smooth scrolling for iOS */
   }
 }
 
 @media(max-width: 768px) {
-
-    .credentials-panel {
+.credentials-panel {
     width: 100%;
     border-left: none;
     z-index: 120; /* Layer on top of everything on mobile */
   }
 
-.viewer {
+  .viewer {
     grid-template-columns: 1fr;
     padding: 0 20px;
-    /* Keeps the overall container fitting the dynamic screen height perfectly */
     height: calc(100dvh - 70px); 
   }
   
@@ -501,9 +507,8 @@ body {
     display: none;
   }
   
-.image-wrap {
+  .image-wrap {
     grid-column: 1;
-    /* Shrinking this slightly ensures the image leaves space for your shifted footer */
     height: calc(100dvh - 240px); 
   }
 
@@ -512,14 +517,11 @@ body {
     flex-direction: column;
     gap: 15px;
     align-items: flex-start;
-    
-    /* FIX: Pushes the footer up by 34px (the exact size of the iOS home indicator bar) 
-       plus an extra buffer so it doesn't clip into the URL address block */
     margin-bottom: env(safe-area-inset-bottom, 24px); 
     padding-bottom: 10px; 
   }
   
- .meta-right {
+  .meta-right {
     width: 100%;
     justify-content: space-between;
   }
