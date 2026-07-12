@@ -475,18 +475,25 @@ body {
     position: fixed;
     top: 70px;
     left: 0;
-    /* FIX: Swapped to 100dvh to stay above the iOS URL section */
     height: calc(100dvh - 70px); 
-    
-    /* FIX: Brought z-index to 130 so the drawer slides out ON TOP of the viewer stage */
     z-index: 130; 
     width: 100%;
     max-width: 300px;
-    
-    /* FIX: Added safe area bottom padding so the last categories aren't cut off */
     padding-bottom: calc(40px + env(safe-area-inset-bottom, 24px)); 
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch; /* Butter-smooth scrolling for iOS */
+    -webkit-overflow-scrolling: touch; 
+
+    /* ANDROID FIX: Forces the graphics card to explicitly repaint the element */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+  }
+  
+  /* ANDROID FIX: When open/active, ensure layout bounds force graphic state overrides */
+  .filters:not(.closed) {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }
 
@@ -494,7 +501,7 @@ body {
 .credentials-panel {
     width: 100%;
     border-left: none;
-    z-index: 120; /* Layer on top of everything on mobile */
+    z-index: 120; 
   }
 
   .viewer {
