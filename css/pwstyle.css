@@ -43,7 +43,9 @@ body {
   letter-spacing: -0.5px;
 }
 
-/* HIGH-LEVEL HAMBURGER TOGGLE BUTTON */
+/* ==========================================================================
+   HIGH-LEVEL HAMBURGER TOGGLE BUTTON (GPU-Accelerated Absolute Reset)
+   ========================================================================== */
 .sidebar-toggle {
   background: none;
   border: none;
@@ -51,40 +53,72 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
-  padding: 10px;
-  z-index: 110;
+  gap: 6px; 
+  padding: 0;
+  z-index: 140; 
   width: 44px;
   height: 44px;
   align-items: flex-end;
+  position: relative;
+  
+  /* Force clean state removal on click */
+  -webkit-tap-highlight-color: transparent;
 }
 
 .sidebar-toggle span {
   display: block;
-  width: 20px;
-  height: 1.5px;
+  width: 24px; /* Both lines are natively 24px wide to maintain baseline coordinates */
+  height: 1.25px; 
   background-color: #111;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-              width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* We anchor to the right edge so the scaling looks perfectly asymmetric */
+  transform-origin: right center; 
+  
+  /* Transitioning transforms is significantly more stable than transitioning layout widths */
+  transition: 
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.3s ease;
+  will-change: transform;
 }
 
-
-/* Asymmetric design polish */
+/* Asymmetric design polish using scaleX instead of width changes */
 .sidebar-toggle span:last-child {
-  width: 14px;
+  transform: scaleX(0.583); /* Math: 14px / 24px = 0.583 */
 }
 
-/* Dynamic morphing states to match script '.active' toggles */
+/* --- Premium Hover Interactions (Only changes scale layers) --- */
+@media (hover: hover) {
+  .sidebar-toggle:not(.active):hover span:first-child {
+    transform: scaleX(0.583);
+  }
+  
+  .sidebar-toggle:not(.active):hover span:last-child {
+    transform: scaleX(1);
+  }
+}
+
+/* --- Dynamic Morphing States (.active) --- */
+/* The browser can reset these instantly because they utilize the exact same 24px coordinate system */
 .sidebar-toggle.active span:first-child {
-  transform: translateY(3.25px) rotate(45deg);
-  width: 20px;
+  /* Aligns lines precisely onto the center point, overrides custom scale back to 100% */
+  transform: translateY(3.5px) rotate(45deg) scaleX(1) !important; 
+  background-color: #e67e22 !important; 
 }
 
 .sidebar-toggle.active span:last-child {
-  transform: translateY(-3.25px) rotate(-45deg);
-  width: 20px;
+  transform: translateY(-3.5px) rotate(-45deg) scaleX(1) !important;
+  background-color: #e67e22 !important;
 }
 
+/* Invisible tap target expander for flawless mobile tracking */
+.sidebar-toggle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 
 
 /* SIDEBAR FILTERS */
@@ -233,46 +267,95 @@ body {
 }
 
 
-
-/* PROGRESS BAR */
+/* ==========================================================================
+   PROGRESS BAR (Premium Minimalist Look)
+   ========================================================================== */
 .progress-line {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 2px;
-  background: rgba(0, 0, 0, 0.05);
+  height: 3px; /* Slightly thicker for premium interaction details */
+  background: rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  overflow: hidden;
 }
 
 .progress-fill {
   width: 0%;
   height: 100%;
-  background: #111;
-  transition: width 0.4s linear;
+  /* High-end linear gradient blending your dark minimalist base with the brand accent color */
+  background: linear-gradient(90deg, #111 0%, #e67e22 100%);
+  
+  /* Cubic-bezier curve gives it an organic, springy, premium loading feel instead of robotic linearity */
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1); 
+  
+  position: relative;
+  box-shadow: 0 0 8px rgba(230, 126, 34, 0.4); /* Subtle ambient glow */
 }
 
-/* RIGHT INDICATOR DOTS */
+/* Luxury particle tracer on the edge of the progress line */
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6));
+}
+
+/* ==========================================================================
+   RIGHT INDICATOR DOTS (Editorial Style)
+   ========================================================================== */
 .slider-dots {
   grid-column: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 16px; /* Opened up spacing for clean negative space */
 }
 
 .dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #ddd;
+  background: rgba(0, 0, 0, 0.15);
   cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
+  position: relative;
+  
+  /* Hardware-accelerated property transitions for high framerates on mobile */
+  transition: 
+    background 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, background;
 }
 
+/* Hover effect: Subtle enlargement without breaking layout structure */
+.dot:hover {
+  background: #111;
+  transform: scale(1.4);
+}
+
+/* Luxury active state: morphs into a dynamic elongated capsule */
 .dot.active {
-  background: #e67e22; 
-  transform: scale(1.3);
+  background: #e67e22;
+  height: 20px; /* Transforms dot into a vertical capsule marker */
+  border-radius: 4px;
+  transform: scale(1);
+  box-shadow: 0 4px 10px rgba(230, 126, 34, 0.25);
+}
+
+/* Interactive touch target expansion so users don't miss on mobile */
+.dot::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
 }
 
 /* ==========================================================================
