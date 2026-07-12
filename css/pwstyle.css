@@ -43,6 +43,7 @@ body {
   letter-spacing: -0.5px;
 }
 
+
 /* ==========================================================================
    HIGH-LEVEL HAMBURGER TOGGLE BUTTON (GPU-Accelerated Absolute Reset)
    ========================================================================== */
@@ -61,8 +62,21 @@ body {
   align-items: flex-end;
   position: relative;
   
-  /* Force clean state removal on click */
-  -webkit-tap-highlight-color: transparent;
+  /* --- APPLE iOS SPECIFIC SYSTEM OVERRIDES --- */
+  -webkit-appearance: none;           /* Wipes out native Apple button engines */
+  appearance: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0) !important; /* Kills the blue block touch flash */
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+/* Force state lock constraints to stop iOS active scaling cascades */
+.sidebar-toggle:active,
+.sidebar-toggle:focus {
+  background: transparent !important;
+  color: inherit !important;
+  outline: none !important;
+  transform: none !important; /* Overrides the automatic iOS tiny shrink behavior */
 }
 
 .sidebar-toggle span {
