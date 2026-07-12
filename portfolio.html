@@ -1,88 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Photo Gallery</title>
+  <title>Olga Galanets Photo Gallery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <!-- Google Fonts for Modern Minimalist Look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/pwstyle.css">
-
-
 </head>
-
 <body>
 
-  <button id="sidebarToggle" class="sidebar-toggle">
-    ☰
-  </button>
+  <!-- TOP HEADER NAVIGATION -->
+  <header class="main-header">
+    <div class="brand-title">Photo Gallery</div>
+    <button id="sidebarToggle" class="sidebar-toggle" aria-label="Toggle filters">
+      <span></span>
+      <span></span>
+    </button>
+  </header>
 
   <div class="layout" id="layout">
-
-    <!-- =========================
-       LEFT FILTER PANEL (DYNAMIC)
-  ========================== -->
+    <!-- LEFT SIDEBAR FILTERS -->
     <aside class="filters closed" id="sidebar">
       <div class="filter-container">
-        <div class="sidebar-top-space"></div>
-        <h2 class="brand-title">.OGalanets Gallery</h2>
-        <div class="filters-label">Filters:</div>
-        <div class="filters-inner" id="filterBar"></div>
-
-        <div class="sidebar-footer">
-
-          <a href="https://www.instagram.com/ogalanets_fotos/" target="_blank" class="social-icon">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 2A2.5 2.5 0 1 1 9.5 12 2.5 2.5 0 0 1 12 9.5zM17.5 6.2a1 1 0 1 0 1 1 1 1 0 0 0-1-1z" />
-            </svg>
-          </a>
-
+        <div class="filters-label">Categories</div>
+        <div class="filters-inner" id="filterBar">
+          <!-- Populated by JS -->
         </div>
       </div>
     </aside>
 
+    <!-- MAIN VIEWER STAGE -->
+    <main class="viewer" id="viewerContainer">
+      
+      
+      <!-- LEFT FIXED SOCIALS (Minimalist rotated look) -->
+      <div class="fixed-socials">
+        <a href="https://www.instagram.com/ogalanets_fotos/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+      </div>
 
-
-    <!-- =========================
-       RIGHT VIEWER (CORE STAGE)
-  ========================== -->
-    <main class="viewer">
-
+      <!-- CENTER IMAGE CANVAS -->
       <div class="image-wrap">
-
-        <!-- PROGRESS INDICATOR -->
         <div class="progress-line">
-          <div class="progress-fill"></div>
+          <div class="progress-fill" id="progressFill"></div>
         </div>
-
-        <!-- MAIN IMAGE -->
-        <img id="mainImage" src="" alt="photography image" />
-
+        <img id="mainImage" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200" alt="Photography image" decoding="async" />
       </div>
 
-      <!-- =========================
-         META UI
-    ========================== -->
-      <div class="meta">
-
-        <!-- counter -->
-        <span id="counter">1 / 1</span>
-
-        <!-- open project page -->
-        <button id="moreBtn">More</button>
-
+      <!-- RIGHT SLIDER DOTS INDICATORS -->
+      <div class="slider-dots" id="sliderDots">
+        <!-- Populated by JS -->
       </div>
 
+      <!-- RIGHT CONTEXTUAL CREDENTIALS PANEL -->
+<aside id="credentialsPanel" class="credentials-panel">
+  <button id="closePanelBtn" class="close-panel-btn" aria-label="Close details">×</button>
+  <div class="panel-content">
+    <div id="panelCategory" class="panel-category">Category</div>
+    <h2 id="panelTitle" class="panel-title">Image Title</h2>
+    <div id="panelMeta" class="panel-meta">Location • Year</div>
+    
+    <hr class="panel-divider">
+    
+    <!-- Dynamic Special Field Section (Exhibitions or Magazine) -->
+    <div id="panelDynamicSection" class="panel-dynamic-section"></div>
+  </div>
+</aside>
+      
+      <!-- BOTTOM META & CONTROLS FOOTER -->
+      <footer class="meta-footer">
+        <div class="meta-left">
+          <span class="category-tag" id="photoTag">#ogalanets</span>
+          <span class="divider">|</span>
+          <span class="photo-title" id="photoTitle">Olga Galanets</span>
+        </div>
+        
+        <div class="meta-right">
+          <span id="counter" class="counter">01 / 04</span>
+          <div class="nav-arrows">
+            <button id="prevBtn" class="nav-arrow" aria-label="Previous Image">←</button>
+            <button id="nextBtn" class="nav-arrow" aria-label="Next Image">→</button>
+          </div>
+        </div>
+      </footer>
     </main>
-
   </div>
 
-  <!-- =========================
-     SCRIPT
-========================= -->
   <script src="js/pwscript.js" defer></script>
-
 </body>
-
 </html>
