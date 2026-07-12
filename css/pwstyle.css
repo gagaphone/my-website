@@ -10,7 +10,14 @@ body {
   background-color: #fafafa;
   color: #111;
   overflow: hidden;
-  height: 100vh;
+  height: 100dvh; /* Changed from 100vh */
+}
+
+/* LAYOUT ENGINE */
+.layout {
+  display: flex;
+  height: 100dvh; /* Changed from 100vh */
+  padding-top: 70px;
 }
 
 /* TOP HEADER */
@@ -78,12 +85,7 @@ body {
   width: 20px;
 }
 
-/* LAYOUT ENGINE */
-.layout {
-  display: flex;
-  height: 100vh;
-  padding-top: 70px;
-}
+
 
 /* SIDEBAR FILTERS */
 .filters {
@@ -466,14 +468,6 @@ body {
   cursor: pointer;
 }
 
-/* Responsive adjustments */
-@media(max-width: 768px) {
-  .credentials-panel {
-    width: 100%;
-    border-left: none;
-    z-index: 120; /* Layer on top of everything on mobile */
-  }
-}
 
 /* MOBILE RESPONSIVENESS */
 @media(max-width: 1024px) {
@@ -489,17 +483,28 @@ body {
 }
 
 @media(max-width: 768px) {
-  .viewer {
+
+    .credentials-panel {
+    width: 100%;
+    border-left: none;
+    z-index: 120; /* Layer on top of everything on mobile */
+  }
+
+.viewer {
     grid-template-columns: 1fr;
     padding: 0 20px;
+    /* Keeps the overall container fitting the dynamic screen height perfectly */
+    height: calc(100dvh - 70px); 
   }
   
   .fixed-socials, .slider-dots {
     display: none;
   }
   
-  .image-wrap {
+.image-wrap {
     grid-column: 1;
+    /* Shrinking this slightly ensures the image leaves space for your shifted footer */
+    height: calc(100dvh - 240px); 
   }
 
   .meta-footer {
@@ -507,9 +512,14 @@ body {
     flex-direction: column;
     gap: 15px;
     align-items: flex-start;
+    
+    /* FIX: Pushes the footer up by 34px (the exact size of the iOS home indicator bar) 
+       plus an extra buffer so it doesn't clip into the URL address block */
+    margin-bottom: env(safe-area-inset-bottom, 24px); 
+    padding-bottom: 10px; 
   }
   
-  .meta-right {
+ .meta-right {
     width: 100%;
     justify-content: space-between;
   }
