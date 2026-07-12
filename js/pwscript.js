@@ -903,6 +903,14 @@ const sidebar =
 const layout =
   document.getElementById("layout");
 
+  const credentialsPanel = document.getElementById("credentialsPanel");
+const closePanelBtn = document.getElementById("closePanelBtn");
+const aboutPhotoBtn = document.getElementById("aboutPhotoBtn");
+const panelCategory = document.getElementById("panelCategory");
+const panelTitle = document.getElementById("panelTitle");
+const panelMeta = document.getElementById("panelMeta");
+const panelDynamicSection = document.getElementById("panelDynamicSection");
+
 let filters = [];
 
 
@@ -1527,3 +1535,145 @@ if (document.querySelector(".viewer")) {
 if (document.querySelector(".project-scroll")) {
   initProjectPage();
 }
+
+
+/* =========================
+   NAVIGATION (Updated to Loop)
+========================= */
+
+function next() {
+  if (!state.filtered.length) return;
+  
+  // Loops back to 0 if you click next on the last image
+  state.index = (state.index < state.filtered.length - 1) ? state.index + 1 : 0;
+  render();
+}
+
+function prev() {
+  if (!state.filtered.length) return;
+
+  // Loops to the last image if you click prev on the first image
+  state.index = (state.index > 0) ? state.index - 1 : state.filtered.length - 1;
+  render();
+}
+
+
+/* =========================
+   INIT INDEX
+========================= */
+
+function initIndexPage() {
+  createFilters();
+
+  state.filtered = images;
+  state.index = 0;
+
+  // FIX: Wire up the click events for the HTML arrow buttons
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => prev());
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => next());
+  }
+
+  render();
+  updateFilterUI();
+}
+
+/* ==========================================================================
+   PANEL EVENT LISTENERS & INTERACTION LOGIC
+   ========================================================================== */
+function togglePanel(forceOpen = null) {
+  if (!credentialsPanel) return;
+  
+  const isOpen = forceOpen !== null ? forceOpen : !credentialsPanel.classList.contains("open");
+  
+  if (isOpen) {
+    populatePanelDetails();
+    credentialsPanel.classList.add("open");
+    if (aboutPhotoBtn) aboutPhotoBtn.innerHTML = "✕ Close Info";
+  } else {
+    credentialsPanel.classList.remove("open");
+    if (aboutPhotoBtn) aboutPhotoBtn.innerHTML = "ⓘ About Photo";
+  }
+}
+
+// Click events
+mainImage?.addEventListener("click", () => togglePanel());
+aboutPhotoBtn?.addEventListener("click", () => togglePanel());
+closePanelBtn?.addEventListener("click", () => togglePanel(false));
+
+// Update the panel synchronously when navigating images while open
+function populatePanelDetails() {
+  const img = getCurrentImage();
+  if (!img) return;
+
+  panelCategory.textContent = img.category;
+  panelTitle.textContent = img.title;
+  
+  // Combines Place + Country Flag + Year
+  const countryFlag = getFlag(img.country);
+  panelMeta.textContent = `${img.place} • ${countryFlag} ${img.country} • ${img.year}`;
+
+  // Clear previous special blocks
+  panelDynamicSection.innerHTML = "";
+
+  // Structure 1: Exhibition Data
+  if (img.exhibition) {
+    panelDynamicSection.innerHTML = `
+      <div class="panel-block-label">Exhibition</div>
+      <div class="panel-block-value">${img.exhibitionTitle} (${img.exhibitionYear})</div>
+      
+      <div class="panel-block-label">Venue / Gallery</div>
+      <div class="panel-block-value">${img.exhibitionPlace}</div>
+      
+      <div class="panel-block-label">Accolade Details</div>
+      <div class="panel-block-value">${img.exhibitionDescription || img.description || 'Featured selection.'}</div>
+      
+      ${img.exhibitionLink ? `<a href="${img.exhibitionLink}" target="_blank" rel="noopener" class="panel-link">View Exhibition Page ↗</a>` : ''}
+    `;
+  } 
+  // Structure 2: Magazine Data
+  else if (img.magazine) {
+    panelDynamicSection.innerHTML = `
+      <div class="panel-block-label">Publication</div>
+      <div class="panel-block-value">${img.magazineTitle} (${img.magazineYear})</div>
+      
+      <div class="panel-block-label">Press Placement</div>
+      <div class="panel-block-value">${img.magazineDescription}</div>
+      
+      ${img.magazineLink ? `<a href="${img.magazineLink}" target="_blank" rel="noopener" class="panel-link">Read Feature Article ↗</a>` : ''}
+    `;
+  } 
+  // Structure 3: Standard Creative Work Details
+  else {
+    panelDynamicSection.innerHTML = `
+      <div class="panel-block-label">Curator Notes</div>
+      <div class="panel-block-value">${img.description || 'Minimal monochrome emotional composition.'}</div>
+      
+      <div class="panel-block-label">Archive Status</div>
+      <div class="panel-block-value">Original Edition Asset (ID: #${img.id.toString().padStart(3, '0')})</div>
+    `;
+  }
+}
+
+/* ==========================================================================
+   HOOK INTO GLOBAL ARCHITECTURE
+   ========================================================================== */
+// Modify your original render() function to update the panel if it is already open
+const originalRender = render;
+render = function() {
+  originalRender(); // Call original functions
+  
+  // Custom injection: Update live panels if open during slideshow switching
+  if (credentialsPanel && credentialsPanel.classList.contains("open")) {
+    populatePanelDetails();
+  }
+};
+
+// Also listen to Escape key to exit drawer seamlessly
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    togglePanel(false);
+  }
+});
