@@ -1274,6 +1274,7 @@ Mobile Architecture (Hamburger & Menus)
 }
 
 .experience-box {
+  
     width: 170px;
     flex-shrink: 0;
 }
@@ -1282,7 +1283,7 @@ Mobile Architecture (Hamburger & Menus)
     color: var(--primary-light);
     font-size: 100px;
     font-weight: var(--fw-l);
-    line-height: 0.8;
+    line-height: 0.85;
 }
 
 .experience-number span {
@@ -1294,11 +1295,14 @@ Mobile Architecture (Hamburger & Menus)
     margin-top: 40px;
     font-size: 14px;
     font-weight: var(--fw-xl);
-    line-height: 1.7;
-    color: var(--text-main);
+    line-height: 1.4;
+    color: var(--primary-light);
     text-transform: uppercase;
     text-align: center;
+    letter-spacing: 0.05em;
+  margin: 0;
 }
+
 
 .services-content { flex: 1; }
 .services-header-row { display: block; margin: 0 0 70px; }
@@ -1367,7 +1371,8 @@ Mobile Architecture (Hamburger & Menus)
         flex-direction: column;
         gap: 50px;
     }
-    .experience-box { width: 100%; }
+    .experience-box { 
+      width: 100%; }
     .services-header-row { margin-bottom: 60px; }
     .services-heading { font-size: 38px; margin-bottom: 25px; }
     .services-grid { grid-template-columns: 1fr; row-gap: 60px; }
@@ -1943,6 +1948,7 @@ Mobile Architecture (Hamburger & Menus)
   margin-bottom: 28px;
 
   border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  text-align: left;
 }
 
 .certification-panel-header > div {
@@ -1955,13 +1961,14 @@ Mobile Architecture (Hamburger & Menus)
 
   margin-bottom: 10px;
 
-  font-size: 11px;
+  font-size: 14px;
 
   font-weight: 800;
 
   letter-spacing: 0.12em;
 
   color: var(--primary-light, #be2f3d);
+  
 }
 
 
@@ -1976,6 +1983,7 @@ Mobile Architecture (Hamburger & Menus)
   line-height: 1.65;
 
   color: rgba(15, 23, 42, 0.58);
+  text-align: left;
 }
 
 
