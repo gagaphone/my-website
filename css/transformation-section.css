@@ -1,0 +1,375 @@
+/*==================================================
+  2 - TRANSFORMATION VALUE MAP
+==================================================*/
+.transformation-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background:
+        linear-gradient(180deg,
+            rgba(255, 255, 255, 0.96) 0%,
+            rgba(243, 248, 250, 1) 100%);
+
+    text-align: left;
+}
+
+/*--------------------------------------------------
+  BACKGROUND
+--------------------------------------------------*/
+
+.transformation-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.transformation-bg::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(to right,
+            rgba(15, 23, 42, 0.035) 1px,
+            transparent 1px),
+        linear-gradient(to bottom,
+            rgba(15, 23, 42, 0.035) 1px,
+            transparent 1px);
+
+    background-size: 80px 80px;
+
+    mask-image:
+        linear-gradient(to bottom,
+            transparent,
+            black 15%,
+            black 80%,
+            transparent);
+
+    -webkit-mask-image:
+        linear-gradient(to bottom,
+            transparent,
+            black 15%,
+            black 80%,
+            transparent);
+}
+
+.transformation-bg::after {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    top: 10%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(circle,
+            rgba(79, 107, 255, 0.08),
+            transparent 68%);
+
+    filter: blur(20px);
+}
+
+.transformation-flow {
+    display: grid;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: 1px;
+
+    width: 100%;
+
+    background: var(--scope-line);
+}
+
+.transformation-card {
+    min-height: 400px;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    border-right: 1px solid var(--scope-line);
+    border-bottom: 1px solid var(--scope-line);
+
+    perspective: 1200px;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.transformation-card__inner {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    min-height: 330px;
+
+    transform-style: preserve-3d;
+
+    transition: transform 0.6s ease;
+    padding: 28px 24px;
+}
+
+/* Flip state */
+
+.transformation-card.is-flipped .transformation-card__inner {
+    transform: rotateY(180deg);
+}
+
+/* =========================================================
+   CARD FACES
+   ========================================================= */
+
+.transformation-card__face {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 25px;
+
+    background: var(--bg-white);
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.transformation-card__front {
+    justify-content: flex-start;
+}
+
+.transformation-card__top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-bottom: 20px;
+}
+
+.transformation-number {
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-size: 10px;
+    font-weight: var(--fw-xl);
+
+    line-height: 1;
+
+}
+
+.transformation-number,
+.transformation-back__number {
+    color: var(--primary-light);
+}
+
+.transformation-status {
+    color:
+        var(--scope-accent, #c33642);
+
+    font-size: 12px;
+
+    letter-spacing: 0.08em;
+}
+
+.transformation-card__front h3 {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-l);
+    letter-spacing: 0.5px;
+
+    color: var(--text-main);
+}
+
+.transformation-card__front p {
+    max-width: 240px;
+
+    margin: 10px 0 0;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.transformation-value {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: auto;
+    padding-top: 24px;
+}
+
+.transformation-value span {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 14px;
+
+    color:
+        rgba(15, 23, 42, 0.42);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+.transformation-value strong {
+    font-size: 13px;
+    font-weight: var(--fw-xl);
+
+    line-height: 1.4;
+}
+
+/* =========================================================
+   CARD BACK
+   ========================================================= */
+
+.transformation-card__back {
+    transform: rotateY(180deg);
+
+    justify-content: flex-start;
+}
+
+.transformation-back__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-bottom: 24px;
+}
+
+.transformation-back__number {
+    margin-bottom: 20px;
+
+    font-size: 10px;
+    font-weight: var(--fw-xl);
+
+    line-height: 1;
+}
+
+.transformation-back__status {
+    color:
+        var(--scope-accent, #c33642);
+
+    font-size: 12px;
+
+    letter-spacing: 0.08em;
+}
+
+.transformation-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.transformation-list li {
+    position: relative;
+
+    padding-left: 14px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.transformation-list li::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0.65em;
+    left: 0;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: var(--primary-light);
+}
+
+.transformation-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow);
+
+    z-index: 2;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .transformation-flow {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    .transformation-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 520px) {
+
+    .transformation-flow {
+        grid-template-columns: 1fr;
+    }
+
+    .transformation-card,
+    .transformation-card__inner {
+        min-height: 280px;
+    }
+
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .transformation-card__inner {
+        transition: none;
+    }
+
+    .transformation-card {
+        transition: none;
+    }
+
+}

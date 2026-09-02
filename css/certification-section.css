@@ -1,0 +1,1038 @@
+/* ========================================================================
+   5 - LICENSES & CERTIFICATIONS
+   CERTIFICATION ROADMAP
+   ======================================================================== */
+
+.certification-explorer {
+    display: grid;
+
+    grid-template-columns: 78px minmax(0, 1fr);
+
+    gap: 22px;
+
+    width: 100%;
+
+    margin-top: 40px;
+
+    align-items: stretch;
+}
+
+.certification-explorer>input[type="radio"] {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+/* ========================================================================
+   HIDDEN RADIO CONTROLS
+   ======================================================================== */
+
+.certification-navigation input[type="radio"] {
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+/* ========================================================================
+   LEFT CATEGORY NAVIGATION
+   ======================================================================== */
+
+.certification-navigation {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px;
+
+    background: var(--bg-dark, #0f172a);
+
+    box-shadow:
+        0 20px 45px rgba(15, 23, 42, 0.12);
+
+    min-height: 100%;
+}
+
+/* ========================================================================
+   CATEGORY BUTTON
+   ======================================================================== */
+
+.cert-category-button {
+    position: relative;
+
+    width: 56px;
+    height: 56px;
+
+    flex: 0 0 56px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    color: rgba(255, 255, 255, 0.48);
+
+    background: transparent;
+
+    border: 1px solid transparent;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.cert-category-button i {
+    font-size: 19px;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+.cert-category-button:hover {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    transform: translateY(-2px);
+}
+
+/* ========================================================================
+   CATEGORY NUMBER
+   ======================================================================== */
+
+.cert-category-number {
+    position: absolute;
+
+    right: 5px;
+    bottom: 4px;
+
+    font-size: 8px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+    opacity: 0.45;
+}
+
+/* ========================================================================
+   ACTIVE CATEGORY
+   ======================================================================== */
+
+#cert-recent:checked+.cert-category-button,
+#cert-project:checked+.cert-category-button,
+#cert-agile:checked+.cert-category-button,
+#cert-ai:checked+.cert-category-button,
+#cert-technical:checked+.cert-category-button,
+#cert-design:checked+.cert-category-button,
+#cert-engineering:checked+.cert-category-button,
+#cert-language:checked+.cert-category-button,
+#cert-earlier:checked+.cert-category-button {
+    color: #ffffff;
+
+    background: var(--primary-light, #be2f3d);
+
+    border-color: rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 8px 22px rgba(190, 47, 61, 0.28);
+
+    transform: translateY(-1px);
+}
+
+#cert-recent:checked+.cert-category-button,
+#cert-project:checked+.cert-category-button i,
+#cert-agile:checked+.cert-category-button i,
+#cert-ai:checked+.cert-category-button i,
+#cert-technical:checked+.cert-category-button i,
+#cert-design:checked+.cert-category-button i,
+#cert-engineering:checked+.cert-category-button i,
+#cert-language:checked+.cert-category-button i,
+#cert-earlier:checked+.cert-category-button i {
+    transform: scale(1.08);
+}
+
+/* ========================================================================
+   CONTENT AREA
+   ======================================================================== */
+
+.certification-content-area {
+    min-width: 0;
+
+    position: relative;
+
+    background: var(--bg-white, #ffffff);
+
+    border: 1px solid rgba(15, 23, 42, 0.08);
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.06);
+
+    overflow: hidden;
+}
+
+/* ========================================================================
+   PANELS
+   ======================================================================== */
+
+.certification-panel {
+    display: none;
+
+    padding: 34px;
+
+    animation:
+        certification-panel-open 0.4s ease both;
+}
+
+
+@keyframes certification-panel-open {
+
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ========================================================================
+   RADIO → PANEL MAPPING
+   ======================================================================== */
+
+.certification-navigation:has(#cert-project:checked)+.certification-content-area .cert-panel-project {
+    display: block;
+}
+
+
+.certification-navigation:has(#cert-agile:checked)+.certification-content-area .cert-panel-agile {
+    display: block;
+}
+
+
+.certification-navigation:has(#cert-ai:checked)+.certification-content-area .cert-panel-ai {
+    display: block;
+}
+
+
+.certification-navigation:has(#cert-technical:checked)+.certification-content-area .cert-panel-technical {
+    display: block;
+}
+
+
+.certification-navigation:has(#cert-design:checked)+.certification-content-area .cert-panel-design {
+    display: block;
+}
+
+
+.certification-navigation:has(#cert-engineering:checked)+.certification-content-area .cert-panel-engineering {
+    display: block;
+}
+
+
+.certification-navigation:has(#cert-language:checked)+.certification-content-area .cert-panel-language {
+    display: block;
+}
+
+
+.certification-navigation:has(#cert-earlier:checked)+.certification-content-area .cert-panel-earlier {
+    display: block;
+}
+
+/* ========================================================================
+   PANEL HEADER
+   ======================================================================== */
+
+.certification-panel-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    text-align: left;
+}
+
+.certification-panel-header>div {
+    min-width: 0;
+}
+
+
+.certification-panel-index {
+    display: inline-flex;
+
+    margin-bottom: 10px;
+
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-l);
+
+    color: var(--primary-light, #be2f3d);
+
+}
+
+
+
+.certification-panel-header p {
+    max-width: 680px;
+
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    color: rgba(15, 23, 42, 0.58);
+    text-align: left;
+}
+
+
+.certification-panel-icon {
+    flex: 0 0 58px;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+
+    border-radius: 17px;
+
+    font-size: 22px;
+    line-height: 1;
+
+    color: var(--bg-dark, #0f172a);
+    background: rgba(15, 23, 42, 0.055);
+}
+
+.certification-panel-icon::before {
+    margin: 18px;
+    display: block;
+    line-height: 1;
+}
+
+
+
+/* ========================================================================
+   CERTIFICATION GRID
+   ======================================================================== */
+
+.certification-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+/* ========================================================================
+   CERTIFICATION CARD
+   ======================================================================== */
+
+.certification-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 17px;
+
+    min-width: 0;
+
+    padding: 21px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(15, 23, 42, 0.08);
+
+    box-shadow:
+        0 5px 18px rgba(15, 23, 42, 0.035);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.certification-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(15, 23, 42, 0.15);
+
+    box-shadow:
+        0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+
+/* ========================================================================
+   FEATURED CERTIFICATIONS
+   ======================================================================== */
+
+.certification-card-featured {
+    border-color: rgba(190, 47, 61, 0.13);
+
+    background:
+        linear-gradient(145deg,
+            #ffffff 0%,
+            rgba(190, 47, 61, 0.025) 100%);
+}
+
+
+/* ========================================================================
+   LEGACY / EXPIRED
+   ======================================================================== */
+
+.certification-card-legacy {
+    opacity: 0.78;
+}
+
+
+.certification-card-legacy:hover {
+    opacity: 1;
+}
+
+
+/* ========================================================================
+   CERTIFICATION ICON
+   ======================================================================== */
+
+.certification-icon {
+    flex: 0 0 48px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    color: #ffffff;
+
+    background: var(--bg-dark, #0f172a);
+}
+
+
+.certification-icon i {
+    font-size: 19px;
+}
+
+
+/* ========================================================================
+   CATEGORY ICON VARIANTS
+   ======================================================================== */
+
+.certification-icon-project {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(15, 23, 42, 0.11);
+
+    border-radius: 11px;
+
+    color:
+        var(--scope-accent, #c33642);
+
+    background:
+        rgba(15, 23, 42, 0.025);
+}
+
+
+.certification-icon-agile {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(15, 23, 42, 0.11);
+
+    border-radius: 11px;
+
+    color:
+        var(--scope-accent, #c33642);
+
+    background:
+        rgba(15, 23, 42, 0.025);
+}
+
+
+.certification-icon-ai {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(15, 23, 42, 0.11);
+
+    border-radius: 11px;
+
+    color:
+        var(--scope-accent, #c33642);
+
+    background:
+        rgba(15, 23, 42, 0.025);
+}
+
+
+.certification-icon-technical {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(15, 23, 42, 0.11);
+
+    border-radius: 11px;
+
+    color:
+        var(--scope-accent, #c33642);
+
+    background:
+        rgba(15, 23, 42, 0.025);
+}
+
+
+.certification-icon-design {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(15, 23, 42, 0.11);
+
+    border-radius: 11px;
+
+    color:
+        var(--scope-accent, #c33642);
+
+    background:
+        rgba(15, 23, 42, 0.025);
+}
+
+
+.certification-icon-engineering {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(15, 23, 42, 0.11);
+
+    border-radius: 11px;
+
+    color:
+        var(--scope-accent, #c33642);
+
+    background:
+        rgba(15, 23, 42, 0.025);
+}
+
+
+.certification-icon-language {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(15, 23, 42, 0.11);
+
+    border-radius: 11px;
+
+    color:
+        var(--scope-accent, #c33642);
+
+    background:
+        rgba(15, 23, 42, 0.025);
+}
+
+
+.certification-icon-legacy {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(15, 23, 42, 0.11);
+
+    border-radius: 11px;
+
+    color:
+        var(--scope-accent, #c33642);
+
+    background:
+        rgba(15, 23, 42, 0.025);
+}
+
+
+/* ========================================================================
+   CERTIFICATION DETAILS
+   ======================================================================== */
+
+.certification-details {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* ========================================================================
+   META
+   ======================================================================== */
+
+.certification-meta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 8px;
+}
+
+
+.certification-year {
+    font-size: 10px;
+
+    line-height: 1;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    color: rgba(15, 23, 42, 0.42);
+}
+
+
+/* ========================================================================
+   STATUS
+   ======================================================================== */
+
+.certification-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 4px 8px;
+
+    border-radius: 999px;
+
+    font-size: 9px;
+
+    line-height: 1;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
+}
+
+
+.certification-status-current {
+    color: #166534;
+
+    background: rgba(34, 197, 94, 0.10);
+}
+
+
+.certification-status-expired {
+    color: #92400e;
+
+    background: rgba(245, 158, 11, 0.10);
+}
+
+
+/* ========================================================================
+   CERTIFICATION TITLE
+   ======================================================================== */
+
+.certification-details h4 {
+    margin: 0 0 7px 0;
+    text-align: left;
+
+    font-size: 12px;
+    font-weight: 650;
+    color: var(--text-dark, #0f172a);
+}
+
+
+/* ========================================================================
+   ISSUER
+   ======================================================================== */
+
+.certification-issuer {
+    margin: 0 0 4px 0;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    font-weight: 600;
+
+    color: var(--primary-light, #be2f3d);
+}
+
+.dot {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin: 0 8px;
+    border-radius: 50%;
+    background: currentColor;
+    vertical-align: middle;
+}
+
+/* ========================================================================
+   SKILLS
+   ======================================================================== */
+
+.certification-skills {
+    margin: 8px 0 0 0;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    color: rgba(15, 23, 42, 0.48);
+}
+
+
+/* ========================================================================
+   TABLET
+   ======================================================================== */
+
+@media (max-width: 900px) {
+
+    .certification-explorer {
+        grid-template-columns: 68px minmax(0, 1fr);
+
+        gap: 16px;
+    }
+
+
+    .certification-navigation {
+        padding: 8px;
+
+        gap: 8px;
+    }
+
+
+    .cert-category-button {
+        width: 50px;
+        height: 50px;
+
+        flex-basis: 50px;
+    }
+
+
+    .cert-category-button i {
+        font-size: 17px;
+    }
+
+
+    .certification-panel {
+        padding: 26px;
+    }
+
+
+    .certification-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 680px) {
+
+    .certification-explorer {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        margin-top: 30px;
+    }
+
+
+    /* --------------------------------------------------------------
+     Horizontal category navigation on mobile
+     -------------------------------------------------------------- */
+
+    .certification-navigation {
+        width: 100%;
+
+        min-height: 0;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        padding: 8px;
+
+        border-radius: 17px;
+
+        scrollbar-width: none;
+    }
+
+
+    .certification-navigation::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .cert-category-button {
+        flex: 0 0 48px;
+
+        width: 48px;
+        height: 48px;
+
+        border-radius: 13px;
+    }
+
+
+    .cert-category-number {
+        display: none;
+    }
+
+
+    /* --------------------------------------------------------------
+     Content
+     -------------------------------------------------------------- */
+
+    .certification-content-area {
+        border-radius: 18px;
+    }
+
+
+    .certification-panel {
+        padding: 21px 17px;
+    }
+
+
+    .certification-panel-header {
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 30px;
+
+        padding-bottom: 28px;
+        margin-bottom: 28px;
+
+        border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+
+    .certification-panel-header h3 {
+        font-size: 23px;
+    }
+
+
+    .certification-panel-header p {
+        font-size: 13px;
+    }
+
+
+    .certification-panel-icon {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border:
+            1px solid rgba(15, 23, 42, 0.11);
+
+        border-radius: 11px;
+
+        color: var(--bg-dark, #0f172a);
+        background: rgba(15, 23, 42, 0.055);
+    }
+
+    .certification-panel-icon::before {
+        display: block;
+        line-height: 1;
+    }
+
+
+    .certification-card {
+        padding: 17px;
+
+        gap: 13px;
+
+        border-radius: 14px;
+    }
+
+
+    .certification-icon {
+        flex: 0 0 42px;
+
+        width: 42px;
+        height: 42px;
+
+        border-radius: 11px;
+    }
+
+
+    .certification-icon i {
+        font-size: 16px;
+    }
+
+
+    .certification-details h4 {
+        font-size: 14px;
+    }
+
+
+    .certification-issuer {
+        font-size: 12px;
+    }
+
+
+    .certification-date {
+        font-size: 11px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .certification-navigation {
+        gap: 6px;
+    }
+
+
+    .cert-category-button {
+        flex-basis: 44px;
+
+        width: 44px;
+        height: 44px;
+    }
+
+
+    .cert-category-button i {
+        font-size: 15px;
+    }
+
+
+    .certification-panel {
+        padding: 18px 14px;
+    }
+
+
+    .certification-panel-header {
+        align-items: center;
+    }
+
+
+    .certification-panel-header h3 {
+        font-size: 21px;
+    }
+
+
+    .certification-panel-icon {
+        display: none;
+    }
+
+
+    .certification-card {
+        padding: 14px;
+
+        gap: 11px;
+    }
+
+
+    .certification-icon {
+        flex: 0 0 38px;
+
+        width: 38px;
+        height: 38px;
+
+        border-radius: 9px;
+    }
+
+
+    .certification-icon i {
+        font-size: 14px;
+    }
+
+
+    .certification-details h4 {
+        font-size: 13px;
+    }
+
+
+    .certification-issuer {
+        font-size: 11px;
+    }
+
+
+    .certification-date {
+        font-size: 10px;
+    }
+
+
+    .certification-skills,
+    .certification-id {
+        font-size: 9px;
+    }
+
+}

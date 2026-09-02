@@ -1,0 +1,495 @@
+/* =========================================================
+   CTA — FINAL TRANSFORMATION CONVERSION
+   ========================================================= */
+
+#cta-section {
+    --cta-accent: var(--primary-light, #be2f3d);
+    --cta-dark: var(--primary-dark, #0f172a);
+    --cta-white: #ffffff;
+    --cta-muted: rgba(255, 255, 255, 0.62);
+    --cta-border: rgba(255, 255, 255, 0.12);
+
+    position: relative;
+    isolation: isolate;
+
+    padding-block:
+        clamp(70px, 9vw, 120px);
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(180deg,
+            rgba(243, 248, 250, 0.96) 0%,
+            rgba(255, 255, 255, 1) 100%);
+}
+
+
+/* =========================================================
+   CTA PANEL
+   ========================================================= */
+
+.cta-panel {
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        clamp(42px, 6vw, 72px) clamp(28px, 6vw, 80px);
+
+    border-radius:
+        var(--radius-xl, 28px);
+
+    background:
+        linear-gradient(135deg,
+            rgba(15, 23, 42, 0.99),
+            rgba(15, 23, 42, 0.94));
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 24px 70px rgba(15, 23, 42, 0.14);
+}
+
+
+/* =========================================================
+   AMBIENT GLOW
+   ========================================================= */
+
+.cta-panel::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    top: -260px;
+    right: 5%;
+
+    border-radius: 50%;
+
+    background:
+        var(--primary-glow,
+            rgba(195, 54, 66, 0.22));
+
+    filter: blur(70px);
+
+    pointer-events: none;
+}
+
+
+.cta-panel::after {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    bottom: -180px;
+    left: 8%;
+
+    border-radius: 50%;
+
+    background:
+        rgba(79, 107, 255, 0.10);
+
+    filter: blur(65px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.cta-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin-inline: auto;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   KICKER
+   ========================================================= */
+
+.cta-kicker {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+    color:
+        var(--cta-accent);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+
+.cta-kicker::before {
+    content: "";
+
+    width: 28px;
+    height: 1px;
+
+    flex: 0 0 28px;
+
+    background:
+        currentColor;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.cta-title {
+    margin: 0 auto 18px;
+
+    max-width: 850px;
+
+    color:
+        var(--cta-white);
+
+    font-size:
+        clamp(2rem, 5vw, 3.6rem);
+
+    font-weight:
+        var(--fw-xl, 700);
+
+    line-height: 1.04;
+
+    letter-spacing: -0.045em;
+}
+
+
+.cta-title span {
+    display: block;
+
+    color:
+        var(--cta-accent);
+}
+
+
+/* =========================================================
+   LEAD
+   ========================================================= */
+
+.cta-lead {
+    max-width: 680px;
+
+    margin:
+        0 auto clamp(28px, 4vw, 38px);
+
+    color:
+        var(--cta-muted);
+
+    font-size:
+        clamp(0.92rem, 1.5vw, 1rem);
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.cta-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   BASE ACTION
+   ========================================================= */
+
+.cta-action {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 50px;
+
+    padding:
+        0 20px;
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight:
+        var(--fw-l, 500);
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.cta-action ion-icon {
+    font-size: 17px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   PRIMARY ACTION
+   ========================================================= */
+
+.cta-action--primary {
+    min-width: 210px;
+
+    color: #ffffff;
+
+    background:
+        var(--cta-accent);
+
+    border:
+        1px solid var(--cta-accent);
+
+    box-shadow:
+        0 10px 30px rgba(195, 54, 66, 0.20);
+}
+
+
+.cta-action--primary:hover {
+    transform:
+        translateY(-2px);
+
+    background:
+        #ffffff;
+
+    border-color:
+        #ffffff;
+
+    color:
+        var(--cta-dark);
+
+    box-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.18);
+}
+
+
+.cta-action-arrow {
+    margin-left: 2px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.cta-action--primary:hover .cta-action-arrow {
+    transform:
+        translateX(3px);
+}
+
+
+/* =========================================================
+   SECONDARY ACTIONS
+   ========================================================= */
+
+.cta-action--secondary {
+    color:
+        rgba(255, 255, 255, 0.88);
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid var(--cta-border);
+}
+
+
+.cta-action--secondary:hover {
+    transform:
+        translateY(-2px);
+
+    color:
+        #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-color:
+        rgba(255, 255, 255, 0.24);
+}
+
+
+/* =========================================================
+   FOOTER SIGNAL
+   ========================================================= */
+
+.cta-footer {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    margin-top:
+        clamp(38px, 5vw, 58px);
+
+    color:
+        rgba(255, 255, 255, 0.28);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+
+    text-align: center;
+}
+
+
+.cta-footer-line {
+    width: 42px;
+    height: 1px;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .cta-panel {
+        padding:
+            42px 24px;
+    }
+
+    .cta-title {
+        font-size:
+            clamp(2rem, 9vw, 3rem);
+    }
+
+    .cta-actions {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .cta-action {
+        width: min(100%, 320px);
+    }
+
+    .cta-footer {
+        flex-wrap: wrap;
+
+        line-height: 1.6;
+    }
+
+    .cta-footer-line {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    #cta-section {
+        padding-block:
+            60px;
+    }
+
+    .cta-panel {
+        border-radius:
+            22px;
+
+        padding:
+            38px 20px;
+    }
+
+    .cta-kicker {
+        font-size: 9px;
+
+        letter-spacing: 0.13em;
+    }
+
+    .cta-kicker::before {
+        width: 20px;
+
+        flex-basis: 20px;
+    }
+
+    .cta-title {
+        font-size:
+            2rem;
+
+        line-height: 1.06;
+    }
+
+    .cta-lead {
+        font-size:
+            0.9rem;
+
+        line-height: 1.65;
+    }
+
+    .cta-action {
+        width: 100%;
+
+        min-height: 48px;
+    }
+
+    .cta-footer {
+        font-size: 8px;
+
+        letter-spacing: 0.12em;
+    }
+}

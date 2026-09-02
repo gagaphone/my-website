@@ -1,0 +1,1423 @@
+/* =========================================================
+    K.O.R.E. FRAMEWORK 
+   ========================================================= */
+
+
+/* =========================================================
+   1. SECTION FOUNDATION
+   ========================================================= */
+
+.transformation-system {
+    position: relative;
+
+    padding-top: clamp(70px, 9vw, 120px);
+    padding-bottom: clamp(70px, 9vw, 120px);
+
+    overflow: hidden;
+}
+
+
+/* Subtle visual continuation from previous section */
+
+.transformation-system::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: min(900px, 80vw);
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(15, 23, 42, 0.14),
+            transparent);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   3. K.O.R.E. FRAMEWORK
+   ========================================================= */
+
+.kore-framework {
+    position: relative;
+}
+
+
+/* =========================================================
+   4. K.O.R.E. FRAMEWORK HEADING
+   ========================================================= */
+
+.kore-framework-heading {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.1fr) minmax(260px, 0.9fr);
+
+    gap: clamp(30px, 6vw, 90px);
+
+    align-items: end;
+
+    margin-bottom: 55px;
+}
+
+.kore-framework-heading>div {
+    max-width: 720px;
+}
+
+.kore-framework-heading .toolbox-label {
+    display: block;
+
+    margin-bottom: 10px;
+}
+
+.kore-framework-heading h3 {
+    margin: 0;
+
+    font-size: clamp(1.7rem, 3vw, 2.6rem);
+
+    line-height: 1.08;
+
+    letter-spacing: -0.04em;
+}
+
+.kore-framework-heading h3 span {
+    color: var(--scope-accent);
+}
+
+.kore-framework-heading>p {
+    max-width: 480px;
+
+    margin: 0;
+
+    color:
+        var(--text-muted,
+            rgba(15, 23, 42, 0.62));
+
+    font-size: 0.98rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   5. K.O.R.E. ENVIRONMENT
+   New interactive framework system
+   ========================================================= */
+
+.kore-environment {
+    position: relative;
+
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   6. K.O.R.E. SECTION HEADING
+   ========================================================= */
+
+.kore-section-heading {
+    margin-bottom: 28px;
+}
+
+.kore-section-heading .scope-kicker {
+    display: block;
+
+    color:
+        rgba(15, 23, 42, 0.48);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+}
+
+.kore-section-heading h3 {
+    max-width: 700px;
+
+    margin: 0;
+
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+
+    line-height: 1.12;
+
+    letter-spacing: -0.035em;
+}
+
+.kore-section-heading h3 span {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   7. K.O.R.E. STAGE GRID
+   ========================================================= */
+
+.kore-stage-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    width: 100%;
+
+    border-top: 1px solid rgba(15, 23, 42, 0.12);
+
+    border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+
+/* =========================================================
+   8. K.O.R.E. STAGE BUTTON
+   ========================================================= */
+
+.kore-stage {
+    position: relative;
+
+    appearance: none;
+
+    width: 100%;
+    min-height: 175px;
+
+    padding: 25px 24px 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    border: 0;
+    border-right: 1px solid rgba(15, 23, 42, 0.12);
+
+    background: transparent;
+
+    color:
+        var(--text-dark,
+            #0f172a);
+
+    text-align: left;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.kore-stage:first-child {
+    border-left: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.kore-stage:last-child {
+    border-right: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+
+/* =========================================================
+   9. STAGE HOVER
+   ========================================================= */
+
+.kore-stage:hover {
+    background: var(--bg-white);
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   10. ACTIVE STAGE
+   ========================================================= */
+
+.kore-stage.is-active {
+    background: #0f172a;
+
+    color: #ffffff;
+}
+
+.kore-stage.is-active:hover {
+    background: #0f172a;
+}
+
+
+/* =========================================================
+   11. STAGE INDEX
+   ========================================================= */
+
+.kore-stage-index {
+    display: block;
+
+    margin-bottom: 34px;
+
+    font-size: 11px;
+    font-weight: var(--fw-xl);
+    letter-spacing: 1px;
+
+    color: var(--primary-light);
+}
+
+.kore-stage.is-active .kore-stage-index {
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   12. STAGE NAME
+   ========================================================= */
+
+.kore-stage-name {
+    display: block;
+
+    max-width: 180px;
+
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-l);
+
+    line-height: 1.25;
+
+    letter-spacing: -0.015em;
+}
+
+
+/* =========================================================
+   13. STAGE DETAIL
+   ========================================================= */
+
+.kore-stage-detail {
+    display: block;
+
+    max-width: 185px;
+
+    margin-top: 9px;
+
+    font-size: 0.7rem;
+
+    line-height: 1.45;
+
+    opacity: 0.5;
+}
+
+.kore-stage.is-active .kore-stage-detail {
+    opacity: 0.68;
+}
+
+
+/* =========================================================
+   14. ACTIVE STAGE INDICATOR
+   ========================================================= */
+
+.kore-stage::after {
+    content: "";
+
+    position: absolute;
+
+    left: 24px;
+    right: 24px;
+    bottom: -1px;
+
+    height: 3px;
+
+    background:
+        var(--scope-accent,
+            #c33642);
+
+    transform: scaleX(0);
+
+    transform-origin: left center;
+
+    transition:
+        transform 0.35s cubic-bezier(.22, .61, .36, 1);
+}
+
+.kore-stage.is-active::after {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   15. K.O.R.E. DETAIL PANEL
+   ========================================================= */
+
+.kore-stage-panel {
+    display: grid;
+
+    grid-template-columns: 105px minmax(0, 1fr);
+
+    width: 100%;
+
+    min-height: 300px;
+
+    margin-top: 18px;
+
+    border: 1px solid rgba(15, 23, 42, 0.12);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.045);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   16. PANEL META
+   ========================================================= */
+
+.kore-panel-meta {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 27px 21px;
+
+    border-right: 1px solid rgba(15, 23, 42, 0.12);
+
+    background:
+        rgba(15, 23, 42, 0.018);
+
+    font-family: monospace;
+
+    font-size: 0.67rem;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.12em;
+}
+
+.kore-panel-meta span:first-child {
+    font-size: 0.95rem;
+
+    letter-spacing: 0;
+    color: var(--primary-light);
+}
+
+.kore-panel-meta span:last-child {
+    font-size: 0.95rem;
+    color: var(--primary-light);
+    transform: rotate(-90deg);
+    padding: 20px;
+}
+
+
+
+/* =========================================================
+   17. PANEL CONTENT
+   ========================================================= */
+
+.kore-panel-content {
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 0.9fr) minmax(280px, 1.1fr);
+
+    column-gap: clamp(35px, 5vw, 70px);
+
+    row-gap: 28px;
+
+    padding:
+        clamp(32px, 4vw, 46px) clamp(30px, 5vw, 55px);
+}
+
+
+/* =========================================================
+   18. PANEL COPY
+   ========================================================= */
+
+.kore-panel-copy {
+    grid-column: 1;
+}
+
+.kore-panel-copy h4 {
+    margin: 0 0 15px;
+
+    color:
+        var(--text-dark,
+            #0f172a);
+
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-l);
+
+    line-height: 1.08;
+
+    letter-spacing: -0.04em;
+}
+
+.kore-panel-copy p {
+    max-width: 540px;
+
+    margin: 0;
+
+    color:
+        rgba(15, 23, 42, 0.62);
+
+    font-size: 0.92rem;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   19. PANEL CAPABILITY TAGS
+   ========================================================= */
+
+.kore-panel-tags {
+    grid-column: 2;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-content: flex-start;
+
+    gap: 8px;
+}
+
+.kore-panel-tags span {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 31px;
+
+    padding: 7px 10px;
+
+    border: 1px solid rgba(15, 23, 42, 0.11);
+
+    background:
+        rgba(15, 23, 42, 0.025);
+
+    color:
+        rgba(15, 23, 42, 0.68);
+
+    font-size: 0.67rem;
+
+    line-height: 1.25;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   20. PANEL TOOL SYSTEM
+   ========================================================= */
+
+.kore-panel-tools {
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(15, 23, 42, 0.09);
+}
+
+.kore-panel-tools span {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    min-height: 29px;
+
+    padding: 6px 10px;
+
+    border: 1px solid rgba(15, 23, 42, 0.1);
+
+    border-radius: 999px;
+
+    background:
+        rgba(15, 23, 42, 0.02);
+
+    color:
+        rgba(15, 23, 42, 0.6);
+
+    font-size: 0.65rem;
+
+    line-height: 1;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.kore-panel-tools span:hover {
+    background:
+        rgba(15, 23, 42, 0.055);
+
+    border-color:
+        rgba(15, 23, 42, 0.18);
+
+    color:
+        var(--text-dark,
+            #0f172a);
+}
+
+.kore-panel-tools i {
+    font-size: 0.72rem;
+}
+
+
+/* =========================================================
+   21. K.O.R.E. ACCESSIBILITY
+   ========================================================= */
+
+.kore-stage:focus-visible {
+    outline: 2px solid var(--scope-accent,
+            #c33642);
+
+    outline-offset: -2px;
+}
+
+
+/* =========================================================
+   27. TRANSFORMATION TOOLBOX
+   ========================================================= */
+
+.transformation-toolbox {
+    position: relative;
+
+    padding-top: 5px;
+}
+
+
+/* =========================================================
+   28. TOOLBOX INTRO
+   ========================================================= */
+
+.toolbox-intro {
+    max-width: 760px;
+
+    margin-bottom:
+        clamp(40px, 5vw, 60px);
+}
+
+.toolbox-intro .scope-title {
+    margin-bottom: 15px;
+}
+
+.toolbox-intro .scope-lead {
+    max-width: 680px;
+}
+
+
+/* =========================================================
+   29. CAPABILITY LAYER
+   ========================================================= */
+
+.toolbox-capabilities {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom:
+        clamp(45px, 6vw, 70px);
+}
+
+.toolbox-capability {
+    display: grid;
+
+    grid-template-columns:
+        58px minmax(0, 1fr);
+
+    gap: 22px;
+
+    padding: 30px;
+
+    border: 1px solid rgba(15, 23, 42, 0.09);
+
+    border-radius:
+        var(--radius-lg,
+            24px);
+
+    background:
+        rgba(255, 255, 255, 0.5);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.toolbox-capability:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(15, 23, 42, 0.16);
+
+    box-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.07);
+}
+
+
+/* =========================================================
+   30. CAPABILITY MARKER
+   ========================================================= */
+
+.toolbox-capability-marker {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.toolbox-capability-marker span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(15, 23, 42, 0.16);
+
+    border-radius: 50%;
+
+    color:
+        var(--text-dark,
+            #0f172a);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   31. CAPABILITY CONTENT
+   ========================================================= */
+
+.toolbox-label {
+    display: block;
+
+    color:
+        rgba(15, 23, 42, 0.48);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+}
+
+.toolbox-capability-content h3 {
+    margin: 7px 0 8px;
+
+    color:
+        var(--text-dark,
+            #0f172a);
+
+    font-size: 1.25rem;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.025em;
+}
+
+.toolbox-capability-content p {
+    max-width: 520px;
+
+    margin: 0;
+
+    color:
+        rgba(15, 23, 42, 0.62);
+
+    font-size: 0.9rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   32. SYSTEMS HEADER
+   ========================================================= */
+
+.toolbox-systems {
+    position: relative;
+}
+
+.toolbox-system-heading {
+    display: flex;
+
+    align-items: end;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    margin-bottom: 24px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.toolbox-system-heading h3 {
+    margin: 7px 0 0;
+
+    color:
+        var(--text-dark,
+            #0f172a);
+
+    font-size:
+        clamp(1.45rem, 2.5vw, 2rem);
+
+    letter-spacing: -0.035em;
+}
+
+.toolbox-system-heading>p {
+    max-width: 420px;
+
+    margin: 0;
+
+    color:
+        rgba(15, 23, 42, 0.58);
+
+    font-size: 0.9rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   33. TOOLBOX SYSTEM CARDS
+   ========================================================= */
+
+.toolbox-system {
+    display: grid;
+
+    grid-template-columns:
+        64px minmax(0, 1fr);
+
+    gap: 24px;
+
+    padding: 26px 0;
+
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.toolbox-system:last-child {
+    border-bottom: 0;
+}
+
+
+/* =========================================================
+   34. SYSTEM ICON
+   ========================================================= */
+
+.toolbox-system-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    border: 1px solid rgba(15, 23, 42, 0.12);
+
+    border-radius: 15px;
+
+    background:
+        rgba(15, 23, 42, 0.025);
+
+    color:
+        var(--scope-accent,
+            #c33642);
+}
+
+.toolbox-system-icon ion-icon {
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   35. SYSTEM TITLE
+   ========================================================= */
+
+.toolbox-system-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 6px;
+}
+
+.toolbox-index {
+    color:
+        rgba(15, 23, 42, 0.35);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+.toolbox-system-title h4 {
+    margin: 0;
+
+    color:
+        var(--text-dark,
+            #0f172a);
+
+    font-size: 1.05rem;
+
+    font-weight: 650;
+
+    letter-spacing: -0.015em;
+}
+
+.toolbox-system-main>p {
+    margin: 0 0 13px;
+
+    color:
+        rgba(15, 23, 42, 0.58);
+
+    font-size: 0.88rem;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   36. TOOLBOX TOOL PILLS
+   ========================================================= */
+
+.toolbox-tools {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.toolbox-tools span {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    min-height: 29px;
+
+    padding: 5px 10px;
+
+    border: 1px solid rgba(15, 23, 42, 0.1);
+
+    border-radius: 999px;
+
+    background:
+        rgba(15, 23, 42, 0.025);
+
+    color:
+        rgba(15, 23, 42, 0.62);
+
+    font-size: 10px;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.toolbox-tools span:hover {
+    border-color:
+        rgba(15, 23, 42, 0.18);
+
+    background:
+        rgba(15, 23, 42, 0.055);
+
+    color:
+        var(--text-dark,
+            #0f172a);
+}
+
+.toolbox-tools i {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   37. TOOLBOX CLOSING POSITION
+   ========================================================= */
+
+.toolbox-note {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    max-width: 760px;
+
+    margin:
+        clamp(45px, 6vw, 70px) auto 0;
+
+    padding: 25px 0 0;
+
+    border-top: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.toolbox-note-line {
+    flex: 0 0 34px;
+
+    width: 34px;
+    height: 2px;
+
+    background:
+        var(--scope-accent,
+            #c33642);
+}
+
+.toolbox-note p {
+    margin: 0;
+
+    color:
+        rgba(15, 23, 42, 0.55);
+
+    font-size: 0.9rem;
+
+    line-height: 1.65;
+}
+
+.toolbox-note strong {
+    color:
+        var(--text-dark,
+            #0f172a);
+}
+
+
+/* =========================================================
+   38. TRANSFORMATION BRIDGE
+   ========================================================= */
+
+.transformation-bridge {
+    margin-top:
+        clamp(45px, 6vw, 70px);
+
+    margin-bottom:
+        clamp(45px, 6vw, 70px);
+}
+
+
+/* =========================================================
+   39. TABLET — 900px
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* -----------------------------------------
+       Framework heading
+    ----------------------------------------- */
+
+    .kore-framework-heading {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        margin-bottom: 45px;
+    }
+
+    .kore-framework-heading>p {
+        max-width: 650px;
+    }
+
+
+    /* -----------------------------------------
+       KORE stage grid
+    ----------------------------------------- */
+
+    .kore-stage-grid {
+        display: flex;
+
+        overflow-x: auto;
+
+        scrollbar-width: thin;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .kore-stage {
+        flex: 0 0 190px;
+
+        min-width: 190px;
+    }
+
+
+    /* -----------------------------------------
+       KORE panel
+    ----------------------------------------- */
+
+    .kore-panel-content {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+    .kore-panel-copy,
+    .kore-panel-tags {
+        grid-column: 1;
+    }
+
+
+    /* -----------------------------------------
+       Capabilities
+    ----------------------------------------- */
+
+    .toolbox-capabilities {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* -----------------------------------------
+       Bridge
+    ----------------------------------------- */
+
+    .scope-bridge {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .scope-bridge-action {
+        min-width: 210px;
+    }
+
+}
+
+
+/* =========================================================
+   40. MOBILE — 640px
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+    .transformation-system {
+        padding-top: 60px;
+
+        padding-bottom: 60px;
+    }
+
+
+    /* -----------------------------------------
+       Section intro
+    ----------------------------------------- */
+
+    .transformation-system-intro {
+        margin-bottom: 38px;
+
+        text-align: left;
+    }
+
+    .transformation-system-intro .scope-lead {
+        margin-left: 0;
+    }
+
+
+    /* -----------------------------------------
+       KORE heading
+    ----------------------------------------- */
+
+    .kore-framework-heading {
+        margin-bottom: 38px;
+    }
+
+    .kore-section-heading {
+        margin-bottom: 20px;
+    }
+
+
+    /* -----------------------------------------
+       KORE stage grid
+    ----------------------------------------- */
+
+    .kore-stage-grid {
+        display: flex;
+
+        overflow-x: auto;
+
+        scroll-snap-type: x mandatory;
+
+        scrollbar-width: none;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .kore-stage-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .kore-stage {
+        flex: 0 0 78%;
+
+        min-height: 155px;
+
+        padding:
+            22px 20px 25px;
+
+        scroll-snap-align: start;
+    }
+
+    .kore-stage-index {
+        margin-bottom: 28px;
+    }
+
+    .kore-stage-name {
+        font-size: 0.96rem;
+    }
+
+    .kore-stage-detail {
+        font-size: 0.68rem;
+    }
+
+    .kore-stage::after {
+        left: 20px;
+        right: 20px;
+    }
+
+
+    /* -----------------------------------------
+       KORE panel
+    ----------------------------------------- */
+
+    .kore-stage-panel {
+        grid-template-columns: 1fr;
+
+        margin-top: 14px;
+    }
+
+
+    /* -----------------------------------------
+       Panel meta
+    ----------------------------------------- */
+
+    .kore-panel-meta {
+        flex-direction: row;
+
+        align-items: center;
+
+        padding:
+            17px 20px;
+
+        border-right: 0;
+
+        border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+    }
+
+    .kore-panel-meta span:last-child {
+        writing-mode: horizontal-tb;
+
+        transform: none;
+    }
+
+
+    /* -----------------------------------------
+       Panel content
+    ----------------------------------------- */
+
+    .kore-panel-content {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        padding:
+            28px 22px;
+    }
+
+    .kore-panel-copy,
+    .kore-panel-tags {
+        grid-column: 1;
+    }
+
+    .kore-panel-copy h4 {
+        font-size: 1.65rem;
+    }
+
+    .kore-panel-copy p {
+        font-size: 0.87rem;
+
+        line-height: 1.7;
+    }
+
+    .kore-panel-tools {
+        grid-column: 1;
+
+        padding-top: 20px;
+    }
+
+
+    /* -----------------------------------------
+       Bridge
+    ----------------------------------------- */
+
+    .scope-bridge {
+        gap: 25px;
+
+        margin-top: 45px;
+
+        margin-bottom: 45px;
+
+        padding:
+            28px 24px;
+    }
+
+    .scope-bridge-copy h3 {
+        font-size: 1.55rem;
+    }
+
+    .scope-bridge-action {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+
+    /* -----------------------------------------
+       Capabilities
+    ----------------------------------------- */
+
+    .toolbox-capability {
+        grid-template-columns:
+            44px minmax(0, 1fr);
+
+        gap: 15px;
+
+        padding:
+            23px 20px;
+    }
+
+    .toolbox-capability-marker span {
+        width: 36px;
+
+        height: 36px;
+    }
+
+
+    /* -----------------------------------------
+       Systems
+    ----------------------------------------- */
+
+    .toolbox-system-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .toolbox-system {
+        grid-template-columns:
+            44px minmax(0, 1fr);
+
+        gap: 15px;
+
+        padding: 23px 0;
+    }
+
+    .toolbox-system-icon {
+        width: 42px;
+
+        height: 42px;
+
+        border-radius: 12px;
+    }
+
+    .toolbox-system-icon ion-icon {
+        font-size: 18px;
+    }
+
+
+    /* -----------------------------------------
+       Closing statement
+    ----------------------------------------- */
+
+    .toolbox-note {
+        align-items: flex-start;
+
+        gap: 13px;
+    }
+
+    .toolbox-note-line {
+        flex-basis: 24px;
+
+        margin-top: 9px;
+    }
+
+}
+
+
+/* =========================================================
+   41. SMALL MOBILE — 480px
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .kore-stage {
+        flex-basis: 86%;
+    }
+
+    .kore-panel-content {
+        padding:
+            25px 20px;
+    }
+
+    .kore-panel-tags span {
+        font-size: 0.63rem;
+    }
+
+    .kore-panel-tools span {
+        font-size: 0.62rem;
+    }
+
+}
+
+
+/* =========================================================
+   42. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .kore-stage,
+    .kore-stage::after,
+    .kore-panel-tools span,
+    .scope-bridge-action,
+    .toolbox-capability,
+    .toolbox-tools span {
+
+        transition: none !important;
+    }
+
+}
