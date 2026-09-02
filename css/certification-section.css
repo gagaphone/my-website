@@ -827,8 +827,6 @@
 
         padding: 8px;
 
-        border-radius: 17px;
-
         scrollbar-width: none;
     }
 
@@ -856,11 +854,6 @@
     /* --------------------------------------------------------------
      Content
      -------------------------------------------------------------- */
-
-    .certification-content-area {
-        border-radius: 18px;
-    }
-
 
     .certification-panel {
         padding: 21px 17px;
@@ -915,10 +908,8 @@
 
     .certification-card {
         padding: 17px;
-
         gap: 13px;
 
-        border-radius: 14px;
     }
 
 
