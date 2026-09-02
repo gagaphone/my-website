@@ -165,122 +165,149 @@ h6,
    HERO / HEADER ACTIONS
    ========================================================= */
 
+/* =========================================================
+   HERO ACTION BUTTONS
+   HAND-DRAWN STROKE STYLE
+   ========================================================= */
+
 .olg-action-box {
     display: flex;
     align-items: center;
+    gap: 18px;
     flex-wrap: wrap;
-
-    gap: 12px;
-
-    min-height: 50px;
-
-    margin-top: 5px;
 }
 
 
 /* =========================================================
-   RESUME DOWNLOAD BUTTON
-   Reusable in HEADER + HERO
+   SHARED BUTTON
    ========================================================= */
 
-.resume-download {
+.hero-explore,
+.hero-resume {
     position: relative;
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
 
-    gap: 10px;
+    min-width: 154px;
 
-    min-height: 48px;
+    padding: 16px 20px;
 
-    padding: 0 21px;
-
-
-    background: var(--scope-accent, #c33642);
-
-    border-color: var(--scope-accent, #c33642);
-
-    color: #ffffff;
-
-    border-radius: 999px;
+    color: var(--text-white);
     text-decoration: none;
 
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
+    text-align: center;
+
+    font-size: 12px;
+    font-weight: var(--fw-l);
+    letter-spacing: 0.02em;
+
     line-height: 1;
-    text-transform: uppercase;
-
-    white-space: nowrap;
-
-    cursor: pointer;
 
     transition:
-        background 0.25s ease,
         color 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+        transform 0.25s ease;
 }
 
 
-/* Resume icon */
+/* =========================================================
+   STROKE
+   ========================================================= */
 
-.resume-download ion-icon {
-    font-size: 16px;
+.hero-button-stroke {
+    display: block;
 
-    transition: transform 0.25s ease;
+    position: absolute;
+
+    left: 20px;
+    bottom: -10px;
+
+    width: calc(100% - 40px);
+    height: 20px;
+
+    overflow: visible;
+
+    pointer-events: none;
 }
 
 
-/* Hover */
+/* First stroke — always visible */
 
-.resume-download:hover {
-    border: 1px solid var(--scope-accent, #c33642);
+.hero-button-stroke:first-of-type {
+    stroke: var(--primary-light, #c33642);
+
+    stroke-width: 3;
+}
 
 
-    background: transparent;
+/* Second stroke — hidden / animated */
 
-    color: var(--scope-accent, #c33642);
+.hero-button-stroke:nth-of-type(2) {
+    stroke: rgba(255, 255, 255, 0.18);
+
+    stroke-width: 4;
+
+    stroke-dasharray: 650px;
+    stroke-dashoffset: 650px;
+
+    transition:
+        stroke-dashoffset 800ms ease-out;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.hero-explore:hover,
+.hero-resume:hover {
+    color: var(--text-white);
 
     transform: translateY(-2px);
-
-    box-shadow:
-        0 10px 25px rgba(15, 23, 42, 0.12);
-}
-
-.resume-download:hover ion-icon {
-    transform: translateY(3px);
 }
 
 
-/* =========================================================
-   HEADER RESUME BUTTON
-   Compact navigation version
-   ========================================================= */
-
-.header .resume-download {
-    min-height: 40px;
-
-    padding: 0 16px;
-
-    font-size: 11px;
-
-    letter-spacing: 0.01em;
-}
-
-.header .resume-download ion-icon {
-    font-size: 14px;
+.hero-explore:hover .hero-button-stroke:nth-of-type(2),
+.hero-resume:hover .hero-button-stroke:nth-of-type(2) {
+    stroke-dashoffset: 0;
 }
 
 
 /* =========================================================
-   HERO RESUME BUTTON
+   FOCUS
    ========================================================= */
 
-.olg-action-box .resume-download {
-    min-width: 190px;
+.hero-explore:focus-visible,
+.hero-resume:focus-visible {
+    outline: 1px solid var(--primary-light);
+    outline-offset: 7px;
+}
+
+
+/* =========================================================
+   EXPLORE
+   PRIMARY
+   ========================================================= */
+
+.hero-explore {
+    color: var(--text-white);
+}
+
+
+/* =========================================================
+   RESUME
+   SECONDARY
+   ========================================================= */
+
+.hero-resume {
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.hero-resume .hero-button-stroke:first-of-type {
+    stroke: rgba(255, 255, 255, 0.35);
+}
+
+.hero-resume .hero-button-stroke:nth-of-type(2) {
+    stroke: var(--primary-light, #c33642);
 }
 
 
@@ -291,18 +318,14 @@ h6,
 @media (max-width: 640px) {
 
     .olg-action-box {
+        align-items: flex-start;
         flex-direction: column;
-        align-items: stretch;
-
-        gap: 10px;
-
-        margin-top: 5px;
+        gap: 18px;
     }
 
-    .olg-action-box,
-    .olg-action-box .resume-download {
-        width: 100%;
-        min-width: 0;
+    .hero-explore,
+    .hero-resume {
+        min-width: 170px;
     }
 
 }
@@ -314,13 +337,20 @@ h6,
 
 @media (prefers-reduced-motion: reduce) {
 
-
-    .resume-download,
-    .resume-download ion-icon {
+    .hero-explore,
+    .hero-resume,
+    .hero-button-stroke {
         transition: none !important;
     }
 
 }
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+
 
 @media (max-width: 912px) {
 
