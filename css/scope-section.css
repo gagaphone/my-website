@@ -605,102 +605,451 @@
    RESPONSIVE
 ================================================== */
 
-@media (max-width: 1000px) {
+/* ==========================================================
+   SCOPE — RESPONSIVE
+========================================================== */
 
-    .scope-metrics {
-        grid-template-columns: repeat(3, 1fr);
+
+/* ==========================================================
+   900px — TABLET / COMPACT DESKTOP
+========================================================== */
+
+@media (max-width: 900px) {
+
+    /* -----------------------------------------
+       Section intro
+    ----------------------------------------- */
+
+    .scope-section .section-intro {
+        margin-bottom: 45px;
     }
 
-    .scope-metric:nth-child(3) {
-        border-right: none;
+
+    /* -----------------------------------------
+       Operating environment
+    ----------------------------------------- */
+
+    .scope-environment {
+        margin-top: 50px;
     }
 
-    .scope-metric:nth-child(-n + 3) {
-        border-bottom: 1px solid var(--scope-line);
+    .scope-section-heading {
+        gap: 18px;
     }
+
+
+    /* -----------------------------------------
+       Domain grid
+    ----------------------------------------- */
 
     .scope-domain-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .scope-domain:last-child {
-        grid-column: span 2;
-    }
 
-    .scope-complexity-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .scope-flow {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .scope-flow-line {
-        width: 1px;
-        height: 25px;
-        margin: 0 auto;
-    }
-
-}
-
-
-@media (max-width: 680px) {
-
-    .scope-section {
-        padding-top: 55px;
-        padding-bottom: 70px;
-    }
-
-    .scope-metrics {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .scope-metric {
-        min-height: 130px;
-    }
-
-    .scope-metric:nth-child(2n) {
-        border-right: none;
-    }
-
-    .scope-metric:nth-child(3) {
-        border-right: 1px solid var(--scope-line);
-    }
-
-    .scope-metric:nth-child(-n + 4) {
-        border-bottom: 1px solid var(--scope-line);
-    }
-
-    .scope-domain-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .scope-domain:last-child {
-        grid-column: auto;
-    }
-
-    .scope-domain {
-        min-height: 130px;
-    }
-
-    .scope-domain-index {
-        margin-bottom: 20px;
-    }
+    /* -----------------------------------------
+       Domain panel
+    ----------------------------------------- */
 
     .scope-domain-panel {
         grid-template-columns: 1fr;
     }
 
     .scope-panel-meta {
+        border-right: 0;
+        border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+
+        padding: 16px 20px;
+
+        flex-direction: row;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .scope-panel-meta span:last-child {
+        writing-mode: horizontal-tb;
+        transform: none;
+    }
+
+    .scope-panel-content {
+        padding: 28px 24px;
+    }
+
+
+    /* -----------------------------------------
+       Complexity
+    ----------------------------------------- */
+
+    .scope-complexity {
+        margin-top: 60px;
+    }
+
+    .scope-complexity-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+
+    /* -----------------------------------------
+       Transformation model
+    ----------------------------------------- */
+
+    .scope-model {
+        margin-top: 60px;
+    }
+
+    .scope-flow {
+        gap: 18px;
+    }
+
+
+    /* -----------------------------------------
+       Bridge
+    ----------------------------------------- */
+
+    .scope-bridge {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .scope-bridge-action {
+        min-width: 210px;
+    }
+
+}
+
+
+/* ==========================================================
+   640px — MOBILE / TABLET
+========================================================== */
+
+@media (max-width: 640px) {
+
+    /* -----------------------------------------
+       Section spacing
+    ----------------------------------------- */
+
+    .scope-section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+
+    /* -----------------------------------------
+       Section intro
+    ----------------------------------------- */
+
+    .scope-section .section-intro {
+        margin-bottom: 38px;
+        text-align: left;
+    }
+
+    .scope-section .scope-lead {
+        margin-left: 0;
+    }
+
+
+    /* -----------------------------------------
+       Metrics
+    ----------------------------------------- */
+
+    .scope-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .scope-metric {
+        padding: 20px 18px;
+    }
+
+    .scope-metric-number {
+        font-size: 1.7rem;
+    }
+
+    .scope-metric-label {
+        font-size: 0.72rem;
+    }
+
+
+    /* -----------------------------------------
+       Operating environment heading
+    ----------------------------------------- */
+
+    .scope-environment {
+        margin-top: 45px;
+    }
+
+    .scope-section-heading {
+        margin-bottom: 30px;
+    }
+
+
+    /* -----------------------------------------
+       Domain grid
+    ----------------------------------------- */
+
+    .scope-domain-grid {
+        display: flex;
+
+        overflow-x: auto;
+
+        gap: 12px;
+
+        padding-bottom: 4px;
+
+        scrollbar-width: none;
+
+        -webkit-overflow-scrolling: touch;
+
+        scroll-snap-type: x mandatory;
+    }
+
+    .scope-domain-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scope-domain {
+        flex: 0 0 78%;
+
+        min-height: 145px;
+
+        padding: 22px 20px;
+
+        scroll-snap-align: start;
+    }
+
+
+    /* -----------------------------------------
+       Domain panel
+    ----------------------------------------- */
+
+    .scope-domain-panel {
+        grid-template-columns: 1fr;
+
+        margin-top: 14px;
+    }
+
+
+    /* -----------------------------------------
+       Panel meta
+    ----------------------------------------- */
+
+    .scope-panel-meta {
         flex-direction: row;
 
-        border-right: none;
-        border-bottom: 1px solid var(--scope-line);
+        align-items: center;
+
+        padding: 17px 20px;
+
+        border-right: 0;
+
+        border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+    }
+
+    .scope-panel-meta span:last-child {
+        writing-mode: horizontal-tb;
+        transform: none;
+    }
+
+
+    /* -----------------------------------------
+       Panel content
+    ----------------------------------------- */
+
+    .scope-panel-content {
+        padding: 28px 22px;
+    }
+
+    .scope-panel-content h4 {
+        font-size: 1.5rem;
+    }
+
+    .scope-panel-content p {
+        font-size: 0.87rem;
+        line-height: 1.7;
+    }
+
+
+    /* -----------------------------------------
+       Panel tags
+    ----------------------------------------- */
+
+    .scope-panel-tags {
+        gap: 7px;
+    }
+
+    .scope-panel-tags span {
+        font-size: 0.65rem;
+    }
+
+
+    /* -----------------------------------------
+       Complexity
+    ----------------------------------------- */
+
+    .scope-complexity {
+        margin-top: 50px;
     }
 
     .scope-complexity-grid {
         grid-template-columns: 1fr;
+    }
+
+    .scope-capability-card {
+        padding: 23px 20px;
+    }
+
+
+    /* -----------------------------------------
+       Transformation model
+    ----------------------------------------- */
+
+    .scope-model {
+        margin-top: 50px;
+    }
+
+    .scope-flow {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+    .scope-flow-line {
+        width: 1px;
+
+        height: 28px;
+
+        margin-left: 22px;
+    }
+
+    .scope-flow-step {
+        width: 100%;
+    }
+
+
+    /* -----------------------------------------
+       Bridge
+    ----------------------------------------- */
+
+    .scope-bridge {
+        gap: 25px;
+
+        margin-top: 45px;
+        margin-bottom: 45px;
+
+        padding: 28px 24px;
+    }
+
+    .scope-bridge-copy h3 {
+        font-size: 1.55rem;
+    }
+
+    .scope-bridge-action {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+}
+
+
+/* ==========================================================
+   480px — SMALL MOBILE
+========================================================== */
+
+@media (max-width: 480px) {
+
+    /* -----------------------------------------
+       Metrics
+    ----------------------------------------- */
+
+    .scope-metrics {
+        gap: 10px;
+    }
+
+    .scope-metric {
+        padding: 18px 15px;
+    }
+
+    .scope-metric-number {
+        font-size: 1.5rem;
+    }
+
+    .scope-metric-label {
+        font-size: 0.68rem;
+        line-height: 1.45;
+    }
+
+
+    /* -----------------------------------------
+       Domain cards
+    ----------------------------------------- */
+
+    .scope-domain {
+        flex-basis: 86%;
+    }
+
+
+    /* -----------------------------------------
+       Domain panel
+    ----------------------------------------- */
+
+    .scope-panel-content {
+        padding: 25px 20px;
+    }
+
+    .scope-panel-content h4 {
+        font-size: 1.4rem;
+    }
+
+    .scope-panel-tags span {
+        font-size: 0.62rem;
+    }
+
+
+    /* -----------------------------------------
+       Complexity cards
+    ----------------------------------------- */
+
+    .scope-capability-card {
+        padding: 21px 18px;
+    }
+
+    .scope-capability-card h4 {
+        font-size: 1rem;
+    }
+
+    .scope-capability-card p {
+        font-size: 0.82rem;
+    }
+
+
+    /* -----------------------------------------
+       Transformation flow
+    ----------------------------------------- */
+
+    .scope-flow-step {
+        padding: 20px;
+    }
+
+    .scope-flow-line {
+        height: 24px;
+        margin-left: 20px;
+    }
+
+
+    /* -----------------------------------------
+       Bridge
+    ----------------------------------------- */
+
+    .scope-bridge {
+        padding: 25px 20px;
+    }
+
+    .scope-bridge-copy h3 {
+        font-size: 1.4rem;
     }
 
 }
