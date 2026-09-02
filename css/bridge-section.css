@@ -219,109 +219,6 @@
    BRIDGE ACTION
    ========================================================= */
 
-.scope-bridge-action {
-    position: relative;
-
-    z-index: 2;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 12px;
-
-    flex:
-        0 0 auto;
-
-    min-width: 220px;
-
-    min-height: 48px;
-
-    padding:
-        0 22px;
-
-    border:
-        1px solid rgba(255, 255, 255, 0.18);
-
-    border-radius:
-        999px;
-
-    background:
-        rgba(255, 255, 255, 0.025);
-
-    color:
-        var(--text-light,
-            (--text-white));
-
-    text-decoration: none;
-
-    font-size: 13px;
-
-    font-weight:
-        var(--fw-l,
-            500);
-
-    white-space: nowrap;
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-
-/* Hover */
-
-.scope-bridge-action:hover {
-    background:
-        var(--scope-accent,
-            var(--bridge-accent));
-
-    border-color:
-        var(--scope-accent,
-            var(--bridge-accent));
-
-    color: (--text-white);
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 10px 25px rgba(195, 54, 66, 0.18);
-}
-
-
-/* Focus */
-
-.scope-bridge-action:focus-visible {
-    outline:
-        2px solid var(--bridge-accent);
-
-    outline-offset:
-        4px;
-}
-
-
-/* Arrow */
-
-.scope-bridge-action ion-icon {
-    font-size: 17px;
-
-    transition:
-        transform 0.25s ease;
-}
-
-
-/* Arrow movement */
-
-.scope-bridge-action:hover ion-icon {
-    transform:
-        translateX(3px);
-}
 
 
 /* =========================================================
@@ -341,34 +238,6 @@
 
     margin-bottom:
         clamp(55px, 7vw, 90px);
-}
-
-
-/* =========================================================
-   OPTIONAL — SMALL CONNECTOR BELOW BRIDGE
-   ========================================================= */
-
-.scope-bridge--section .scope-bridge-action::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-
-    bottom: -42px;
-
-    width: 1px;
-    height: 28px;
-
-    background:
-        linear-gradient(180deg,
-            var(--bridge-line),
-            transparent);
-
-    transform:
-        translateX(-50%);
-
-    pointer-events: none;
 }
 
 
@@ -393,9 +262,7 @@
         max-width: 680px;
     }
 
-    .scope-bridge-action {
-        min-width: 210px;
-    }
+
 
 }
 
@@ -455,27 +322,295 @@
     }
 
 
+
+
+}
+
+/* =========================================================
+   SCOPE BRIDGE ACTION
+   EDITORIAL ANIMATED ARROW
+   ========================================================= */
+
+.scope-bridge-action {
+    --arrow-color: rgba(255, 255, 255, 0.48);
+    --arrow-hover: var(--primary-light, #c33642);
+
+    position: relative;
+
+    display: inline-block;
+
+    flex: 0 0 auto;
+
+    min-width: 180px;
+
+    color: var(--arrow-color);
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: var(--fw-l, 500);
+
+    letter-spacing: 0.02em;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.scope-bridge-action__main {
+    display: flex;
+
+    align-items: center;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+/* Text */
+
+.scope-bridge-action__text {
+    margin-right: 16px;
+    font-size: 18px;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   ARROW SYSTEM
+   ========================================================= */
+
+.scope-bridge-action .the-arrow {
+    width: 64px;
+
+    transition:
+        all 0.2s ease;
+}
+
+
+/* Arrow shaft */
+
+.scope-bridge-action .the-arrow>.shaft {
+    display: block;
+
+    position: relative;
+
+    height: 1px;
+
+    background: var(--arrow-color);
+
+    transition:
+        all 0.2s ease;
+
+    transition-delay: 0;
+
+    will-change: transform;
+}
+
+
+/* Arrow heads */
+
+.scope-bridge-action .the-arrow>.shaft::before,
+.scope-bridge-action .the-arrow>.shaft::after {
+    content: "";
+
+    display: block;
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 8px;
+    height: 1px;
+
+    background: var(--arrow-color);
+
+    transition:
+        all 0.2s ease;
+}
+
+
+/* Head rotation */
+
+.scope-bridge-action .the-arrow>.shaft::before {
+    transform-origin: top right;
+    transform: rotate(40deg);
+}
+
+.scope-bridge-action .the-arrow>.shaft::after {
+    transform-origin: bottom right;
+    transform: rotate(-40deg);
+}
+
+
+/* =========================================================
+   LEFT ARROW
+   Hidden until hover
+   ========================================================= */
+
+.scope-bridge-action .the-arrow--left {
+    position: absolute;
+
+    top: 50%;
+    left: 0;
+
+    transform: translateY(-50%);
+}
+
+
+.scope-bridge-action .the-arrow--left>.shaft {
+    width: 0;
+
+    background: transparent;
+}
+
+
+.scope-bridge-action .the-arrow--left>.shaft::before,
+.scope-bridge-action .the-arrow--left>.shaft::after {
+    width: 0;
+
+    background: transparent;
+
+    transform: rotate(0);
+}
+
+
+/* =========================================================
+   RIGHT ARROW
+   Visible by default
+   ========================================================= */
+
+.scope-bridge-action .the-arrow--right {
+    position: relative;
+
+    top: 3px;
+}
+
+
+.scope-bridge-action .the-arrow--right>.shaft {
+    width: 64px;
+
+    transition-delay: 0.2s;
+}
+
+
+.scope-bridge-action .the-arrow--right>.shaft::before,
+.scope-bridge-action .the-arrow--right>.shaft::after {
+    width: 8px;
+
+    transition-delay: 0.3s;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.scope-bridge-action:hover {
+    color: var(--arrow-hover);
+}
+
+
+/* Left arrow expands */
+
+.scope-bridge-action:hover .the-arrow--left>.shaft {
+    width: 64px;
+
+    background: var(--arrow-hover);
+
+    transition-delay: 0.1s;
+}
+
+
+.scope-bridge-action:hover .the-arrow--left>.shaft::before,
+.scope-bridge-action:hover .the-arrow--left>.shaft::after {
+    width: 8px;
+
+    background: var(--arrow-hover);
+
+    transition-delay: 0.1s;
+}
+
+
+.scope-bridge-action:hover .the-arrow--left>.shaft::before {
+    transform: rotate(40deg);
+}
+
+
+.scope-bridge-action:hover .the-arrow--left>.shaft::after {
+    transform: rotate(-40deg);
+}
+
+
+/* Text moves right */
+
+.scope-bridge-action:hover .scope-bridge-action__main {
+    transform:
+        translateX(80px);
+}
+
+
+/* Right arrow retracts */
+
+.scope-bridge-action:hover .the-arrow--right>.shaft {
+    width: 0;
+
+    transform: translateX(200%);
+
+    background: transparent;
+
+    transition-delay: 0;
+}
+
+
+.scope-bridge-action:hover .the-arrow--right>.shaft::before,
+.scope-bridge-action:hover .the-arrow--right>.shaft::after {
+    width: 0;
+
+    background: transparent;
+
+    transform: rotate(0);
+
+    transition-delay: 0;
+}
+
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+.scope-bridge-action:focus-visible {
+    outline: 1px solid var(--primary-light);
+    outline-offset: 8px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
     .scope-bridge-action {
-        width: 100%;
-
-        min-width: 0;
-
-        min-height: 48px;
+        min-width: 180px;
     }
 
 }
 
 
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
+@media (max-width: 640px) {
 
-@media (prefers-reduced-motion: reduce) {
+    .scope-bridge-action {
+        width: auto;
 
-    .scope-bridge-action,
-    .scope-bridge-action ion-icon {
-
-        transition: none !important;
+        min-width: 180px;
     }
 
 }
