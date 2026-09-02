@@ -290,19 +290,48 @@
 }
 
 
-.certification-panel-index {
-    display: inline-flex;
+/* ========================================================================
+   PANEL INDEX
+   ======================================================================== */
 
-    margin-bottom: 10px;
+.certification-panel-index {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 10px;
+    font-weight: var(--fw-xl);
+
+    line-height: 1;
+
+    letter-spacing: 1px;
+
+    color: var(--primary-light, #be2f3d);
+
+    opacity: 0.9;
+}
+
+
+/* ========================================================================
+   PANEL NAME
+   ======================================================================== */
+
+.certification-panel-name {
+    display: block;
+
+    max-width: 680px;
+
+    margin-bottom: 14px;
 
     font-size: var(--fs-h3);
     font-weight: var(--fw-l);
 
-    color: var(--primary-light, #be2f3d);
+    line-height: 1.25;
 
+    letter-spacing: -0.015em;
+
+    color: var(--text-main, #0f172a);
 }
-
-
 
 .certification-panel-header p {
     max-width: 680px;
